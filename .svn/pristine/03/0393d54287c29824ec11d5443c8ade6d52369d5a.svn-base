@@ -1,0 +1,21 @@
+//
+//  GetMemberBalanceRequest.h
+//  weidong
+//
+//  Created by zhccc on 2017/10/8.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "RequestBase.h"
+
+@interface GetMemberBalanceResponse : NSObject
+@property(nonatomic, assign)float memberBalance;    //微动币当前余额
+@property(nonatomic, copy)NSArray *paymentPlugins;      //支付插件list PaymentPluginInfo
+@property(nonatomic, assign)NSInteger defaultPaymentPluginId;   //默认选中支付插件ID
+@end
+
+
+@interface GetMemberBalanceRequest : RequestBase
+- (void)excuteRequest:(void (^_Nonnull)(BOOL isOK, GetMemberBalanceResponse * _Nullable response, NSString * _Nullable errorMsg))complete;
+@end

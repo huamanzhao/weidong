@@ -1,0 +1,45 @@
+//
+//  CollectionTableViewCell.m
+//  weidong
+//
+//  Created by zhccc on 2017/10/5.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "CollectionTableViewCell.h"
+#import "PrimaryFuncCell.h"
+#import "Constants.h"
+
+@implementation CollectionTableViewCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    _collection.delegate = self;
+    _collection.dataSource = self;
+    [_collection registerNib:[UINib nibWithNibName:@"PrimaryFuncCell" bundle:nil] forCellWithReuseIdentifier:PrimaryCellIdentifier];
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 8;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    PrimaryFuncCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:PrimaryCellIdentifier forIndexPath:indexPath];
+    
+    [cell setupPrimaryCell:indexPath.row];
+    
+    return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat length = SCREEN_WIDTH / 4;
+    
+    return CGSizeMake(length, length);
+}
+
+@end

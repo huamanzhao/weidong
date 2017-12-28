@@ -1,0 +1,36 @@
+//
+//  MemberHeaderView.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/4.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "MemberHeaderView.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
+@implementation MemberHeaderView
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        self = [[NSBundle mainBundle] loadNibNamed:@"MemberHeaderView" owner:self options:nil].firstObject;
+        self.frame = frame;
+    }
+    return self;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    self.levelBgView.backgroundColor = [UIColor colorWithWhite:0.2 alpha:0.7];
+    [self.levelBgView setRoundCornerWithRadius:6.0];
+}
+
+- (void)setupWithSelf:(SelfInfo *)info {
+    _userLabel.text = [@"您好 " stringByAppendingString:info.username];
+    
+//    [_avatarImage sd_setImageWithURL:[NSURL URLWithString:info.a]]
+}
+
+@end

@@ -1,0 +1,55 @@
+//
+//  MyCreditsLogViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/19.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "MyCreditsLogViewController.h"
+#import "GetPointsLogRequest.h"
+
+@interface MyCreditsLogViewController ()
+
+@end
+
+@implementation MyCreditsLogViewController {
+    NSArray *creditLogList;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self getCreditsLogs];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)getCreditsLogs {
+    [SVProgressHUD showWithStatus:@"正在加载"];
+    GetPointsLogRequest *request = [GetPointsLogRequest new];
+    request.pageSize = 20;
+    request.pageNumber = 1;
+    [request excuteRequest:^(BOOL isOK, GetPointsLogResponse * _Nullable response, NSString * _Nullable errorMsg) {
+        [SVProgressHUD dismiss];
+        if (isOK) {
+            [SVProgressHUD showSuccessWithStatus:@"加载完毕"];
+            creditLogList = response.list;
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:errorMsg];
+        }
+    }];
+}
+
+
+
+@end

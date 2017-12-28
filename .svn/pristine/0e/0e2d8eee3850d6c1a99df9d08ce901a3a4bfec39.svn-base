@@ -1,0 +1,108 @@
+//
+//  EgouCardViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/12/17.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "EgouCardViewController.h"
+#import "VerifyCodeView.h"
+#import "GetVerifyCodeRequest.h"
+#import "CheckVerifyCodeRequest.h"
+
+@interface EgouCardViewController () <VerifiCodeDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *amountLabel;
+@property (weak, nonatomic) IBOutlet UITextField *cardNoTF;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTF;
+@property (weak, nonatomic) IBOutlet UITextField *verifyTF;
+@property (weak, nonatomic) IBOutlet VerifyCodeView *verifyCodeView;
+@property (weak, nonatomic) IBOutlet UIButton *chargeBtn;
+@property (weak, nonatomic) IBOutlet UIView *cardBgView;
+
+@end
+
+@implementation EgouCardViewController {
+    NSString *serverVerify;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.title = @"充值服务";
+    [self initNaviBackButton];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars=NO;
+    
+    _verifyCodeView.delegate = self;
+    
+    [self setupPositiveButtonStyle:_chargeBtn];
+    _cardBgView.layer.cornerRadius = 8.0;
+    [_cardBgView addShadowLayer];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self getVerifyCode];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+- (IBAction)chargeBtnPressed:(id)sender {
+}
+
+- (void)getVerifyCode {
+    [SVProgressHUD showWithStatus:@"获取验证码"];
+    GetVerifyCodeRequest *request = [GetVerifyCodeRequest new];
+    request.type = VerifyCodeType_Other;
+    [request excuteRequst:^(Boolean isOK, NSString *verifyCode, NSString * _Nullable errorMsg) {
+        [SVProgressHUD dismiss];
+        if (isOK) {
+            serverVerify = verifyCode;
+            [_verifyCodeView setupWithCode:verifyCode];
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:errorMsg];
+        }
+    }];
+}
+
+//验证验证码
+- (void)checkVerifyCode {
+    [SVProgressHUD showWithStatus:@"正在验证"];
+    CheckVerifyCodeRequest *request = [CheckVerifyCodeRequest new];
+    request.type = VerifyCodeType_Other;
+    request.verifyCode = _verifyTF.text;
+    [request excuteRequst:^(Boolean isOK, NSString * _Nullable errorMsg) {
+        [SVProgressHUD dismiss];
+        if (isOK) {
+            
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:errorMsg];
+            [self getVerifyCode];
+        }
+    }];
+}
+
+
+- (void)needChangeVerifyCode {
+    serverVerify = @"";
+    [self getVerifyCode];
+}
+
+@end

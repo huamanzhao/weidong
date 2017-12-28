@@ -1,0 +1,110 @@
+//
+//  MemberMainViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/9/29.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "MemberMainViewController.h"
+#import "LoginViewController.h"
+#import "MemberHeaderView.h"
+#import "MemberFunctionView.h"
+#import "MemberTableSectionView.h"
+
+@interface MemberMainViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@end
+
+@implementation MemberMainViewController {
+    UITableView *table;
+    UIView *tableHeader;
+    MemberHeaderView *headerView;
+    MemberFunctionView *functionView;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.title = @"会员中心";
+    
+    self.view.backgroundColor = [UIColor grayColor];
+    [self initTableView];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if (![Util userIsLogin] ) {
+        [self openLoginController];
+        return;
+    }
+    
+    
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+  
+    table.frame = self.view.bounds;
+    tableHeader.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * 0.6);
+    headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * 0.4);
+    functionView.frame = CGRectMake(0, SCREEN_WIDTH * 0.4, SCREEN_WIDTH, SCREEN_WIDTH * 0.2);
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)initTableView {
+    table = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    table.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    table.separatorStyle = UITableViewCellSeparatorStyleNone;
+    table.rowHeight = UITableViewAutomaticDimension;
+    table.estimatedRowHeight = 100;
+    table.delegate = self;
+    table.dataSource = self;
+    if (@available(iOS 11.0, *)) {
+        table.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        // Fallback on earlier versions
+    } //取消顶部空白
+    
+    tableHeader = [UIView new];
+    headerView = [MemberHeaderView new];
+    functionView = [MemberFunctionView new];
+    [tableHeader addSubview:headerView];
+    [tableHeader addSubview:functionView];
+
+    table.tableHeaderView = tableHeader;
+    [self.view addSubview:table];
+}
+
+- (void)openLoginController {
+    LoginViewController *loginVC = [LoginViewController new];
+    loginVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:loginVC animated:NO];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 6;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 0;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 36;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    MemberTableSectionView *sectionView = [MemberTableSectionView new];
+    return sectionView;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return nil;
+}
+
+@end

@@ -1,0 +1,76 @@
+//
+//  MyCreditsLogViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/19.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "MyCreditsLogViewController.h"
+#import "GetPointsLogRequest.h"
+#import "CreditLogCell.h"
+
+@interface MyCreditsLogViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@end
+
+@implementation MyCreditsLogViewController {
+    NSArray *creditLogList;
+    UITableView *table;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    table = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    table.delegate = self;
+    table.dataSource = self;
+    table.rowHeight = 80;
+    [table registerNib:[UINib nibWithNibName:@"CreditLogCell" bundle:nil] forCellReuseIdentifier:CREDITLOG_CELLID];
+    
+    [self.view addSubview:table];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self getCreditsLogs];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)getCreditsLogs {
+    [SVProgressHUD showWithStatus:@"正在加载"];
+    GetPointsLogRequest *request = [GetPointsLogRequest new];
+    request.pageSize = 20;
+    request.pageNumber = 1;
+    [request excuteRequest:^(BOOL isOK, GetPointsLogResponse * _Nullable response, NSString * _Nullable errorMsg) {
+        [SVProgressHUD dismiss];
+        if (isOK) {
+            [SVProgressHUD showSuccessWithStatus:@"加载完毕"];
+            creditLogList = response.list;
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:errorMsg];
+        }
+    }];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (!creditLogList) {
+        return 0;
+    }
+    return [creditLogList count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CreditLogCell *cell = [tableView dequeueReusableCellWithIdentifier:CREDITLOG_CELLID forIndexPath:indexPath];
+    [cell setupWithCreditInfo:[creditLogList objectAtIndex:indexPath.row]];
+    return cell;
+}
+
+
+@end

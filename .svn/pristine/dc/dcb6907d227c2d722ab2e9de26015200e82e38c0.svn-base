@@ -1,0 +1,92 @@
+//
+//  ProductMainView.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/18.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "ProductMainView.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "ProductSkuInfo.h"
+
+@interface ProductMainView ()
+@property (weak, nonatomic) IBOutlet UIImageView *typeImage;
+@property (weak, nonatomic) IBOutlet UIImageView *headImage;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *oldPriceLabel;
+@property (weak, nonatomic) IBOutlet UIButton *specificationBtn;
+
+@end
+
+@implementation ProductMainView {
+    ProductDetail *product;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        self = [[NSBundle mainBundle] loadNibNamed:@"ProductMainView" owner:self options:nil].firstObject;
+        self.frame = frame;
+    }
+    return self;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    
+}
+
+- (void)setupWithProduct:(ProductDetail *)detail {
+    NSString *imageUrlStr = detail.image;
+    NSURL *imageUrl = [NSURL URLWithString:imageUrlStr];
+    if (imageUrl) {
+        [_headImage sd_setImageWithURL:imageUrl placeholderImage:UIImageWithName(@"default_5") options:SDWebImageProgressiveDownload];
+    }
+    
+    NSString *imageName = @"";
+    switch (detail.productType) {
+            case ProductType_Trade:
+            imageName = @"product_damao";
+            break;
+            
+            case ProductType_Bonded:
+            imageName = @"product_baoshui";
+            break;
+            
+            case ProductType_Deliver:
+            imageName = @"product_zhiyou";
+            break;
+            
+        default:
+            break;
+    }
+    if (!STRING_NULL(imageName)) {
+        _typeImage.image = UIImageWithName(imageName);
+    }
+    
+    _titleLabel.text = detail.name;
+    _priceLabel.text = [NSString stringWithFormat:@"￥%.2lf", detail.price];
+    float marketPrice = 0;
+    for (ProductSkuInfo *sku in detail.appSkus) {
+        if (!STRING_NULL(sku.marketPrice)) {
+            float market = [sku.marketPrice floatValue];
+            if (market > marketPrice) {
+                marketPrice = market;
+            }
+        }
+    }
+    if (marketPrice != CGFLOAT_MAX) {
+        _oldPriceLabel.text = [NSString stringWithFormat:@"￥%.2lf", marketPrice];
+    }
+}
+
+- (IBAction)specificationBtnPressed:(id)sender {
+    if (_delegate) {
+        [_delegate showProductSpecifications];
+    }
+}
+
+@end

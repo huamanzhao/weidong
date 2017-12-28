@@ -1,0 +1,24 @@
+//
+//  ProductCollectionViewCell.m
+//  weidong
+//
+//  Created by zhccc on 2017/10/5.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "ProductCollectionViewCell.h"
+
+@implementation ProductCollectionViewCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+}
+
+- (void)setupWithProduct: (ProductInfo *)product {
+    self.titleLabel.text = product.name;
+    self.descriptLabel.text = product.caption;
+    self.priceLabel.text = [NSString stringWithFormat:@"￥%.2f", product.price];
+}
+
+@end

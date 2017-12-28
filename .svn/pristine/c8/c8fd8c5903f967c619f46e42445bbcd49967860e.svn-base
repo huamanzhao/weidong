@@ -1,0 +1,15 @@
+//
+//  ProductFilterView.h
+//  weidong
+//
+//  Created by zhccc on 2017/10/22.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface ProductFilterView : UIView <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@property (weak, nonatomic) IBOutlet UICollectionView *collection;
+@property (weak, nonatomic) IBOutlet UIButton *finishBtn;
+
+@end

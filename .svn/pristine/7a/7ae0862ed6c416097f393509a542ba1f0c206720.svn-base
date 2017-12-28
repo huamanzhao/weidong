@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MemberFunctionView">
+            <connections>
+                <outlet property="ConsulteBtn" destination="PjJ-SI-57u" id="t5p-7L-so2"/>
+                <outlet property="commentBtn" destination="fzZ-Jq-yij" id="Ibh-F9-Rbd"/>
+                <outlet property="deliveryBtn" destination="xTE-Rt-dMb" id="ucf-2X-MlL"/>
+                <outlet property="favoriteBtn" destination="2z8-Ph-xOG" id="6cv-B5-4hr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="bOA-6R-KJA">
+                    <rect key="frame" x="19" y="4" width="337.5" height="71"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2z8-Ph-xOG">
+                            <rect key="frame" x="0.0" y="0.0" width="84.5" height="71"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="商品收藏" image="func_favorite">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <connections>
+                                <action selector="favariteBtnPressed:" destination="-1" eventType="touchUpInside" id="0bc-7C-gXV"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTE-Rt-dMb">
+                            <rect key="frame" x="84.5" y="0.0" width="84.5" height="71"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="到货通知" image="func_receive">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <connections>
+                                <action selector="deliveryBtnPressed:" destination="-1" eventType="touchUpInside" id="Ld7-5C-2W4"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzZ-Jq-yij">
+                            <rect key="frame" x="169" y="0.0" width="84" height="71"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="商品评论" image="func_comment">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <connections>
+                                <action selector="commentBtnPressed:" destination="-1" eventType="touchUpInside" id="07t-69-sba"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjJ-SI-57u">
+                            <rect key="frame" x="253" y="0.0" width="84.5" height="71"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="商品咨询" image="func_consulate">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <connections>
+                                <action selector="consultBtnPressed:" destination="-1" eventType="touchUpInside" id="wZN-gc-rwf"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4GF-cq-Uc0">
+                    <rect key="frame" x="0.0" y="75" width="375" height="20"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="y8V-zj-jq8"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="4GF-cq-Uc0" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="9Dw-Y8-rhp"/>
+                <constraint firstItem="4GF-cq-Uc0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ehi-WX-8tQ"/>
+                <constraint firstItem="bOA-6R-KJA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="J4d-Zz-yp8"/>
+                <constraint firstItem="4GF-cq-Uc0" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="L8G-3f-cWj"/>
+                <constraint firstItem="bOA-6R-KJA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="LXI-tW-Xai"/>
+                <constraint firstItem="4GF-cq-Uc0" firstAttribute="top" secondItem="bOA-6R-KJA" secondAttribute="bottom" id="P22-dU-oN5"/>
+                <constraint firstItem="bOA-6R-KJA" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.9" id="w4n-2u-y99"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="26.5" y="52.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="func_comment" width="31" height="31"/>
+        <image name="func_consulate" width="31" height="31"/>
+        <image name="func_favorite" width="31" height="31"/>
+        <image name="func_receive" width="31" height="31"/>
+    </resources>
+</document>

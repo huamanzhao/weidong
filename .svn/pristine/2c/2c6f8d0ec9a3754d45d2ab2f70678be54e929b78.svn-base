@@ -1,0 +1,225 @@
+//
+//  ShopCartMainViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/12/11.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "ShopCartMainViewController.h"
+#import <VTMagic/VTMagic.h>
+#import "CartTypeInfo.h"
+#import "CartItemInfo.h"
+#import "GetCartListRequest.h"
+#import "ShopCartListViewController.h"
+
+@interface ShopCartMainViewController () <VTMagicViewDataSource, VTMagicViewDelegate>
+@property (weak, nonatomic) IBOutlet UIView *emptyView;
+@property (weak, nonatomic) IBOutlet UIView *displayView;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
+@property (weak, nonatomic) IBOutlet UILabel *totalLabel;
+@property (weak, nonatomic) IBOutlet UIButton *clearBtn;
+@property (weak, nonatomic) IBOutlet UIButton *payBtn;
+
+@property (strong, nonatomic) VTMagicController *magicController;
+@end
+
+@implementation ShopCartMainViewController {
+    NSMutableArray *cartTypeList;
+    NSMutableArray *titleList;
+    
+    NSInteger selectPage;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.title = @"购物车";
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars = NO;
+    self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
+    self.tabBarController.tabBar.backgroundColor = [UIColor whiteColor];
+    
+    [self addChildViewController:self.magicController];
+    [self.displayView addSubview:_magicController.view];
+    [_magicController didMoveToParentViewController:self];
+    
+    selectPage = 0;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    cartTypeList = [NSMutableArray new];
+    titleList = [NSMutableArray new];
+    
+    if ([Util userIsLogin]) {
+        [self getServerCartList];
+    }
+    else {
+        [self getLocalCartList];
+    }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (VTMagicController *)magicController {
+    if (!_magicController) {
+        _magicController = [[VTMagicController alloc] init];
+        _magicController.magicView.navigationColor = [UIColor whiteColor];
+        _magicController.magicView.sliderColor = ZHAO_BLUE;
+        _magicController.magicView.sliderWidth = 100;
+        _magicController.magicView.layoutStyle = VTLayoutStyleDivide;
+        _magicController.magicView.switchStyle = VTSwitchStyleDefault;
+        _magicController.magicView.navigationHeight = 40.f;
+        _magicController.magicView.dataSource = self;
+        _magicController.magicView.delegate = self;
+    }
+    
+    return _magicController;
+}
+
+- (void)getLocalCartList {
+    //获取所有的
+    NSArray *cartList = [CartItemInfo getLocalCartList];
+    
+    NSMutableArray *dmList = [NSMutableArray new];  //大贸
+    float dmTotal = 0.0;    //总价
+    NSMutableArray *zyList = [NSMutableArray new];  //直邮
+    float zyTotal = 0.0;
+    NSMutableArray *bsList = [NSMutableArray new];  //保税
+    float bsTotal = 0.0;
+    
+    for (CartItemInfo *cart in cartList) {
+        if (cart.productType == ProductType_Trade) {
+            [dmList addObject:cart];
+            dmTotal += [cart.price floatValue];
+        }
+        else if (cart.productType == ProductType_Bonded) {
+            [bsList addObject:cart];
+            bsTotal += [cart.price floatValue];
+        }
+        else if (cart.productType == ProductType_Deliver) {
+            [zyList addObject:cart];
+            zyTotal += [cart.price floatValue];
+        }
+    }
+    
+    if ([dmList count]) {
+        CartTypeInfo *info = [CartTypeInfo new];
+        info.effectivePrice = [NSString stringWithFormat:@"%.2f", dmTotal];
+        info.list = [dmList copy];
+        
+        [cartTypeList addObject:info];
+        [titleList addObject:@"优选"];
+    }
+    if ([zyList count]) {
+        CartTypeInfo *info = [CartTypeInfo new];
+        info.effectivePrice = [NSString stringWithFormat:@"%.2f", zyTotal];
+        info.list = [zyList copy];
+        
+        [cartTypeList addObject:info];
+        [titleList addObject:@"直邮"];
+    }
+    if ([bsList count]) {
+        CartTypeInfo *info = [CartTypeInfo new];
+        info.effectivePrice = [NSString stringWithFormat:@"%.2f", bsTotal];
+        info.list = [bsList copy];
+        
+        [cartTypeList addObject:info];
+        [titleList addObject:@"保税"];
+    }
+    
+    [self handleCartList];
+}
+
+- (void)getServerCartList {
+    [SVProgressHUD showWithStatus:@"正在请求数据"];
+    GetCartListRequest *request = [GetCartListRequest new];
+    [request excuteRequest:^(BOOL isOK, GetCartListResponse * _Nullable response, NSString * _Nullable errorMsg) {
+        [SVProgressHUD dismiss];
+        if (isOK) {
+            if ([response.dmDetail.list count]) {
+                [cartTypeList addObject:response.dmDetail];
+                [titleList addObject:@"优选"];
+            }
+            if ([response.zyDetail.list count]) {
+                [cartTypeList addObject:response.zyDetail];
+                [titleList addObject:@"直邮"];
+            }
+            if ([response.bsDetail.list count]) {
+                [cartTypeList addObject:response.bsDetail];
+                [titleList addObject:@"保税"];
+            }
+        }
+        
+        [self handleCartList];
+    }];
+}
+
+- (void)handleCartList {
+    if ([cartTypeList count]) { //有数据
+        [_displayView setHidden:NO];
+        [_bottomView setHidden:NO];
+        [self.view bringSubviewToFront:_bottomView];
+        
+        [_magicController.magicView reloadData];
+        [self updateTotalPrice];
+    }
+    else {  //没有数据
+        [_displayView setHidden:YES];
+        [_bottomView setHidden:YES];
+    }
+}
+
+- (void)updateTotalPrice {
+    if (cartTypeList && [cartTypeList count] > selectPage) {
+        CartTypeInfo *info = [cartTypeList objectAtIndex:selectPage];
+        _totalLabel.text = [NSString stringWithFormat:@"￥%@", info.effectivePrice];
+    }
+}
+
+- (IBAction)clearBtnPressed:(id)sender {
+    
+}
+
+- (IBAction)payBtnPressed:(id)sender {
+    
+}
+
+//MARK: VTMagic Delegate
+- (NSArray<NSString *> *)menuTitlesForMagicView:(VTMagicView *)magicView {
+    return titleList;
+}
+
+- (UIButton *)magicView:(VTMagicView *)magicView menuItemAtIndex:(NSUInteger)itemIndex {
+    static NSString *itemIdentifier = @"itemIdentifier";
+    UIButton *itemBtn = [magicView dequeueReusableItemWithIdentifier:itemIdentifier];
+    if (!itemBtn) {
+        itemBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [itemBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        [itemBtn setTitleColor:ZHAO_BLUE forState:UIControlStateSelected];
+        itemBtn.titleLabel.font = [UIFont systemFontOfSize:14.0];
+    }
+    
+    return itemBtn;
+}
+
+- (UIViewController *)magicView:(VTMagicView *)magicView viewControllerAtPage:(NSUInteger)pageIndex {
+    static NSString *listId = @"cartListIdentifier";
+    ShopCartListViewController *listController = [magicView dequeueReusablePageWithIdentifier:listId];
+    if (!listController) {
+        listController = [ShopCartListViewController new];
+    }
+    CartTypeInfo *cart = [cartTypeList objectAtIndex:pageIndex];
+    [listController reloadWithCart:cart];
+    return listController;
+}
+
+- (void)magicView:(VTMagicView *)magicView viewDidAppear:(__kindof UIViewController *)viewController atPage:(NSUInteger)pageIndex {
+    selectPage = pageIndex;
+    [self updateTotalPrice];
+}
+
+@end

@@ -1,0 +1,134 @@
+//
+//  CartItemInfo.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/19.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "CartItemInfo.h"
+#import <MJExtension/MJExtension.h>
+#import "AddCartInfoRequest.h"
+
+#define DEFAULT_CART @"default_card"
+
+@implementation CartItemInfo
+
+- (void)recordToLocal {
+    [CartItemInfo recordCart:self];
+}
+
++ (void)recordCart:(CartItemInfo *)cartInfo {
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *cartArr = [userDefault valueForKey:DEFAULT_CART];
+    
+    //1. 如果为空，直接添加
+    if (!cartArr || [cartArr count] == 0) {
+        cartArr = [NSMutableArray new];
+        NSMutableDictionary *cartDic = [cartInfo mj_keyValues];
+        [cartArr addObject:cartDic];
+        
+        [userDefault setValue:cartArr forKey:DEFAULT_CART];
+        [userDefault synchronize];
+        return;
+    }
+    
+    //2. 不为空，则看列表中是否有相同skuID的购物车信息
+    BOOL found = NO;
+    NSInteger count = [cartArr count];
+    for (NSInteger index = 0; index < count; index++) {
+        NSDictionary *cartDic = [cartArr objectAtIndex:index];
+        if (![[cartDic valueForKey:@"skuId"] isEqualToString:cartInfo.skuId]) {
+            continue;
+        }
+        
+        //2.1 命中，更新数量
+        found = YES;
+        NSInteger dicQuantity = [[cartDic valueForKey:@"quantity"] integerValue];
+        NSInteger sumQuantity = dicQuantity + cartInfo.quantity;
+        [cartDic setValue:[NSString stringWithFormat:@"%ld", (long)sumQuantity] forKey:@"quantity"];
+        [cartArr removeObjectAtIndex:index];
+        [cartArr addObject:cartDic];
+        
+        break;
+    }
+    
+    //2.2 未命中，添加进去
+    if (!found) {
+        NSMutableDictionary *cartDic = [cartInfo mj_keyValues];
+        [cartArr addObject:cartDic];
+    }
+    
+    [userDefault setValue:cartArr forKey:DEFAULT_CART];
+    [userDefault synchronize];
+}
+
++ (void)recordCartList:(NSArray *)cartList {
+    if (!cartList) {
+        return;
+    }
+    
+    for (CartItemInfo *item in cartList) {
+        [CartItemInfo recordCart:item];
+    }
+}
+
++ (NSArray *)getLocalCartList {
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *cartArr = [userDefault valueForKey:DEFAULT_CART];
+    
+    if (!cartArr || [cartArr count] == 0) {
+        return nil;
+    }
+    
+    NSMutableArray *cartList = [NSMutableArray new];
+    for (NSDictionary *cartDic in cartArr) {
+        CartItemInfo *item = [CartItemInfo mj_objectWithKeyValues:cartDic];
+        
+        [cartList addObject:item];
+    }
+    
+    return [cartList copy];
+}
+
++ (void)clearLocalRecords {
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    [userDefault removeObjectForKey:DEFAULT_CART];
+    [userDefault synchronize];
+}
+
+- (void)uploadToServer:(void (^_Nonnull)(BOOL))complete {
+    AddCartInfoRequest *request = [AddCartInfoRequest new];
+    request.skuId = self.skuId;
+    request.quantity = self.quantity;
+    [request excuteRequest:^(BOOL isOK, NSString * _Nullable errorMsg) {
+        complete(isOK);
+    }];
+}
+
+- (void)removeLocalRecord {
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *cartArr = [userDefault valueForKey:DEFAULT_CART];
+    
+    //1. 如果为空，直接返回
+    if (!cartArr || [cartArr count] == 0) {
+        return;
+    }
+    
+    //2. 不为空，则看列表中是否有相同skuID的购物车信息
+    NSInteger count = [cartArr count];
+    for (NSInteger index = 0; index < count; index++) {
+        NSDictionary *cartDic = [cartArr objectAtIndex:index];
+        if (![[cartDic valueForKey:@"skuId"] isEqualToString:self.skuId]) {
+            continue;
+        }
+        
+        //2.1 命中，直接移除
+        [cartArr removeObjectAtIndex:index];
+        break;
+    }
+    
+    [userDefault setValue:cartArr forKey:DEFAULT_CART];
+    [userDefault synchronize];
+}
+@end

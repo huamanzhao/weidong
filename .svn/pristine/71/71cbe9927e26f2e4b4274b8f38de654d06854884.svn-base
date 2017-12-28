@@ -1,0 +1,118 @@
+//
+//  ShopCartMainViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/9/29.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "ShopCartMainViewController.h"
+#import "LoginViewController.h"
+#import <WebKit/WebKit.h>
+#import <AlipaySDK/AlipaySDK.h>
+
+@interface ShopCartMainViewController () <WKNavigationDelegate>
+//@property (weak, nonatomic) IBOutlet UILabel *totalPriceLabel;
+//@property (weak, nonatomic) IBOutlet UIButton *clearBtn;
+//@property (weak, nonatomic) IBOutlet UIButton *settlementBtn;
+
+@end
+
+@implementation ShopCartMainViewController {
+    WKWebView *webView;
+    NSString *urlStr;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self initStatusBarBGColor];
+    
+    webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+    webView.navigationDelegate = self;
+    [self.view addSubview:webView];
+    
+    [self loadUrl];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if (![Util userIsLogin]) {
+        LoginViewController *loginVC = [LoginViewController new];
+        loginVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:loginVC animated:NO];
+        return;
+    }
+    
+    if (STRING_NULL(urlStr)) {
+        [self loadUrl];
+    }
+    
+    self.navigationController.navigationBar.hidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    self.navigationController.navigationBar.hidden = NO;
+}
+
+- (void)loadUrl {
+    NSString *userName = [Util getUserName];
+    NSString *password = [Util getUserPassword];
+    if (!STRING_NULL(userName)  && !STRING_NULL(password)) {
+        urlStr = [SERVER_TEST_HTTP_BASE stringByAppendingString:[NSString stringWithFormat:@"/appRedirect.jsp?username=%@&password=%@&url=/cart/list", userName, password]];
+        NSURL *webUrl = [NSURL URLWithString:urlStr];
+        [webView loadRequest:[NSURLRequest requestWithURL:webUrl]];
+    }
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    webView.frame = self.view.bounds;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    NSString *urlString = [[navigationAction.request URL] absoluteString];
+    NSString *urlScheme = [Util getURLScheme];
+    
+    NSLog(@"zhccc--- Request:%@",urlString);
+    BOOL isIntercepted = [[AlipaySDK defaultService] payInterceptorWithUrl:urlString fromScheme:urlScheme callback:^(NSDictionary *result) {
+        // 处理支付结果
+        NSLog(@"%@", result);
+        // isProcessUrlPay 代表 支付宝已经处理该URL
+        if ([result[@"isProcessUrlPay"] boolValue]) {
+            // returnUrl 代表 第三方App需要跳转的成功页URL
+            NSString* urlStr = result[@"returnUrl"];
+//            [wself loadWithUrlStr:urlStr];
+        }
+    }];
+    
+    if (isIntercepted) {
+        decisionHandler(WKNavigationActionPolicyCancel);
+    }
+    decisionHandler(WKNavigationActionPolicyAllow);
+}
+
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
+    
+    NSString *urlString = [navigationResponse.response.URL absoluteString];
+    NSLog(@"zhccc--- Response:%@",urlString);
+    decisionHandler(WKNavigationResponsePolicyAllow);
+}
+
+/// 2 页面开始加载
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
+    NSLog(@"didStartProvisionalNavigation");
+//    NSString *urlString = [[navigation.request URL] absoluteString];
+//    NSLog(urlString);
+}
+
+
+@end

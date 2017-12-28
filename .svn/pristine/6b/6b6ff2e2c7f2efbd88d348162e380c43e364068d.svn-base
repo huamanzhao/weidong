@@ -1,0 +1,91 @@
+//
+//  CategoryMainViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/9/29.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "CategoryMainViewController.h"
+#import "GetProductCategoryRequest.h"
+#import "CategoryPrimaryCell.h"
+
+@interface CategoryMainViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *table;
+
+@end
+
+@implementation CategoryMainViewController {
+    NSArray *categoryList;
+    CGFloat sectionHeaderHeight;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setTintColor:POSITIVE_COLOR];
+    
+    self.title = @"商品分类";
+    
+    categoryList = [NSArray new];
+    sectionHeaderHeight = 10.0;
+    
+    [_table registerNib:[UINib nibWithNibName:@"CategoryPrimaryCell" bundle:nil] forCellReuseIdentifier:CATEGORYPRIMARY_CELLID];
+    _table.rowHeight = UITableViewAutomaticDimension;
+    _table.estimatedRowHeight = 160;
+    _table.sectionHeaderHeight = sectionHeaderHeight;
+    _table.sectionFooterHeight = 0.01;
+    
+    [self getCategoryList];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    
+}
+
+- (void)getCategoryList {
+    [SVProgressHUD showWithStatus:@"正在加载数据"];
+    GetProductCategoryRequest *request = [GetProductCategoryRequest new];
+    [request excuteRequest:^(BOOL isOK, GetCategoryResponse * _Nullable response, NSString * _Nullable errorMsg) {
+        [SVProgressHUD dismiss];
+        if (isOK) {
+            categoryList = response.list;
+            [_table reloadData];
+        }
+    }];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [categoryList count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, sectionHeaderHeight)];
+//    header.backgroundColor = [UIColor groupTableViewBackgroundColor];
+//    return header;
+//}
+//
+//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+//    return nil;
+//}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger index = indexPath.section;
+    
+    CategoryPrimaryCell *cell = [tableView dequeueReusableCellWithIdentifier:CATEGORYPRIMARY_CELLID forIndexPath:indexPath];
+    [cell setupWithCategory:[categoryList objectAtIndex:index]];
+    
+    return cell;
+}
+
+@end

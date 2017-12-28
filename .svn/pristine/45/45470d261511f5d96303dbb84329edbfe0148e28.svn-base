@@ -1,0 +1,31 @@
+//
+//  ProductDetailViewController.h
+//  weidong
+//
+//  Created by zhccc on 2017/10/19.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
+
+@interface ProductDetailViewController : UIViewController
+
+@property(nonatomic, copy)NSString *productId;
+@property (weak, nonatomic) IBOutlet UIButton *homeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *detailBtn;
+@property (weak, nonatomic) IBOutlet UIButton *commentBtn;
+@property (weak, nonatomic) IBOutlet UIButton *consultBtn;
+@property (weak, nonatomic) IBOutlet UIButton *excuteBtn;
+
+@property (weak, nonatomic) IBOutlet UIView *mainView;
+
+@property (weak, nonatomic) IBOutlet UIButton *homepageBtn;
+@property (weak, nonatomic) IBOutlet UIButton *favoriteBtn;
+@property (weak, nonatomic) IBOutlet UIButton *cartBtn;
+@property (weak, nonatomic) IBOutlet UIButton *addCardBtn;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
+
+@property (nonatomic, strong) UITabBarController *tabController;
+
+@end

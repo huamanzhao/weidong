@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArrivalNoticeListViewController">
+            <connections>
+                <outlet property="emptyView" destination="guf-QH-niq" id="ghs-mc-KZe"/>
+                <outlet property="table" destination="79C-WL-IZO" id="iD1-Ji-T6E"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="guf-QH-niq">
+                    <rect key="frame" x="0.0" y="32" width="375" height="48"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xhH-JT-egP">
+                            <rect key="frame" x="38.5" y="23.5" width="112.5" height="1"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="sjw-cu-4Gi"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无记录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cK-uJ-fpA">
+                            <rect key="frame" x="159" y="15.5" width="57.5" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtp-SK-Ytq">
+                            <rect key="frame" x="224.5" y="23.5" width="112.5" height="1"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="5RL-bn-gMh"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="xhH-JT-egP" firstAttribute="width" secondItem="guf-QH-niq" secondAttribute="width" multiplier="0.3" id="2nW-UJ-CXC"/>
+                        <constraint firstItem="8cK-uJ-fpA" firstAttribute="leading" secondItem="xhH-JT-egP" secondAttribute="trailing" constant="8" id="C3M-9p-7eQ"/>
+                        <constraint firstItem="gtp-SK-Ytq" firstAttribute="leading" secondItem="8cK-uJ-fpA" secondAttribute="trailing" constant="8" id="FMi-8J-i8p"/>
+                        <constraint firstItem="gtp-SK-Ytq" firstAttribute="centerY" secondItem="guf-QH-niq" secondAttribute="centerY" id="LcB-YC-0cB"/>
+                        <constraint firstItem="8cK-uJ-fpA" firstAttribute="centerY" secondItem="guf-QH-niq" secondAttribute="centerY" id="O3X-Qa-gyj"/>
+                        <constraint firstItem="gtp-SK-Ytq" firstAttribute="width" secondItem="xhH-JT-egP" secondAttribute="width" id="QQY-QY-HmB"/>
+                        <constraint firstAttribute="height" constant="48" id="Udh-jX-T0d"/>
+                        <constraint firstItem="xhH-JT-egP" firstAttribute="centerY" secondItem="guf-QH-niq" secondAttribute="centerY" id="fE2-YQ-NTn"/>
+                        <constraint firstItem="8cK-uJ-fpA" firstAttribute="centerX" secondItem="guf-QH-niq" secondAttribute="centerX" id="sJo-4C-3hv"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="79C-WL-IZO">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="5I2-zJ-WxT"/>
+                        <outlet property="delegate" destination="-1" id="CbF-H0-2De"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="79C-WL-IZO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="D88-gH-9B2"/>
+                <constraint firstAttribute="bottom" secondItem="79C-WL-IZO" secondAttribute="bottom" id="F1g-kN-HDe"/>
+                <constraint firstItem="guf-QH-niq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="32" id="Tkt-fa-X02"/>
+                <constraint firstItem="guf-QH-niq" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Wg9-vc-cfj"/>
+                <constraint firstItem="79C-WL-IZO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gpw-pD-DyS"/>
+                <constraint firstItem="79C-WL-IZO" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="mN1-uZ-qyT"/>
+                <constraint firstItem="guf-QH-niq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oR3-s3-GLf"/>
+            </constraints>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
+        </view>
+    </objects>
+</document>

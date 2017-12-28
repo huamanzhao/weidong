@@ -1,0 +1,64 @@
+//
+//  GetCategoryProductListRequest.m
+//  weidong
+//
+//  Created by zhccc on 2017/10/8.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "GetCategoryProductListRequest.h"
+#import <MJExtension/MJExtension.h>
+
+@implementation GetProductListResponse
+-(instancetype)init {
+    self = [super init];
+    if (self) {
+        [GetProductListResponse mj_setupObjectClassInArray:^NSDictionary *{
+            return @{
+                     @"list" : @"ProductInfo",
+                     };
+        }];
+    }
+    return self;
+}
+@end
+
+
+@implementation GetCategoryProductListRequest
+
+- (instancetype)init {
+    self = [super init];
+    
+    if (self) {
+        self.urlString = [SERVER_API_URL stringByAppendingString:@"getProductList"];
+    }
+    
+    return self;
+}
+
+//- (void)generateParameterDic {
+//    NSMutableDictionary *tempDic = [NSMutableDictionary new];
+//    [tempDic setObject:self.productCategoryId forKey:@"productCategoryId"];
+//    [tempDic setObject:self.brandId forKey:@"brandId"];
+//    [tempDic setObject:[NSString stringWithFormat:@"%ld", (long)self.type] forKey:@"type"];
+//    [tempDic setObject:self.promotionId forKey:@"promotionId"];
+//    [tempDic setObject:self.productTagId forKey:@"productTagId"];
+//    [tempDic setObject:self.startPrice forKey:@"startPrice"];
+//    [tempDic setObject:self.endPrice forKey:@"endPrice"];
+//    [tempDic setObject: forKey:<#(nonnull id<NSCopying>)#>];
+//    [tempDic setObject:<#(nonnull id)#> forKey:<#(nonnull id<NSCopying>)#>];
+//}
+
+- (void)excuteRequest:(void (^)(BOOL, GetProductListResponse * _Nullable, NSString * _Nullable))complete {
+    [self doRequest:^(Boolean isOK, NSDictionary * _Nullable responseDic, NSString * _Nullable errorMsg) {
+        if (isOK) {
+            GetProductListResponse *reponse = [GetProductListResponse mj_objectWithKeyValues:responseDic];
+            complete(YES, reponse, nil);
+        }
+        else {
+            complete(NO, nil, errorMsg);
+        }
+    }];
+}
+
+@end

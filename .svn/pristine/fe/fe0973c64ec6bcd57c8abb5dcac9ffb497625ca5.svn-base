@@ -1,0 +1,13 @@
+//
+//  ShopCartPayViewController.h
+//  weidong
+//
+//  Created by zhccc on 2017/12/13.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface ShopCartPayViewController : UIViewController
+
+@end

@@ -1,0 +1,55 @@
+//
+//  MyOrdersViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/19.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "MyOrdersViewController.h"
+#import "LoginViewController.h"
+#import <WebKit/WebKit.h>
+
+@implementation MyOrdersViewController{
+    WKWebView *webView;
+    NSString *urlStr;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.title = @"我的订单";
+    [self initNaviBackButton];
+    
+    webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:webView];
+    
+    [self loadUrl];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    webView.frame = self.view.bounds;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)loadUrl {
+    NSString *userName = [Util getUserName];
+    NSString *password = [Util getUserPassword];
+    if (!STRING_NULL(userName)  && !STRING_NULL(password)) {
+        urlStr = [SERVER_TEST_HTTP_BASE stringByAppendingString:[NSString stringWithFormat:@"/appRedirect.jsp?username=%@&password=%@&url=/member/order/list", userName, password]];
+        NSURL *webUrl = [NSURL URLWithString:urlStr];
+        [webView loadRequest:[NSURLRequest requestWithURL:webUrl]];
+    }
+}
+
+@end

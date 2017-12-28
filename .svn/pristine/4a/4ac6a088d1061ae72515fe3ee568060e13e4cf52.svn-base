@@ -1,0 +1,68 @@
+//
+//  CreditLogCell.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/19.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "CreditLogCell.h"
+
+@interface CreditLogCell ()
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *changeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *balanceLabel;
+
+@end
+
+@implementation CreditLogCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+- (void)setupWithCreditInfo:(CreditLogInfo *)credit {
+    NSString *type = @"";
+    switch (credit.type) {
+            case 0: {
+                type = @"积分赠送";
+                break;
+            }
+            case 1: {
+                type = @"积分兑换";
+                break;
+            }
+            case 2: {
+                type = @"积分兑换撤销";
+                break;
+            }
+            case 3: {
+                type = @"积分调整";
+                break;
+            }
+            
+        default:
+            break;
+    }
+    _typeLabel.text = type;
+    
+    if (credit.credit > 0) {
+        _changeLabel.text = [NSString stringWithFormat:@"+%ld", (long)credit.credit];
+        _changeLabel.textColor = POSITIVE_COLOR;
+    }
+    else if (credit.debit > 0) {
+        _changeLabel.text = [NSString stringWithFormat:@"-%ld", (long)credit.debit];
+        _changeLabel.textColor = NEGATIVE_COLOR;
+    }
+    
+    _balanceLabel.text = [NSString stringWithFormat:@"%ld", (long)credit.balance];
+}
+
+@end

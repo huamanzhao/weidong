@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConsulationListViewController">
+            <connections>
+                <outlet property="emptyView" destination="eI2-UQ-PMj" id="7Ax-Th-Neg"/>
+                <outlet property="table" destination="2ib-Jn-83I" id="6f3-RU-fw9"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eI2-UQ-PMj">
+                    <rect key="frame" x="0.0" y="32" width="375" height="48"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBF-s0-J64">
+                            <rect key="frame" x="38.5" y="23.5" width="112.5" height="1"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="9Fd-J0-D5X"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无咨询" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XlI-G8-F5X">
+                            <rect key="frame" x="159" y="15.5" width="57.5" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giw-j3-YlG">
+                            <rect key="frame" x="224.5" y="23.5" width="112.5" height="1"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="SIQ-PF-hgH"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="fBF-s0-J64" firstAttribute="centerY" secondItem="eI2-UQ-PMj" secondAttribute="centerY" id="7VB-Kq-tu2"/>
+                        <constraint firstItem="giw-j3-YlG" firstAttribute="width" secondItem="fBF-s0-J64" secondAttribute="width" id="OQ5-qi-h02"/>
+                        <constraint firstItem="XlI-G8-F5X" firstAttribute="leading" secondItem="fBF-s0-J64" secondAttribute="trailing" constant="8" id="PT1-dt-HWb"/>
+                        <constraint firstAttribute="height" constant="48" id="QnO-5j-B1b"/>
+                        <constraint firstItem="fBF-s0-J64" firstAttribute="width" secondItem="eI2-UQ-PMj" secondAttribute="width" multiplier="0.3" id="TIv-CU-wlE"/>
+                        <constraint firstItem="XlI-G8-F5X" firstAttribute="centerX" secondItem="eI2-UQ-PMj" secondAttribute="centerX" id="cc1-Xe-e5e"/>
+                        <constraint firstItem="XlI-G8-F5X" firstAttribute="centerY" secondItem="eI2-UQ-PMj" secondAttribute="centerY" id="gIK-9K-uXU"/>
+                        <constraint firstItem="giw-j3-YlG" firstAttribute="centerY" secondItem="eI2-UQ-PMj" secondAttribute="centerY" id="h2V-XP-sDw"/>
+                        <constraint firstItem="giw-j3-YlG" firstAttribute="leading" secondItem="XlI-G8-F5X" secondAttribute="trailing" constant="8" id="i3N-g6-7M5"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2ib-Jn-83I">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="YJC-dP-uC2"/>
+                        <outlet property="delegate" destination="-1" id="yHk-oW-bXD"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="2ib-Jn-83I" secondAttribute="bottom" id="1no-4C-MbU"/>
+                <constraint firstItem="eI2-UQ-PMj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Nev-bI-c0H"/>
+                <constraint firstItem="eI2-UQ-PMj" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="aNB-az-0L0"/>
+                <constraint firstItem="2ib-Jn-83I" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cAt-40-PeT"/>
+                <constraint firstItem="eI2-UQ-PMj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="32" id="ev6-mV-42i"/>
+                <constraint firstItem="2ib-Jn-83I" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="ss9-Wt-6nI"/>
+                <constraint firstItem="2ib-Jn-83I" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wCx-wu-kfb"/>
+            </constraints>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
+        </view>
+    </objects>
+</document>

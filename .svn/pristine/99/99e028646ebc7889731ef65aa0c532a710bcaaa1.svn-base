@@ -1,0 +1,51 @@
+//
+//  RealNameVerifyViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/12.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "RealNameVerifyViewController.h"
+
+@interface RealNameVerifyViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *nameTF;
+@property (weak, nonatomic) IBOutlet UITextField *idCardTF;
+@property (weak, nonatomic) IBOutlet UIButton *verifyBtn;
+
+@end
+
+@implementation RealNameVerifyViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.title = @"实名认证";
+    [self initNaviBackButton];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+- (IBAction)verifyBtnPressed:(id)sender {
+    NSString *name = _nameTF.text;
+    NSString *cardNo = _idCardTF.text;
+    
+    if (STRING_NULL(name)) {
+        [SVProgressHUD showErrorWithStatus:@"请输入姓名"];
+        return;
+    }
+    
+    if (STRING_NULL(cardNo)) {
+        [SVProgressHUD showErrorWithStatus:@"请输入您的身份证号"];
+        return;
+    }
+    
+    
+    
+    
+}
+
+
+
+@end

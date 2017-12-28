@@ -1,0 +1,71 @@
+//
+//  ShopCartMainViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/9/29.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "ShopCartMainViewController.h"
+#import "GetCartListRequest.h"
+
+@interface ShopCartMainViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *totalPriceLabel;
+@property (weak, nonatomic) IBOutlet UIButton *clearBtn;
+@property (weak, nonatomic) IBOutlet UIButton *settlementBtn;
+
+@end
+
+@implementation ShopCartMainViewController {
+    CartTypeInfo *daMaoCart;
+    CartTypeInfo *zhiYouCart;
+    CartTypeInfo *mianShuiCart;
+    
+    NSArray *titleList;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self initStatusBarBGColor];
+    [self setTintColor:ZHAO_BLUE];
+    
+    self.title = @"购物车";
+    [self initNaviBackButton];
+    
+    titleList = @[@"大贸", @"免税", @"直邮"];
+    
+//    self.magicView.navigationColor = [UIColor whiteColor];
+//    self.magicView.sliderColor = POSITIVE_COLOR;
+//    self.magicView.layoutStyle = VTLayoutStyleDefault;
+//    self.magicView.switchStyle = VTSwitchStyleDefault;
+//    self.magicView.navigationHeight = 40.f;
+//    self.magicView.dataSource = self;
+//    self.magicView.delegate = self;
+//
+//    [self.magicView reloadData];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    GetCartListRequest *request = [GetCartListRequest new];
+    [request excuteRequest:^(BOOL isOK, GetCartListResponse * _Nullable response, NSString * _Nullable errorMsg) {
+        if (isOK) {
+            NSLog(@"adf");
+        }
+    }];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)clearBtnPressed:(id)sender {
+}
+
+- (IBAction)settlementBtnPressed:(id)sender {
+}
+
+
+@end

@@ -1,0 +1,22 @@
+//
+//  ProductCommentsView.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/18.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "ProductCommentsView.h"
+
+@implementation ProductCommentsView
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        self = [[NSBundle mainBundle] loadNibNamed:@"ProductCommentsView" owner:self options:nil].firstObject;
+        self.frame = frame;
+    }
+    return self;
+}
+
+@end

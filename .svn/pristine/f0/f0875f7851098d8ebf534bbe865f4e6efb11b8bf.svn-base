@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="secondaryId" id="gTV-IL-0wX" customClass="SecondaryFuncCell">
+            <rect key="frame" x="0.0" y="0.0" width="160" height="60"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="160" height="60"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJc-Gq-R6l">
+                        <rect key="frame" x="8" y="8" width="13" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VL9-HC-vk8">
+                        <rect key="frame" x="8" y="29" width="11.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nlt-2V-a5A">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="60"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Nlt-2V-a5A" secondAttribute="bottom" id="5V4-DT-IW8"/>
+                <constraint firstItem="VL9-HC-vk8" firstAttribute="top" secondItem="fJc-Gq-R6l" secondAttribute="bottom" constant="4" id="I6d-IX-U0b"/>
+                <constraint firstItem="fJc-Gq-R6l" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Kku-0U-tc3"/>
+                <constraint firstItem="VL9-HC-vk8" firstAttribute="leading" secondItem="fJc-Gq-R6l" secondAttribute="leading" id="QCA-TK-RSD"/>
+                <constraint firstAttribute="trailing" secondItem="Nlt-2V-a5A" secondAttribute="trailing" id="e6h-7P-2dB"/>
+                <constraint firstItem="fJc-Gq-R6l" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="pqZ-WV-9Gd"/>
+                <constraint firstItem="Nlt-2V-a5A" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qSB-0d-tSN"/>
+                <constraint firstItem="Nlt-2V-a5A" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vrU-UV-oMY"/>
+            </constraints>
+            <connections>
+                <outlet property="itemImage" destination="Nlt-2V-a5A" id="ksf-M5-cq3"/>
+                <outlet property="subTitleLabel" destination="VL9-HC-vk8" id="p8T-tY-e8Z"/>
+                <outlet property="titleLabel" destination="fJc-Gq-R6l" id="bBT-CO-m2P"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

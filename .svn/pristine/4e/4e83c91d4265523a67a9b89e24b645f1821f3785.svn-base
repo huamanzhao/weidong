@@ -1,0 +1,90 @@
+//
+//  CreditLogCell.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/19.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "CreditLogCell.h"
+
+@interface CreditLogCell ()
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *changeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *balanceLabel;
+
+@end
+
+@implementation CreditLogCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+- (void)setupTitleStyle {
+    _typeLabel.text = @"类型";
+    _typeLabel.textColor = [UIColor grayColor];
+    
+    _changeLabel.text = @"+/-";
+    _changeLabel.textColor = [UIColor grayColor];
+    
+    _balanceLabel.text = @"当前积分";
+    _balanceLabel.textColor = [UIColor grayColor];
+}
+
+- (void)setupWithCredit:(CreditLogInfo *)credit Index:(NSInteger)index {
+    NSString *type = @"";
+    switch (credit.type) {
+            case 0: {
+                type = @"赠送";
+                _changeLabel.textColor = POSITIVE_COLOR;
+                break;
+            }
+            case 1: {
+                type = @"兑换";
+                _changeLabel.textColor = POSITIVE_COLOR;
+                break;
+            }
+            case 2: {
+                type = @"兑换撤销";
+                _changeLabel.textColor = NEGATIVE_COLOR;
+                break;
+            }
+            case 3: {
+                type = @"调整";
+                _changeLabel.textColor = POSITIVE_COLOR;
+                break;
+            }
+            
+        default:
+            break;
+    }
+    _typeLabel.text = type;
+    
+    if (credit.credit > 0) {
+        _changeLabel.text = [NSString stringWithFormat:@"+%ld", (long)credit.credit];
+        _changeLabel.textColor = POSITIVE_COLOR;
+    }
+    else if (credit.debit > 0) {
+        _changeLabel.text = [NSString stringWithFormat:@"-%ld", (long)credit.debit];
+        _changeLabel.textColor = NEGATIVE_COLOR;
+    }
+    
+    _balanceLabel.text = [NSString stringWithFormat:@"%ld", (long)credit.balance];
+    
+    if (index % 2) {
+        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    }
+    else {
+        self.backgroundColor = [UIColor whiteColor];
+    }
+}
+
+@end

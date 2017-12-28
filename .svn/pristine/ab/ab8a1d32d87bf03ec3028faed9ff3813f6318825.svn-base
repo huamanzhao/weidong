@@ -1,0 +1,200 @@
+//
+//  LoopView.m
+//  GZDefence
+//
+//  Created by zhccc on 2017/8/24.
+//  Copyright © 2017年 wxy. All rights reserved.
+//
+
+#import "LoopView.h"
+#import "Constants.h"
+#import "PromotionInfo.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
+@interface TitleView : UIView
+
+@property(nonatomic, weak) id<TitleViewDelegate> delegate;
+
+- (void)setupWithPromotion:(PromotionInfo *)promotion;
+
+@end
+
+@implementation LoopView {
+    UIScrollView *_scrollView;
+    NSArray *promotionList;
+    NSMutableArray *titleList;
+    
+    CGFloat width;
+    CGFloat height;
+    
+    NSUInteger newsCount;
+    int timeTick;
+    
+    NSTimer *timer;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        _scrollView = [UIScrollView new];
+        _scrollView.pagingEnabled = true;
+        _scrollView.showsVerticalScrollIndicator = NO;
+        _scrollView.showsHorizontalScrollIndicator = NO;
+        _scrollView.delegate = self;
+        _scrollView.decelerationRate = 0.1;
+        
+        [self addSubview:_scrollView];
+    }
+    return self;
+}
+
+- (void)showViewWithPromotions: (NSArray *)list {
+    if (!list || [list count] == 0) {
+        return;
+    }
+    
+    titleList = [NSMutableArray new];
+    for (UIView *sub in _scrollView.subviews) {
+        if ([sub isKindOfClass:[TitleView class]]) {
+            [sub removeFromSuperview];
+        }
+    }
+    promotionList = list;
+    newsCount = [promotionList count];
+    
+    for (int index = 0; index < newsCount; index++) {
+        TitleView *title = [TitleView new];
+        title.delegate = self;
+        [title setupWithPromotion:[list objectAtIndex:index]];
+        
+        [titleList addObject:title];
+        [_scrollView addSubview:title];
+    }
+    
+    //为了实现循环效果，第一个再加载一次
+    TitleView *first = [TitleView new];
+    first.delegate = self;
+    [first setupWithPromotion:[list firstObject]];
+    
+    [titleList addObject:first];
+    [_scrollView addSubview:first];
+    
+    [self layoutSubviews];
+    
+    //执行动画
+    timeTick = 0;
+    if (!timer) {
+        timer = [NSTimer scheduledTimerWithTimeInterval:3.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        [self startLoopAnimation];
+        }];
+    }
+}
+
+- (void)layoutSubviews {
+    width = self.frame.size.width;
+    height = self.frame.size.height;
+    CGRect subFrame = CGRectMake(0, 0, width, height);
+    
+    _scrollView.frame = subFrame;
+    _scrollView.contentSize = CGSizeMake(width, (height * newsCount + 1));
+    
+    for (int index = 0; index < newsCount; index++) {
+        UIButton *title = titleList[index];
+        title.frame = CGRectMake(0, height * index, 400, height);
+    }
+}
+
+//执行循环动画
+- (void)startLoopAnimation {
+    timeTick++;
+    
+    CGFloat offsetY = timeTick * height;
+    
+    [_scrollView setContentOffset:CGPointMake(0, offsetY) animated:YES];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat orginY = scrollView.contentOffset.y;
+    NSUInteger index = (NSUInteger)(orginY / height);
+    
+    if (index == newsCount) {
+        timeTick = 0;
+        [scrollView setContentOffset:CGPointMake(0, 0) animated:false];
+    }
+}
+
+//点按新闻后的响应消息
+- (void)itemDidSelected: (NSString *)promotionId {
+    if (self.delegate) {
+        [self.delegate selectPromotionWithId:promotionId];
+    }
+}
+
+@end
+
+@implementation TitleView {
+    UIButton *coverBtn;
+//    UILabel *titleLabel;
+//    UILabel *subTitleLabel;
+    UIImageView *image;
+    PromotionInfo *tProduct;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    
+//    titleLabel = [UILabel new];
+//    subTitleLabel = [UILabel new];
+    image = [UIImageView new];
+    coverBtn = [UIButton new];
+    
+//    [self addSubview:titleLabel];
+//    titleLabel.textColor = [UIColor colorWithHex:0x40a5c0];
+//    titleLabel.font = [UIFont systemFontOfSize:14.0 weight:UIFontWeightMedium];//[UIFont systemFontOfSize:14.0];
+//
+//    [self addSubview:subTitleLabel];
+//    subTitleLabel.textColor = [UIColor darkTextColor];
+//    subTitleLabel.font = [UIFont systemFontOfSize:14.0];
+    
+    [self addSubview:image];
+    image.contentMode = UIViewContentModeScaleAspectFill;
+    image.clipsToBounds = YES;
+    image.image = UIImageWithName(@"default_L");
+    
+    [self addSubview:coverBtn];
+    coverBtn.backgroundColor = [UIColor clearColor];
+    [coverBtn addTarget:self action:@selector(loopItemSelected) forControlEvents:UIControlEventTouchUpInside];
+    
+    return self;
+}
+
+- (void)layoutSubviews {
+    CGFloat margin = 2.0;
+    CGSize size = self.frame.size;
+    
+    CGFloat width = size.width;
+    CGFloat height = size.height - margin * 2;
+    
+//    titleLabel.frame = CGRectMake(0, margin, width, height);
+//    subTitleLabel.frame = CGRectMake(0, margin * 2 + height, width, height);
+    image.frame = CGRectMake(0, 0, width, height);
+    coverBtn.frame = CGRectMake(0, 0, width, height);
+}
+
+- (void)setupWithPromotion:(PromotionInfo *)promotion {
+    tProduct = promotion;
+    NSURL *imageURL = [NSURL URLWithString:promotion.image];
+    if (imageURL) {
+        [image sd_setImageWithURL:imageURL placeholderImage:UIImageWithName(@"default")];
+    }
+//    titleLabel.text = promotion.name;
+//    subTitleLabel.text = promotion.title;
+}
+
+- (void)loopItemSelected {
+    if (_delegate) {
+        [_delegate itemDidSelected:tProduct.id];
+    }
+}
+
+@end

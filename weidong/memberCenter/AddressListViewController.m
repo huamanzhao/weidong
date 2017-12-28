@@ -1,0 +1,125 @@
+//
+//  AddressListViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/20.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "AddressListViewController.h"
+#import "GetAddressListRequest.h"
+#import "AddressItemCell.h"
+#import "AddressEditViewController.h"
+#import "DeleteAddressRequest.h"
+
+@interface AddressListViewController () <UITableViewDelegate, UITableViewDataSource, AddressItemDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *table;
+@property (weak, nonatomic) IBOutlet UIButton *addBtn;
+
+@end
+
+@implementation AddressListViewController {
+    NSArray *addressList;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.title = @"收货地址";
+    [self initNaviBackButton];
+    
+    _table.rowHeight = UITableViewAutomaticDimension;
+    _table.estimatedRowHeight = 100;
+    _table.sectionHeaderHeight = 0.01;
+    _table.sectionFooterHeight = 8;
+    [_table registerNib:[UINib nibWithNibName:@"AddressItemCell" bundle:nil] forCellReuseIdentifier:ADDRESS_CELLID];
+    
+    [self setupPositiveButtonStyle:_addBtn];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self getAddressList];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)addBtnPressed:(id)sender {
+    AddressEditViewController *addressVC = [AddressEditViewController new];
+    [self.navigationController pushViewController:addressVC animated:YES];
+}
+
+- (void)getAddressList {
+    [SVProgressHUD showWithStatus:@"正在获取地址信息"];
+    GetAddressListRequest *request = [GetAddressListRequest new];
+    request.pageSize = 20;
+    request.pageNumber = 1;
+    [request excuteRequest:^(BOOL isOK, NSArray * _Nullable list, NSString * _Nullable errorMsg) {
+        [SVProgressHUD dismiss];
+        if (isOK) {
+            addressList = list;
+            [_table reloadData];
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:errorMsg];
+        }
+    }];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if (!addressList) {
+        return 0;
+    }
+    return [addressList count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    AddressItemCell *cell = [tableView dequeueReusableCellWithIdentifier:ADDRESS_CELLID forIndexPath:indexPath];
+    cell.delegate = self;
+    DeliverAddressInfo *addressInfo = [addressList objectAtIndex:indexPath.section];
+    [cell setupWithAddressInfo:addressInfo];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)editAddressInfo:(DeliverAddressInfo *)address {
+    AddressEditViewController *addressVC = [AddressEditViewController new];
+    addressVC.address = address;
+    [self.navigationController pushViewController:addressVC animated:YES];
+}
+
+- (void)deleteAddressInfo:(NSString *)addressId {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"确认要删除吗？" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [SVProgressHUD showWithStatus:@"正在删除"];
+        DeleteAddressRequest *request = [DeleteAddressRequest new];
+        request.id = addressId;
+        [request excuteRequest:^(BOOL isOK, NSString * _Nullable errorMsg) {
+            [SVProgressHUD dismiss];
+            if (isOK) {
+                [self getAddressList];
+            }
+            else {
+                [SVProgressHUD showErrorWithStatus:errorMsg];
+            }
+        }];
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }]];
+    [self.navigationController presentViewController:alert animated:YES completion:nil];
+}
+
+@end

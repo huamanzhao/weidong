@@ -1,0 +1,54 @@
+//
+//  ShopCartListViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/19.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "ShopCartListViewController.h"
+
+@interface ShopCartListViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *table;
+
+@end
+
+@implementation ShopCartListViewController {
+    BOOL inEditMode;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    inEditMode = NO;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)refreshTableLayoutWithEditMode:(BOOL)inEdit {
+    inEditMode = inEdit;
+    
+    [_table reloadData];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if (!_cartInfo) {
+        return 0;
+    }
+    return [_cartInfo.list count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return nil;
+}
+
+
+
+@end

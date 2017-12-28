@@ -1,0 +1,25 @@
+//
+//  GetBannerAdsRequest.h
+//  weidong
+//
+//  Created by zhccc on 2017/10/8.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "RequestBase.h"
+#import "Enum.h"
+
+@interface GetBannerAdsResponse : NSObject
+@property(nonatomic, weak)NSArray * _Nullable list;
+@end
+
+
+
+@interface GetBannerAdsRequest : RequestBase
+
+@property(nonatomic, assign)AdPostion adPosition;
+
+- (void)excuteRequest: (void (^_Nonnull)(BOOL isOK, GetBannerAdsResponse *_Nullable response, NSString *_Nullable errorMsg))complete;
+
+@end

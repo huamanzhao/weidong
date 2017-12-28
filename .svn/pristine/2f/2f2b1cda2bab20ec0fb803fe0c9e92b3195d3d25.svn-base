@@ -1,0 +1,57 @@
+//
+//  Enum.h
+//  weidong
+//
+//  Created by zhccc on 2017/10/7.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#ifndef Enum_h
+#define Enum_h
+
+typedef NS_ENUM(NSInteger, ProductOrderType) {
+    OrderType_TopDesc = 0,  //置顶降序
+    OrderType_PriceAsc,     //价格升序
+    OrderType_PriceDesc,    //价格降序
+    OrderType_SalesDesc,    //销量降序
+    OrderType_ScoreDesc,    //评分降序
+    OrderType_DateDesc      //日期降序
+};
+
+typedef NS_ENUM(NSInteger, ProductSaleType) {
+    ProductSaleType_Common = 0, //普通商品
+    ProductSaleType_Exchange = 1,   //兑换商品
+    ProductSaleType_Gift = 2       //赠品
+};
+
+typedef NS_ENUM(NSInteger, ProductCategory) {
+    ProductType_Bonded = 0,     //保税
+    ProductType_Trade = 1,      //大贸
+    ProductType_Deliver = 2        //直邮
+};
+
+typedef NS_ENUM(NSInteger, VerifyCodeType) {
+    VerifyCodeType_Register = 1,    //注册
+    VerifyCodeType_Findback,        //取回密码
+    VerifyCodeType_Login,           //登录
+    VerifyCodeType_Other            //其他 待补充
+};
+
+typedef NS_ENUM(NSInteger, AdPostion) {
+    AdPostion_Banner = 1,   //顶部轮播
+    AdPostion_Hotspot,      //热点广告
+    AdPostion_Middle,       //中间广告
+    AdPostion_Column,       //分栏广告
+    AdPostion_Bottom,       //底部广告
+    AdPostion_Left          //左侧广告
+};
+
+typedef NS_ENUM(NSInteger, OrderListType) {
+    OrderListType_All = 0,      //全部
+    OrderListType_waitPay,      //待付款
+    OrderListType_waitSend,     //待发货
+    OrderListType_waitReceive,  //待收货
+    OrderListType_done          //已完成
+};
+
+#endif /* Enum_h */

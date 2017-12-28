@@ -1,0 +1,172 @@
+//
+//  HeaderSearchView.m
+//  weidong
+//
+//  Created by zhccc on 2017/10/11.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "HeaderSearchView.h"
+#import "SVProgressHUD.h"
+#import "Util.h"
+#import "Constants.h"
+
+@implementation HeaderSearchView {
+    NSArray *titleList;
+    NSString *cellIdentifier;
+    
+    CGFloat headerHeight;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    headerHeight = 146;
+    [self initViewLayout];
+    
+    _searchTF.delegate = self;
+    _collection.delegate = self;
+    _collection.dataSource = self;
+    
+    cellIdentifier = @"titleCellIdentifier";
+    [_collection registerClass:[TitleCollectionCell class] forCellWithReuseIdentifier:cellIdentifier];
+}
+
+- (void)initViewLayout {
+    _searchBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    _searchBtn.layer.borderWidth = 1.0;
+    
+    _searchBgView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    _searchBgView.layer.borderWidth = 1.0;
+    _searchBgView.layer.cornerRadius = 4.0;
+    _searchBgView.layer.masksToBounds = YES;
+}
+
+- (void)showSearchViewWithTitles: (NSArray *)list {
+    titleList = list;
+    
+    if ([list count] == 0) {
+        titleList = @[@"空调", @"冰箱", @"iphone 8", @"微波炉", @"hdmi 雷电", @"小米耳机"];
+    }
+    [_collection reloadData];
+    
+    UIViewController *topVC = [Util getTopViewController];
+    self.frame = CGRectMake(0, 20, SCREEN_WIDTH, headerHeight);
+    [topVC.view addSubview:self];
+    
+    self.transform = CGAffineTransformTranslate(self.transform, 0, -(headerHeight+20));
+        [UIView animateWithDuration:0.3 animations:^{
+        self.transform = CGAffineTransformIdentity;
+    }];
+}
+
+- (void)dismiss {
+    [self removeFromSuperview];
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [titleList count];
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger index = indexPath.row;
+    NSString *title = [titleList objectAtIndex:index];
+    
+    CGFloat cellHeight = 26;
+    CGSize defaultSize = CGSizeMake(800, cellHeight);
+    CGSize realSize  = [Util getTextBoundSize:title Font:[UIFont systemFontOfSize:14.0] Size:defaultSize];
+    CGFloat cellWidth = realSize.width + 16;
+    
+    return CGSizeMake(cellWidth, cellHeight);
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger index = indexPath.row;
+    NSString *title = [titleList objectAtIndex:index];
+    
+    TitleCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    [cell setupWithTitle:title];
+    
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger row = indexPath.row;
+    
+    NSString *title = [titleList objectAtIndex:row];
+    self.searchTF.text = title;
+    if (self.delegate) {
+        [self.delegate productSearch:title];
+    }
+}
+
+- (IBAction)searchBtnPressed:(id)sender {
+    if (STRING_NULL(_searchTF.text)) {
+        return;
+    }
+    
+    [_searchTF resignFirstResponder];
+    
+    NSString *title = _searchTF.text;
+    if (self.delegate) {
+        [self.delegate productSearch:title];
+    }
+}
+
+- (IBAction)RetractBtnPressed:(id)sender {
+    [UIView animateWithDuration:0.3 animations:^{
+        self.transform = CGAffineTransformTranslate(self.transform, 0, -(headerHeight+20));
+    } completion:^(BOOL finished) {
+        [self removeFromSuperview];
+    }];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self resignFirstResponder];
+    
+    if (STRING_NULL(_searchTF.text)) {
+        return YES;
+    }
+    NSString *title = _searchTF.text;
+    if (self.delegate) {
+        [self.delegate productSearch:title];
+    }
+    
+    return YES;
+}
+
+@end
+
+@implementation TitleCollectionCell {
+    UILabel *titleLabel;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    self.backgroundColor = [UIColor whiteColor];
+    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.layer.borderWidth = 1.0;
+    self.layer.cornerRadius = 4.0;
+    
+    titleLabel = [UILabel new];
+    titleLabel.font = [UIFont systemFontOfSize:14.0];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.textColor = [UIColor darkTextColor];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    [self addSubview:titleLabel];
+    
+    return self;
+}
+
+- (void)layoutSubviews {
+    titleLabel.frame = self.bounds;
+}
+
+- (void)setupWithTitle: (NSString *)title {
+    titleLabel.text = title;
+}
+
+@end
+
+
+

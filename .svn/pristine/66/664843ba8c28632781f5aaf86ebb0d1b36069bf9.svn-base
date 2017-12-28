@@ -1,0 +1,28 @@
+//
+//  ShopCartMainViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/9/29.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "ShopCartMainViewController.h"
+
+@implementation ShopCartMainViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self initStatusBarBGColor];
+    
+    self.funcBaseUrl = @"/cart/list";
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+}
+
+@end

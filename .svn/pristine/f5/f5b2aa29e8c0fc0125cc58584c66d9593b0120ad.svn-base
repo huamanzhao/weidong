@@ -1,0 +1,29 @@
+//
+//  MemberMainViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/9/29.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "MemberMainViewController.h"
+
+@interface MemberMainViewController ()
+
+@end
+
+@implementation MemberMainViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    
+    self.view.backgroundColor = [UIColor grayColor];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+@end

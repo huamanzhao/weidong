@@ -1,0 +1,219 @@
+//
+//  RegisterViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/1.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "RegisterViewController.h"
+#import "GetVerifyCodeRequest.h"
+#import "CheckVerifyCodeRequest.h"
+#import "RegisterRequest.h"
+#import "VerifyCodeView.h"
+#import "UserProtocolViewController.h"
+
+@interface RegisterViewController () <VerifiCodeDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *userNameTF;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTF;
+@property (weak, nonatomic) IBOutlet UITextField *confirmTF;
+
+@property (weak, nonatomic) IBOutlet UITextField *emailTF;
+@property (weak, nonatomic) IBOutlet UITextField *phoneTF;
+
+@property (weak, nonatomic) IBOutlet UITextField *realNameTF;
+@property (weak, nonatomic) IBOutlet UITextField *identifyTF;
+
+@property (weak, nonatomic) IBOutlet UIButton *maleBtn;
+@property (weak, nonatomic) IBOutlet UIButton *femaleBtn;
+
+@property (weak, nonatomic) IBOutlet UIView *verifyBgView;
+@property (weak, nonatomic) IBOutlet VerifyCodeView *verifyCodeView;
+@property (weak, nonatomic) IBOutlet UITextField *verifyTF;
+@property (weak, nonatomic) IBOutlet UIButton *registerBtn;
+
+@end
+
+@implementation RegisterViewController {
+    NSInteger gender; //0-男 1-女
+    NSString *serverVerify;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.title = @"注册";
+    [self initNaviBackButton];
+    
+    gender = 0;     //默认为男性
+    serverVerify = @"";
+    
+    [self setupRoundBorder:_userNameTF];
+    [self setupRoundBorder:_passwordTF];
+    [self setupRoundBorder:_confirmTF];
+    [self setupRoundBorder:_emailTF];
+    [self setupRoundBorder:_phoneTF];
+    [self setupRoundBorder:_realNameTF];
+    [self setupRoundBorder:_identifyTF];
+    [self setupRoundBorder:_verifyBgView];
+    _registerBtn.layer.cornerRadius = 4.0;
+    
+    _verifyCodeView.delegate = self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self getVerifyCode];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)setupRoundBorder: (UIView *)view {
+    view.layer.cornerRadius = 4.0;
+    view.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    view.layer.borderWidth = 1.0;
+    view.layer.masksToBounds = YES;
+}
+
+- (void)needChangeVerifyCode {
+    serverVerify = @"";
+    [self getVerifyCode];
+}
+
+//请求验证码
+- (void)getVerifyCode {
+    GetVerifyCodeRequest *request = [GetVerifyCodeRequest new];
+    request.type = VerifyCodeType_Register;
+    [request excuteRequst:^(Boolean isOK, NSString *verifyCode, NSString * _Nullable errorMsg) {
+        if (isOK) {
+            serverVerify = verifyCode;
+            [_verifyCodeView setupWithCode:verifyCode];
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat: @"请求验证码失败：%@", errorMsg]];
+        }
+    }];
+}
+
+- (IBAction)maleBtnPressed:(id)sender {
+    gender = 0;
+    [_maleBtn setImage:UIImageWithName(@"icon_checked") forState:UIControlStateNormal];
+    [_femaleBtn setImage:UIImageWithName(@"icon_uncheck") forState:UIControlStateNormal];
+}
+
+- (IBAction)femaleBtnPressed:(id)sender {
+    gender = 1;
+    [_femaleBtn setImage:UIImageWithName(@"icon_checked") forState:UIControlStateNormal];
+    [_maleBtn setImage:UIImageWithName(@"icon_uncheck") forState:UIControlStateNormal];
+}
+
+- (IBAction)registerBtnPressed:(id)sender {
+    NSString *userName = _userNameTF.text;
+    NSString *password = _passwordTF.text;
+    NSString *confirmPsw = _confirmTF.text;
+    NSString *email = _emailTF.text;
+    NSString *phone = _phoneTF.text;
+    NSString *realName = _realNameTF.text;
+    NSString *idcardNO = _identifyTF.text;
+    NSString *inputVerify = _verifyTF.text;
+    
+    if (STRING_NULL(userName)) {
+        [SVProgressHUD showErrorWithStatus:@"请输入您的用户名"];
+        return;
+    }
+    if (STRING_NULL(password)) {
+        [SVProgressHUD showErrorWithStatus:@"请输入您的密码"];
+        return;
+    }
+    if (![password isEqualToString:confirmPsw]) {
+        [SVProgressHUD showErrorWithStatus:@"您两次输入的密码不一样"];
+        return;
+    }
+    if (STRING_NULL(email)) {
+        [SVProgressHUD showErrorWithStatus:@"请输入您的邮箱"];
+        return;
+    }
+    if (![email checkEmailAccount]) {
+        [SVProgressHUD showErrorWithStatus:@"您输入的邮箱格式错误"];
+        return;
+    }
+    if (STRING_NULL(phone)) {
+        [SVProgressHUD showErrorWithStatus:@"请输入您的电话号码"];
+        return;
+    }
+    if (![phone checkPhoneNumInput]) {
+        [SVProgressHUD showErrorWithStatus:@"您输入的手机号码格式错误"];
+        return;
+    }
+    if (STRING_NULL(realName)) {
+        [SVProgressHUD showErrorWithStatus:@"请输入您的姓名"];
+        return;
+    }
+    if (STRING_NULL(idcardNO)) {
+        [SVProgressHUD showErrorWithStatus:@"请输入您的身份证号码"];
+        return;
+    }
+    if (![idcardNO checkIDNumber]) {
+        [SVProgressHUD showErrorWithStatus:@"您输入的身份证号码格式错误"];
+        return;
+    }
+    if (STRING_NULL(inputVerify)) {
+        [SVProgressHUD showErrorWithStatus:@"请输入验证码"];
+        return;
+    }
+    if (![inputVerify isEqualToString:serverVerify]) {
+        [SVProgressHUD showErrorWithStatus:@"验证码错误"];
+        return;
+    }
+    
+    //1. 验证验证码
+    [SVProgressHUD showWithStatus:@"正在验证"];
+    CheckVerifyCodeRequest *request = [CheckVerifyCodeRequest new];
+    request.type = VerifyCodeType_Register;
+    request.verifyCode = inputVerify;
+    [request excuteRequst:^(Boolean isOK, NSString * _Nullable errorMsg) {
+        [SVProgressHUD dismiss];
+        if (isOK) {
+            //2. 验证通过后开始注册
+            [SVProgressHUD showWithStatus:@"正在注册"];
+            RegisterRequest *request = [RegisterRequest new];
+            request.username = userName;
+            request.password = password;
+            request.email = email;
+            request.idNumber = idcardNO;
+            request.gender = gender;
+            request.phone = phone;
+            request.mobile = phone;
+            request.name = realName;
+            [request excuteRequest:^(BOOL isOK, NSString * _Nullable errorMsg) {
+                [SVProgressHUD dismiss];
+                if (isOK) { //注册成功后，返回登录界面
+                    [SVProgressHUD showSuccessWithStatus:@"注册成功"];
+                    
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
+                else {
+                    [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"验证失败：%@", errorMsg]];
+                }
+            }];
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"验证失败：%@", errorMsg]];
+        }
+    }];
+}
+
+- (IBAction)protocolBtnPressed:(id)sender {
+    UserProtocolViewController *protocolVC = [UserProtocolViewController new];
+    [self.navigationController pushViewController:protocolVC animated:YES];
+}
+
+- (IBAction)loginBtnPressed:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+@end

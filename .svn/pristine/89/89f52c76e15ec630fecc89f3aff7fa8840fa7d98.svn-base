@@ -1,0 +1,44 @@
+//
+//  ProductDetailViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/10/19.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "ProductDetailViewController.h"
+#import "GetProductDetailRequest.h"
+
+@interface ProductDetailViewController ()
+
+@end
+
+@implementation ProductDetailViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self getProductInfo];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)getProductInfo {
+    GetProductDetailRequest *request = [GetProductDetailRequest new];
+    request.productId = @"657"; //ZC_DEBUG self.productId;
+    [request excuteRequest:^(BOOL isOK, GetProductDetailResponse * _Nullable response, NSString * _Nullable errorMsg) {
+        if (isOK) {
+            
+        }
+    }];
+}
+
+@end

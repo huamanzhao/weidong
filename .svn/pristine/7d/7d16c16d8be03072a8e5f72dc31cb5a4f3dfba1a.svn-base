@@ -1,0 +1,233 @@
+//
+//  ProductListViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/10/19.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "ProductListViewController.h"
+#import "ProductItemCell.h"
+#import "Constants.h"
+#import "ProductSearchRequest.h"
+#import "ProductDetailViewController.h"
+#import "NavibarSearchView.h"
+#import "DropdownTableView.h"
+#import "Enum.h"
+
+@interface ProductListViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, NavibarSearchViewDelegate, SortDropDownDelegate>
+@property (weak, nonatomic) IBOutlet UICollectionView *collection;
+@property (weak, nonatomic) IBOutlet NavibarSearchView *searchView;
+
+@end
+
+@implementation ProductListViewController {
+    NSArray *productList;
+    ProductOrderType orderType;
+    
+    NSArray *sortTypeList;
+    DropdownTableView *sortDropView;
+    
+    NSArray *funcNameList;
+    NSArray *funcImageList;
+    DropdownTableView *funcDropView;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.title = _searchKey;
+    
+    [self.view bringSubviewToFront:_searchView];
+    _searchView.delegate = self;
+    if (!STRING_NULL(_searchKey)) {
+        [_searchView setSearchTitle:_searchKey];
+    }
+    
+    [_collection registerNib:[UINib nibWithNibName:@"ProductItemCell" bundle:nil] forCellWithReuseIdentifier:PRODUCTITEM_CELLID];
+    
+    orderType = OrderType_TopDesc;
+    sortTypeList = @[@"综合", @"价格从低到高", @"价格从高到低"];
+    funcNameList = @[@"首页", @"购物车", @"会员中心"];
+    funcImageList = @[@"tabbar_home", @"tabbar_cart", @"tabbar_member"];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBar.hidden = YES;
+    
+    [self searchProducts];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    self.navigationController.navigationBar.hidden = NO;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+
+- (void)searchProducts {
+    ProductSearchRequest *request = [ProductSearchRequest new];
+    request.keyword = _searchKey;
+    request.orderType = orderType;
+    request.pageNumber = 1;
+    request.pageSize = 10;
+    [request excuteRequst:^(Boolean isOK, ProductSearchResponse * _Nullable response, NSString * _Nullable errorMsg) {
+        if (isOK) {
+            productList = response.list;
+            [_collection reloadData];
+        }
+    }];
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [productList count];
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger row = indexPath.row;
+    ProductInfo *product = [productList objectAtIndex:row];
+    
+    ProductItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:PRODUCTITEM_CELLID forIndexPath:indexPath];
+    [cell setupWithProduct:product];
+    
+    return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat itemWidth = (SCREEN_WIDTH - 1) / 2;
+    CGFloat itemHeight = itemWidth * 1.25;
+    
+    return CGSizeMake(itemWidth, itemHeight);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    
+    //打开产品详情界面
+    NSInteger row = indexPath.row;
+    ProductInfo *product = [productList objectAtIndex:row];
+    
+    ProductDetailViewController *detailVC = [ProductDetailViewController new];
+    detailVC.productId = product.id;
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
+
+- (void)popViewController {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)searchProductWithKey:(NSString *)keyword {
+    [self dismissSortView];
+    [self dismissFuncView];
+    
+    _searchKey = keyword;
+    [self searchProducts];
+}
+
+- (void)showSortDropdownView {
+    [self dismissFuncView];
+    if (sortDropView) {
+        [self dismissSortView];
+        return;
+    }
+    
+    sortDropView = [[NSBundle mainBundle] loadNibNamed:@"DropdownTableView" owner:self options:nil].firstObject;
+    sortDropView.frame = CGRectMake(0, 93, 100, 100);
+    sortDropView.delegate = self;
+    [sortDropView setupWithTitles:sortTypeList];
+    [self.view addSubview:sortDropView];
+}
+
+- (void)showFuncDropdownView {
+    //收起下拉选择视图
+    [self dismissSortView];
+    if (funcDropView) {
+        [self dismissFuncView];
+        return;
+    }
+    
+    CGFloat originX = SCREEN_WIDTH * 0.6;
+    funcDropView = [[NSBundle mainBundle] loadNibNamed:@"DropdownTableView" owner:self options:nil].firstObject;
+    funcDropView.frame = CGRectMake(originX, 60, 100, 100);
+    funcDropView.delegate = self;
+    [funcDropView setupWithTitles:funcNameList Images:funcImageList];
+    [self.view addSubview:funcDropView];
+}
+
+- (void)setSearchSortType:(ProductOrderType)type {
+    //收起下拉选择视图
+    [self dismissSortView];
+    [self dismissFuncView];
+    
+    //执行搜索
+    orderType = type;
+    [self searchProducts];
+}
+
+- (void)selectSortItemAtIndex:(NSInteger)index {
+    //收起下拉选择视图
+    [self dismissSortView];
+    
+    //更新navi视图里面的搜索按钮标题
+    NSString *sortType = index == 0 ? @"综合" : @"价格";
+    [self.searchView updateComplexType:sortType];
+    
+    //执行搜索
+    orderType = index;
+    [self searchProducts];
+}
+
+- (void)selectFuncItemAtIndex:(NSInteger)index {
+    [self dismissFuncView];
+    
+    switch (index) {
+        case 0:
+            [self openHomeViewController];
+            break;
+        case 1:
+            [self openCartViewController];
+            break;
+        case 2:
+            [self openMemberViewController];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (void)dismissSortView {
+    if (sortDropView) {
+        [sortDropView removeFromSuperview];
+        sortDropView = nil;
+    }
+}
+
+- (void)dismissFuncView {
+    if (funcDropView) {
+        [funcDropView removeFromSuperview];
+        funcDropView = nil;
+    }
+}
+
+- (void)openHomeViewController {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (void)openCartViewController {
+    [self.tabBarController setSelectedIndex:2];
+}
+
+- (void)openMemberViewController {
+    [self.tabBarController setSelectedIndex:3];
+}
+
+@end

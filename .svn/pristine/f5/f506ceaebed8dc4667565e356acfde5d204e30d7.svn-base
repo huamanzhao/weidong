@@ -1,0 +1,48 @@
+//
+//  CartItemCell.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/19.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "CartItemCell.h"
+#import <SDwebImage/UIImageView+WebCache.h>
+
+@implementation CartItemCell {
+    CartItemInfo *cart;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+- (void)setupWithCartInfo:(CartItemInfo *)cartInfo {
+    cart = cartInfo;
+    _nameLabel.text = cartInfo.skuName;
+    _specificationLabel.text = @"";
+    _priceLabel.text = [NSString stringWithFormat:@"￥%@", cartInfo.price];
+    _quantityTF.text = [NSString stringWithFormat:@"%ld", (long)cartInfo.quantity];
+    
+    if (STRING_NULL(cartInfo.skuThumbnail)) {
+        return;
+    }
+    NSURL *url = [NSURL URLWithString:cartInfo.skuThumbnail];
+    [_productImage sd_setImageWithURL:url placeholderImage:UIImageWithName(@"default_1")];
+}
+
+- (IBAction)minusBtnPressed:(id)sender {
+}
+- (IBAction)addBtnPressed:(id)sender {
+}
+- (IBAction)removeBtnPressed:(id)sender {
+}
+
+@end

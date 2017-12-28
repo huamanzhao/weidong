@@ -1,0 +1,157 @@
+//
+//  AddressEditViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/20.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "AddressEditViewController.h"
+#import "AddAddressRequest.h"
+
+
+@interface AddressEditViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *nameTF;
+@property (weak, nonatomic) IBOutlet UITextField *addressTF;
+@property (weak, nonatomic) IBOutlet UITextField *zipCodeTF;
+@property (weak, nonatomic) IBOutlet UITextField *phoneTF;
+
+@property (weak, nonatomic) IBOutlet UIView *bgProvinceVIew;
+@property (weak, nonatomic) IBOutlet UIView *bgCityView;
+@property (weak, nonatomic) IBOutlet UIView *bgDistrictView;
+@property (weak, nonatomic) IBOutlet UIImageView *dropIcon0;
+@property (weak, nonatomic) IBOutlet UIImageView *dropIcon1;
+@property (weak, nonatomic) IBOutlet UIImageView *dropIcon2;
+@property (weak, nonatomic) IBOutlet UIButton *defaultBtn;
+@property (weak, nonatomic) IBOutlet UIButton *funcBtn;
+
+
+
+@end
+
+@implementation AddressEditViewController {
+    BOOL isDefault;
+    NSString *areaName;
+    NSString *areaId;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self initNaviBackButton];
+    self.title = _address ? @"修改收货地址" : @"添加收货地址";
+    
+    isDefault = NO;
+    
+    [self initSubViews];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)initSubViews {
+    //地区选择
+    [_dropIcon0 setTintColor:POSITIVE_COLOR];
+    [_dropIcon1 setTintColor:POSITIVE_COLOR];
+    [_dropIcon2 setTintColor:POSITIVE_COLOR];
+    [_bgProvinceVIew setRoundBorder];
+    [_bgCityView setRoundBorder];
+    [_bgDistrictView setRoundBorder];
+    [self setupPositiveButtonStyle:_funcBtn];
+    
+    if (!_address) {   //新建地址界面先隐藏城市和区域
+        [_bgCityView setHidden:YES];
+        [_bgDistrictView setHidden:YES];
+    }
+    else {
+        _nameTF.text = _address.consignee;
+        _addressTF.text = _address.address;
+        _zipCodeTF.text = _address.zipCode;
+        _phoneTF.text = _address.phone;
+        
+        isDefault = _address.isDefault;
+        [self updateDefaultBtnLayout];
+    }
+}
+
+- (IBAction)provinceSelectBtnPressed:(id)sender {
+    
+}
+
+- (IBAction)citySelectBtnPressed:(id)sender {
+    
+}
+
+- (IBAction)districtBtnPressed:(id)sender {
+    
+}
+
+- (IBAction)defaultBtnPressed:(id)sender {
+}
+
+- (IBAction)functionBtnPressed:(id)sender {
+    if (_address) {
+        [self updateAddress];
+    }
+    else {
+        [self addNewAddress];
+    }
+}
+
+- (void)updateAddress {
+    
+}
+
+- (void)addNewAddress {
+    NSString *name = _addressTF.text;
+    NSString *addressDetail = _addressTF.text;
+    NSString *zipCode = _zipCodeTF.text;
+    NSString *phone = _phoneTF.text;
+    
+    if (STRING_NULL(name)) {
+        [SVProgressHUD showErrorWithStatus:@"请输入收件人姓名"];
+        return;
+    }
+    
+    if (STRING_NULL(areaId)) {
+        [SVProgressHUD showErrorWithStatus:@"请选择地址"];
+        return;
+    }
+    
+    if (STRING_NULL(addressDetail)) {
+        [SVProgressHUD showErrorWithStatus:@"请输入详细地址"];
+        return;
+    }
+    
+    if (STRING_NULL(phone)) {
+        [SVProgressHUD showErrorWithStatus:@"请输入收件人联系电话"];
+        return;
+    }
+    
+    ReceiveAddrInfo *addressInfo = [ReceiveAddrInfo new];
+    addressInfo.consignee = name;
+    addressInfo.areaName  = areaName;
+    addressInfo.address   = addressDetail;
+    addressInfo.zipCode   = zipCode;
+    addressInfo.areaId    = areaId;
+    addressInfo.isDefault = isDefault;
+    AddAddressRequest *request = [AddAddressRequest new];
+    request.addressInfo = addressInfo;
+    [request excuteRequest:^(BOOL isOK, NSString * _Nullable errorMsg) {
+        if (isOK) {
+            
+        }
+    }];
+}
+
+- (void)updateDefaultBtnLayout {
+    if (isDefault) {
+        [_defaultBtn setImage:[UIImage imageNamed:@"btn_checked"] forState:UIControlStateNormal];
+    }
+    else {
+        [_defaultBtn setImage:[UIImage imageNamed:@"btn_uncheck"] forState:UIControlStateNormal];
+    }
+}
+
+@end

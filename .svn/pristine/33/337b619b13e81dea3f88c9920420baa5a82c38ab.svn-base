@@ -1,0 +1,15 @@
+//
+//  ProductCommentsView.h
+//  weidong
+//
+//  Created by zhccc on 2017/11/18.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface ProductCommentsView : UIView <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *table;
+
+- (void)reloadTableDataWith:(NSArray *)comments;
+@end

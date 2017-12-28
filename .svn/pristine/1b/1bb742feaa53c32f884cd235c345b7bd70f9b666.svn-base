@@ -1,0 +1,61 @@
+//
+//  MainTabbarViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/9/29.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "MainTabbarViewController.h"
+#import "HomePageViewController.h"
+#import "CategoryMainViewController.h"
+#import "ShopCartMainViewController.h"
+#import "MemberMainViewController.h"
+
+@interface MainTabbarViewController ()
+
+@end
+
+@implementation MainTabbarViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self initTabbarControllers];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+
+
+- (void)initTabbarControllers {
+    HomePageViewController *homepageVC = [HomePageViewController new];
+    homepageVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:UIImageWithName(@"tabbar_home") selectedImage:UIImageWithName(@"tabbar_home_select")];
+    UINavigationController *homeNavi = [[UINavigationController alloc] initWithRootViewController:homepageVC];
+    homeNavi.title = @"首页";
+    
+    CategoryMainViewController *categoryVC = [CategoryMainViewController new];
+    categoryVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"分类" image:UIImageWithName(@"tabbar_category") selectedImage:UIImageWithName(@"tabbar_category_select")];
+    UINavigationController *categoryNavi = [[UINavigationController alloc] initWithRootViewController:categoryVC];
+    categoryNavi.title = @"分类";
+    
+    ShopCartMainViewController *cartVC = [ShopCartMainViewController new];
+    cartVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"购物车" image:UIImageWithName(@"tabbar_cart") selectedImage:UIImageWithName(@"tabbar_cart_select")];
+    UINavigationController *cartNavi = [[UINavigationController alloc] initWithRootViewController:cartVC];
+    cartNavi.title = @"购物车";
+    
+    MemberMainViewController *memberVC = [MemberMainViewController new];
+    memberVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"会员中心" image:UIImageWithName(@"tabbar_member") selectedImage:UIImageWithName(@"tabbar_member_select")];
+    UINavigationController *memberNavi = [[UINavigationController alloc] initWithRootViewController:memberVC];
+    memberNavi.title = @"会员中心";
+    
+    NSArray *controllers = @[homeNavi, categoryNavi, cartNavi, memberNavi];
+    [self setViewControllers: controllers];
+    
+}
+
+@end

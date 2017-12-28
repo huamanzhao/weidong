@@ -1,0 +1,45 @@
+//
+//  Constants.h
+//  GZDefence
+//
+//  Created by zhccc on 2017/8/20.
+//  Copyright © 2017年 wxy. All rights reserved.
+//
+
+#ifndef Constants_h
+#define Constants_h
+
+#import "Util.h"
+
+/* -------- 常量 -------- */
+
+//屏幕大小
+#define SCREEN_SIZE [[UIScreen mainScreen] bounds].size
+#define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_HEIGH [[UIScreen mainScreen] bounds].size.height
+
+//颜色
+#define CYAN_COLOR [UIColor colorWithHex:0x00ffff]      //青色
+#define ORANGE_COLOR [UIColor colorWithHex:0xFF7F00]   //橘色
+#define MAIN_COLOR [UIColor colorWithHex:0x1f548c]
+#define SUB_COLOR  [UIColor colorWithHex:0x80bbec]
+#define GRAY_COLOR [UIColor colorWithHex:0x9a9a9a]
+#define LOGIN_RED  [UIColor colorWithHex:0xf03030]
+
+/* -------- 服务器设置 -------- */
+#define SERVER_TEST_SERVER_URL @"http://47.95.204.47:80/"  //测试服务器
+#define SERVER_SERVER_URL @""
+
+#define SERVER_BASE_URL     SERVER_TEST_SERVER_URL
+#define SERVER_API_URL [SERVER_BASE_URL stringByAppendingString:@"interfaces/app/"] //接口url基地址
+#define SERVER_API_URL_MEMEBER [SERVER_BASE_URL stringByAppendingString:@"interfaces/app/member/"] //需要登录访问的接口
+
+/* -------- 个人信息 -------- */
+#define USER_NAME    @"username"
+#define PASS_WORD    @"password"
+#define LOGION_STATE @"loginstate"
+#define LOGGED_IN    @"1"
+#define LOGGED_OUT   @"0"
+
+
+#endif /* Constants_h */

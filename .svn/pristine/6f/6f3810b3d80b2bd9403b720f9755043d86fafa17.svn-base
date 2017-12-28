@@ -1,0 +1,192 @@
+//
+//  MemberMainViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/9/29.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "MemberMainViewController.h"
+#import "LoginViewController.h"
+#import "MemberHeaderView.h"
+#import "MemberFunctionView.h"
+#import "MemberTableSectionView.h"
+#import "MemberOrderCell.h"
+#import "MemberMessageCell.h"
+#import "MemberToolsCell.h"
+#import "MemberToolsCell.h"
+#import "MemberLogoutCell.h"
+
+@interface MemberMainViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@end
+
+@implementation MemberMainViewController {
+    UITableView *table;
+    UIView *tableHeader;
+    MemberHeaderView *headerView;
+    MemberFunctionView *functionView;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.title = @"会员中心";
+    
+    self.view.backgroundColor = [UIColor grayColor];
+    [self initTableView];
+    
+    [table registerNib:[UINib nibWithNibName:@"MemberOrderCell" bundle:nil] forCellReuseIdentifier:ORDER_CELLID];
+    [table registerNib:[UINib nibWithNibName:@"MemberMessageCell" bundle:nil] forCellReuseIdentifier:MESSAGE_CELLID];
+    [table registerNib:[UINib nibWithNibName:@"MemberToolsCell" bundle:nil] forCellReuseIdentifier:TOOLS_CELLID];
+    [table registerNib:[UINib nibWithNibName:@"MemberLogoutCell" bundle:nil] forCellReuseIdentifier:LOGOUT_CELLID];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if (![Util userIsLogin] ) {
+        [self openLoginController];
+        return;
+    }
+    
+    
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+  
+    table.frame = self.view.bounds;
+    tableHeader.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * 0.6);
+    headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * 0.4);
+    functionView.frame = CGRectMake(0, SCREEN_WIDTH * 0.4, SCREEN_WIDTH, SCREEN_WIDTH * 0.2);
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)initTableView {
+    table = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    table.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    table.separatorStyle = UITableViewCellSeparatorStyleNone;
+    table.rowHeight = UITableViewAutomaticDimension;
+    table.estimatedRowHeight = 100;
+    table.delegate = self;
+    table.dataSource = self;
+    table.tableFooterView = nil;
+//    if (@available(iOS 11.0, *)) {
+//        table.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//    } else {
+//        self.automaticallyAdjustsScrollViewInsets = NO;
+//    }
+    
+    tableHeader = [UIView new];
+    headerView = [MemberHeaderView new];
+    functionView = [MemberFunctionView new];
+    [tableHeader addSubview:headerView];
+    [tableHeader addSubview:functionView];
+
+    table.tableHeaderView = tableHeader;
+    [self.view addSubview:table];
+}
+
+- (void)openLoginController {
+    LoginViewController *loginVC = [LoginViewController new];
+    loginVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:loginVC animated:NO];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 6;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section >= 3 && section <=4) {
+        return 0;
+    }
+    
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section <= 2) {
+        return 36;
+    }
+    return 40;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (section != 2) {
+        return 8;
+    }
+    else {
+        return 24;
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    MemberTableSectionView *sectionView = [MemberTableSectionView new];
+    switch (section) {
+        case 0:
+            [sectionView setupWithTitle:@"我的订单" Image:@"default" Subtitle:@"查看全部订单" TintColor:COLOR_0];
+            break;
+            
+        case 1:
+            [sectionView setupWithTitle:@"消息盒子" Image:@"default" Subtitle:@"" TintColor:COLOR_1];
+            break;
+            
+        case 2:
+            [sectionView setupWithTitle:@"必备工具" Image:@"default" Subtitle:@"" TintColor:COLOR_2];
+            break;
+            
+        case 3:
+            [sectionView setupWithTitle:@"设置" Image:@"default" Subtitle:@"收货地址管理" TintColor:nil];
+            break;
+            
+        case 4:
+            [sectionView setupWithTitle:@"个人资料" Image:@"default" Subtitle:@"个人账户管理" TintColor:nil];
+            break;
+            
+        case 5:
+            [sectionView setupWithTitle:@"修改密码" Image:@"default" Subtitle:@"修改密码" TintColor:nil];
+            break;
+            
+        default:
+            break;
+    }
+    return sectionView;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger section = indexPath.section;
+    
+    switch (section) {
+        case 0: {
+            MemberOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:ORDER_CELLID forIndexPath:indexPath];
+            return cell;
+            break;
+        }
+        case 1: {
+            MemberMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:MESSAGE_CELLID forIndexPath:indexPath];
+            return cell;
+            break;
+        }
+        case 2: {
+            MemberToolsCell *cell = [tableView dequeueReusableCellWithIdentifier:TOOLS_CELLID forIndexPath:indexPath];
+            return cell;
+            break;
+        }
+        case 5: {
+            MemberLogoutCell *cell = [tableView dequeueReusableCellWithIdentifier:LOGOUT_CELLID forIndexPath:indexPath];
+            return cell;
+            break;
+        }
+            
+        default:{
+            return nil;
+        }
+    }
+}
+
+@end

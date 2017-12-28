@@ -1,0 +1,128 @@
+//
+//  MyCreditsLogViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/19.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "MyCreditsLogViewController.h"
+#import "GetPointsLogRequest.h"
+#import "CreditLogCell.h"
+
+@interface MyCreditsLogViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@end
+
+@implementation MyCreditsLogViewController {
+    NSArray *creditLogList;
+    UITableView *table;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    table = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    table.delegate = self;
+    table.dataSource = self;
+    table.rowHeight = 48;
+    table.sectionHeaderHeight = 0;
+    table.sectionFooterHeight = 10;
+    table.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [table registerNib:[UINib nibWithNibName:@"CreditLogCell" bundle:nil] forCellReuseIdentifier:CREDITLOG_CELLID];
+    
+    [self.view addSubview:table];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self getCreditsLogs];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)getCreditsLogs {
+    [SVProgressHUD showWithStatus:@"正在加载"];
+    GetPointsLogRequest *request = [GetPointsLogRequest new];
+    request.pageSize = 20;
+    request.pageNumber = 1;
+    [request excuteRequest:^(BOOL isOK, GetPointsLogResponse * _Nullable response, NSString * _Nullable errorMsg) {
+        [SVProgressHUD dismiss];
+        if (isOK) {
+            [SVProgressHUD showSuccessWithStatus:@"加载完毕"];
+            creditLogList = response.list;
+            
+            //ZC_DEBUG
+//            [self getStubCreditList];
+            
+            [table reloadData];
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:errorMsg];
+        }
+    }];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0) {
+        return 1;
+    }
+    
+    if (!creditLogList) {
+        return 0;
+    }
+    return [creditLogList count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger section = indexPath.section;
+    NSInteger row = indexPath.row;
+    CreditLogCell *cell = [tableView dequeueReusableCellWithIdentifier:CREDITLOG_CELLID forIndexPath:indexPath];
+    if (section == 0) {
+        [cell setupTitleStyle];
+    }
+    else {
+        [cell setupWithCredit:[creditLogList objectAtIndex:row] Index:row];
+    }
+    return cell;
+}
+
+//ZC_DEBUG
+- (void)getStubCreditList {
+    CreditLogInfo *credit0 = [CreditLogInfo new];
+    credit0.type = 1;
+    credit0.credit = 10;
+    credit0.debit = 0;
+    credit0.balance = 125;
+    
+    CreditLogInfo *credit1 = [CreditLogInfo new];
+    credit1.type = 3;
+    credit1.credit = 0;
+    credit1.debit = 5;
+    credit1.balance = 115;
+    
+    CreditLogInfo *credit2 = [CreditLogInfo new];
+    credit2.type = 2;
+    credit2.credit = 0;
+    credit2.debit = 5;
+    credit2.balance = 110;
+    
+    CreditLogInfo *credit3 = [CreditLogInfo new];
+    credit3.type = 2;
+    credit3.credit = 20;
+    credit3.debit = 0;
+    credit3.balance = 115;
+    
+    creditLogList = @[credit0, credit1, credit2, credit3];
+}
+
+
+@end

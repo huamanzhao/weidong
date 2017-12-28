@@ -1,0 +1,125 @@
+//
+//  Util.h
+//  GZDefence
+//
+//  Created by zhccc on 2017/8/21.
+//  Copyright © 2017年 wxy. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+
+#define STRING_NULL(str) ((id)str == [NSNull null] || str == nil || 0 == [str length])
+#define UIImageWithName(a) [UIImage imageNamed:a]
+
+#define DEBUG_LOG(a) NSLog(@"---+++ zhccc +++--- %@", (a))
+
+@interface Util : NSObject
+
+//用户、登录状态
++ (void)updateLoginInfo:(NSString *)user Token:(NSString *)token ExpireTime: (NSString *)time Pswd: (NSString *)password;
++ (void)clearLoginInfo;
++ (NSString *)getUserName;
++ (NSString *)getUserToken;
++ (NSString *)getUserPassword;
+
++ (void)setUserLogin: (BOOL)staus;
++ (BOOL)userIsLogin;
++ (void)setAutoLogin:(BOOL)enable;
++ (BOOL)getAutoLoginState;
++ (void)autoLogin:(void (^_Nonnull)(BOOL isOK))complete ;
+
+//------------------------获取系统设备信息----------------------//
+//获取设备串号
++ (NSString *)getDeviceUUID;
+//获取设备类型
++ (NSString *)getDeviceVersion;
+//获取系统版本
++ (NSString *)getSystemVerison;
+//获取Bundle Version
++ (NSString *)getAppVersion;
+//获取Build Version
++ (NSString *)getAppBuildVersion;
+
+
+//------------------------程序自定义----------------------//
+//获取字符串长度
++ (CGSize)getTextBoundSize: (NSString *)text Font: (UIFont *)font Size: (CGSize)size;
+
+//计算两点之间距离
++ (double)getDistanceOfPoint: (CLLocationCoordinate2D)originCd ToPoint: (CLLocationCoordinate2D)targetCd;
+
+//返回两点之间距离，字符串格式：小于1000米显示[米数] 例如560米；大于等于1000显示[公里数] 例如2.0公里
++ (NSString *)getDistanceStringOfPoint: (CLLocationCoordinate2D)originCd ToPoint: (CLLocationCoordinate2D)targetCd;
+
+//将Json字符串转换为字典类型
++ (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString;
+
+//获取当前最前端controller
++ (UIViewController *)getTopViewController;
+
+//获取程序MainTabbarViewController
++ (UITabBarController *)getMainTabbarController;
+
+
+
+@end
+
+
+@interface UIColor (ColorExtension)
+
++ (UIColor *)colorWithHex: (uint)hex;
+
+@end
+
+@interface NSDate (Extension)
+
+//根据毫秒值获取NSDate
++ (NSDate *)getDate: (int64_t) milliseconds;
+
+//获取当前本地时间
++ (NSDate *)localDate;
+
+//转化为本地时间
+- (NSDate *)toLocalDate;
+
+//将NSDate转化为NSString
+/*例如
+ * 2017/08/23 10:22:37 <---> yyyy/MM/dd HH:mm:ss
+ * 2017年8月7日9点22分 <---> yyyy年M月d日H点m分
+ */
+- (NSString *)toString: (NSString *)format;
+
+@end
+
+@interface NSString (StrExtentsion)
+
+- (NSDate *)toDate: (NSString *)format;
+
+- (BOOL)checkPhoneNumInput;
+- (BOOL)checkIDNumber;
+- (BOOL)checkEmailAccount;
+- (NSString *) md5String;
+
+@end
+
+@interface UIView (ViewExtension)
+//设置圆角边框
+- (void)setRoundBorder;
+//设置圆角
+- (void)setRoundCorner;
+- (void)setRoundCornerWithRadius:(CGFloat)radius;
+//设置
+- (void)setShadowLayer;
+
+@end
+
+@interface UIButton (TitleImageAdjust)
+
+- (void)adjustItemsUpDown;
+- (void)setBadgeNumber:(NSInteger)num;
+
+@end
+
+

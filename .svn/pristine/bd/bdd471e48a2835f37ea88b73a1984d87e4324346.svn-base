@@ -1,0 +1,35 @@
+//
+//  MemberOrderCell.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/5.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "MemberOrderCell.h"
+
+@implementation MemberOrderCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    [_waitPayBtn adjustItemsUpDown];
+    [_waitSendBtn adjustItemsUpDown];
+    [_waitReceiveBtn adjustItemsUpDown];
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+
+- (IBAction)waitPayBtnPressed:(id)sender {
+}
+- (IBAction)waitsendBtnPressed:(id)sender {
+}
+- (IBAction)waitReceiveBtnPressed:(id)sender {
+}
+
+@end

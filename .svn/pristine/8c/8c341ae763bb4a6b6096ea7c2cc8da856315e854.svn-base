@@ -1,0 +1,45 @@
+//
+//  ProductDetailView.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/18.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "ProductDetailView.h"
+#import <WebKit/WebKit.h>
+
+@implementation ProductDetailView {
+    WKWebView *webView;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        self = [[NSBundle mainBundle] loadNibNamed:@"ProductDetailView" owner:self options:nil].firstObject;
+        self.frame = frame;
+    }
+    return self;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    webView = [[WKWebView alloc] initWithFrame:self.bounds];
+    [self addSubview:webView];
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    webView.frame = self.bounds;
+}
+
+
+- (void)setupWithProductDetail:(ProductDetail *)detail {
+    if (STRING_NULL(detail.introduction)) {
+        return;
+    }
+    [webView loadHTMLString:detail.introduction baseURL:nil];
+}
+
+@end

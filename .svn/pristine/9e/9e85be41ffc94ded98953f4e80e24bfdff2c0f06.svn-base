@@ -1,0 +1,36 @@
+//
+//  ProductCommentCell.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/23.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "ProductCommentCell.h"
+
+@implementation ProductCommentCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+- (void)setupWithComment:(CommentInfo *)comment {
+    if (!comment.isShow) {
+        _nameLabel.text = @"匿名用户";
+    }
+    else {
+        _nameLabel.text = comment.memberName;
+    }
+    
+    _scoreLabel.text = [NSString stringWithFormat:@"%.1f", comment.score];
+    _contentLabel.text = comment.content;
+}
+
+@end

@@ -1,0 +1,82 @@
+//
+//  CategoryPrimaryCell.m
+//  weidong
+//
+//  Created by zhccc on 2017/10/23.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+#import "CategoryPrimaryCell.h"
+#import "CategoryInfo.h"
+
+@implementation CategoryPrimaryCell {
+    NSString *cellId;
+    CategoryInfo *myCategory;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    cellId = @"collectionID";
+    [_colletion registerClass:[CategorySubCell class] forCellWithReuseIdentifier:cellId];
+}
+
+- (void)setupWithCategory:(CategoryInfo *)category {
+    myCategory = category;
+    [_titleBtn setTitle:category.name forState:UIControlStateNormal];
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [myCategory.childList count];
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CategorySubCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
+    
+    CategoryInfo *subCategory = [myCategory.childList objectAtIndex:indexPath.row];
+    [cell setupWithTitle:subCategory.name];
+    
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    CategoryInfo *subCategory = [myCategory.childList objectAtIndex:indexPath.row];
+    
+    if (self.delegate) {
+        [self.delegate selectChildCategory:subCategory];
+    }
+}
+
+- (IBAction)titleBtnPressed:(id)sender {
+    if (self.delegate) {
+        [self.delegate selectChildCategory:myCategory];
+    }
+}
+
+@end
+
+
+@implementation CategorySubCell {
+    UILabel *titleLabel;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    
+    titleLabel = [UILabel new];
+    titleLabel.font = [UIFont systemFontOfSize:14.0];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.textColor = [UIColor darkTextColor];
+    [self addSubview:titleLabel];
+    
+    return self;
+}
+
+- (void)layoutSubviews {
+    titleLabel.frame = self.bounds;
+}
+
+- (void)setupWithTitle: (NSString *)title {
+    titleLabel.text = title;
+}
+
+@end

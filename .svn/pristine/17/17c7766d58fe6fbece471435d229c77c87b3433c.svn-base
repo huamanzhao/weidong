@@ -1,0 +1,20 @@
+//
+//  GetPromotionRequest.h
+//  weidong
+//
+//  Created by zhccc on 2017/10/8.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "RequestBase.h"
+
+@interface GetPromotionResponse : NSObject
+@property(nonatomic, weak)NSArray * _Nullable list;
+@end
+
+@interface GetPromotionRequest : RequestBase
+
+- (void)excuteRequest:(void (^ _Nonnull)(BOOL isOK, GetPromotionResponse *_Nullable response, NSString *_Nullable errorMsg))complete;
+
+@end

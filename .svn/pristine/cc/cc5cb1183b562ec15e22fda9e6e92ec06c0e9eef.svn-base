@@ -1,0 +1,135 @@
+//
+//  PersonalInfoViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/21.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "PersonalInfoViewController.h"
+#import "UpdateSelfInfoRequest.h"
+
+@interface PersonalInfoViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *emailTF;
+@property (weak, nonatomic) IBOutlet UITextField *mobileTF;
+@property (weak, nonatomic) IBOutlet UITextField *nickTF;
+@property (weak, nonatomic) IBOutlet UITextField *nameTF;
+@property (weak, nonatomic) IBOutlet UITextField *idCardTF;
+@property (weak, nonatomic) IBOutlet UIButton *maleBtn;
+@property (weak, nonatomic) IBOutlet UIButton *femaleBtn;
+@property (weak, nonatomic) IBOutlet UITextField *phoneTF;
+@property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+
+@end
+
+@implementation PersonalInfoViewController {
+    NSInteger gender;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.title = @"个人资料";
+    [self initNaviBackButton];
+    
+    gender = 0;
+    [self setupPositiveButtonStyle:_confirmBtn];
+    [self setupNegativeButtonStyle:_backBtn];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+- (IBAction)maleBtnPressed:(id)sender {
+    gender = 0;
+    [_maleBtn setImage:UIImageWithName(@"btn_checked") forState:UIControlStateNormal];
+    [_femaleBtn setImage:UIImageWithName(@"btn_uncheck") forState:UIControlStateNormal];
+}
+
+- (IBAction)femaleBtnPressed:(id)sender {
+    gender = 1;
+    [_femaleBtn setImage:UIImageWithName(@"btn_checked") forState:UIControlStateNormal];
+    [_maleBtn setImage:UIImageWithName(@"btn_uncheck") forState:UIControlStateNormal];
+}
+
+- (IBAction)confirmBtnPressed:(id)sender {
+    NSString *email  = _emailTF.text;
+    NSString *mobile = _mobileTF.text;
+    NSString *nick   = _nickTF.text;
+    NSString *name   = _nameTF.text;
+    NSString *idCard = _idCardTF.text;
+    NSString *phone  = _phoneTF.text;
+    
+    if (STRING_NULL(email)) {
+        [SVProgressHUD showErrorWithStatus:@"请输入您的邮箱"];
+        return;
+    }
+    if (STRING_NULL(mobile)) {
+        [SVProgressHUD showErrorWithStatus:@"请输入您的手机号码"];
+        return;
+    }
+    if (![mobile checkPhoneNumInput]) {
+        [SVProgressHUD showErrorWithStatus:@"您输入的手机号码格式错误"];
+        return;
+    }
+    if (STRING_NULL(nick)) {
+        [SVProgressHUD showErrorWithStatus:@"请输入您的昵称"];
+        return;
+    }
+    if (STRING_NULL(name)) {
+        [SVProgressHUD showErrorWithStatus:@"请输入您的真实姓名"];
+        return;
+    }
+    if (STRING_NULL(idCard)) {
+        [SVProgressHUD showErrorWithStatus:@"请输入您的身份证号"];
+        return;
+    }
+    if (![idCard checkIDNumber]) {
+        [SVProgressHUD showErrorWithStatus:@"您输入的身份证号错误"];
+        return;
+    }
+    if (STRING_NULL(phone)) {
+        [SVProgressHUD showErrorWithStatus:@"请输入您的电话号码"];
+        return;
+    }
+    
+    SelfInfo *info = [SelfInfo new];
+    info.username = [Util getUserName];
+    info.password = [Util getUserPassword];
+    info.email    = email;
+    info.mobile   = mobile;
+    info.nickname = nick;
+    info.name     = name;
+    info.idNumber = idCard;
+    info.gender   = gender;
+    info.phone    = phone;
+    
+    [SVProgressHUD showWithStatus:@"正在提交"];
+    UpdateSelfInfoRequest *request = [UpdateSelfInfoRequest new];
+    request.info = info;
+    [request excuteRequest:^(BOOL isOK, NSString * _Nullable errorMsg) {
+        [SVProgressHUD dismiss];
+        if (isOK) {
+            [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:errorMsg];
+        }
+    }];
+}
+
+- (IBAction)backBtnPressed:(id)sender {
+    NSString *title = @"确定要退出本次编辑吗？";
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"继续编辑" style:UIAlertActionStyleCancel handler:nil]];
+    [self.navigationController presentViewController:alert animated:YES completion:nil];
+}
+
+
+@end

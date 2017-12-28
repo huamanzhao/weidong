@@ -1,0 +1,160 @@
+//
+//  LoginViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/10/6.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "LoginViewController.h"
+#import "VerifyCodeView.h"
+#import "GetVerifyCodeRequest.h"
+#import "CheckVerifyCodeRequest.h"
+#import "LoginRequest.h"
+
+@interface LoginViewController () <VerifiCodeDelegate>
+
+@property (weak, nonatomic) IBOutlet UIView *nameBgView;
+@property (weak, nonatomic) IBOutlet UIView *avatarBgView;
+@property (weak, nonatomic) IBOutlet UITextField *nameTF;
+
+@property (weak, nonatomic) IBOutlet UIView *passwordBgView;
+@property (weak, nonatomic) IBOutlet UIView *pswImageBgView;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTF;
+
+@property (weak, nonatomic) IBOutlet UIView *verifyBgView;
+@property (weak, nonatomic) IBOutlet UIView *verifyImageBgView;
+@property (weak, nonatomic) IBOutlet VerifyCodeView *verifyCodeView;
+@property (weak, nonatomic) IBOutlet UITextField *verifyTF;
+
+@property (weak, nonatomic) IBOutlet UIButton *rememberBtn;
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+@property (weak, nonatomic) IBOutlet UIButton *registBtn;
+@property (weak, nonatomic) IBOutlet UIButton *forgetBtn;
+
+@end
+
+@implementation LoginViewController {
+    NSArray *tempArray;
+    NSInteger index;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.title = @"会员登录";
+    [self initNaviBackButton];
+    
+    [self initLayout];
+    
+    _verifyCodeView.delegate = self;
+    tempArray = @[@"s8He", @"UILe", @"po9N", @"N62n", @"uiJ3"];
+    index = 0;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [_verifyCodeView setupWithCode:@"12SH"];
+    [self getVerifyCode];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)initLayout {
+    [self addGrayBorder:_avatarBgView];
+    [self addGrayRoundedBorder:_nameBgView];
+    
+    [self addGrayBorder:_pswImageBgView];
+    [self addGrayRoundedBorder:_passwordBgView];
+    
+    [self addGrayBorder:_verifyImageBgView];
+    [self addGrayRoundedBorder:_verifyBgView];
+    
+    _loginBtn.layer.cornerRadius = 6.0;
+}
+
+- (IBAction)rememberBtnPressed:(id)sender {
+}
+
+- (IBAction)loginBtnPressed:(id)sender {
+}
+
+- (IBAction)registerBtnPressed:(id)sender {
+}
+
+- (IBAction)forgetBtnPressed:(id)sender {
+}
+
+- (void)addGrayBorder:(UIView *)view {
+    view.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    view.layer.borderWidth = 1.0;
+}
+
+- (void)addGrayRoundedBorder:(UIView *)view {
+    view.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    view.layer.borderWidth = 1.0;
+    
+    view.layer.masksToBounds = YES;
+    view.layer.cornerRadius = 4.0;
+}
+
+- (void)needChangeVerifyCode {
+    
+    [self getVerifyCode];
+}
+
+//请求验证码
+- (void)getVerifyCode {
+    [SVProgressHUD showWithStatus:@"正在请求"];
+    
+    GetVerifyCodeRequest *request = [GetVerifyCodeRequest new];
+    [request excuteRequst:^(Boolean isOK, NSString *verifyCode, NSString * _Nullable errorMsg) {
+        [SVProgressHUD dismiss];
+        if (isOK) {
+            [_verifyCodeView setupWithCode:verifyCode];
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat: @"请求验证码失败：%@", errorMsg]];
+        }
+    }];
+}
+
+//验证验证码
+- (void)checkVerifyCode {
+    [SVProgressHUD showWithStatus:@"正在验证"];
+    
+    CheckVerifyCodeRequest *request = [CheckVerifyCodeRequest new];
+    request.type = VerifyCodeType_Login;
+    request.IMEI = [Util getDeviceUUID];
+    request.verifyCode = _verifyTF.text;
+    [request excuteRequst:^(Boolean isOK, NSString * _Nullable errorMsg) {
+        [SVProgressHUD dismiss];
+        if (isOK) {
+            [self loginTask];
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat: @"验证码验证失败"]];
+        }
+    }];
+}
+
+//执行登录
+- (void)loginTask {
+    LoginRequest *request = [LoginRequest new];
+    request.login_name = _nameTF.text;
+    request.password = _passwordTF.text;
+    request.phone_model = [Util getDeviceVersion];
+    request.phone_system = [Util getSystemVerison];
+    request.login_imei = [Util getDeviceUUID];
+    request.login_time = [[NSDate localDate] toString:@"yyyymmddhhmmss"];
+    [request excuteRequst:^(Boolean isOK, NSString *token, NSString *expireTime, NSString * _Nullable errorMsg) {
+        [Util updateLoginInfo:_nameTF.text Token:token ExpireTime:expireTime];
+    }];
+}
+
+
+@end

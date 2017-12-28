@@ -1,0 +1,27 @@
+//
+//  GetCategoryProductListRequest.h
+//  weidong
+//
+//  Created by zhccc on 2017/10/8.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "RequestBase.h"
+#import "Enum.h"
+
+@interface GetProductListResponse : NSObject
+@property(nonatomic, copy)NSArray *_Nullable list;
+@end
+
+@interface GetCategoryProductListRequest : RequestBase
+@property(nonatomic, copy)NSString *productCategory;
+@property(nonatomic, assign)ProductSaleType type;
+@property(nonatomic, copy)NSString *startPrice;
+@property(nonatomic, copy)NSString *endPrice;
+@property(nonatomic, assign)ProductOrderType orderType;
+@property(nonatomic, assign)NSInteger pageNumber;
+@property(nonatomic, assign)NSInteger pageSize;
+
+- (void)excuteRequest:(void (^_Nonnull)(BOOL isOK, GetProductListResponse * _Nullable response, NSString * _Nullable errorMsg))complete;
+@end

@@ -1,0 +1,28 @@
+//
+//  MemberFunctionView.h
+//  weidong
+//
+//  Created by zhccc on 2017/11/5.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "BadgeButton.h"
+@protocol MemberFunctionDelegate
+- (void)showFavoriteProducts;
+- (void)showArrivalNotications;
+- (void)showProductComments;
+- (void)showProductConsults;
+@end
+
+@interface MemberFunctionView : UIView
+@property (weak, nonatomic) IBOutlet UIButton *favoriteBtn;
+@property (weak, nonatomic) IBOutlet UIButton *deliveryBtn;
+@property (weak, nonatomic) IBOutlet UIButton *commentBtn;
+@property (weak, nonatomic) IBOutlet UIButton *ConsulteBtn;
+@property (weak, nonatomic) id<MemberFunctionDelegate> delegate;
+
+- (instancetype)initFuncViewFrame:(CGRect)frame;
+- (void)setupBadgeWithFavorite:(NSInteger)num1 Delivery:(NSInteger)num2 Comment:(NSInteger)num3 Consult:(NSInteger)num4;
+
+@end

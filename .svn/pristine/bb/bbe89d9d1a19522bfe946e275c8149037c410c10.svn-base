@@ -1,0 +1,55 @@
+//
+//  BadgeButton.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/7.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "BadgeButton.h"
+
+@implementation BadgeButton {
+    NSInteger badgeNum;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    
+    return self;
+}
+
+- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
+    
+    CGFloat btnWidth = rect.size.width;
+    CGFloat btnHeight = rect.size.height;
+    
+    CGFloat badgeLength = 16.0;
+    CGFloat badgeX = btnWidth - badgeLength;
+    CGFloat badgeY = 0;
+    
+    CGRect badgeRect = CGRectMake(badgeX, badgeY, badgeLength, badgeLength);
+    
+    //填充色
+    UIColor *red = [UIColor redColor];
+    [red set];
+    UIBezierPath *bPath = [UIBezierPath bezierPathWithOvalInRect:badgeRect];
+    [bPath fill];
+    
+    UIFont *font = [UIFont systemFontOfSize:12.0];
+    NSMutableParagraphStyle *style = [NSMutableParagraphStyle new];
+    style.alignment = NSTextAlignmentCenter;
+    NSString *numStr = [NSString stringWithFormat:@"%ld", (long)badgeNum];
+    [numStr drawInRect:badgeRect withAttributes:@{NSFontAttributeName : font,
+                                                  NSForegroundColorAttributeName : [UIColor whiteColor],
+                                                  NSParagraphStyleAttributeName : style
+                                                  }];
+}
+
+- (void)setBadgeNumber:(NSInteger)num {
+    badgeNum = num;
+    
+    [self setNeedsDisplay];
+}
+
+@end

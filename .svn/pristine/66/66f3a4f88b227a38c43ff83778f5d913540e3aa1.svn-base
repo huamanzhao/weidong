@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PromotionCellIdentifier" id="KGk-i7-Jjw" customClass="PromotionTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_gift" translatesAutoresizingMaskIntoConstraints="NO" id="Xsv-Hd-t1B">
+                        <rect key="frame" x="12" y="8" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Xsv-Hd-t1B" secondAttribute="height" multiplier="1:1" id="DPB-ke-amC"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iT5-S7-mtL" customClass="LoopView">
+                        <rect key="frame" x="64" y="4" width="248" height="48"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="48" id="wfT-S6-4Bb"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="iT5-S7-mtL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="7tY-dY-0vB"/>
+                    <constraint firstItem="Xsv-Hd-t1B" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Gdb-gp-d0F"/>
+                    <constraint firstItem="Xsv-Hd-t1B" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="QnM-er-h2I"/>
+                    <constraint firstItem="iT5-S7-mtL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="YQK-nu-2KQ"/>
+                    <constraint firstItem="Xsv-Hd-t1B" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cXK-dD-yLq"/>
+                    <constraint firstItem="iT5-S7-mtL" firstAttribute="leading" secondItem="Xsv-Hd-t1B" secondAttribute="trailing" constant="12" id="d7s-YT-cFQ"/>
+                    <constraint firstAttribute="trailing" secondItem="iT5-S7-mtL" secondAttribute="trailing" constant="8" id="tjc-be-EUU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="loopView" destination="iT5-S7-mtL" id="UvJ-w7-tbd"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="home_gift" width="24" height="24"/>
+    </resources>
+</document>

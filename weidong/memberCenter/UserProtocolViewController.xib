@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserProtocolViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="79p-fc-TLV">
+                    <rect key="frame" x="8" y="8" width="359" height="659"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <string key="text">【注意】欢迎申请使用微动公司提供的服务。请您（下列简称为“用户”）仔细阅读以下全部内容（特别是下划线标注的内容）。如用户不同意本服务条款任意内容，请勿注册或使用微动服务。如用户通过进入注册程序并勾选“我同意微动账号服务条款”，即表示用户与天津微动国际贸易有限公司已达成协议，自愿接受本服务条款的所有内容。此后，用户不得以未阅读本服务条款内容作任何形式的抗辩。
+ 
+1.服务条款的确认和接纳
+微动服务涉及到的微动产品的所有权以及相关软件的知识产权归微动公司所有。微动公司所提供的服务必须按照其发布的公司章程，服务条款和操作规则严格执行。本服务条款的效力范围及于将微动帐号作为登录帐号的微动产品和服务（以下简称“微动各单项服务”），用户在享受微动各单项服务时，应当受本服务条款的约束。
+当用户使用微动各单项服务时，应以微动公司认可的方式同意该单项服务的服务条款以及微动公司在该单项服务中发出的各类公告（下列简称为“单项条款”），在此情况下单项条款与本服务条款同时对用户产生效力。若单项条款与本服务条款存在同类条款的冲突，则在单项条款约束范围内应以单项条款为准。
+ 
+2.微动帐号服务简介
+本服务条款所称的“微动帐号”是指用户以手机号码或邮箱作为帐号注册的合法、有效的帐号，微动帐号注册成功后帐号即为用户所填用户名。
+微动公司运用自己的操作系统通过国际互联网络为用户提供各项服务。用户必须：
+（1）提供设备，如个人电脑、手机或其他上网设备。
+（2）个人上网和支付与此服务有关的费用。
+ 
+3.微动帐号注册规则
+微动帐号注册资料包括：用户的用户名、密码、邮箱、手机号、姓名、身份证号及注册微动帐号或更新微动帐号注册资料时输入的所有信息或更新微动帐号时输入的所有信息以及用户使用微动各单项服务时输入的名称、头像等所有信息。
+用户在注册微动帐号时承诺遵守法律法规、社会主义制度、国家利益、公民合法权益、公共秩序、社会道德风尚和信息真实性等七条底线，不得在微动帐号注册资料中出现违法和不良信息，且用户保证其在注册和使用帐号时，不得有以下情形：
+（1）违反宪法或法律法规规定的；
+（2）危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；
+（3）损害国家荣誉和利益的，损害公共利益的；
+（4）煽动民族仇恨、民族歧视，破坏民族团结的；
+（5）破坏国家宗教政策，宣扬邪教和封建迷信的；
+（6）散布谣言，扰乱社会秩序，破坏社会稳定的；
+（7）散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；
+（8）侮辱或者诽谤他人，侵害他人合法权益的；
+（9）含有法律、行政法规禁止的其他内容的。
+若用户提供给微动公司的帐号注册资料不准确，不真实，含有违法或不良信息的，微动公司有权不予注册，并保留终止用户使用微动各项服务的权利。若用户以虚假信息骗取帐号注册或帐号头像、个人简介等注册资料存在违法和不良信息的，微动公司有权采取通知限期改正、暂停使用、注销登记等措施。对于冒用关联机构或社会名人注册帐号名称的，微动公司有权注销该帐号，并向政府主管部门进行报告。
+根据相关法律、法规规定以及考虑到微动产品服务的重要性，用户同意：
+（1）在注册微动帐号时提交个人有效身份信息进行实名认证；
+（2）提供及时、详尽及准确的帐户注册资料；
+（3）不断更新注册资料，符合及时、详尽准确的要求，对注册微动手机帐号时填写的身份证件信息不能更新。
+用户同意，其提供的真实、准确、合法的微动帐号注册资料作为认定用户与其微动帐号的关联性以及用户身份的唯一证据。用户在享用微动各项服务的同时，同意接受微动提供的各类信息服务。微动公司提醒用户，用户注册微动帐号或更新注册信息时填写的证件号码，在注册微动帐号成功或补充填写后将无法进行修改，请用户慎重填写各类注册信息。
+为使用户及时、全面了解微动公司提供的各项服务，用户同意，微动公司可以多次、长期向用户发送各类商业性短信息而无需另行获得用户的同意。用户同意与注册、使用微动手机帐号相关的一切资料、数据和记录，包括但不限于手机帐号、注册信息、所有登录、消费记录和相关的使用统计数字等归微动公司所有。发生争议时，用户同意以微动公司的系统数据为准，微动公司保证该数据的真实性。
+尽管有前述约定，对于用户使用微动手机帐号享受微动公司旗下单项服务（如微动币支付产品等）时产生的一切数据，包括但不限于产品登录记录、消费记录及其他产品日志、产品客户服务记录、用户在产品中创造的社会网络内容等，归具体产品运营主体所有。发生争议时，用户同意以具体产品运营主体的系统数据为准。但是如果单项条款存在与前述不同的约定，则以单项条款约定为准。
+ 
+4.服务条款的修改
+微动公司有权在必要时通过在网页上发出公告等合理方式修改本服务条款以及各单项服务的相关条款。用户在享受各项服务时，应当及时查阅了解修改的内容，并自觉遵守本服务条款以及该单项服务的相关条款。用户如继续使用本服务条款涉及的服务，则视为对修改内容的同意，当发生有关争议时，以最新的服务条款为准；用户在不同意修改内容的情况下，有权停止使用本服务条款涉及的服务。</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="79p-fc-TLV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="GPg-Th-6B2"/>
+                <constraint firstItem="79p-fc-TLV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="QLe-yh-fvC"/>
+                <constraint firstItem="79p-fc-TLV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RbB-RI-gOA"/>
+                <constraint firstItem="79p-fc-TLV" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="da1-De-xQN"/>
+            </constraints>
+            <point key="canvasLocation" x="32.5" y="59.5"/>
+        </view>
+    </objects>
+</document>

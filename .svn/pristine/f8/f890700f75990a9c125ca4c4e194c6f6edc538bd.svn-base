@@ -1,0 +1,54 @@
+//
+//  ProductConsultsView.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/18.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "ProductConsultsView.h"
+#import "ConsultationInfo.h"
+#import "ProductConsulateCell.h"
+
+@implementation ProductConsultsView {
+    NSArray *consulationList;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        self = [[NSBundle mainBundle] loadNibNamed:@"ProductConsultsView" owner:self options:nil].firstObject;
+        self.frame = frame;
+    }
+    return self;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    consulationList = [NSArray new];
+    _table.delegate = self;
+    _table.dataSource = self;
+    _table.rowHeight = UITableViewAutomaticDimension;
+    _table.estimatedRowHeight = 90;
+    [_table registerNib:[UINib nibWithNibName:@"ProductConsulateCell" bundle:nil] forCellReuseIdentifier:PRODUCTCONSULATION_ID];
+}
+
+
+- (void)reloadTableWithConsults:(NSArray *)consultList {
+    consulationList = consultList;
+    [_table reloadData];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [consulationList count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ProductConsulateCell *cell = [tableView dequeueReusableCellWithIdentifier:PRODUCTCONSULATION_ID forIndexPath:indexPath];
+    ConsultationInfo *cosulation = [consulationList objectAtIndex:indexPath.row];
+    [cell setupWithConsulation:cosulation];
+    return cell;
+}
+
+@end

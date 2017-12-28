@@ -1,0 +1,16 @@
+//
+//  ProductFavoriteViewController.h
+//  weidong
+//
+//  Created by zhccc on 2017/11/8.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import <VTMagic/VTMagic.h>
+#import <VTMagic/VTMagicController.h>
+#import "BaseViewController.h"
+
+@interface ProductFavoriteViewController : VTMagicController
+
+@end

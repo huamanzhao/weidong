@@ -1,0 +1,51 @@
+//
+//  ShopCartMainViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/9/29.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "ShopCartMainViewController.h"
+#import "GetCartListRequest.h"
+
+@interface ShopCartMainViewController ()
+
+@end
+
+@implementation ShopCartMainViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setTintColor:POSITIVE_COLOR];
+    
+    self.view.backgroundColor = [UIColor yellowColor];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    GetCartListRequest *request = [GetCartListRequest new];
+    [request excuteRequest:^(BOOL isOK, GetCartListResponse * _Nullable response, NSString * _Nullable errorMsg) {
+        if (isOK) {
+            NSLog(@"adf");
+        }
+    }];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

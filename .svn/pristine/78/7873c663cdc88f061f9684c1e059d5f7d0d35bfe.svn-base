@@ -1,0 +1,17 @@
+//
+//  ShopCartListViewController.h
+//  weidong
+//
+//  Created by zhccc on 2017/11/19.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "CartTypeInfo.h"
+
+@interface ShopCartListViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *table;
+
+- (void)reloadWithCart:(CartTypeInfo *)cart;
+- (void)refreshTableLayoutWithEditMode:(BOOL)inEdit;
+@end

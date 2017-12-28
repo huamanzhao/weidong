@@ -1,0 +1,76 @@
+//
+//  BadgeButton.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/7.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "BadgeButton.h"
+
+@interface BadgeView : UIView
+- (void)setNumber:(NSInteger)number;
+@end
+
+@implementation BadgeButton {
+    BadgeView *badge;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        badge = [BadgeView new];
+        badge.backgroundColor = [UIColor clearColor];
+        [self addSubview:badge];
+    }
+    return self;
+}
+
+- (void)layoutSubviews {
+    CGFloat badgeLen = 18;
+    CGFloat btnWidth = self.frame.size.width;
+    CGFloat badgeX = btnWidth - badgeLen;
+    
+    badge.frame = CGRectMake(badgeX, 0, badgeLen, badgeLen);
+}
+
+- (void)setBadge:(NSInteger)number {
+    if (number == 0) {
+        [badge setHidden:YES];
+    }
+    else {
+        [badge setHidden:NO];
+        [badge setNumber:number];
+    }
+}
+@end
+
+@implementation BadgeView {
+    NSInteger badgeNum;
+}
+
+- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
+    
+    //填充色
+    UIColor *red = [UIColor redColor];
+    [red set];
+    UIBezierPath *bPath = [UIBezierPath bezierPathWithOvalInRect:rect];
+    [bPath fill];
+    
+    UIFont *font = [UIFont systemFontOfSize:12.0];
+    NSMutableParagraphStyle *style = [NSMutableParagraphStyle new];
+    style.alignment = NSTextAlignmentCenter;
+    NSString *numStr = [NSString stringWithFormat:@"%ld", (long)badgeNum];
+    [numStr drawInRect:rect withAttributes:@{NSFontAttributeName : font,
+                                                  NSForegroundColorAttributeName : [UIColor whiteColor],
+                                                  NSParagraphStyleAttributeName : style
+                                                  }];
+}
+
+- (void)setNumber:(NSInteger)number {
+    badgeNum = number;
+    
+    [self setNeedsDisplay];
+}
+@end

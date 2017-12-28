@@ -1,0 +1,21 @@
+//
+//  ProductSpecificationView.h
+//  weidong
+//
+//  Created by zhccc on 2017/11/18.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "ProductDetail.h"
+
+@protocol ProductSpecificationDelegate <NSObject>
+- (void)closeSpecView;
+- (void)addOrderToShopCart;
+@end
+
+@interface ProductSpecificationView : UIView
+@property(nonatomic, weak) id<ProductSpecificationDelegate> delegate;
+
+- (void)setupWithProduct:(ProductDetail *)productDetail;
+@end

@@ -1,0 +1,22 @@
+//
+//  ProductMainView.h
+//  weidong
+//
+//  Created by zhccc on 2017/11/18.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "ProductDetail.h"
+
+@protocol ProductMainPageDelegate <NSObject>
+- (void)showProductSpecifications;
+@end
+
+
+@interface ProductMainView : UIView
+
+@property(nonatomic, weak) id<ProductMainPageDelegate> delegate;
+
+- (void)setupWithProduct:(ProductDetail *)detail;
+@end

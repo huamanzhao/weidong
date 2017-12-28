@@ -1,0 +1,30 @@
+//
+//  CategoryPrimaryCell.h
+//  weidong
+//
+//  Created by zhccc on 2017/10/23.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "CategoryInfo.h"
+
+#define CATEGORYPRIMARY_CELLID @"categoryPrimaryID"
+
+@protocol CetegoryPrimaryDelegate <NSObject>
+- (void)selectPrimaryCategory:(CategoryInfo *)category;
+- (void)selectChildCategory:(CategoryInfo *)category;
+@end
+
+@interface CategorySubCell : UICollectionViewCell
+- (void)setupWithTitle: (NSString *)title;
+@end
+
+@interface CategoryPrimaryCell : UITableViewCell <UICollectionViewDelegate, UICollectionViewDataSource>
+@property (weak, nonatomic) IBOutlet UIButton *titleBtn;
+@property (weak, nonatomic) IBOutlet UICollectionView *colletion;
+@property (nonatomic, weak) id<CetegoryPrimaryDelegate> delegate;
+
+- (void)setupWithCategory:(CategoryInfo *)category;
+
+@end

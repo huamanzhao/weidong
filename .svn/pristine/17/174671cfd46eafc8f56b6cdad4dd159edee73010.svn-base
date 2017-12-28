@@ -1,0 +1,182 @@
+//
+//  LoginViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/10/6.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "LoginViewController.h"
+#import "VerifyCodeView.h"
+#import "GetVerifyCodeRequest.h"
+#import "CheckVerifyCodeRequest.h"
+#import "LoginRequest.h"
+#import "RegisterViewController.h"
+
+@interface LoginViewController () <VerifiCodeDelegate>
+
+@property (weak, nonatomic) IBOutlet UIView *centerBgView;
+@property (weak, nonatomic) IBOutlet UIView *nameBgView;
+@property (weak, nonatomic) IBOutlet UIView *avatarBgView;
+@property (weak, nonatomic) IBOutlet UITextField *nameTF;
+
+@property (weak, nonatomic) IBOutlet UIView *passwordBgView;
+@property (weak, nonatomic) IBOutlet UIView *pswImageBgView;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTF;
+
+@property (weak, nonatomic) IBOutlet UIView *verifyBgView;
+@property (weak, nonatomic) IBOutlet UIView *verifyImageBgView;
+@property (weak, nonatomic) IBOutlet VerifyCodeView *verifyCodeView;
+@property (weak, nonatomic) IBOutlet UITextField *verifyTF;
+
+@property (weak, nonatomic) IBOutlet UIButton *rememberBtn;
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+@property (weak, nonatomic) IBOutlet UIButton *registBtn;
+@property (weak, nonatomic) IBOutlet UIButton *forgetBtn;
+
+@end
+
+@implementation LoginViewController {
+    NSArray *tempArray;
+    NSInteger index;
+    NSString * serverVerify;
+    BOOL needRemember;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.title = @"会员登录";
+    [self initNaviBackButton];
+    
+    [self initLayout];
+    
+    _verifyCodeView.delegate = self;
+    index = 0;
+    serverVerify = @"";
+    needRemember = NO;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [_verifyCodeView setupWithCode:@"12SH"];
+    [self getVerifyCode];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)initLayout {
+    [_centerBgView setRoundCorner];
+    [_centerBgView setShadowLayer];
+}
+
+- (void)naviLeftBarItemPressed {
+    UITabBarController *tabController = [Util getMainTabbarController];
+    if (tabController) {
+        [tabController setSelectedIndex:0];
+    }
+}
+
+- (IBAction)rememberBtnPressed:(id)sender {
+    needRemember = !needRemember;
+    
+    if (needRemember) {
+        [_rememberBtn setImage:UIImageWithName(@"btn_checked") forState:UIControlStateNormal];
+    }
+    else {
+        [_rememberBtn setImage:UIImageWithName(@"btn_uncheck") forState:UIControlStateNormal];
+    }
+}
+
+- (IBAction)loginBtnPressed:(id)sender {
+    if (STRING_NULL(_nameTF.text)) {
+        [SVProgressHUD showErrorWithStatus:@"用户名不能为空"];
+        return;
+    }
+    if (STRING_NULL(_passwordTF.text)) {
+        [SVProgressHUD showErrorWithStatus:@"密码不能为空"];
+        return;
+    }
+    if (STRING_NULL(_verifyTF.text)) {
+        [SVProgressHUD showErrorWithStatus:@"验证码不能为空"];
+        return;
+    }
+    
+    [self checkVerifyCode];
+}
+
+- (IBAction)registerBtnPressed:(id)sender {
+    RegisterViewController *registerVC = [RegisterViewController new];
+    [self.navigationController pushViewController:registerVC animated:YES];
+}
+
+- (IBAction)forgetBtnPressed:(id)sender {
+    [SVProgressHUD showInfoWithStatus:@"正在开发中，稍候开放"];
+}
+
+- (void)needChangeVerifyCode {
+    serverVerify = @"";
+    [self getVerifyCode];
+}
+
+//请求验证码
+- (void)getVerifyCode {
+    GetVerifyCodeRequest *request = [GetVerifyCodeRequest new];
+    request.type = VerifyCodeType_Login;
+    [request excuteRequst:^(Boolean isOK, NSString *verifyCode, NSString * _Nullable errorMsg) {
+        if (isOK) {
+            serverVerify = verifyCode;
+            [_verifyCodeView setupWithCode:verifyCode];
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat: @"请求验证码失败：%@", errorMsg]];
+        }
+    }];
+}
+
+//验证验证码
+- (void)checkVerifyCode {
+    [SVProgressHUD showWithStatus:@"正在验证"];
+    
+    CheckVerifyCodeRequest *request = [CheckVerifyCodeRequest new];
+    request.type = VerifyCodeType_Login;
+    request.verifyCode = _verifyTF.text;
+    [request excuteRequst:^(Boolean isOK, NSString * _Nullable errorMsg) {
+        [SVProgressHUD dismiss];
+        if (isOK) {
+            [self loginTask];
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat: @"验证码验证失败"]];
+        }
+    }];
+}
+
+//执行登录
+- (void)loginTask {
+    [SVProgressHUD showWithStatus:@"正在登录"];
+    LoginRequest *request = [LoginRequest new];
+    request.login_name = _nameTF.text;
+    request.password = _passwordTF.text;
+    [request excuteRequst:^(Boolean isOK, NSString *token, NSString *expireTime, NSString * _Nullable errorMsg) {
+        [SVProgressHUD dismiss];
+        if (isOK) {
+            [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+            
+            [Util setAutoLogin:needRemember];
+            [Util updateLoginInfo:_nameTF.text Token:token ExpireTime:expireTime Pswd:_passwordTF.text];
+            
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat: @"登录失败：%@",errorMsg]];
+        }
+    }];
+}
+
+
+@end

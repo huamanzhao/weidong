@@ -1,0 +1,27 @@
+//
+//  CategoryInfo.m
+//  weidong
+//
+//  Created by zhccc on 2017/10/15.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "CategoryInfo.h"
+#import <MJExtension/MJExtension.h>
+
+@implementation CategoryInfo
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [CategoryInfo mj_setupObjectClassInArray:^NSDictionary *{
+            return @{
+                     @"childList" : @"CategoryInfo",
+                     @"productList" : @"CategoryInfo"
+                     };
+        }];
+    }
+    return self;
+}
+
+@end

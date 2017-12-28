@@ -1,0 +1,77 @@
+//
+//  PrimaryFuncCell.m
+//  GZDefence
+//
+//  Created by zhccc on 2017/8/24.
+//  Copyright © 2017年 wxy. All rights reserved.
+//
+
+#import "PrimaryFuncCell.h"
+#import "Util.h"
+
+@implementation PrimaryFuncCell
+- (void)awakeFromNib {
+    [super awakeFromNib];
+}
+
+- (void)setupPrimaryCell: (NSInteger)row {
+    NSString *imageName;
+    NSString *title;
+    
+    switch (row) {
+        case 0:
+            imageName = @"default";
+            title = @"积分乐园";
+            break;
+            
+        case 1:
+            imageName = @"default";
+            title = @"充值中心";
+            break;
+            
+        case 2:
+            imageName = @"default";
+            title = @"办公电器";
+            break;
+            
+        case 3:
+            imageName = @"default";
+            title = @"平板来袭";
+            break;
+            
+        case 4:
+            imageName = @"default";
+            title = @"手机专场";
+            break;
+            
+        case 5:
+            imageName = @"default";
+            title = @"心随乐动";
+            break;
+            
+        case 6:
+            imageName = @"default";
+            title = @"发现好货";
+            break;
+            
+        case 7:
+            imageName = @"default";
+            title = @"乐享世界";
+            break;
+            
+        default:
+            break;
+    }
+    
+    self.centerImage.image = UIImageWithName(imageName);
+    self.titleLabel.text = title;
+    self.titleLabel.textColor = [UIColor darkTextColor];
+}
+
+- (void)setupCellWithTitle: (NSString *)title Image:(NSString *)name {
+    self.centerImage.image = UIImageWithName(name);
+    self.titleLabel.text = title;
+    self.titleLabel.textColor = [UIColor darkTextColor];
+}
+
+@end

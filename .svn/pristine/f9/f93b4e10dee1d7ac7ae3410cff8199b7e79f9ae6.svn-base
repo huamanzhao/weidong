@@ -1,0 +1,22 @@
+//
+//  ProductConsultsView.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/18.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "ProductConsultsView.h"
+
+@implementation ProductConsultsView
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        self = [[NSBundle mainBundle] loadNibNamed:@"ProductConsultsView" owner:self options:nil].firstObject;
+        self.frame = frame;
+    }
+    return self;
+}
+
+@end

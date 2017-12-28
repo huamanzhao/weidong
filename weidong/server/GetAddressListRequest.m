@@ -1,0 +1,50 @@
+//
+//  GetAddressListRequest.m
+//  weidong
+//
+//  Created by zhccc on 2017/10/8.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "GetAddressListRequest.h"
+
+@implementation GetAddressListResponse
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [GetAddressListResponse mj_setupObjectClassInArray:^NSDictionary *{
+            return @{
+                     @"list" : @"DeliverAddressInfo",
+                     };
+        }];
+    }
+    return self;
+}
+@end
+
+
+@implementation GetAddressListRequest
+
+- (instancetype)init {
+    self = [super init];
+    
+    if (self) {
+        self.urlString = [SERVER_API_URL_MEMEBER stringByAppendingString:@"getRreceivers"];
+    }
+    
+    return self;
+}
+
+- (void)excuteRequest:(void (^)(BOOL, NSArray * _Nullable, NSString * _Nullable))complete {
+    [self doRequest:^(Boolean isOK, NSDictionary * _Nullable responseDic, NSString * _Nullable errorMsg) {
+        if (isOK) {
+            GetAddressListResponse *response = [GetAddressListResponse mj_objectWithKeyValues:responseDic];
+            complete(YES, response.list, nil);
+        }
+        else {
+            complete(NO, nil, errorMsg);
+        }
+    }];
+}
+
+@end

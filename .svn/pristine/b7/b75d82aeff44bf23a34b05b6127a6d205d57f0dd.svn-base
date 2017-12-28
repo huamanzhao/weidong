@@ -1,0 +1,101 @@
+//
+//  ProductFilterView.m
+//  weidong
+//
+//  Created by zhccc on 2017/10/22.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "ProductFilterView.h"
+#import "Util.h"
+
+@interface WordCollectionCell : UICollectionViewCell
+- (void)setupWithTitle: (NSString *)title;
+@end
+
+@implementation ProductFilterView {
+    NSArray *categoryList;
+    NSArray *wordList;
+    NSString *cellIdentifier;
+}
+
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    cellIdentifier = @"wordIdenfier";
+    
+    _collection.delegate = self;
+    _collection.dataSource = self;
+    [_collection registerClass:[WordCollectionCell class] forCellWithReuseIdentifier:cellIdentifier];
+}
+
+- (IBAction)finishBtnPressed:(id)sender {
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return [categoryList count];
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [wordList count];
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger index = indexPath.row;
+    NSString *title = [wordList objectAtIndex:index];
+    
+    CGFloat cellHeight = 26;
+    CGSize defaultSize = CGSizeMake(800, cellHeight);
+    CGSize realSize  = [Util getTextBoundSize:title Font:[UIFont systemFontOfSize:14.0] Size:defaultSize];
+    CGFloat cellWidth = realSize.width + 16;
+    
+    return CGSizeMake(cellWidth, cellHeight);
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger index = indexPath.row;
+    NSString *title = [wordList objectAtIndex:index];
+    
+    WordCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    [cell setupWithTitle:title];
+    
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger row = indexPath.row;
+}
+
+@end
+
+@implementation WordCollectionCell {
+    UILabel *titleLabel;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.layer.borderWidth = 1.0;
+    self.layer.cornerRadius = 4.0;
+    
+    titleLabel = [UILabel new];
+    titleLabel.font = [UIFont systemFontOfSize:14.0];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.textColor = [UIColor darkTextColor];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    [self addSubview:titleLabel];
+    
+    return self;
+}
+
+- (void)layoutSubviews {
+    titleLabel.frame = self.bounds;
+}
+
+- (void)setupWithTitle: (NSString *)title {
+    titleLabel.text = title;
+}
+
+@end

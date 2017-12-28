@@ -1,0 +1,114 @@
+//
+//  CategoryPrimaryCell.m
+//  weidong
+//
+//  Created by zhccc on 2017/10/23.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+#import "CategoryPrimaryCell.h"
+#import "CategoryInfo.h"
+
+
+
+@interface CategorySubCell : UICollectionViewCell
+- (void)setupWithTitle: (NSString *)title;
+@end
+
+
+@implementation CategoryPrimaryCell {
+    NSString *cellId;
+    CategoryInfo *myCategory;
+    CGFloat itemHeight;
+    CGFloat margin;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    cellId = @"collectionID";
+    [_colletion registerClass:[CategorySubCell class] forCellWithReuseIdentifier:cellId];
+    
+    itemHeight = 36;
+    margin = 6;
+}
+
+- (void)layoutSubviews {
+    
+}
+
+- (void)setupWithCategory:(CategoryInfo *)category {
+    myCategory = category;
+    [_titleBtn setTitle:category.name forState:UIControlStateNormal];
+    
+    NSInteger count = [myCategory.childList count];
+    NSInteger rows = count / 3 + 1;
+    _cellHeightCS.constant = rows * itemHeight + (rows - 1) * margin;
+    [self layoutIfNeeded];
+    
+    [_colletion reloadData];
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [myCategory.childList count];
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CategorySubCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
+    
+    CategoryInfo *subCategory = [myCategory.childList objectAtIndex:indexPath.row];
+    [cell setupWithTitle:subCategory.name];
+    
+    return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat collectionWidth = SCREEN_WIDTH * 0.75;
+    CGFloat spaceTotalWidth = _horzLeadingCS.constant + _horzTrailingCS.constant + margin * 2 - 1;
+    CGFloat itemWidth = (collectionWidth - spaceTotalWidth) / 3;
+    
+    return CGSizeMake(itemWidth, itemHeight);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    CategoryInfo *subCategory = [myCategory.childList objectAtIndex:indexPath.row];
+    
+    if (self.delegate) {
+        [self.delegate selectChildCategory:subCategory];
+    }
+}
+
+- (IBAction)titleBtnPressed:(id)sender {
+    if (self.delegate) {
+        [self.delegate selectChildCategory:myCategory];
+    }
+}
+
+@end
+
+
+@implementation CategorySubCell {
+    UILabel *titleLabel;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    
+    titleLabel = [UILabel new];
+    titleLabel.font = [UIFont systemFontOfSize:14.0];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.textColor = [UIColor darkGrayColor];
+    [self addSubview:titleLabel];
+    self.backgroundColor = [UIColor whiteColor];
+    
+    return self;
+}
+
+- (void)layoutSubviews {
+    titleLabel.frame = self.bounds;
+}
+
+- (void)setupWithTitle: (NSString *)title {
+    titleLabel.text = title;
+}
+
+@end

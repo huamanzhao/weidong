@@ -1,0 +1,47 @@
+//
+//  MemberMainViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/9/29.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "MemberMainViewController.h"
+#import "LoginViewController.h"
+
+@interface MemberMainViewController ()
+
+@end
+
+@implementation MemberMainViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    
+    self.view.backgroundColor = [UIColor grayColor];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if (![Util userIsLogin]) {
+        [self openLoginController];
+        return;
+    }
+    
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)openLoginController {
+    LoginViewController *loginVC = [LoginViewController new];
+    loginVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:loginVC animated:NO];
+}
+
+@end

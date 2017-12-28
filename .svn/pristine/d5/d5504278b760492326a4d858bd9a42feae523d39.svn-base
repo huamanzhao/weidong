@@ -1,0 +1,47 @@
+//
+//  ChangePswdViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/3.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "ChangePswdViewController.h"
+
+@interface ChangePswdViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *currentPswdTF;
+@property (weak, nonatomic) IBOutlet UITextField *freshPswdTF;
+@property (weak, nonatomic) IBOutlet UITextField *confirmPswdTF;
+@property (weak, nonatomic) IBOutlet UIButton *okBtn;
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+
+@end
+
+@implementation ChangePswdViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self initSubviewLayout];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)initSubviewLayout {
+    [_currentPswdTF setRoundBorder];
+    [_freshPswdTF setRoundBorder];
+    [_confirmPswdTF setRoundBorder];
+    [_okBtn setRoundCorner];
+    [_backBtn setRoundCorner];
+}
+
+- (IBAction)okBtnPressed:(id)sender {
+}
+
+- (IBAction)backBtnPressed:(id)sender {
+}
+
+@end

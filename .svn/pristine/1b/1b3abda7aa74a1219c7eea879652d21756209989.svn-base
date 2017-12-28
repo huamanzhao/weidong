@@ -1,0 +1,42 @@
+//
+//  ArrivalNoticeListViewController.m
+//  weidong
+//
+//  Created by zhccc on 2017/12/11.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "ArrivalNoticeListViewController.h"
+
+@interface ArrivalNoticeListViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UIView *emptyView;
+@property (weak, nonatomic) IBOutlet UITableView *table;
+
+@end
+
+@implementation ArrivalNoticeListViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.title = @"到货通知";
+    [self initNaviBackButton];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars=NO;
+    
+    [_table setHidden:YES];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return nil;
+}
+
+@end

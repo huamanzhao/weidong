@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MemberTitleView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您好，" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnA-0y-c6O">
+                    <rect key="frame" x="16" y="11" width="46" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEO-qg-uhg">
+                    <rect key="frame" x="62" y="11" width="14" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="1" green="0.2168156295" blue="0.066164439539999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="普通会员" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVB-Kx-Rfy">
+                    <rect key="frame" x="297" y="11" width="61.5" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="1" green="0.2168156295" blue="0.066164439539999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未实名认证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOq-kG-sgP">
+                    <rect key="frame" x="212" y="11" width="76.5" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="1" green="0.2168156295" blue="0.066164439539999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="pOq-kG-sgP" firstAttribute="centerY" secondItem="dVB-Kx-Rfy" secondAttribute="centerY" id="Jn9-WT-lYS"/>
+                <constraint firstItem="qnA-0y-c6O" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Kg9-83-SFJ"/>
+                <constraint firstItem="dVB-Kx-Rfy" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="QGR-Od-NJy"/>
+                <constraint firstItem="lEO-qg-uhg" firstAttribute="leading" secondItem="qnA-0y-c6O" secondAttribute="trailing" id="YGp-t2-kER"/>
+                <constraint firstItem="dVB-Kx-Rfy" firstAttribute="leading" secondItem="pOq-kG-sgP" secondAttribute="trailing" constant="8" id="bAx-s9-WQJ"/>
+                <constraint firstItem="lEO-qg-uhg" firstAttribute="centerY" secondItem="qnA-0y-c6O" secondAttribute="centerY" id="fXj-ld-Gl1"/>
+                <constraint firstItem="qnA-0y-c6O" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="mjn-aF-aN4"/>
+                <constraint firstAttribute="trailing" secondItem="dVB-Kx-Rfy" secondAttribute="trailing" constant="16.5" id="pyF-KL-Khw"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="memberLabel" destination="dVB-Kx-Rfy" id="ush-I8-d60"/>
+                <outlet property="nameLabel" destination="lEO-qg-uhg" id="218-lI-EJ5"/>
+                <outlet property="verifyLabel" destination="pOq-kG-sgP" id="PRl-5w-MXt"/>
+            </connections>
+        </view>
+    </objects>
+</document>

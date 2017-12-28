@@ -1,0 +1,51 @@
+//
+//  MemberFunctionView.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/5.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "MemberFunctionView.h"
+
+@implementation MemberFunctionView {
+    UIView *nibView;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        nibView = [[NSBundle mainBundle] loadNibNamed:@"MemberFunctionView" owner:self options:nil].firstObject;
+        nibView.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
+        [self addSubview:nibView];
+        
+        [_favoriteBtn setTitle:@"商品收藏" forState:UIControlStateNormal];
+    }
+    return self;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+}
+
+- (void)layoutSubviews {
+    [_favoriteBtn adjustItemsUpDown];
+    [_deliveryBtn adjustItemsUpDown];
+    [_commentBtn adjustItemsUpDown];
+    [_ConsulteBtn adjustItemsUpDown];
+    
+    [_favoriteBtn setBadgeNumber:9];
+}
+
+- (IBAction)favariteBtnPressed:(id)sender {
+}
+
+- (IBAction)deliveryBtnPressed:(id)sender {
+}
+
+- (IBAction)commentBtnPressed:(id)sender {
+}
+
+- (IBAction)consultBtnPressed:(id)sender {
+}
+@end

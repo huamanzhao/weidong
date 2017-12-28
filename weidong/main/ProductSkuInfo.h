@@ -1,0 +1,24 @@
+//
+//  ProductSkuInfo.h
+//  weidong
+//
+//  Created by zhccc on 2017/10/29.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+//  商品规格
+
+#import <Foundation/Foundation.h>
+
+@interface ProductSkuInfo : NSObject
+@property(nonatomic, copy)NSString *id; //规格名称
+@property(nonatomic, copy)NSString *value; //规格指
+@property(nonatomic, assign)BOOL isSelected; //是否选中
+@property(nonatomic, copy)NSString *marketPrice;//商场售价
+@property(nonatomic, copy)NSString *price;      //价格
+@property(nonatomic, assign)NSInteger stock;    //商品库存
+@property(nonatomic, assign)NSInteger allocatedStock; //锁定库存
+@property(nonatomic, assign)NSInteger rewardPoint;  //赠送积分
+@property(nonatomic, copy)NSString *sn; //SN
+@property(nonatomic, copy)NSArray *specificationValues;
+
+@end

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductFavoriteListViewController">
+            <connections>
+                <outlet property="emptyView" destination="Zhv-B6-0eS" id="y27-35-aKq"/>
+                <outlet property="table" destination="Cho-JL-Ct8" id="luh-o4-scc"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zhv-B6-0eS">
+                    <rect key="frame" x="0.0" y="32" width="375" height="48"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBr-BX-vOi">
+                            <rect key="frame" x="38.5" y="23.5" width="112.5" height="1"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="jhx-0u-TFS"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无记录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6P-TY-x8a">
+                            <rect key="frame" x="159" y="15.5" width="57.5" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xs0-MI-gvY">
+                            <rect key="frame" x="224.5" y="23.5" width="112.5" height="1"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="gm6-Z9-UIt"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="A6P-TY-x8a" firstAttribute="centerY" secondItem="Zhv-B6-0eS" secondAttribute="centerY" id="3Eo-Lo-nUW"/>
+                        <constraint firstItem="PBr-BX-vOi" firstAttribute="centerY" secondItem="Zhv-B6-0eS" secondAttribute="centerY" id="5b0-89-koo"/>
+                        <constraint firstItem="PBr-BX-vOi" firstAttribute="width" secondItem="Zhv-B6-0eS" secondAttribute="width" multiplier="0.3" id="AQv-IW-M01"/>
+                        <constraint firstItem="A6P-TY-x8a" firstAttribute="leading" secondItem="PBr-BX-vOi" secondAttribute="trailing" constant="8" id="QGb-34-7mY"/>
+                        <constraint firstItem="xs0-MI-gvY" firstAttribute="centerY" secondItem="Zhv-B6-0eS" secondAttribute="centerY" id="SQi-kq-Wdg"/>
+                        <constraint firstItem="xs0-MI-gvY" firstAttribute="width" secondItem="PBr-BX-vOi" secondAttribute="width" id="WeP-yS-3F7"/>
+                        <constraint firstItem="A6P-TY-x8a" firstAttribute="centerX" secondItem="Zhv-B6-0eS" secondAttribute="centerX" id="bno-MS-emu"/>
+                        <constraint firstItem="xs0-MI-gvY" firstAttribute="leading" secondItem="A6P-TY-x8a" secondAttribute="trailing" constant="8" id="d7D-bm-OOX"/>
+                        <constraint firstAttribute="height" constant="48" id="lTf-Ey-cim"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="88" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Cho-JL-Ct8">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="dss-jl-5zP"/>
+                        <outlet property="delegate" destination="-1" id="Zio-QJ-D9E"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Zhv-B6-0eS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="C5Y-qy-1mo"/>
+                <constraint firstAttribute="top" secondItem="Zhv-B6-0eS" secondAttribute="top" constant="-32" id="JaB-Il-hf5"/>
+                <constraint firstItem="Cho-JL-Ct8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cSr-lR-cvU"/>
+                <constraint firstItem="Zhv-B6-0eS" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="f5w-Fk-Wbq"/>
+                <constraint firstItem="Cho-JL-Ct8" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="juI-iv-qKk"/>
+                <constraint firstItem="Cho-JL-Ct8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xtm-bJ-Owu"/>
+                <constraint firstItem="Cho-JL-Ct8" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="y6h-Z1-mvc"/>
+            </constraints>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
+        </view>
+    </objects>
+</document>

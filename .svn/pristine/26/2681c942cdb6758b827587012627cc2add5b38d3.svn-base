@@ -1,0 +1,17 @@
+//
+//  CollectionTableViewCell.h
+//  weidong
+//
+//  Created by zhccc on 2017/10/5.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+#define COLLECTION_CELL_ID @"collectionCellIdenfier"
+
+@interface CollectionTableViewCell : UITableViewCell <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collection;
+
+@end

@@ -1,0 +1,144 @@
+//
+//  NavibarSearchView.m
+//  weidong
+//
+//  Created by zhccc on 2017/10/19.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "NavibarSearchView.h"
+#import "SVProgressHUD.h"
+#import "Util.h"
+
+@implementation NavibarSearchView {
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        UIView *base = [[NSBundle mainBundle] loadNibNamed:@"NavibarSearchView" owner:self options:nil][0];
+        base.frame = self.bounds;
+        [self addSubview:base];
+    }
+    
+    return self;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    _searchBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    _searchBtn.layer.borderWidth = 1.0;
+    
+    _searchBgView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    _searchBgView.layer.borderWidth = 1.0;
+    _searchBgView.layer.cornerRadius = 4.0;
+    _searchBgView.layer.masksToBounds = YES;
+    
+    [self adjustButtonLayout:_complexBtn];
+    [self adjustButtonLayout:_salesBtn];
+    [self adjustButtonLayout:_scoreBtn];
+    [self adjustButtonLayout:_filterBtn];
+    
+    _funcView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+    _funcView.layer.shadowOpacity = 0.5;
+    _funcView.layer.shadowOffset = CGSizeMake(2, 4);
+    _funcView.layer.shadowRadius = 4.0;
+}
+
+//调整按钮图片文字位置：文字在左 图片在右
+- (void)adjustButtonLayout: (UIButton *)button {
+    CGFloat imageWidth = button.imageView.frame.size.width;
+    CGFloat titleWidth = button.titleLabel.frame.size.width;
+    button.imageEdgeInsets = UIEdgeInsetsMake(0, titleWidth, 0, -titleWidth);
+    button.titleEdgeInsets = UIEdgeInsetsMake(0, -imageWidth, 0, imageWidth);
+    button.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;//使图片和文字水平垂直显示
+    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;//使图片和文字水平垂直显示
+}
+
+- (IBAction)backBtnPressed:(id)sender {
+    if (self.delegate) {
+        [self.delegate popViewController];
+    }
+}
+
+- (IBAction)searchBtnPressed:(id)sender {
+    NSString *searchKey = _searchTF.text;
+    if (STRING_NULL(searchKey)) {
+        [SVProgressHUD showErrorWithStatus:@"请输入搜索关键字"];
+        return;
+    }
+    
+    if (self.delegate) {
+        [self.delegate searchProductWithKey:searchKey];
+    }
+}
+
+- (IBAction)tabBtnPressed:(id)sender {
+    if (self.delegate) {
+        [self.delegate showFuncDropdownView];
+    }
+}
+
+- (IBAction)complexBtnPressed:(id)sender {
+    if (self.delegate) {
+        [self.delegate showSortDropdownView];
+    }
+}
+
+- (IBAction)salesBtnPressed:(id)sender {
+    if (self.delegate) {
+        [self.delegate setSearchSortType:OrderType_SalesDesc];
+    }
+    
+    [self.salesBtn setTitleColor:POSITIVE_COLOR forState:UIControlStateNormal];
+    [self.scoreBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
+    [self updateComplexType:nil];
+}
+
+- (IBAction)scoreBtnPressed:(id)sender {
+    if (self.delegate) {
+        [self.delegate setSearchSortType:OrderType_ScoreDesc];
+    }
+    
+    [self.scoreBtn setTitleColor:POSITIVE_COLOR forState:UIControlStateNormal];
+    [self.salesBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
+    [self updateComplexType:nil];
+}
+
+- (IBAction)filterBtnPressed:(id)sender {
+}
+
+- (void)setSearchTitle:(NSString *)title {
+    self.searchTF.text = title;
+}
+
+- (void)updateComplexType:(NSString *)type {
+    if (!STRING_NULL(type)) {
+        [self.complexBtn setTitle:type forState:UIControlStateNormal];
+        [self.complexBtn setTitleColor:POSITIVE_COLOR forState:UIControlStateNormal];
+        
+        [self.salesBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
+        [self.scoreBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
+    }
+    else {
+        [self.complexBtn setTitle:@"综合" forState:UIControlStateNormal];
+        [self.complexBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
+    }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    
+    if (STRING_NULL(_searchTF.text)) {
+        return YES;
+    }
+    NSString *title = _searchTF.text;
+    if (self.delegate) {
+        [self.delegate searchProductWithKey:title];
+    }
+    
+    return YES;
+}
+
+@end

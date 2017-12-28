@@ -1,0 +1,19 @@
+//
+//  FavoriteProductCell.h
+//  weidong
+//
+//  Created by zhccc on 2017/11/8.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+#define FAVORITE_CELLID @"favoriteId"
+
+@protocol FavoriteProductCellDelegate <NSObject>
+- (void)removeProductWithId:(NSString *)productId;
+@end
+
+@interface FavoriteProductCell : UITableViewCell
+
+@end

@@ -1,0 +1,13 @@
+//
+//  CartItemInfo.m
+//  weidong
+//
+//  Created by zhccc on 2017/11/19.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import "CartItemInfo.h"
+
+@implementation CartItemInfo
+
+@end

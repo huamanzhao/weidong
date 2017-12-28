@@ -1,0 +1,23 @@
+//
+//  RegisterRequest.h
+//  weidong
+//
+//  Created by zhccc on 2017/10/8.
+//  Copyright © 2017年 zhccc. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "RequestBase.h"
+
+@interface RegisterRequest : RequestBase
+@property(nonatomic, copy)NSString *username;//用户登录名
+@property(nonatomic, copy)NSString *password;//密码
+@property(nonatomic, copy)NSString *email;   //用户邮箱
+@property(nonatomic, copy)NSString *mobile;  //手机号码
+@property(nonatomic, assign)NSInteger gender;   //性别 0-男 1-女
+@property(nonatomic, copy)NSString *phone;      //电话号码
+@property(nonatomic, copy)NSString *memberAttribute_1;  //用户姓名
+@property(nonatomic, copy)NSString *memberAttribute_51; //用户身份证号
+
+- (void)excuteRequest:(void (^_Nonnull)(BOOL isOK, NSString * _Nullable errorMsg))complete;
+@end
