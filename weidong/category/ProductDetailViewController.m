@@ -53,18 +53,25 @@
     
     NSInteger currState;    //0-商品首页；1-商品详情；2-商品评价；3-咨询界面
     BOOL didPressedConsult;
+    BOOL specShow;
     
     CGFloat transHeight;
     CGFloat specHeight;
+    
+    BOOL firstAppear;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"商品信息";
     [self initNaviBackButton];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars=NO;
     
     currState = 0;
     didPressedConsult = NO;
+    firstAppear = YES;
+    specShow = NO;
     
     [self initSubViews];
 }
@@ -75,6 +82,10 @@
     [self getProductDetailInfo];
     [self getProductCommentsList];
     [self getProductConsulations];
+    
+    if (firstAppear && !_showComment && !_showConsulation) {
+        [self initPosition];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -96,8 +107,6 @@
     [self setupHeaderViews];
     self.mainView.clipsToBounds = YES;
     
-    transHeight = self.mainView.bounds.size.height;
-    
     //商品首页
     _homeView = [[ProductMainView alloc] initWithFrame:self.mainView.bounds];
     _homeView.delegate = self;
@@ -107,19 +116,16 @@
     _detailView = [[ProductDetailView alloc] initWithFrame:self.mainView.bounds];
     _detailView.delegate = self;
     [self.mainView addSubview:_detailView];
-    _detailView.transform = CGAffineTransformTranslate(_detailView.transform, 0, transHeight);
     
     //商品评论列表
     _commentView = [[ProductCommentsView alloc] initWithFrame:self.mainView.bounds];
     _commentView.delegate = self;
     [self.mainView addSubview:_commentView];
-    _commentView.transform = CGAffineTransformTranslate(_commentView.transform, 0, transHeight);
     
     //商品咨询列表
     _consultView = [[ProductConsultsView alloc] initWithFrame:self.mainView.bounds];
     _consultView.delegate = self;
     [self.mainView addSubview:_consultView];
-    _consultView.transform = CGAffineTransformTranslate(_consultView.transform, 0, transHeight);
     
     [self.mainView bringSubviewToFront:_homeView];
     
@@ -131,6 +137,13 @@
     _bottomView.layer.shadowRadius = 4.0;
     _bottomView.layer.shadowOpacity = 0.5;
     _bottomView.layer.shadowOffset = CGSizeMake(4, -4);
+}
+
+- (void)initPosition {
+    transHeight = self.mainView.bounds.size.height;
+    _detailView.transform = CGAffineTransformTranslate(_detailView.transform, 0, transHeight);
+    _commentView.transform = CGAffineTransformTranslate(_commentView.transform, 0, transHeight);
+    _consultView.transform = CGAffineTransformTranslate(_consultView.transform, 0, transHeight);
 }
 
 //MARK: 网络请求
@@ -257,6 +270,11 @@
 
 //MARK: ProductDetailRefreshDelegate
 - (void)showProductSpecifications {
+    if (specShow) {
+        return;
+    }
+    specShow = YES;
+    
     CGFloat specWidth = SCREEN_WIDTH;
     specHeight = specWidth * 0.8;
     CGFloat specY = self.view.bounds.size.height - specHeight;
@@ -275,6 +293,11 @@
 
 //MARK: ProductSpecificationDelegate
 - (void)closeSpecView {
+    if (!specShow) {
+        return;
+    }
+    specShow = NO;
+    
     [self moveVerticalTranslateView:_specView Distance:specHeight+30];
 }
 
@@ -312,6 +335,7 @@
     
     currState = 1;
     [self setupHeaderViews];
+    [self closeSpecView];
 }
 
 - (void)showProductComments {
@@ -332,6 +356,7 @@
     
     currState = 2;
     [self setupHeaderViews];
+    [self closeSpecView];
 }
 
 - (void)showProductConsults {
@@ -348,6 +373,7 @@
     
     currState = 3;
     [self setupHeaderViews];
+    [self closeSpecView];
 }
 
 - (void)setupHeaderViews {

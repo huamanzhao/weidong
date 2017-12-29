@@ -26,6 +26,7 @@
     [super awakeFromNib];
     
     webView = [[WKWebView alloc] initWithFrame:self.bounds];
+    webView.contentMode = UIViewContentModeScaleAspectFit;
     [_scroll addSubview:webView];
     
     //下拉切换页面
@@ -67,7 +68,12 @@
     if (STRING_NULL(detail.introduction)) {
         return;
     }
-    [webView loadHTMLString:detail.introduction baseURL:nil];
+    
+    NSString * htmlStyle = @" <style type=\"text/css\"> img{ width: 100%; height: auto; display: block; } </style> ";
+    NSString * htmlStr = detail.introduction;
+    htmlStr = [htmlStr stringByAppendingString:htmlStyle];
+    
+    [webView loadHTMLString:htmlStr baseURL:nil];
 }
 
 @end

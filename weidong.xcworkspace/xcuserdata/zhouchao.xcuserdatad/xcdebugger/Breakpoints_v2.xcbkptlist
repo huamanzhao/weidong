@@ -1876,7 +1876,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/memberCenter/CouponListViewController.m"
-            timestampString = "535937558.077451"
+            timestampString = "536248670.682815"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -1956,11 +1956,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/category/ProductDetailViewController.m"
-            timestampString = "536192967.346364"
+            timestampString = "536249748.248326"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "-getProductCommentsList"
             landmarkType = "7">
          </BreakpointContent>
@@ -1972,11 +1972,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/category/ProductDetailViewController.m"
-            timestampString = "536192967.346778"
+            timestampString = "536249748.248399"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "-getProductConsulations"
             landmarkType = "7">
          </BreakpointContent>
@@ -1988,11 +1988,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/category/ProductDetailViewController.m"
-            timestampString = "536192967.347093"
+            timestampString = "536249748.248456"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
+            startingLineNumber = "315"
+            endingLineNumber = "315"
+            landmarkName = "-showProductHome"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "weidong/category/ProductDetailViewController.m"
+            timestampString = "536249748.248506"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
             landmarkName = "-showProductDetail"
             landmarkType = "7">
          </BreakpointContent>
@@ -2004,11 +2020,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/category/ProductDetailViewController.m"
-            timestampString = "536192967.347399"
+            timestampString = "536249748.248552"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "318"
-            endingLineNumber = "318"
+            startingLineNumber = "353"
+            endingLineNumber = "353"
             landmarkName = "-showProductComments"
             landmarkType = "7">
          </BreakpointContent>
@@ -2020,29 +2036,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/category/ProductDetailViewController.m"
-            timestampString = "536192967.347686"
+            timestampString = "536249748.248598"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "338"
-            endingLineNumber = "338"
-            landmarkName = "-showProductConsults"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "weidong/category/ProductDetailViewController.m"
-            timestampString = "536192967.347975"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "289"
-            endingLineNumber = "289"
-            landmarkName = "-showProductHome"
-            landmarkType = "7">
+            startingLineNumber = "303"
+            endingLineNumber = "303"
+            landmarkName = "ProductDetailViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2180,12 +2180,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/category/ProductDetailViewController.m"
-            timestampString = "536192967.348853"
+            timestampString = "536249748.248743"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
-            landmarkName = "-showProductSpecifications"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
+            landmarkName = "-showCartBtnPressed:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2196,13 +2196,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/category/ProductDetailViewController.m"
-            timestampString = "536192967.349255"
+            timestampString = "536249748.248794"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "-getProductConsulations"
-            landmarkType = "7">
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "ProductDetailViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2212,13 +2212,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/category/ProductDetailViewController.m"
-            timestampString = "536192967.350006"
+            timestampString = "536249748.248841"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "-getProductDetailInfo"
-            landmarkType = "7">
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "ProductDetailViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

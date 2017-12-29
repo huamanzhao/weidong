@@ -149,12 +149,11 @@
     
     if ([urlString hasPrefix:@"weixin://"]) {
         decisionHandler(WKNavigationActionPolicyCancel);
-        
         NSURL *url = [NSURL URLWithString:urlString];
         if ([[UIApplication sharedApplication] canOpenURL:url]) {
             if ([[UIApplication sharedApplication] respondsToSelector:@selector(openURL:options:completionHandler:)]) {
                 [[UIApplication sharedApplication] openURL:url options:@{UIApplicationOpenURLOptionUniversalLinksOnly: @NO} completionHandler:^(BOOL success) {
-                    
+                    NSLog(@"success");
                 }];
             }
             else {
@@ -163,9 +162,6 @@
         }
         return;
     }
-    
-    
-    
     
     //拦截跳转到入口界面的上一级界面
     urlString = [urlString stringByRemovingPercentEncoding];
