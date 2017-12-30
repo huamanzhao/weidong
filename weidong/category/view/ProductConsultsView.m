@@ -35,7 +35,6 @@
     [self bringSubviewToFront:_emptyView];
     
     //下拉切换页面
-    
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         if (self.delegate) {
             [self.delegate showProductComments];

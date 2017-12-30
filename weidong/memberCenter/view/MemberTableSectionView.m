@@ -51,6 +51,9 @@
     else if ([sectionTitle isEqualToString:MEMBER_CHANGEPSW]) {
         [_delegate changePassword];
     }
+    else if ([sectionTitle isEqualToString:MEMBER_CHANGEPAYPSW]) {
+        [_delegate changePayPassword];
+    }
 }
 
 @end

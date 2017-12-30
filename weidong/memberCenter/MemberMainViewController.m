@@ -34,6 +34,8 @@
 #import "OrderListViewController.h"
 #import "CouponListViewController.h"
 #import "MemberTitleView.h"
+#import "ChargeWebViewController.h"
+#import "ModifyPayPasswordViewController.h"
 
 @interface MemberMainViewController () <UITableViewDelegate, UITableViewDataSource, MemberToolsDelegate, MemberLogoutDelegate, MemberTableSectionDelegate, MemberOrderDelegate, MemberFunctionDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *table;
@@ -53,6 +55,8 @@
     [super viewDidLoad];
     [self initStatusBarBGColor];
     [self setTintColor:ZHAO_BLUE];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars=NO;
 
     self.title = @"会员中心";
     
@@ -139,11 +143,11 @@
 
 #pragma mark - tableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 5;
+    return 6;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 2 || section == 3) { //设置、个人资料只有sectionHeader 没有cell
+    if (section == 2 || section == 3|| section == 4) { //设置、个人资料只有sectionHeader 没有cell
         return 0;
     }
     return 1;
@@ -188,6 +192,10 @@
             [sectionView setupWithTitle:MEMBER_CHANGEPSW Image:@"icon_password" Subtitle:@"修改密码" TintColor:nil];
             break;
             
+        case 5: //修改支付密码
+            [sectionView setupWithTitle:MEMBER_CHANGEPAYPSW Image:@"icon_password" Subtitle:@"修改支付密码" TintColor:nil];
+            break;
+            
         default:
             break;
     }
@@ -215,7 +223,7 @@
             return cell;
             break;
         }
-        case 4: {
+        case 5: {
             MemberLogoutCell *cell = [tableView dequeueReusableCellWithIdentifier:LOGOUT_CELLID forIndexPath:indexPath];
             cell.delegate = self;
             return cell;
@@ -246,7 +254,8 @@
 }
 
 - (void)chargeWeidongCoin {
-    ChargeCenterViewController *chargeVC = [ChargeCenterViewController new];
+//    ChargeCenterViewController *chargeVC = [ChargeCenterViewController new];
+    ChargeWebViewController *chargeVC = [ChargeWebViewController new];
     chargeVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:chargeVC animated:YES];
 }
@@ -312,6 +321,12 @@
 
 - (void)changePassword {
     ChangePswdViewController *changeVC = [ChangePswdViewController new];
+    changeVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:changeVC animated:YES];
+}
+
+- (void)changePayPassword {
+    ModifyPayPasswordViewController *changeVC = [ModifyPayPasswordViewController new];
     changeVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:changeVC animated:YES];
 }

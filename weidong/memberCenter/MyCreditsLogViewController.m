@@ -30,6 +30,8 @@
     
     self.title = _showCoinLog ? @"我的微动币" : @"我的积分";
     [self initNaviBackButton];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars=NO;
     
     creditLogList = [NSMutableArray new];
     coinLogList = [NSMutableArray new];

@@ -37,6 +37,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 @property (weak, nonatomic) IBOutlet UIButton *registBtn;
 @property (weak, nonatomic) IBOutlet UIButton *forgetBtn;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *rememberHeightCS;
 
 @end
 
@@ -58,8 +59,11 @@
 //    _verifyCodeView.delegate = self;
     index = 0;
 //    serverVerify = @"";
-    needRemember = NO;
+    needRemember = YES;
     _tabIndex = 0;
+    
+    _rememberBtn.hidden = YES;
+    _rememberHeightCS.constant = 0;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

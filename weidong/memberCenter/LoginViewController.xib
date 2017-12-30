@@ -24,6 +24,7 @@
                 <outlet property="pswImageBgView" destination="qRd-Hc-9fa" id="lMV-9a-Y4B"/>
                 <outlet property="registBtn" destination="OBr-7h-A5X" id="CEm-6g-DuN"/>
                 <outlet property="rememberBtn" destination="UBp-fx-dbt" id="dOP-FT-VSk"/>
+                <outlet property="rememberHeightCS" destination="mBy-7I-swi" id="cpa-vc-XcI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -135,7 +136,7 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgL-JO-Uzc">
-                            <rect key="frame" x="31.5" y="209.5" width="255" height="40"/>
+                            <rect key="frame" x="31.5" y="195.5" width="255" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="pge-L0-Xy2"/>
                             </constraints>
@@ -147,7 +148,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBr-7h-A5X">
-                            <rect key="frame" x="31.5" y="249.5" width="58" height="32"/>
+                            <rect key="frame" x="31.5" y="241.5" width="58" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="pMx-dS-FA0"/>
                             </constraints>
@@ -160,7 +161,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJc-cl-3Xj">
-                            <rect key="frame" x="228.5" y="250.5" width="58" height="29"/>
+                            <rect key="frame" x="228.5" y="242.5" width="58" height="29"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="忘记密码">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -170,7 +171,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBp-fx-dbt">
-                            <rect key="frame" x="31" y="177.5" width="93" height="24"/>
+                            <rect key="frame" x="31" y="163.5" width="93" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="93" id="OMy-sn-e4L"/>
                                 <constraint firstAttribute="height" constant="24" id="mBy-7I-swi"/>
@@ -194,8 +195,8 @@
                         <constraint firstItem="wL4-yc-GCh" firstAttribute="leading" secondItem="cEY-rx-zOn" secondAttribute="leading" id="Pe2-Le-yDC"/>
                         <constraint firstItem="cEY-rx-zOn" firstAttribute="width" secondItem="RbY-X5-Xlp" secondAttribute="width" multiplier="0.8" id="PrF-Wq-SQ8"/>
                         <constraint firstItem="UVM-0j-Zgl" firstAttribute="width" secondItem="RbY-X5-Xlp" secondAttribute="width" multiplier="0.8" id="RLH-BI-z3b"/>
-                        <constraint firstItem="zgL-JO-Uzc" firstAttribute="centerY" secondItem="RbY-X5-Xlp" secondAttribute="centerY" multiplier="1.6" id="UUH-aZ-1i8"/>
-                        <constraint firstItem="OBr-7h-A5X" firstAttribute="top" secondItem="zgL-JO-Uzc" secondAttribute="bottom" id="W5H-TL-G5d"/>
+                        <constraint firstItem="zgL-JO-Uzc" firstAttribute="centerY" secondItem="RbY-X5-Xlp" secondAttribute="centerY" multiplier="1.5" id="UUH-aZ-1i8"/>
+                        <constraint firstItem="OBr-7h-A5X" firstAttribute="top" secondItem="zgL-JO-Uzc" secondAttribute="bottom" constant="6" id="W5H-TL-G5d"/>
                         <constraint firstItem="zgL-JO-Uzc" firstAttribute="width" secondItem="RbY-X5-Xlp" secondAttribute="width" multiplier="0.8" id="WSL-0v-cBX"/>
                         <constraint firstItem="UBp-fx-dbt" firstAttribute="leading" secondItem="zgL-JO-Uzc" secondAttribute="leading" id="Wew-TF-m7F"/>
                         <constraint firstItem="UVM-0j-Zgl" firstAttribute="centerX" secondItem="RbY-X5-Xlp" secondAttribute="centerX" id="X7r-YC-b3l"/>

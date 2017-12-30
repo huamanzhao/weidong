@@ -114,14 +114,14 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1h-U6-V7A">
-                    <rect key="frame" x="0.0" y="41" width="375" height="577"/>
+                    <rect key="frame" x="0.0" y="41" width="375" height="573"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FWP-nv-qsx">
-                    <rect key="frame" x="0.0" y="619" width="375" height="48"/>
+                    <rect key="frame" x="0.0" y="615" width="375" height="52"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lps-nF-u0V">
-                            <rect key="frame" x="225" y="0.0" width="150" height="48"/>
+                            <rect key="frame" x="225" y="0.0" width="150" height="52"/>
                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <state key="normal" title="加入购物车">
@@ -132,7 +132,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqO-DC-lbM">
-                            <rect key="frame" x="0.5" y="0.5" width="75" height="48"/>
+                            <rect key="frame" x="0.5" y="0.5" width="75" height="52"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="首页" image="bar_home">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -142,7 +142,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNI-D2-LdY">
-                            <rect key="frame" x="75" y="0.0" width="75" height="48"/>
+                            <rect key="frame" x="75" y="0.0" width="75" height="52"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="收藏" image="bar_favorite">
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -152,7 +152,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gkx-Fv-a6t">
-                            <rect key="frame" x="150" y="0.0" width="75" height="48"/>
+                            <rect key="frame" x="150" y="0.0" width="75" height="52"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="购物车" image="bar_chart">
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -171,7 +171,7 @@
                         <constraint firstItem="qNI-D2-LdY" firstAttribute="centerY" secondItem="FWP-nv-qsx" secondAttribute="centerY" id="SNC-Xi-iEE"/>
                         <constraint firstItem="TqO-DC-lbM" firstAttribute="centerX" secondItem="FWP-nv-qsx" secondAttribute="centerX" multiplier="0.2" id="WXd-MN-dXb"/>
                         <constraint firstItem="Gkx-Fv-a6t" firstAttribute="width" secondItem="qNI-D2-LdY" secondAttribute="width" id="Xrl-bC-s3E"/>
-                        <constraint firstAttribute="height" constant="48" id="f5R-Rs-75f"/>
+                        <constraint firstAttribute="height" constant="52" id="f5R-Rs-75f"/>
                         <constraint firstItem="TqO-DC-lbM" firstAttribute="width" secondItem="FWP-nv-qsx" secondAttribute="width" multiplier="0.2" id="gMD-cM-Rac"/>
                         <constraint firstItem="Gkx-Fv-a6t" firstAttribute="centerY" secondItem="FWP-nv-qsx" secondAttribute="centerY" id="mYG-3U-tPz"/>
                         <constraint firstItem="qNI-D2-LdY" firstAttribute="width" secondItem="FWP-nv-qsx" secondAttribute="width" multiplier="0.2" id="nLZ-Cu-nHf"/>

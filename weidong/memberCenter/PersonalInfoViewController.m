@@ -17,8 +17,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *nickTF;
 @property (weak, nonatomic) IBOutlet UITextField *nameTF;
 @property (weak, nonatomic) IBOutlet UITextField *idCardTF;
-@property (weak, nonatomic) IBOutlet UIButton *maleBtn;
-@property (weak, nonatomic) IBOutlet UIButton *femaleBtn;
+//@property (weak, nonatomic) IBOutlet UIButton *maleBtn;
+//@property (weak, nonatomic) IBOutlet UIButton *femaleBtn;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;
 @property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
 @property (weak, nonatomic) IBOutlet UIButton *backBtn;
@@ -65,11 +65,8 @@
     _idCardTF.text = selfInfo.idNumber;
     _phoneTF.text = selfInfo.phone;
     
-    if (!selfInfo.isVerify) {   //未实名认证
-        [_verifyNoticeLabel setHidden:NO];
-    }
-    else {  //已实名认证
-        [_verifyNoticeLabel setHidden:YES];
+    if (selfInfo.isVerify) { //已实名认证
+        [_verifyNoticeLabel setText:@"*您已实名认证"];
         _nameTF.userInteractionEnabled = NO;
         _idCardTF.userInteractionEnabled = NO;
     }
@@ -136,17 +133,17 @@
     }];
 }
 
-- (IBAction)maleBtnPressed:(id)sender {
-    gender = 0;
-    [_maleBtn setImage:UIImageWithName(@"btn_checked") forState:UIControlStateNormal];
-    [_femaleBtn setImage:UIImageWithName(@"btn_uncheck") forState:UIControlStateNormal];
-}
-
-- (IBAction)femaleBtnPressed:(id)sender {
-    gender = 1;
-    [_femaleBtn setImage:UIImageWithName(@"btn_checked") forState:UIControlStateNormal];
-    [_maleBtn setImage:UIImageWithName(@"btn_uncheck") forState:UIControlStateNormal];
-}
+//- (IBAction)maleBtnPressed:(id)sender {
+//    gender = 0;
+//    [_maleBtn setImage:UIImageWithName(@"btn_checked") forState:UIControlStateNormal];
+//    [_femaleBtn setImage:UIImageWithName(@"btn_uncheck") forState:UIControlStateNormal];
+//}
+//
+//- (IBAction)femaleBtnPressed:(id)sender {
+//    gender = 1;
+//    [_femaleBtn setImage:UIImageWithName(@"btn_checked") forState:UIControlStateNormal];
+//    [_maleBtn setImage:UIImageWithName(@"btn_uncheck") forState:UIControlStateNormal];
+//}
 
 - (IBAction)confirmBtnPressed:(id)sender {
     NSString *email  = _emailTF.text;

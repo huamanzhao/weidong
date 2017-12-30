@@ -1,26 +1,25 @@
 //
-//  OrderWebViewController.m
+//  ModifyPayPasswordViewController.m
 //  weidong
 //
-//  Created by zhccc on 2017/11/29.
+//  Created by zhccc on 2017/12/30.
 //  Copyright © 2017年 zhccc. All rights reserved.
 //
 
-#import "OrderWebViewController.h"
+#import "ModifyPayPasswordViewController.h"
 #import <AlipaySDK/AlipaySDK.h>
 #import "LoginViewController.h"
 #import "RedirectModule.h"
 #import "SecurityUtil.h"
 #import <MJExtension/MJExtension.h>
 
-@interface OrderWebViewController ()
+@interface ModifyPayPasswordViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property(nonatomic, copy)NSString *funcBaseUrl; //功能部分
 @property(nonatomic, copy)NSString *previosUrl;
-
 @end
 
-@implementation OrderWebViewController {
+@implementation ModifyPayPasswordViewController {
     NSString *redirectPart; //重定向链接部分
     NSString *h5Url;        //购物车地址：基地址+功能部分
     NSString *webUrl;       //购物车地址: 基地址+重定向+功能部分
@@ -32,23 +31,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initStatusBarBGColor];
-    [self setTintColor:ZHAO_BLUE];
-    self.title = @"我的订单";
+    self.title = @"修改支付密码";
+    [self initNaviBackButton];
     
-    if (self.orderType == OrderListType_Init) {
-        self.funcBaseUrl = @"/member/order/list";
-    }
-    else if (self.orderType == OrderListType_waitPay) {
-        self.funcBaseUrl = @"/member/order/list?status=pendingPayment";
-    }
-    else if (self.orderType == OrderListType_waitSend) {
-        self.funcBaseUrl = @"/member/order/list?status=pendingShipment";
-    }
-    else if (self.orderType == OrderListType_waitReceive) {
-        self.funcBaseUrl = @"/member/order/list?status=pendingShipment";
-    }
-    
+    self.funcBaseUrl = @"/member/deposit/payPw";
     self.previosUrl = SERVER_MEMBERCETER_URL;
     schemeUrl = [Util getURLScheme];
 }
@@ -100,8 +86,8 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
-
 
 - (void)loadWithUrlStr:(NSString *)urlStr {
     NSURL *url = [NSURL URLWithString:urlStr];
@@ -112,7 +98,7 @@
 {
     NSString *urlString = [request.URL absoluteString];
     
-    __weak OrderWebViewController* wself = self;
+    __weak ModifyPayPasswordViewController* wself = self;
     BOOL isIntercepted = [[AlipaySDK defaultService] payInterceptorWithUrl:[request.URL absoluteString] fromScheme:schemeUrl callback:^(NSDictionary *result) {
         // 处理支付结果
         NSLog(@"%@", result);

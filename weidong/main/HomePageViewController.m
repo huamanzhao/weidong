@@ -446,7 +446,7 @@
             [banner showViewWithBanners:response.list];
         }
         else {
-            [SVProgressHUD showErrorWithStatus:errorMsg];
+            [SVProgressHUD showErrorWithStatus:@"内容获取失败，下拉刷新一下~"];
         }
         
         //ZC_DEBUG
@@ -463,7 +463,7 @@
             promotionList = [response.list copy];
         }
         else {
-            [SVProgressHUD showErrorWithStatus:errorMsg];
+            [SVProgressHUD showErrorWithStatus:@"内容获取失败，下拉刷新一下~"];
         }
         getPromotionsDone = YES;
         [self reloadTableIfFinished];
@@ -497,7 +497,7 @@
             [_table reloadData];
         }
         else {
-            [SVProgressHUD showErrorWithStatus:errorMsg];
+            [SVProgressHUD showErrorWithStatus:@"内容获取失败，下拉刷新一下~"];
         }
         getHotpotAdsDone = YES;
         
@@ -516,7 +516,7 @@
             [_table reloadData];
         }
         else {
-            [SVProgressHUD showErrorWithStatus:errorMsg];
+            [SVProgressHUD showErrorWithStatus:@"内容获取失败，下拉刷新一下~"];
         }
         getCategoriesDone = YES;
         [self reloadTableIfFinished];

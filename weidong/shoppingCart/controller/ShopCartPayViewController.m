@@ -152,8 +152,6 @@
         return NO;
     }
     
-    
-    
     NSString *prevString = [urlString stringByRemovingPercentEncoding];
     if ([prevString isEqualToString:_previosUrl]) {
         return NO;

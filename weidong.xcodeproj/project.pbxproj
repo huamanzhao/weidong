@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		950060541FF6A0A10087EB87 /* ModifyPayPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 950060521FF6A0A10087EB87 /* ModifyPayPasswordViewController.m */; };
+		950060551FF6A0A10087EB87 /* ModifyPayPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 950060531FF6A0A10087EB87 /* ModifyPayPasswordViewController.xib */; };
 		950195431FC4693E0025DACD /* SendSmsVerifycodeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 950195421FC4693E0025DACD /* SendSmsVerifycodeRequest.m */; };
 		95063DF81F87160F00F9D2DF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95063DF61F87160F00F9D2DF /* LoginViewController.m */; };
 		95063DF91F87160F00F9D2DF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95063DF71F87160F00F9D2DF /* LoginViewController.xib */; };
@@ -275,6 +277,9 @@
 /* Begin PBXFileReference section */
 		06C3F508CE0C4E82EAB2BEA3 /* Pods_weidong.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weidong.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		632F1735DC52A73D11BEF6A3 /* Pods-weidong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weidong.release.xcconfig"; path = "Pods/Target Support Files/Pods-weidong/Pods-weidong.release.xcconfig"; sourceTree = "<group>"; };
+		950060511FF6A0A10087EB87 /* ModifyPayPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ModifyPayPasswordViewController.h; path = memberCenter/ModifyPayPasswordViewController.h; sourceTree = "<group>"; };
+		950060521FF6A0A10087EB87 /* ModifyPayPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ModifyPayPasswordViewController.m; path = memberCenter/ModifyPayPasswordViewController.m; sourceTree = "<group>"; };
+		950060531FF6A0A10087EB87 /* ModifyPayPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ModifyPayPasswordViewController.xib; path = memberCenter/ModifyPayPasswordViewController.xib; sourceTree = "<group>"; };
 		950195411FC4693E0025DACD /* SendSmsVerifycodeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SendSmsVerifycodeRequest.h; path = server/SendSmsVerifycodeRequest.h; sourceTree = "<group>"; };
 		950195421FC4693E0025DACD /* SendSmsVerifycodeRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SendSmsVerifycodeRequest.m; path = server/SendSmsVerifycodeRequest.m; sourceTree = "<group>"; };
 		95063DF51F87160F00F9D2DF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = memberCenter/LoginViewController.h; sourceTree = "<group>"; };
@@ -1420,6 +1425,9 @@
 				95F985B01FF132E4001CA540 /* CouponListViewController.h */,
 				95F985B11FF132E4001CA540 /* CouponListViewController.m */,
 				95F985B21FF132E4001CA540 /* CouponListViewController.xib */,
+				950060511FF6A0A10087EB87 /* ModifyPayPasswordViewController.h */,
+				950060521FF6A0A10087EB87 /* ModifyPayPasswordViewController.m */,
+				950060531FF6A0A10087EB87 /* ModifyPayPasswordViewController.xib */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -1626,6 +1634,7 @@
 				95256A771FDDA22700E21764 /* CommentListViewController.xib in Resources */,
 				9534E1661FEFEBA700F6B43B /* ArrivalNotifyCell.xib in Resources */,
 				95A437E91F86387300424E06 /* ProductCollectionViewCell.xib in Resources */,
+				950060551FF6A0A10087EB87 /* ModifyPayPasswordViewController.xib in Resources */,
 				95BFC77D1FE641300038B326 /* EgouCardViewController.xib in Resources */,
 				956DD2961F98EAD30028B18F /* ProductDetailViewController.xib in Resources */,
 				95A437C21F85518B00424E06 /* SecondaryFuncCell.xib in Resources */,
@@ -1792,6 +1801,7 @@
 				954074111F8BBBBB00D52350 /* CaculateOrderRequest.m in Sources */,
 				956206861F9108BF00612934 /* AdInfo.m in Sources */,
 				95D2BE001FEF4C8700577D3A /* GetProductNotifyRequest.m in Sources */,
+				950060541FF6A0A10087EB87 /* ModifyPayPasswordViewController.m in Sources */,
 				955512CA1F8A7FF10032DC13 /* GetMemberBalanceRequest.m in Sources */,
 				95B472EB1F97A386003C4339 /* ProductItemCell.m in Sources */,
 				9577CEA61FA6068D00D675B3 /* ConsultationInfo.m in Sources */,

@@ -13,6 +13,7 @@
 - (void)manageDeliveryAddress;
 - (void)managePersonalInfo;
 - (void)changePassword;
+- (void)changePayPassword;
 @end
 
 

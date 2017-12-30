@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zhv-B6-0eS">
-                    <rect key="frame" x="0.0" y="32" width="375" height="48"/>
+                    <rect key="frame" x="0.0" y="72" width="375" height="48"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBr-BX-vOi">
                             <rect key="frame" x="38.5" y="23.5" width="112.5" height="1"/>
@@ -71,9 +71,9 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Zhv-B6-0eS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="C5Y-qy-1mo"/>
-                <constraint firstAttribute="top" secondItem="Zhv-B6-0eS" secondAttribute="top" constant="-32" id="JaB-Il-hf5"/>
                 <constraint firstItem="Cho-JL-Ct8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cSr-lR-cvU"/>
                 <constraint firstItem="Zhv-B6-0eS" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="f5w-Fk-Wbq"/>
+                <constraint firstItem="Zhv-B6-0eS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="72" id="hRL-z3-hyn"/>
                 <constraint firstItem="Cho-JL-Ct8" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="juI-iv-qKk"/>
                 <constraint firstItem="Cho-JL-Ct8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xtm-bJ-Owu"/>
                 <constraint firstItem="Cho-JL-Ct8" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="y6h-Z1-mvc"/>

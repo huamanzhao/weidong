@@ -161,6 +161,9 @@
         [SVProgressHUD dismiss];
         if (isOK) {
             [SVProgressHUD showSuccessWithStatus:@"添加成功"];
+            if (_delegate) {
+                [_delegate closeSpecView];
+            }
         }
         else {
             [SVProgressHUD showErrorWithStatus:errorMsg];
