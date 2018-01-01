@@ -148,8 +148,19 @@
     }
     
     NSString *prevString = [urlString stringByRemovingPercentEncoding];
-    if ([prevString isEqualToString:_previosUrl]) {
+    urlString = [urlString stringByRemovingPercentEncoding];
+    //拦截主页
+    if ([urlString isEqualToString:SERVER_HOME_URL]) {
         [self.navigationController popViewControllerAnimated:YES];
+        return NO;
+    }
+    
+    //拦截微动币列表界面
+    if ([urlString isEqualToString:SERVER_DepositList_URL]) {
+        [self.navigationController popViewControllerAnimated:YES];
+        return NO;
+    }
+    if ([prevString isEqualToString:_previosUrl]) {
         return NO;
     }
     
