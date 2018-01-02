@@ -60,7 +60,6 @@
 
     self.title = @"会员中心";
     
-    self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
     [self initTableView];
 }
 

@@ -12,6 +12,7 @@
 #import "SecurityUtil.h"
 #import <AlipaySDK/AlipaySDK.h>
 #import "LoginViewController.h"
+#import "MyCreditsLogViewController.h"
 
 @interface ShopCartPayViewController () <UIWebViewDelegate>
 
@@ -161,8 +162,8 @@
     }
     
     //拦截微动币列表界面
-    if ([urlString isEqualToString:SERVER_DepositList_URL]) {
-        [self.navigationController popViewControllerAnimated:YES];
+    if ([urlString isEqualToString:SERVER_CoinList_URL]) {
+        [self openCoinsLogVC];
         return NO;
     }
     if ([prevString isEqualToString:_previosUrl]) {
@@ -189,5 +190,12 @@
     LoginViewController *loginVC = [LoginViewController new];
     loginVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:loginVC animated:NO];
+}
+
+- (void)openCoinsLogVC {
+    MyCreditsLogViewController *creditsVC = [MyCreditsLogViewController new];
+    creditsVC.showCoinLog = YES;
+    creditsVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:creditsVC animated:YES];
 }
 @end

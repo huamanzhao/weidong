@@ -40,7 +40,7 @@
 #define SERVER_YANXUDONG    @"http://192.168.43.91:8080/" //严旭东
 
 
-#define SERVER_HTTP_BASE    SERVER_SERVER_URL//     SERVER_SERVER_URL//   //测试服务器、正式服务器切换改这里
+#define SERVER_HTTP_BASE    SERVER_TEST_HTTP_BASE//     SERVER_SERVER_URL//   //测试服务器、正式服务器切换改这里
 
 
 #define SERVER_BASE_URL     [SERVER_HTTP_BASE stringByAppendingString:@":80/"]  //服务器基地址
@@ -50,7 +50,7 @@
 #define SERVER_MEMBERCETER_URL  [SERVER_HTTP_BASE stringByAppendingString:@"/member/index"]         //个人中心URL
 #define SERVER_CART_URL         [SERVER_HTTP_BASE stringByAppendingString:@"/cart/list"]            //购物车URL
 #define SERVER_ORDER_URL        [SERVER_HTTP_BASE stringByAppendingString:@"/member/order/list"]    //订单URL
-#define SERVER_DepositList_URL  [SERVER_HTTP_BASE stringByAppendingString:@"/member/deposit/log"]   //微动币列表URL
+#define SERVER_CoinList_URL  [SERVER_HTTP_BASE stringByAppendingString:@"/member/deposit/log"]   //微动币列表URL
 #define SERVER_HOME_URL         [SERVER_HTTP_BASE stringByAppendingString:@"/"] //首页URL
 
 
