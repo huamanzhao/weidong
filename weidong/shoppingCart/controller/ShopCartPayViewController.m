@@ -12,8 +12,9 @@
 #import "SecurityUtil.h"
 #import <AlipaySDK/AlipaySDK.h>
 #import "LoginViewController.h"
+#import "PayManager.h"
 
-@interface ShopCartPayViewController () <UIWebViewDelegate>
+@interface ShopCartPayViewController () <UIWebViewDelegate, PayManagerDelegate>
 
 @end
 
@@ -22,6 +23,7 @@
     NSString *h5Url;        //购物车地址：基地址+功能部分
     NSString *webUrl;       //购物车地址: 基地址+重定向+功能部分
     NSString *schemeUrl;    //app schemeUrl;
+    PayManager *manager;
     
     //上一次的用户名；
     NSString *lastUserName;
@@ -39,6 +41,9 @@
     self.funcBaseUrl = [NSString stringWithFormat:@"/order/checkout?productType=%ld",_productType];
     self.previosUrl = [NSString stringWithFormat:@"%@/cart/list",SERVER_HTTP_BASE];
     schemeUrl = [Util getURLScheme];
+    
+    manager = [PayManager new];
+    manager.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -189,5 +194,19 @@
     LoginViewController *loginVC = [LoginViewController new];
     loginVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:loginVC animated:NO];
+}
+
+
+
+- (void)paySucceed {
+    
+}
+
+- (void)payFailed:(NSString *)reason {
+    
+}
+
+- (void)payCanceled {
+    
 }
 @end

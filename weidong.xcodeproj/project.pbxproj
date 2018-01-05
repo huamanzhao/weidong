@@ -28,6 +28,7 @@
 		951D8EBB1FA2A21E00285084 /* CategoryPrimaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 951D8EB91FA2A21E00285084 /* CategoryPrimaryCell.xib */; };
 		951FE1501FF28A0300726576 /* MemberTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 951FE14F1FF28A0300726576 /* MemberTitleView.m */; };
 		951FE1521FF28A5B00726576 /* MemberTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 951FE1511FF28A5B00726576 /* MemberTitleView.xib */; };
+		952012291FFE51E100623762 /* PayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 952012281FFE51E100623762 /* PayManager.m */; };
 		95223E9C1FB7DC1C00921AE4 /* OrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95223E9A1FB7DC1C00921AE4 /* OrderListViewController.m */; };
 		95223E9D1FB7DC1C00921AE4 /* OrderListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95223E9B1FB7DC1C00921AE4 /* OrderListViewController.xib */; };
 		95229B0F1FCA78CE00FAAF38 /* WebBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95229B0E1FCA78CE00FAAF38 /* WebBaseViewController.m */; };
@@ -313,6 +314,8 @@
 		951FE14E1FF28A0300726576 /* MemberTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MemberTitleView.h; path = memberCenter/view/MemberTitleView.h; sourceTree = "<group>"; };
 		951FE14F1FF28A0300726576 /* MemberTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MemberTitleView.m; path = memberCenter/view/MemberTitleView.m; sourceTree = "<group>"; };
 		951FE1511FF28A5B00726576 /* MemberTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MemberTitleView.xib; path = memberCenter/view/MemberTitleView.xib; sourceTree = "<group>"; };
+		952012271FFE51E100623762 /* PayManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PayManager.h; path = common/PayManager.h; sourceTree = "<group>"; };
+		952012281FFE51E100623762 /* PayManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PayManager.m; path = common/PayManager.m; sourceTree = "<group>"; };
 		95223E991FB7DC1C00921AE4 /* OrderListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OrderListViewController.h; path = memberCenter/OrderListViewController.h; sourceTree = "<group>"; };
 		95223E9A1FB7DC1C00921AE4 /* OrderListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = OrderListViewController.m; path = memberCenter/OrderListViewController.m; sourceTree = "<group>"; };
 		95223E9B1FB7DC1C00921AE4 /* OrderListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OrderListViewController.xib; path = memberCenter/OrderListViewController.xib; sourceTree = "<group>"; };
@@ -840,6 +843,8 @@
 				951D8EBC1FA3834D00285084 /* Enum.h */,
 				95180FE51F7E7F8000A96FD8 /* Util.h */,
 				95180FE61F7E7F8000A96FD8 /* Util.m */,
+				952012271FFE51E100623762 /* PayManager.h */,
+				952012281FFE51E100623762 /* PayManager.m */,
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -1800,6 +1805,7 @@
 				95F729431F821CA800C1E3C1 /* BannerView.m in Sources */,
 				954074111F8BBBBB00D52350 /* CaculateOrderRequest.m in Sources */,
 				956206861F9108BF00612934 /* AdInfo.m in Sources */,
+				952012291FFE51E100623762 /* PayManager.m in Sources */,
 				95D2BE001FEF4C8700577D3A /* GetProductNotifyRequest.m in Sources */,
 				950060541FF6A0A10087EB87 /* ModifyPayPasswordViewController.m in Sources */,
 				955512CA1F8A7FF10032DC13 /* GetMemberBalanceRequest.m in Sources */,

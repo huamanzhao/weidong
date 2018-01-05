@@ -40,7 +40,7 @@
 #define SERVER_YANXUDONG    @"http://192.168.43.91:8080/" //严旭东
 
 
-#define SERVER_HTTP_BASE    SERVER_SERVER_URL//     SERVER_SERVER_URL//   //测试服务器、正式服务器切换改这里
+#define SERVER_HTTP_BASE    SERVER_TEST_HTTP_BASE//     SERVER_SERVER_URL//   //测试服务器、正式服务器切换改这里
 
 
 #define SERVER_BASE_URL     [SERVER_HTTP_BASE stringByAppendingString:@":80/"]  //服务器基地址
@@ -69,5 +69,9 @@
 #define MEMBER_CHANGEPAYPSW @"支付密码设置"
 
 #define CREDIT_PARK_CATEGORY_ID @"241"
+
+
+#define WX_AppID @"wxcaacd462002e7404"
+#define WX_PartnerID @"1496008132"
 
 #endif /* Constants_h */
