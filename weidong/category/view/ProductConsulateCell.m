@@ -26,12 +26,18 @@
 }
 
 - (void)setupWithConsulation:(ConsultationInfo *)info {
-    _nameLabel.text = info.memberName;
+    NSString *name = info.memberName;
+    if (STRING_NULL(name)) {
+        name = @"匿名";
+    }
+    _nameLabel.text = name;
     _timeLabel.text = info.createdDate;
     _questionLabel.text = info.content;
     
     if (!info.replyAppConsultations || ![info.replyAppConsultations count]) {
         [_AIcon setHidden:YES];
+        _answerLabel.text =@"";
+        
     }
     else {
         [_AIcon setHidden:NO];

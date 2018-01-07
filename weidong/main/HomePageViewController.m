@@ -97,6 +97,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
     
     [self initNaviBackGroundImage:YES];
     
@@ -125,6 +126,7 @@
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
+    self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
     
     [self initNaviBackGroundImage:NO];
 }

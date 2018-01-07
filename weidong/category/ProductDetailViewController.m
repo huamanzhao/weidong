@@ -83,8 +83,9 @@
     [self getProductCommentsList];
     [self getProductConsulations];
     
-    if (firstAppear && !_showComment && !_showConsulation) {
+    if (firstAppear) {
         [self initPosition];
+        firstAppear = NO;
     }
 }
 
