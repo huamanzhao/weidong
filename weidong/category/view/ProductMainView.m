@@ -10,6 +10,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "ProductSkuInfo.h"
 #import "XLPhotoBrowser.h"
+#import "ProductImageInfo.h"
 
 @interface ProductMainView ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -73,6 +74,7 @@
 }
 
 - (void)setupWithProduct:(ProductDetail *)detail {
+    product = detail;
     [imageViewList removeAllObjects];
     [imageList removeAllObjects];
     
@@ -114,21 +116,23 @@
     }
     
     //处理图片数组
-    if (!detail.imageList || [detail.imageList count] == 0) {
+    if (!product.productImages || [product.productImages count] == 0) {
         //ZC_DEBUG  return;
-        detail.imageList = @[detail.image, @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515237172497&di=8e7f48d2d7c6a36cd83992e344edef44&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20140504%2FImg399110307.jpg",
-                             @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515237199529&di=7b7d238032ee9361e81a21f948dc86e4&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201408%2F13%2F20140813105739_tL3hd.jpeg",
-                             @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515237220582&di=94b0df49004be36919bba05f85a50856&imgtype=0&src=http%3A%2F%2Ffb.topitme.com%2Fb%2Fba%2F63%2F11236274207e863babl.jpg"];
+        product.productImages = @[product.image];
     }
     
     //pageControll 设置
-    _pageControl.numberOfPages = [detail.imageList count];
+    _pageControl.numberOfPages = [detail.productImages count];
+    
+    //图片排序
+    [self sortProductImages];
     
     //图片显示
-    NSInteger count = [detail.imageList count];
+    NSInteger count = [product.productImages count];
     _imageScroll.contentSize = CGSizeMake(SCREEN_WIDTH * count, SCREEN_WIDTH / 1.1);
-    for (NSString *imageStr in detail.imageList) {
-        NSURL *imageUrl = [NSURL URLWithString:imageStr];
+    for (ProductImageInfo *imageInfo in product.productImages) {
+        
+        NSURL *imageUrl = [NSURL URLWithString:imageInfo.large];
         if (!imageUrl) {
             continue;
         }
@@ -141,8 +145,9 @@
         [imageViewList addObject:imageView];
         
         //异步下载图片
+        __block NSURL *sourceUrl = [NSURL URLWithString:imageInfo.source];
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+            NSData *imageData = [NSData dataWithContentsOfURL:sourceUrl];
             UIImage *image = [[UIImage alloc] initWithData:imageData];
             [imageList addObject:image];
             
@@ -186,6 +191,20 @@
     CGFloat originX = scrollView.contentOffset.x;
     
     _pageControl.currentPage = originX / SCREEN_WIDTH;
+}
+
+- (void)sortProductImages {
+    NSMutableArray *sortedList = [NSMutableArray new];
+    for (ProductImageInfo *info in product.productImages) {
+        if (info.order == 0) {
+            [sortedList addObject:info];
+        }
+        else {
+            [sortedList insertObject:info atIndex:info.order];
+        }
+    }
+    
+    product.productImages = [sortedList copy];
 }
 
 @end

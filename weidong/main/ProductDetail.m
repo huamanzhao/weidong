@@ -18,7 +18,8 @@
                      @"parameterValues" : @"ProductParameter",
                      @"specificationItems" : @"ProductSpec",
                      @"appSkus" : @"ProductSkuInfo",
-                     @"promotions" : @"PromotionInfo"
+                     @"promotions" : @"PromotionInfo",
+                     @"productImages" : @"ProductImageInfo"
                      };
         }];
     }

@@ -166,10 +166,6 @@
         return;
     }
     
-    if (!STRING_NULL(name) && !STRING_NULL(idCard) && !selfInfo.isVerify) {
-        [self checkRealIdentify];
-    }
-    
     [self updateSelfInfo];
 }
 

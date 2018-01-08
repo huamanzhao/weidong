@@ -29,6 +29,7 @@
 		951FE1501FF28A0300726576 /* MemberTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 951FE14F1FF28A0300726576 /* MemberTitleView.m */; };
 		951FE1521FF28A5B00726576 /* MemberTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 951FE1511FF28A5B00726576 /* MemberTitleView.xib */; };
 		952012291FFE51E100623762 /* PayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 952012281FFE51E100623762 /* PayManager.m */; };
+		9520122D2003BCE200623762 /* ProductImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9520122C2003BCE200623762 /* ProductImageInfo.m */; };
 		95223E9C1FB7DC1C00921AE4 /* OrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95223E9A1FB7DC1C00921AE4 /* OrderListViewController.m */; };
 		95223E9D1FB7DC1C00921AE4 /* OrderListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95223E9B1FB7DC1C00921AE4 /* OrderListViewController.xib */; };
 		95229B0F1FCA78CE00FAAF38 /* WebBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95229B0E1FCA78CE00FAAF38 /* WebBaseViewController.m */; };
@@ -316,6 +317,8 @@
 		951FE1511FF28A5B00726576 /* MemberTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MemberTitleView.xib; path = memberCenter/view/MemberTitleView.xib; sourceTree = "<group>"; };
 		952012271FFE51E100623762 /* PayManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PayManager.h; path = common/PayManager.h; sourceTree = "<group>"; };
 		952012281FFE51E100623762 /* PayManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PayManager.m; path = common/PayManager.m; sourceTree = "<group>"; };
+		9520122B2003BCE200623762 /* ProductImageInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProductImageInfo.h; path = main/ProductImageInfo.h; sourceTree = "<group>"; };
+		9520122C2003BCE200623762 /* ProductImageInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProductImageInfo.m; path = main/ProductImageInfo.m; sourceTree = "<group>"; };
 		95223E991FB7DC1C00921AE4 /* OrderListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OrderListViewController.h; path = memberCenter/OrderListViewController.h; sourceTree = "<group>"; };
 		95223E9A1FB7DC1C00921AE4 /* OrderListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = OrderListViewController.m; path = memberCenter/OrderListViewController.m; sourceTree = "<group>"; };
 		95223E9B1FB7DC1C00921AE4 /* OrderListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OrderListViewController.xib; path = memberCenter/OrderListViewController.xib; sourceTree = "<group>"; };
@@ -1069,6 +1072,8 @@
 				9555128E1F8A59110032DC13 /* ProductInfo.m */,
 				956AE1641FA5B055006D59B7 /* ProductDetail.h */,
 				956AE1651FA5B055006D59B7 /* ProductDetail.m */,
+				9520122B2003BCE200623762 /* ProductImageInfo.h */,
+				9520122C2003BCE200623762 /* ProductImageInfo.m */,
 				956AE1681FA5B222006D59B7 /* ProductParameter.h */,
 				956AE1691FA5B222006D59B7 /* ProductParameter.m */,
 				956AE16E1FA5BB39006D59B7 /* ParameterInfo.h */,
@@ -1917,6 +1922,7 @@
 				9551F7981FEB1EC300DD48AE /* FavoriteProductInfo.m in Sources */,
 				95BB3AA21FC13B8E002FB2FE /* CartTypeInfo.m in Sources */,
 				956AE1661FA5B055006D59B7 /* ProductDetail.m in Sources */,
+				9520122D2003BCE200623762 /* ProductImageInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
