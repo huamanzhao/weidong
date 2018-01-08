@@ -28,7 +28,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="--" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tzw-fs-pfo">
-                        <rect key="frame" x="96" y="27" width="14" height="18"/>
+                        <rect key="frame" x="96" y="27" width="168" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -46,7 +46,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0G-bN-rKA">
-                        <rect key="frame" x="272" y="11" width="32" height="32"/>
+                        <rect key="frame" x="272" y="19" width="32" height="32"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="S0G-bN-rKA" secondAttribute="height" multiplier="1:1" id="hhZ-CT-dld"/>
                             <constraint firstAttribute="height" constant="32" id="nST-qu-o3I"/>
@@ -59,9 +59,10 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="S0G-bN-rKA" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="0mf-gb-6cr"/>
-                    <constraint firstItem="Tzw-fs-pfo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="37V-Rg-7kt"/>
+                    <constraint firstItem="Tzw-fs-pfo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="37V-Rg-7kt"/>
+                    <constraint firstItem="S0G-bN-rKA" firstAttribute="leading" secondItem="Tzw-fs-pfo" secondAttribute="trailing" constant="8" id="5Z2-5a-9Zg"/>
                     <constraint firstItem="ODU-RN-7Ie" firstAttribute="top" secondItem="PXV-uY-Wok" secondAttribute="bottom" constant="21" id="Ufs-IE-jiI"/>
-                    <constraint firstItem="S0G-bN-rKA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Y6L-Wt-RNK"/>
+                    <constraint firstItem="S0G-bN-rKA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="Y6L-Wt-RNK"/>
                     <constraint firstAttribute="bottom" secondItem="ODU-RN-7Ie" secondAttribute="bottom" constant="14" id="bXp-Ug-vxz"/>
                     <constraint firstItem="jNi-oe-pvf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="cdq-sK-i39"/>
                     <constraint firstItem="ODU-RN-7Ie" firstAttribute="leading" secondItem="Tzw-fs-pfo" secondAttribute="leading" constant="-4" id="giW-O4-DbQ"/>

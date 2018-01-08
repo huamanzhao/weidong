@@ -152,7 +152,6 @@
         return NO;
     }
     
-    NSString *prevString = [urlString stringByRemovingPercentEncoding];
     urlString = [urlString stringByRemovingPercentEncoding];
     //拦截主页
     if ([urlString isEqualToString:SERVER_HOME_URL]) {
@@ -165,7 +164,8 @@
         [self.navigationController popViewControllerAnimated:YES];
         return NO;
     }
-    if ([prevString isEqualToString:_previosUrl]) {
+    if ([urlString isEqualToString:_previosUrl]) {
+        [self.navigationController popViewControllerAnimated:YES];
         return NO;
     }
     
