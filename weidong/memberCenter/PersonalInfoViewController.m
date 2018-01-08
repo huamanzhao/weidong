@@ -69,6 +69,8 @@
         [_verifyNoticeLabel setText:@"*您已实名认证"];
         _nameTF.userInteractionEnabled = NO;
         _idCardTF.userInteractionEnabled = NO;
+        _nameTF.borderStyle = UITextBorderStyleNone;
+        _idCardTF.borderStyle = UITextBorderStyleNone;
     }
 }
 

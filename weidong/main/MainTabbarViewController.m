@@ -25,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tabBar.backgroundColor = [UIColor whiteColor];
+    
     [self initTabbarControllers];
     
     [self handleAutoLogin];
@@ -106,7 +108,6 @@
     
     NSArray *controllers = @[homeNavi, categoryNavi, cartNavi, memberNavi];
     [self setViewControllers: controllers];
-    
 }
 
 @end

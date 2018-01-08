@@ -116,7 +116,7 @@
     //处理图片数组
     if (!detail.imageList || [detail.imageList count] == 0) {
         //ZC_DEBUG  return;
-        detail.imageList = @[@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515237172497&di=8e7f48d2d7c6a36cd83992e344edef44&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20140504%2FImg399110307.jpg",
+        detail.imageList = @[detail.image, @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515237172497&di=8e7f48d2d7c6a36cd83992e344edef44&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20140504%2FImg399110307.jpg",
                              @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515237199529&di=7b7d238032ee9361e81a21f948dc86e4&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201408%2F13%2F20140813105739_tL3hd.jpeg",
                              @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515237220582&di=94b0df49004be36919bba05f85a50856&imgtype=0&src=http%3A%2F%2Ffb.topitme.com%2Fb%2Fba%2F63%2F11236274207e863babl.jpg"];
     }
@@ -134,7 +134,8 @@
         }
         
         UIImageView *imageView = [UIImageView new];
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        imageView.clipsToBounds = YES;
         [imageView sd_setImageWithURL:imageUrl placeholderImage:UIImageWithName(@"default_5") options:SDWebImageProgressiveDownload];
         [_imageScroll addSubview:imageView];
         [imageViewList addObject:imageView];
