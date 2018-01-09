@@ -27,6 +27,8 @@
     [super viewDidLoad];
     [self initStatusBarBGColor];
     [self setTintColor:ZHAO_BLUE];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars = NO;
     
     self.title = @"商品分类";
     
