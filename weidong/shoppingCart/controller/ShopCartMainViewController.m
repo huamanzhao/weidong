@@ -44,8 +44,6 @@
     self.title = @"购物车";
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.extendedLayoutIncludesOpaqueBars = NO;
-    self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
-    self.tabBarController.tabBar.backgroundColor = [UIColor whiteColor];
     [self initNaviRightImage:@"btn_edit"];
     
     [self addChildViewController:self.magicController];
@@ -62,6 +60,8 @@
     [super viewWillAppear:animated];
     cartTypeList = [NSMutableArray new];
     titleList = [NSMutableArray new];
+    self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
+    self.tabBarController.tabBar.backgroundColor = [UIColor whiteColor];
     
     [self getCartList];
 }

@@ -29,6 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initNaviBackButton];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars = NO;
     self.title = @"我的评论";
     
     commentList = [NSMutableArray new];
