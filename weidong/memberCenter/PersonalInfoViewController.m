@@ -98,8 +98,8 @@
     selfInfo.email    = _emailTF.text;
     selfInfo.mobile   = _mobileTF.text;
     selfInfo.nickname = _nickTF.text;
-    selfInfo.name     = _nameTF.text;
-    selfInfo.idNumber = _idCardTF.text;
+    selfInfo.memberAttribute_1  = _nameTF.text;
+    selfInfo.memberAttribute_51 = _idCardTF.text;
     selfInfo.gender   = gender;
     selfInfo.phone    = _phoneTF.text;
     
@@ -109,10 +109,20 @@
     [request excuteRequest:^(BOOL isOK, NSString * _Nullable errorMsg) {
         [SVProgressHUD dismiss];
         if (isOK) {
-            [SVProgressHUD showSuccessWithStatus:@"修改成功"];
-            [self.navigationController popViewControllerAnimated:YES];
-            
-            [selfInfo recordToLocal];
+            GetSelfInfoRequest *request = [GetSelfInfoRequest new];
+            [request excuteRequest:^(BOOL isOK, SelfInfo * _Nullable info, NSString * _Nullable errorMsg) {
+                [SVProgressHUD dismiss];
+                if (!isOK) {
+                    [SVProgressHUD showErrorWithStatus:errorMsg];
+                    return;
+                }
+                
+                selfInfo = info;
+                [selfInfo recordToLocal];
+                
+                [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+                [self.navigationController popViewControllerAnimated:YES];
+            }];
         }
         else {
             [SVProgressHUD showErrorWithStatus:errorMsg];
