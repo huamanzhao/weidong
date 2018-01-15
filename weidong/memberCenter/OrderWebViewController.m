@@ -13,6 +13,7 @@
 #import "SecurityUtil.h"
 #import <MJExtension/MJExtension.h>
 #import "MyCreditsLogViewController.h"
+#import "PayManager.h"
 
 @interface OrderWebViewController ()  <UIWebViewDelegate, PayManagerDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;

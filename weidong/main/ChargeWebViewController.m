@@ -14,6 +14,7 @@
 #import "RedirectModule.h"
 #import "SecurityUtil.h"
 #import "MyCreditsLogViewController.h"
+#import "PayManager.h"
 
 @interface ChargeWebViewController () <WKNavigationDelegate, PayManagerDelegate>
 @property(nonatomic, copy)NSString *funcBaseUrl; //功能部分

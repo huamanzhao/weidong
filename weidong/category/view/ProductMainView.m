@@ -117,8 +117,10 @@
     
     //处理图片数组
     if (!product.productImages || [product.productImages count] == 0) {
-        //ZC_DEBUG  return;
-        product.productImages = @[product.image];
+        ProductImageInfo *defaultImage = [ProductImageInfo new];
+        defaultImage.large = @"dd";
+        defaultImage.source = @"dd";
+        detail.productImages = @[defaultImage];
     }
     
     //pageControll 设置
@@ -148,7 +150,13 @@
         __block NSURL *sourceUrl = [NSURL URLWithString:imageInfo.source];
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             NSData *imageData = [NSData dataWithContentsOfURL:sourceUrl];
-            UIImage *image = [[UIImage alloc] initWithData:imageData];
+            UIImage *image;
+            if (imageData) {
+                image = [[UIImage alloc] initWithData:imageData];
+            }
+            else {
+                image = UIImageWithName(@"default_5");
+            }
             [imageList addObject:image];
             
             if ([imageList count] == count) {

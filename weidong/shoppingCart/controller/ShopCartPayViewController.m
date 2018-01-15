@@ -13,6 +13,7 @@
 #import <AlipaySDK/AlipaySDK.h>
 #import "LoginViewController.h"
 #import "MyCreditsLogViewController.h"
+#import "PayManager.h"
 
 @interface ShopCartPayViewController () <UIWebViewDelegate, PayManagerDelegate>
 
