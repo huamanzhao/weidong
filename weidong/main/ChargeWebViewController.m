@@ -13,7 +13,7 @@
 #import <MJExtension/MJExtension.h>
 #import "RedirectModule.h"
 #import "SecurityUtil.h"
-#import "PayManager.h"
+#import "MyCreditsLogViewController.h"
 
 @interface ChargeWebViewController () <WKNavigationDelegate, PayManagerDelegate>
 @property(nonatomic, copy)NSString *funcBaseUrl; //功能部分
@@ -177,15 +177,19 @@
     
     urlString = [urlString stringByRemovingPercentEncoding];
     //拦截主页
-    if ([urlString isEqualToString:SERVER_HOME_URL]) {
+    NSString *notokUrl = SERVER_HOME_URL;
+    if ([urlString isEqualToString:notokUrl]) {
         decisionHandler(WKNavigationActionPolicyCancel);
         [self.navigationController popViewControllerAnimated:YES];
+        return;
     }
     
     //拦截微动币列表界面
-    if ([urlString isEqualToString:SERVER_DepositList_URL]) {
+    NSString *notokUrl1 = SERVER_CoinList_URL;
+    if ([urlString isEqualToString:notokUrl1]) {
         decisionHandler(WKNavigationActionPolicyCancel);
-        [self.navigationController popViewControllerAnimated:YES];
+        [self openCoinsLogVC];
+        return;
     }
     
     //拦截跳转到入口界面的上一级界面
@@ -271,16 +275,11 @@
     }
 }
 
-- (void)paySucceed {
-    
-}
-
-- (void)payFailed:(NSString *)reason {
-    
-}
-
-- (void)payCanceled {
-    
+- (void)openCoinsLogVC {
+    MyCreditsLogViewController *creditsVC = [MyCreditsLogViewController new];
+    creditsVC.showCoinLog = YES;
+    creditsVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:creditsVC animated:YES];
 }
 
 @end

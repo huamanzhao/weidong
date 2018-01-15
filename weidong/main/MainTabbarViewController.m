@@ -108,6 +108,9 @@
     
     NSArray *controllers = @[homeNavi, categoryNavi, cartNavi, memberNavi];
     [self setViewControllers: controllers];
+    
+    
+    self.tabBar.backgroundColor = [UIColor whiteColor];
 }
 
 @end

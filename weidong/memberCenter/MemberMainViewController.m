@@ -59,6 +59,7 @@
     self.tabBarController.tabBar.backgroundColor = [UIColor whiteColor];
 
     self.title = @"会员中心";
+    
     [self initTableView];
 }
 

@@ -49,7 +49,7 @@
 #define SERVER_MEMBERCETER_URL  [SERVER_HTTP_BASE stringByAppendingString:@"/member/index"]         //个人中心URL
 #define SERVER_CART_URL         [SERVER_HTTP_BASE stringByAppendingString:@"/cart/list"]            //购物车URL
 #define SERVER_ORDER_URL        [SERVER_HTTP_BASE stringByAppendingString:@"/member/order/list"]    //订单URL
-#define SERVER_DepositList_URL  [SERVER_HTTP_BASE stringByAppendingString:@"/member/deposit/log"]   //微动币列表URL
+#define SERVER_CoinList_URL  [SERVER_HTTP_BASE stringByAppendingString:@"/member/deposit/log"]   //微动币列表URL
 #define SERVER_HOME_URL         [SERVER_HTTP_BASE stringByAppendingString:@"/"] //首页URL
 
 

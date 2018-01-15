@@ -12,7 +12,7 @@
 #import "RedirectModule.h"
 #import "SecurityUtil.h"
 #import <MJExtension/MJExtension.h>
-#import "PayManager.h"
+#import "MyCreditsLogViewController.h"
 
 @interface OrderWebViewController ()  <UIWebViewDelegate, PayManagerDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -160,8 +160,8 @@
     }
     
     //拦截微动币列表界面
-    if ([urlString isEqualToString:SERVER_DepositList_URL]) {
-        [self.navigationController popViewControllerAnimated:YES];
+    if ([urlString isEqualToString:SERVER_CoinList_URL]) {
+        [self openCoinsLogVC];
         return NO;
     }
     if ([urlString isEqualToString:_previosUrl]) {
@@ -191,16 +191,10 @@
     [self.navigationController pushViewController:loginVC animated:NO];
 }
 
-- (void)paySucceed {
-    
+- (void)openCoinsLogVC {
+    MyCreditsLogViewController *creditsVC = [MyCreditsLogViewController new];
+    creditsVC.showCoinLog = YES;
+    creditsVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:creditsVC animated:YES];
 }
-
-- (void)payFailed:(NSString *)reason {
-    
-}
-
-- (void)payCanceled {
-    
-}
-
 @end

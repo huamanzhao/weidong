@@ -36,7 +36,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    if (STRING_NULL(_articleId)) {
+    if (!STRING_NULL(_articleId)) {
         [self getAdArtical];
     }
     else if (_artical) {
@@ -45,11 +45,6 @@
 }
 
 - (void)getAdArtical {
-    if (STRING_NULL(_articleId)) {
-        [SVProgressHUD showErrorWithStatus:@"传入参数错误"];
-        return;
-    }
-    
     [SVProgressHUD showWithStatus:@"正在加载"];
     
     GetArticalDetailRequest *request = [GetArticalDetailRequest new];
