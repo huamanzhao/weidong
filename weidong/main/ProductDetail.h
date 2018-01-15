@@ -17,6 +17,7 @@
 @property(nonatomic, assign)ProductSaleType type;   //商品类型 0-普通商品 1-兑换商品 2-赠品
 @property(nonatomic, assign)ProductCategory productType; //商品类别 0-保税 1-大贸 2-直邮
 @property(nonatomic, copy)NSString *image;  //展示图片
+@property(nonatomic, copy)NSArray *productImages; //图片列表
 @property(nonatomic, assign)float price;  //商品默认价格
 @property(nonatomic, copy)NSString *introduction; //商品详情（html串）
 @property(nonatomic, copy)NSArray *parameterValues; //商品参数列表

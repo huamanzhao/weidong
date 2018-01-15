@@ -55,8 +55,8 @@
     [super viewDidLoad];
     [self initStatusBarBGColor];
     [self setTintColor:ZHAO_BLUE];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.extendedLayoutIncludesOpaqueBars=NO;
+    self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
+    self.tabBarController.tabBar.backgroundColor = [UIColor whiteColor];
 
     self.title = @"会员中心";
     
@@ -154,9 +154,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section <= 1) {
-        return 36;
+        return 40;
     }
-    return 40;
+    return 44;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {

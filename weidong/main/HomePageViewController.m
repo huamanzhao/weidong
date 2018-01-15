@@ -97,6 +97,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
     
     [self initNaviBackGroundImage:YES];
     
@@ -112,8 +113,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    //ZC_DEBUG
-//    [self testApi_2];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -127,6 +126,7 @@
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
+    self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
     
     [self initNaviBackGroundImage:NO];
 }
@@ -204,7 +204,7 @@
     
     banner = [[BannerView alloc] initWithFrame:CGRectMake(0, -44, SCREEN_WIDTH, SCREEN_WIDTH * 9 / 20)];
     banner.delegate = self;
-    _table.tableHeaderView = banner;
+//    _table.tableHeaderView = banner;
     
     [_table registerNib:[UINib nibWithNibName:@"CollectionTableViewCell" bundle:nil] forCellReuseIdentifier:COLLECTION_CELL_ID];
 //    [_table registerNib:[UINib nibWithNibName:@"PromotionTableViewCell" bundle:nil] forCellReuseIdentifier:RECOMMEND_CELL_ID];
@@ -427,6 +427,14 @@
     [self.navigationController pushViewController:listVC animated:YES];
 }
 
+- (void)showTableBanner {
+    _table.tableHeaderView = banner;
+}
+
+- (void)hideTableBanner {
+    _table.tableHeaderView = nil;
+}
+
 //MARK: 服务端请求
 //获取搜索热词
 - (void)getHotSearchKeywords {
@@ -443,7 +451,14 @@
     [request excuteRequest:^(BOOL isOK, GetBannerAdsResponse * _Nullable response, NSString * _Nullable errorMsg) {
         if (isOK) {
             bannerAdList = [response.list copy];
-            [banner showViewWithBanners:response.list];
+//            bannerAdList = [NSArray new];
+            if (!bannerAdList || [bannerAdList count] == 0) {
+                [self hideTableBanner];
+            }
+            else {
+                [self showTableBanner];
+                [banner showViewWithBanners:response.list];
+            }
         }
         else {
             [SVProgressHUD showErrorWithStatus:@"内容获取失败，下拉刷新一下~"];

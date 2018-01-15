@@ -66,6 +66,7 @@
     
     [_verifyView setHidden:YES];
     _verifyHeightCS.constant = 0;
+    _personalHeightCS.constant = 0;
     
     _verifyCodeView.delegate = self;
 }

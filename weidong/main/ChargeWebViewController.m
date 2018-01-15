@@ -15,7 +15,7 @@
 #import "SecurityUtil.h"
 #import "MyCreditsLogViewController.h"
 
-@interface ChargeWebViewController () <WKNavigationDelegate>
+@interface ChargeWebViewController () <WKNavigationDelegate, PayManagerDelegate>
 @property(nonatomic, copy)NSString *funcBaseUrl; //功能部分
 @property(nonatomic, copy)NSString *previosUrl;
 
@@ -26,6 +26,7 @@
     NSString *redirectPart;  //重定向链接部分
     NSString *h5Url;    //H5网页访问的地址：基地址+功能部分
     NSString *webUrl;       //webview加载Url
+    PayManager *manager;
     
     BOOL needReload;    //是否需要重新加载
     
@@ -48,6 +49,9 @@
     
     self.funcBaseUrl = @"/member/deposit/recharge?deviceType=mobile";
     self.previosUrl = SERVER_MEMBERCETER_URL;
+    
+    manager = [PayManager new];
+    manager.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

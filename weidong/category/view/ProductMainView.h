@@ -20,7 +20,7 @@
 @end
 
 
-@interface ProductMainView : UIView
+@interface ProductMainView : UIView <UIScrollViewDelegate>
 
 @property(nonatomic, weak) id<ProductDetailRefreshDelegate> delegate;
 

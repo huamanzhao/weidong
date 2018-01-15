@@ -221,34 +221,18 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                 </textField>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（* 请填写姓名进行实名认证）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXu-El-FN5">
-                                    <rect key="frame" x="47" y="13" width="182" height="16"/>
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                                    <color key="textColor" red="1" green="0.2168156295" blue="0.066164439539999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（* 请填写身份证进行实名认证）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Naw-Ke-RZc">
-                                    <rect key="frame" x="75.5" y="80" width="196" height="16"/>
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                                    <color key="textColor" red="1" green="0.2168156295" blue="0.066164439539999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="GDt-G4-1Ys" firstAttribute="top" secondItem="Md3-a1-mrP" secondAttribute="bottom" constant="4" id="00S-jh-w2U"/>
                                 <constraint firstItem="GDt-G4-1Ys" firstAttribute="leading" secondItem="3b5-Xu-9su" secondAttribute="leading" id="1bY-UM-r7B"/>
-                                <constraint firstItem="QXu-El-FN5" firstAttribute="leading" secondItem="3b5-Xu-9su" secondAttribute="trailing" constant="2" id="2ZV-NC-758"/>
-                                <constraint firstItem="Naw-Ke-RZc" firstAttribute="leading" secondItem="Md3-a1-mrP" secondAttribute="trailing" constant="2" id="5DO-qR-9W1"/>
                                 <constraint firstItem="GDt-G4-1Ys" firstAttribute="centerX" secondItem="0TO-dt-3oS" secondAttribute="centerX" id="Et5-ZC-Udx"/>
                                 <constraint firstAttribute="bottom" secondItem="GDt-G4-1Ys" secondAttribute="bottom" constant="12" id="F8x-5E-QsP"/>
                                 <constraint firstItem="TBu-Dc-E6V" firstAttribute="leading" secondItem="0TO-dt-3oS" secondAttribute="leading" constant="16" id="Fx7-S2-gPS"/>
                                 <constraint firstItem="TBu-Dc-E6V" firstAttribute="centerX" secondItem="0TO-dt-3oS" secondAttribute="centerX" id="GGa-Sg-wjX"/>
                                 <constraint firstItem="3b5-Xu-9su" firstAttribute="leading" secondItem="0TO-dt-3oS" secondAttribute="leading" constant="16" id="KCT-Nc-vPi"/>
-                                <constraint firstItem="Naw-Ke-RZc" firstAttribute="baseline" secondItem="Md3-a1-mrP" secondAttribute="baseline" id="Paw-yN-iPg"/>
                                 <constraint firstItem="3b5-Xu-9su" firstAttribute="top" secondItem="0TO-dt-3oS" secondAttribute="top" constant="12" id="T68-Ug-PXF"/>
                                 <constraint firstItem="Md3-a1-mrP" firstAttribute="top" secondItem="TBu-Dc-E6V" secondAttribute="bottom" constant="16" id="UYF-sz-AMs"/>
-                                <constraint firstItem="QXu-El-FN5" firstAttribute="baseline" secondItem="3b5-Xu-9su" secondAttribute="baseline" id="WTG-kM-Y1m"/>
                                 <constraint firstItem="TBu-Dc-E6V" firstAttribute="top" secondItem="3b5-Xu-9su" secondAttribute="bottom" constant="4" id="YFW-My-U9q"/>
                                 <constraint firstItem="GDt-G4-1Ys" firstAttribute="height" secondItem="TBu-Dc-E6V" secondAttribute="height" id="ZNw-S6-4Sm"/>
                                 <constraint firstItem="Md3-a1-mrP" firstAttribute="leading" secondItem="3b5-Xu-9su" secondAttribute="leading" id="f0T-H2-vDj"/>

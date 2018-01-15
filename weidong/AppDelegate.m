@@ -21,6 +21,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self configIQKeyboard];
+    
+    [WXApi registerApp:WX_AppID];
 
     [SVProgressHUD setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:0.7]];
     [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
@@ -58,7 +60,7 @@
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    return YES;
+    return [WXApi handleOpenURL:url delegate:_wxDelegate];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
@@ -77,6 +79,16 @@
         }];
     }
     return YES;
+}
+
+//微信终端向第三方程序发起请求，要求第三方程序响应
+-(void) onReq:(BaseReq*)req {
+    
+}
+
+//第三方程序向微信发送了sendReq的请求，那么onResp会被回调
+-(void) onResp:(BaseResp*)resp {
+    
 }
 
 - (void)configIQKeyboard {

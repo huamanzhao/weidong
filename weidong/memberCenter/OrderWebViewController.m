@@ -14,7 +14,7 @@
 #import <MJExtension/MJExtension.h>
 #import "MyCreditsLogViewController.h"
 
-@interface OrderWebViewController ()
+@interface OrderWebViewController ()  <UIWebViewDelegate, PayManagerDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property(nonatomic, copy)NSString *funcBaseUrl; //功能部分
 @property(nonatomic, copy)NSString *previosUrl;
@@ -26,6 +26,7 @@
     NSString *h5Url;        //购物车地址：基地址+功能部分
     NSString *webUrl;       //购物车地址: 基地址+重定向+功能部分
     NSString *schemeUrl;    //app schemeUrl;
+    PayManager *manager;
     
     //上一次的用户名；
     NSString *lastUserName;
@@ -52,11 +53,14 @@
     
     self.previosUrl = SERVER_MEMBERCETER_URL;
     schemeUrl = [Util getURLScheme];
+    
+    manager = [PayManager new];
+    manager.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden = YES;
+//    self.navigationController.navigationBar.hidden = YES;
     
     if (![Util userIsLogin]) {
         [self openLoginVC];
@@ -148,7 +152,6 @@
         return NO;
     }
     
-    NSString *prevString = [urlString stringByRemovingPercentEncoding];
     urlString = [urlString stringByRemovingPercentEncoding];
     //拦截主页
     if ([urlString isEqualToString:SERVER_HOME_URL]) {
@@ -161,7 +164,8 @@
         [self openCoinsLogVC];
         return NO;
     }
-    if ([prevString isEqualToString:_previosUrl]) {
+    if ([urlString isEqualToString:_previosUrl]) {
+        [self.navigationController popViewControllerAnimated:YES];
         return NO;
     }
     

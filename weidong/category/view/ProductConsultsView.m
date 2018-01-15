@@ -30,7 +30,7 @@
     _table.delegate = self;
     _table.dataSource = self;
     _table.rowHeight = UITableViewAutomaticDimension;
-    _table.estimatedRowHeight = 100;
+    _table.estimatedRowHeight = 120;
     [_table registerNib:[UINib nibWithNibName:@"ProductConsulateCell" bundle:nil] forCellReuseIdentifier:PRODUCTCONSULATION_ID];
     [self bringSubviewToFront:_emptyView];
     

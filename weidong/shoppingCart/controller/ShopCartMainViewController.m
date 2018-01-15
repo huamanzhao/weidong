@@ -60,6 +60,8 @@
     [super viewWillAppear:animated];
     cartTypeList = [NSMutableArray new];
     titleList = [NSMutableArray new];
+    self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
+    self.tabBarController.tabBar.backgroundColor = [UIColor whiteColor];
     
     [self getCartList];
 }

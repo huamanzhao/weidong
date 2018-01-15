@@ -25,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tabBar.backgroundColor = [UIColor whiteColor];
+    
     [self initTabbarControllers];
     
     [self handleAutoLogin];
@@ -83,7 +85,6 @@
     HomePageViewController *homepageVC = [HomePageViewController new];
     homepageVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:UIImageWithName(@"tabbar_home") selectedImage:UIImageWithName(@"tabbar_home_select")];
     UINavigationController *homeNavi = [[UINavigationController alloc] initWithRootViewController:homepageVC];
-    homeNavi.navigationBar.backgroundColor = [UIColor whiteColor];
     homeNavi.title = @"首页";
     
     CategoryMainViewController *categoryVC = [CategoryMainViewController new];
