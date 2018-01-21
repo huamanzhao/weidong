@@ -11,7 +11,7 @@
 @interface ArticalInfo : NSObject
 
 @property(nonatomic, copy)NSString *articleId;  //文章ID
-@property(nonatomic, copy)NSString *Title;      //文章标题
+@property(nonatomic, copy)NSString *title;      //文章标题
 @property(nonatomic, copy)NSString *author;     //文章作者
 @property(nonatomic, copy)NSString *content;    //文章内容（html串）
 @property(nonatomic, assign)NSInteger hits;     //点击数

@@ -24,6 +24,10 @@
     [super viewDidLoad];
     [self initNaviBackButton];
     
+    if (_artical) {
+        self.title = _artical.title;
+    }
+    
     webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height - 20)];
     [self.view addSubview:webView];
 }
@@ -52,6 +56,7 @@
     [request excuteRequest:^(BOOL isOK, ArticalInfo * _Nullable artical, NSString * _Nullable errorMsg) {
         [SVProgressHUD dismiss];
         if (isOK) {
+            self.title = artical.title;
             [self loadArticalContent:artical];
         }
         else {

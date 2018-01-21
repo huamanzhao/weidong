@@ -36,11 +36,11 @@
 
 /* -------- 服务器设置 -------- */
 #define SERVER_TEST_HTTP_BASE   @"http://pay.rhd361.com"    //@"http://172.20.10.2"//
-#define SERVER_SERVER_URL   @"http://www.weldone.shop"      //正式服务器
-#define SERVER_YANXUDONG    @"http://192.168.43.91:8080/"   //严旭东
+#define SERVER_SERVER_URL       @"http://www.weldone.shop"      //正式服务器
+#define SERVER_YANXUDONG        @"http://192.168.43.91:8080/"   //严旭东
 
 
-#define SERVER_HTTP_BASE    SERVER_TEST_HTTP_BASE//     SERVER_SERVER_URL//   //测试服务器、正式服务器切换改这里
+#define SERVER_HTTP_BASE    SERVER_SERVER_URL//   SERVER_TEST_HTTP_BASE//     //测试服务器、正式服务器切换改这里
 
 
 #define SERVER_BASE_URL     [SERVER_HTTP_BASE stringByAppendingString:@":80/"]  //服务器基地址

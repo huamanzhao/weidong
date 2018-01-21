@@ -355,7 +355,12 @@
 
 //打开广告详情界面
 - (void)selectAdWithId: (AdInfo *)adInfo {
-    [self getAdArticalWithId:adInfo.id];
+    if (adInfo.type == 1) {
+        [self getAdArticalWithId:adInfo.articleId];
+    }
+    else {
+        [self selectProductWithID:adInfo.articleId];
+    }
 }
 
 //促销部分点击回调
@@ -392,10 +397,11 @@
 
 //打开充值中心
 - (void)openChargeCenter {
+    self.hidesBottomBarWhenPushed = YES;
 //    ChargeCenterViewController *chargeVC = [ChargeCenterViewController new];
     ChargeWebViewController *chargeVC = [ChargeWebViewController new];
-    chargeVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:chargeVC animated:YES];
+    self.hidesBottomBarWhenPushed=NO;
 }
 
 //打开会员中心

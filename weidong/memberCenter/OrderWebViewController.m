@@ -157,6 +157,7 @@
     //拦截主页
     if ([urlString isEqualToString:SERVER_HOME_URL]) {
         [self.navigationController popViewControllerAnimated:YES];
+        [self.tabBarController setSelectedIndex:0];
         return NO;
     }
     
@@ -167,6 +168,7 @@
     }
     if ([urlString isEqualToString:_previosUrl]) {
         [self.navigationController popViewControllerAnimated:YES];
+        [self.tabBarController setSelectedIndex:3];
         return NO;
     }
     
