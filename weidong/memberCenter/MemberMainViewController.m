@@ -36,6 +36,7 @@
 #import "MemberTitleView.h"
 #import "ChargeWebViewController.h"
 #import "ModifyPayPasswordViewController.h"
+#import "RefoundWebViewController.h"
 
 @interface MemberMainViewController () <UITableViewDelegate, UITableViewDataSource, MemberToolsDelegate, MemberLogoutDelegate, MemberTableSectionDelegate, MemberOrderDelegate, MemberFunctionDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *table;
@@ -207,6 +208,10 @@
     switch (section) {
         case 0: {
             MemberOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:ORDER_CELLID forIndexPath:indexPath];
+            [cell setupWithOrderCountsUnpay:memInfo.pendingPaymentOrderCount
+                                     UnSend:memInfo.pendingShipmentOrderCount
+                                  UnReceive:memInfo.shippedOrderCount
+                                    Refound:0];
             cell.delegate = self;
             return cell;
             break;
@@ -291,6 +296,12 @@
     orderVC.orderType = type;
     orderVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:orderVC animated:YES];
+}
+
+- (void)showRefoundList {
+    RefoundWebViewController *refoundVC = [RefoundWebViewController new];
+    refoundVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:refoundVC animated:YES];
 }
 
 - (void)showFavoriteProducts {

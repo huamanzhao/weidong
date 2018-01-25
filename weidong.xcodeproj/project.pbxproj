@@ -258,6 +258,8 @@
 		95E7297C1F92FF1500C920FD /* CategoryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E7297B1F92FF1500C920FD /* CategoryInfo.m */; };
 		95E729801F93435D00C920FD /* AdvertisementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E7297E1F93435D00C920FD /* AdvertisementViewController.m */; };
 		95E729841F9367E400C920FD /* ArticalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E729831F9367E400C920FD /* ArticalInfo.m */; };
+		95E83B65201A1C9500886956 /* RefoundWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E83B63201A1C9500886956 /* RefoundWebViewController.m */; };
+		95E83B66201A1C9500886956 /* RefoundWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E83B64201A1C9500886956 /* RefoundWebViewController.xib */; };
 		95EA128C1FD19DF000B627D9 /* ProductConsulateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA128A1FD19DF000B627D9 /* ProductConsulateCell.m */; };
 		95EA128D1FD19DF000B627D9 /* ProductConsulateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95EA128B1FD19DF000B627D9 /* ProductConsulateCell.xib */; };
 		95EF49B11F89118C00DBE834 /* ResponseBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF49AE1F89118C00DBE834 /* ResponseBase.m */; };
@@ -706,6 +708,9 @@
 		95E7297E1F93435D00C920FD /* AdvertisementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AdvertisementViewController.m; path = main/AdvertisementViewController.m; sourceTree = "<group>"; };
 		95E729821F9367E400C920FD /* ArticalInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ArticalInfo.h; path = main/ArticalInfo.h; sourceTree = "<group>"; };
 		95E729831F9367E400C920FD /* ArticalInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ArticalInfo.m; path = main/ArticalInfo.m; sourceTree = "<group>"; };
+		95E83B62201A1C9500886956 /* RefoundWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RefoundWebViewController.h; path = memberCenter/RefoundWebViewController.h; sourceTree = "<group>"; };
+		95E83B63201A1C9500886956 /* RefoundWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RefoundWebViewController.m; path = memberCenter/RefoundWebViewController.m; sourceTree = "<group>"; };
+		95E83B64201A1C9500886956 /* RefoundWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RefoundWebViewController.xib; path = memberCenter/RefoundWebViewController.xib; sourceTree = "<group>"; };
 		95EA12891FD19DF000B627D9 /* ProductConsulateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProductConsulateCell.h; path = category/view/ProductConsulateCell.h; sourceTree = "<group>"; };
 		95EA128A1FD19DF000B627D9 /* ProductConsulateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProductConsulateCell.m; path = category/view/ProductConsulateCell.m; sourceTree = "<group>"; };
 		95EA128B1FD19DF000B627D9 /* ProductConsulateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProductConsulateCell.xib; path = category/view/ProductConsulateCell.xib; sourceTree = "<group>"; };
@@ -1389,6 +1394,9 @@
 				959290E01FCDD284008E7B9D /* OrderWebViewController.h */,
 				959290E11FCDD284008E7B9D /* OrderWebViewController.m */,
 				959290E21FCDD284008E7B9D /* OrderWebViewController.xib */,
+				95E83B62201A1C9500886956 /* RefoundWebViewController.h */,
+				95E83B63201A1C9500886956 /* RefoundWebViewController.m */,
+				95E83B64201A1C9500886956 /* RefoundWebViewController.xib */,
 				95CBCC9E1FC1C4260053DFF4 /* MyCreditsLogViewController.h */,
 				95CBCC9F1FC1C4260053DFF4 /* MyCreditsLogViewController.m */,
 				95063DF51F87160F00F9D2DF /* LoginViewController.h */,
@@ -1649,6 +1657,7 @@
 				956DD2961F98EAD30028B18F /* ProductDetailViewController.xib in Resources */,
 				95A437C21F85518B00424E06 /* SecondaryFuncCell.xib in Resources */,
 				951D8EBB1FA2A21E00285084 /* CategoryPrimaryCell.xib in Resources */,
+				95E83B66201A1C9500886956 /* RefoundWebViewController.xib in Resources */,
 				95CF88DD1FAF42AA0068744B /* MemberTableSectionView.xib in Resources */,
 				956DD29E1F98F70E0028B18F /* NavibarSearchView.xib in Resources */,
 				95CD879D1FAE0AAA00E2EF09 /* MemberHeaderView.xib in Resources */,
@@ -1901,6 +1910,7 @@
 				959A33511FC0268000CD9A26 /* ProductConsultsView.m in Sources */,
 				955724631FDCCB7600399FB8 /* RedirectModule.m in Sources */,
 				95BFC77C1FE641300038B326 /* EgouCardViewController.m in Sources */,
+				95E83B65201A1C9500886956 /* RefoundWebViewController.m in Sources */,
 				955512E51F8A81FB0032DC13 /* LogoutRequest.m in Sources */,
 				954074021F8BB7D800D52350 /* CancelOrderRequest.m in Sources */,
 				95EA128C1FD19DF000B627D9 /* ProductConsulateCell.m in Sources */,

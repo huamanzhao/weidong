@@ -11,13 +11,16 @@
 
 @protocol MemberOrderDelegate <NSObject>
 - (void)showOrderListWithType:(OrderListType)type;
+- (void)showRefoundList;
 @end
 
 @interface MemberOrderCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIButton *waitPayBtn;
 @property (weak, nonatomic) IBOutlet UIButton *waitSendBtn;
 @property (weak, nonatomic) IBOutlet UIButton *waitReceiveBtn;
+@property (weak, nonatomic) IBOutlet UIButton *refoundBtn;
+
 @property (nonatomic, weak) id<MemberOrderDelegate> delegate;
 
-- (void)setupWithOrderCountsUnpay:(NSInteger)num1 UnSend:(NSInteger)num2 UnReceive:(NSInteger)num3;
+- (void)setupWithOrderCountsUnpay:(NSInteger)num1 UnSend:(NSInteger)num2 UnReceive:(NSInteger)num3 Refound:(NSInteger)num4;
 @end

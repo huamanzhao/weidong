@@ -32,6 +32,13 @@
     [self handleAutoLogin];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self checkPhotoAuthorization];
+    [self checkCameraAuthorization];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

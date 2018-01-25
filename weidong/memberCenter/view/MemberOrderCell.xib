@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -22,10 +22,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Gl4-Xa-Qcp">
-                        <rect key="frame" x="10" y="8" width="300" height="65.5"/>
+                        <rect key="frame" x="-40" y="8" width="400" height="87.5"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DlJ-K9-1He">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="65.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="87.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="等待付款" image="wait_pay">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -35,7 +35,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFF-kA-hpG">
-                                <rect key="frame" x="100" y="0.0" width="100" height="65.5"/>
+                                <rect key="frame" x="100" y="0.0" width="100" height="87.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="等待发货" image="wait_send">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -45,13 +45,23 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qp4-fS-JDl">
-                                <rect key="frame" x="200" y="0.0" width="100" height="65.5"/>
+                                <rect key="frame" x="200" y="0.0" width="100" height="87.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="等待收货" image="wait_receive">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="waitReceiveBtnPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="TRM-Lj-H0X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brk-te-4oO">
+                                <rect key="frame" x="300" y="0.0" width="100" height="87.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="我的退货" image="btn_refound">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="refoundBtnPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="c25-nN-daU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -69,6 +79,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="refoundBtn" destination="Brk-te-4oO" id="350-jv-1Bm"/>
                 <outlet property="waitPayBtn" destination="DlJ-K9-1He" id="Vuc-79-9dQ"/>
                 <outlet property="waitReceiveBtn" destination="Qp4-fS-JDl" id="4lq-GZ-WdN"/>
                 <outlet property="waitSendBtn" destination="aFF-kA-hpG" id="Dku-ez-b12"/>
@@ -76,6 +87,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="btn_refound" width="34" height="31"/>
         <image name="wait_pay" width="39" height="30"/>
         <image name="wait_receive" width="34" height="30"/>
         <image name="wait_send" width="42" height="31"/>
