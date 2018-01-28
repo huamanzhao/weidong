@@ -37,6 +37,7 @@
 #import "ChargeWebViewController.h"
 #import "ModifyPayPasswordViewController.h"
 #import "RefoundWebViewController.h"
+#import "RefoundListWebViewController.h"
 
 @interface MemberMainViewController () <UITableViewDelegate, UITableViewDataSource, MemberToolsDelegate, MemberLogoutDelegate, MemberTableSectionDelegate, MemberOrderDelegate, MemberFunctionDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *table;
@@ -299,7 +300,8 @@
 }
 
 - (void)showRefoundList {
-    RefoundWebViewController *refoundVC = [RefoundWebViewController new];
+//    RefoundWebViewController *refoundVC = [RefoundWebViewController new];
+    RefoundListWebViewController *refoundVC = [RefoundListWebViewController new];
     refoundVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:refoundVC animated:YES];
 }

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface RefoundWebViewController : UIViewController
-
+@property(nonatomic, copy)NSString *funcBaseUrl; //功能部分
 @end

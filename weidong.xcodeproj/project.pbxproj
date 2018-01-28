@@ -156,6 +156,7 @@
 		95879C971FC9A5EA0012A19C /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95879C8C1FC9A58B0012A19C /* CoreTelephony.framework */; };
 		95879C981FC9A5EA0012A19C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95879C8B1FC9A57F0012A19C /* SystemConfiguration.framework */; };
 		958873461FD985A800D6D82E /* AddFavoriteProductReqeust.m in Sources */ = {isa = PBXBuildFile; fileRef = 958873451FD985A800D6D82E /* AddFavoriteProductReqeust.m */; };
+		959157DD201E026C00D529C8 /* RefoundListWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 959157DC201E026C00D529C8 /* RefoundListWebViewController.m */; };
 		959290DE1FCDA910008E7B9D /* ShopCartWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 959290DC1FCDA910008E7B9D /* ShopCartWebViewController.m */; };
 		959290DF1FCDA910008E7B9D /* ShopCartWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 959290DD1FCDA910008E7B9D /* ShopCartWebViewController.xib */; };
 		959290E31FCDD284008E7B9D /* OrderWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 959290E11FCDD284008E7B9D /* OrderWebViewController.m */; };
@@ -259,7 +260,6 @@
 		95E729801F93435D00C920FD /* AdvertisementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E7297E1F93435D00C920FD /* AdvertisementViewController.m */; };
 		95E729841F9367E400C920FD /* ArticalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E729831F9367E400C920FD /* ArticalInfo.m */; };
 		95E83B65201A1C9500886956 /* RefoundWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E83B63201A1C9500886956 /* RefoundWebViewController.m */; };
-		95E83B66201A1C9500886956 /* RefoundWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E83B64201A1C9500886956 /* RefoundWebViewController.xib */; };
 		95EA128C1FD19DF000B627D9 /* ProductConsulateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA128A1FD19DF000B627D9 /* ProductConsulateCell.m */; };
 		95EA128D1FD19DF000B627D9 /* ProductConsulateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95EA128B1FD19DF000B627D9 /* ProductConsulateCell.xib */; };
 		95EF49B11F89118C00DBE834 /* ResponseBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF49AE1F89118C00DBE834 /* ResponseBase.m */; };
@@ -543,6 +543,8 @@
 		95879C911FC9A5E40012A19C /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		958873441FD985A800D6D82E /* AddFavoriteProductReqeust.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AddFavoriteProductReqeust.h; path = server/AddFavoriteProductReqeust.h; sourceTree = "<group>"; };
 		958873451FD985A800D6D82E /* AddFavoriteProductReqeust.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AddFavoriteProductReqeust.m; path = server/AddFavoriteProductReqeust.m; sourceTree = "<group>"; };
+		959157DB201E026C00D529C8 /* RefoundListWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RefoundListWebViewController.h; path = memberCenter/RefoundListWebViewController.h; sourceTree = "<group>"; };
+		959157DC201E026C00D529C8 /* RefoundListWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RefoundListWebViewController.m; path = memberCenter/RefoundListWebViewController.m; sourceTree = "<group>"; };
 		959290DB1FCDA910008E7B9D /* ShopCartWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ShopCartWebViewController.h; path = shoppingCart/controller/ShopCartWebViewController.h; sourceTree = "<group>"; };
 		959290DC1FCDA910008E7B9D /* ShopCartWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ShopCartWebViewController.m; path = shoppingCart/controller/ShopCartWebViewController.m; sourceTree = "<group>"; };
 		959290DD1FCDA910008E7B9D /* ShopCartWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ShopCartWebViewController.xib; path = shoppingCart/controller/ShopCartWebViewController.xib; sourceTree = "<group>"; };
@@ -710,7 +712,6 @@
 		95E729831F9367E400C920FD /* ArticalInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ArticalInfo.m; path = main/ArticalInfo.m; sourceTree = "<group>"; };
 		95E83B62201A1C9500886956 /* RefoundWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RefoundWebViewController.h; path = memberCenter/RefoundWebViewController.h; sourceTree = "<group>"; };
 		95E83B63201A1C9500886956 /* RefoundWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RefoundWebViewController.m; path = memberCenter/RefoundWebViewController.m; sourceTree = "<group>"; };
-		95E83B64201A1C9500886956 /* RefoundWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RefoundWebViewController.xib; path = memberCenter/RefoundWebViewController.xib; sourceTree = "<group>"; };
 		95EA12891FD19DF000B627D9 /* ProductConsulateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProductConsulateCell.h; path = category/view/ProductConsulateCell.h; sourceTree = "<group>"; };
 		95EA128A1FD19DF000B627D9 /* ProductConsulateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProductConsulateCell.m; path = category/view/ProductConsulateCell.m; sourceTree = "<group>"; };
 		95EA128B1FD19DF000B627D9 /* ProductConsulateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProductConsulateCell.xib; path = category/view/ProductConsulateCell.xib; sourceTree = "<group>"; };
@@ -1396,7 +1397,8 @@
 				959290E21FCDD284008E7B9D /* OrderWebViewController.xib */,
 				95E83B62201A1C9500886956 /* RefoundWebViewController.h */,
 				95E83B63201A1C9500886956 /* RefoundWebViewController.m */,
-				95E83B64201A1C9500886956 /* RefoundWebViewController.xib */,
+				959157DB201E026C00D529C8 /* RefoundListWebViewController.h */,
+				959157DC201E026C00D529C8 /* RefoundListWebViewController.m */,
 				95CBCC9E1FC1C4260053DFF4 /* MyCreditsLogViewController.h */,
 				95CBCC9F1FC1C4260053DFF4 /* MyCreditsLogViewController.m */,
 				95063DF51F87160F00F9D2DF /* LoginViewController.h */,
@@ -1657,7 +1659,6 @@
 				956DD2961F98EAD30028B18F /* ProductDetailViewController.xib in Resources */,
 				95A437C21F85518B00424E06 /* SecondaryFuncCell.xib in Resources */,
 				951D8EBB1FA2A21E00285084 /* CategoryPrimaryCell.xib in Resources */,
-				95E83B66201A1C9500886956 /* RefoundWebViewController.xib in Resources */,
 				95CF88DD1FAF42AA0068744B /* MemberTableSectionView.xib in Resources */,
 				956DD29E1F98F70E0028B18F /* NavibarSearchView.xib in Resources */,
 				95CD879D1FAE0AAA00E2EF09 /* MemberHeaderView.xib in Resources */,
@@ -1775,6 +1776,7 @@
 				95343B511FEBE48800438BDE /* ConsulateProductCell.m in Sources */,
 				95180FE71F7E7F8000A96FD8 /* BaseViewController.m in Sources */,
 				954074171F8BBE6A00D52350 /* GetOrderPaymentRequest.m in Sources */,
+				959157DD201E026C00D529C8 /* RefoundListWebViewController.m in Sources */,
 				956AE16A1FA5B222006D59B7 /* ProductParameter.m in Sources */,
 				954138E51F92568100FF84BD /* PromotionInfo.m in Sources */,
 				959290DE1FCDA910008E7B9D /* ShopCartWebViewController.m in Sources */,

@@ -14,6 +14,7 @@
 #import <MJExtension/MJExtension.h>
 #import "MyCreditsLogViewController.h"
 #import "PayManager.h"
+#import "RefoundWebViewController.h"
 
 @interface OrderWebViewController ()  <UIWebViewDelegate, PayManagerDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -35,6 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initNaviBackButton];
     [self initStatusBarBGColor];
     [self setTintColor:ZHAO_BLUE];
     self.title = @"我的订单";
@@ -153,22 +155,28 @@
         return NO;
     }
     
-    urlString = [urlString stringByRemovingPercentEncoding];
+    NSString* formateUrl = [urlString stringByRemovingPercentEncoding];
     //拦截主页
-    if ([urlString isEqualToString:SERVER_HOME_URL]) {
+    if ([formateUrl isEqualToString:SERVER_HOME_URL]) {
         [self.navigationController popViewControllerAnimated:YES];
         [self.tabBarController setSelectedIndex:0];
         return NO;
     }
     
     //拦截微动币列表界面
-    if ([urlString isEqualToString:SERVER_CoinList_URL]) {
+    if ([formateUrl isEqualToString:SERVER_CoinList_URL]) {
         [self openCoinsLogVC];
         return NO;
     }
-    if ([urlString isEqualToString:_previosUrl]) {
+    if ([formateUrl isEqualToString:_previosUrl]) {
         [self.navigationController popViewControllerAnimated:YES];
         [self.tabBarController setSelectedIndex:3];
+        return NO;
+    }
+    
+    //拦截退货界面
+    if ([formateUrl containsString:@"order/applyReturn"]) {
+        [self openRefundVC:urlString];
         return NO;
     }
     
@@ -199,5 +207,11 @@
     creditsVC.showCoinLog = YES;
     creditsVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:creditsVC animated:YES];
+}
+
+- (void)openRefundVC:(NSString *)url {
+    RefoundWebViewController *refundVC = [RefoundWebViewController new];
+    refundVC.funcBaseUrl = url;
+    [self.navigationController pushViewController:refundVC animated:YES];
 }
 @end

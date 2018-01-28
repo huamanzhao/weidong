@@ -1,12 +1,12 @@
 //
-//  RefoundWebViewController.m
+//  RefoundListWebViewController.m
 //  weidong
 //
-//  Created by zhccc on 2018/1/25.
+//  Created by zhccc on 2018/1/28.
 //  Copyright © 2018年 zhccc. All rights reserved.
 //
 
-#import "RefoundWebViewController.h"
+#import "RefoundListWebViewController.h"
 #import "LoginViewController.h"
 #import <WebKit/WebKit.h>
 #import <AlipaySDK/AlipaySDK.h>
@@ -14,12 +14,12 @@
 #import "RedirectModule.h"
 #import "SecurityUtil.h"
 
-@interface RefoundWebViewController () <WKNavigationDelegate>
+@interface RefoundListWebViewController () <WKNavigationDelegate>
+@property(nonatomic, copy)NSString *funcBaseUrl; //功能部分
 @property(nonatomic, copy)NSString *previosUrl;
-
 @end
 
-@implementation RefoundWebViewController {
+@implementation RefoundListWebViewController  {
     WKWebView *webView;
     NSString *redirectPart;  //重定向链接部分
     NSString *h5Url;    //H5网页访问的地址：基地址+功能部分
@@ -36,7 +36,7 @@
     [self initNaviBackButton];
     [self initStatusBarBGColor];
     [self setTintColor:ZHAO_BLUE];
-    self.title = @"退货";
+    self.title = @"我的退货";
     
     //初始化webview
     webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
@@ -45,14 +45,9 @@
     
     needReload = YES;
     
+    self.funcBaseUrl = @"/member/order/applyReturnList";
     self.previosUrl = SERVER_MEMBERCETER_URL;
-    
-    if (![Util userIsLogin]) {
-        [self openLoginVC];
-        return;
-    }
 }
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
@@ -190,5 +185,6 @@
     //    NSString *urlString = [webView.URL absoluteString];
     //    NSLog(@"zhccc--- 进程被终止：URL=%@",urlString);
 }
+
 
 @end
