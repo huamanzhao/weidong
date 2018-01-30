@@ -33,6 +33,7 @@
     
     self.title = @"找回密码";
     [self initNaviBackButton];
+    [self initNaviTopEdge];
     
     [self initSubView];
 }

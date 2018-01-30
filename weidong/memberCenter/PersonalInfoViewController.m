@@ -37,6 +37,7 @@
     
     self.title = @"个人资料";
     [self initNaviBackButton];
+    [self initNaviTopEdge];
     
     gender = 0;
     [self setupPositiveButtonStyle:_confirmBtn];

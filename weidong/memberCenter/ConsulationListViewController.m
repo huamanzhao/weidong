@@ -30,8 +30,7 @@
     [super viewDidLoad];
     self.title = @"我的咨询";
     [self initNaviBackButton];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.extendedLayoutIncludesOpaqueBars=NO;
+    [self initNaviTopEdge];
     
     consulateList = [NSMutableArray new];
     pageNumber = 1;

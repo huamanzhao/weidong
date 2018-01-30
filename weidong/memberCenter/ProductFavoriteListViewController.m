@@ -31,8 +31,7 @@
     [super viewDidLoad];
     self.title = @"商品收藏";
     [self initNaviBackButton];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.extendedLayoutIncludesOpaqueBars = NO;
+    [self initNaviTopEdge];
     
     [self.table setHidden:YES];
     favoriteList = [NSMutableArray new];

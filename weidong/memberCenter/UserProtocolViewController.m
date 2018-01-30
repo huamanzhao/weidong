@@ -19,6 +19,7 @@
     
     self.title = @"用户注册协议";
     [self initNaviBackButton];
+    [self initNaviTopEdge];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -33,6 +33,7 @@
     [super viewDidLoad];
     self.title = @"修改支付密码";
     [self initNaviBackButton];
+    [self initNaviTopEdge];
     
     self.funcBaseUrl = @"/member/deposit/payPw";
     self.previosUrl = SERVER_MEMBERCETER_URL;

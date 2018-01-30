@@ -77,6 +77,11 @@
 - (void)customeNaviLeftItemPressed {
 }
 
+- (void)initNaviTopEdge {
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars = NO;
+}
+
 
 /* ---- 定制导航栏右侧 ---- */
 - (void)initNaviRightItem: (UIView *)customView{

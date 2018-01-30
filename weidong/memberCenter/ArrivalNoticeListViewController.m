@@ -28,8 +28,7 @@
     [super viewDidLoad];
     self.title = @"到货通知";
     [self initNaviBackButton];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.extendedLayoutIncludesOpaqueBars=NO;
+    [self initNaviTopEdge];
     
     _table.rowHeight = UITableViewAutomaticDimension;
     _table.estimatedRowHeight = 136;

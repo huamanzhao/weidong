@@ -57,8 +57,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initNaviBackButton];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.extendedLayoutIncludesOpaqueBars = NO;
+    [self initNaviTopEdge];
     
     self.title = _address ? @"修改收货地址" : @"添加收货地址";
     

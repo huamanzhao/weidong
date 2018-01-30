@@ -36,6 +36,7 @@
     [self initNaviBackButton];
     [self initStatusBarBGColor];
     [self setTintColor:ZHAO_BLUE];
+    [self initNaviTopEdge];
     self.title = @"我的退货";
     
     //初始化webview
@@ -50,7 +51,6 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden = YES;
     
     if (![Util userIsLogin]) {
         [self openLoginVC];
@@ -95,6 +95,13 @@
         
         needReload = NO;
     }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self checkPhotoAuthorization];
+    [self checkCameraAuthorization];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

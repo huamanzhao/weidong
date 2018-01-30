@@ -34,9 +34,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    [self checkPhotoAuthorization];
-    [self checkCameraAuthorization];
 }
 
 - (void)didReceiveMemoryWarning {

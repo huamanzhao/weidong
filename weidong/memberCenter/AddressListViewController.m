@@ -27,6 +27,7 @@
     
     self.title = @"收货地址";
     [self initNaviBackButton];
+    [self initNaviTopEdge];
     
     _table.rowHeight = UITableViewAutomaticDimension;
     _table.estimatedRowHeight = 100;

@@ -25,8 +25,7 @@
     [super viewDidLoad];
     self.title = @"我的优惠券";
     [self initNaviBackButton];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.extendedLayoutIncludesOpaqueBars=NO;
+    [self initNaviTopEdge];
     
     pageNumber = 1;
     couponList = [NSMutableArray new];

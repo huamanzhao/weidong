@@ -20,6 +20,7 @@
     
     self.title = @"商品收藏";
     [self initNaviBackButton];
+    [self initNaviTopEdge];
     
     self.magicView.navigationColor = [UIColor whiteColor];
     self.magicView.sliderColor = POSITIVE_COLOR;

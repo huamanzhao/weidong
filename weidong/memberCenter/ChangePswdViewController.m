@@ -25,6 +25,7 @@
     
     self.title = @"修改密码";
     [self initNaviBackButton];
+    [self initNaviTopEdge];
     
     [self initSubviewLayout];
 }

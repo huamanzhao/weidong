@@ -25,6 +25,7 @@
     
     self.title = @"实名认证";
     [self initNaviBackButton];
+    [self initNaviTopEdge];
     
     [self setupPositiveButtonStyle:_verifyBtn];
 }

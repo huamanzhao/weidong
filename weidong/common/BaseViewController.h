@@ -49,6 +49,8 @@
 //右侧多个按钮点击回调
 - (void)naviRightItemPressed: (UIBarButtonItem *)button;
 
+- (void)initNaviTopEdge;
+
 
 /* ---- 定制导航栏标题 ---- */
 

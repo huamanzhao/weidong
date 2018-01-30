@@ -26,8 +26,7 @@
     [super viewDidLoad];
     self.title = @"我的订单";
     [self initNaviBackButton];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.extendedLayoutIncludesOpaqueBars=NO;
+    [self initNaviTopEdge];
     
     pageNumber = 1;
     orderList = [NSMutableArray new];

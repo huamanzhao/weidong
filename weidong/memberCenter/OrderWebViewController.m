@@ -39,6 +39,7 @@
     [self initNaviBackButton];
     [self initStatusBarBGColor];
     [self setTintColor:ZHAO_BLUE];
+    [self initNaviTopEdge];
     self.title = @"我的订单";
     
     if (self.orderType == OrderListType_Init) {
@@ -63,7 +64,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    self.navigationController.navigationBar.hidden = YES;
     
     if (![Util userIsLogin]) {
         [self openLoginVC];

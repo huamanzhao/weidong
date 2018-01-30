@@ -46,6 +46,7 @@
     
     self.title = @"注册";
     [self initNaviBackButton];
+    [self initNaviTopEdge];
     
     gender = 0;     //默认为男性
     serverVerify = @"";
