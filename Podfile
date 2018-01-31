@@ -1,4 +1,4 @@
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 target 'weidong' do
 pod 'AFNetworking', '~> 3.0'
@@ -9,5 +9,5 @@ pod 'VTMagic'
 pod 'JPush', '~> 3.0'
 pod 'SVProgressHUD’
 pod 'WechatOpenSDK'
-pod 'XLPhotoBrowser+CoderXL'
+pod 'MWPhotoBrowser', '~> 2.1'
 end

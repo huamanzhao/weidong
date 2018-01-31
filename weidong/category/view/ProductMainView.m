@@ -9,7 +9,7 @@
 #import "ProductMainView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "ProductSkuInfo.h"
-#import "XLPhotoBrowser.h"
+//#import "XLPhotoBrowser.h"
 #import "ProductImageInfo.h"
 
 @interface ProductMainView ()
@@ -27,6 +27,7 @@
 @implementation ProductMainView {
     ProductDetail *product;
     NSMutableArray *imageList; //图片列表；
+    NSMutableArray *photoList; //array of MWPhoto objects
     NSMutableArray *imageViewList; //
     BOOL downloadFinished;
 }
@@ -192,7 +193,7 @@
     CGFloat originX = _imageScroll.contentOffset.x;
     NSInteger index = originX / SCREEN_WIDTH;
     
-    [XLPhotoBrowser showPhotoBrowserWithImages:imageList currentImageIndex:index];
+//    [XLPhotoBrowser showPhotoBrowserWithImages:imageList currentImageIndex:index];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
