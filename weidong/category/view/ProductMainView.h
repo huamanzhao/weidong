@@ -17,7 +17,7 @@
 - (void)showProductHome;
 - (void)showProductComments;
 - (void)showProductConsults;
-
+- (void)showProductImages;
 @end
 
 

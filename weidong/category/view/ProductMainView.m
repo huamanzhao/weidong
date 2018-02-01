@@ -9,7 +9,6 @@
 #import "ProductMainView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "ProductSkuInfo.h"
-//#import "XLPhotoBrowser.h"
 #import "ProductImageInfo.h"
 
 @interface ProductMainView ()
@@ -26,7 +25,7 @@
 
 @implementation ProductMainView {
     ProductDetail *product;
-    NSMutableArray *imageList; //图片列表；
+//    NSMutableArray *imageList; //图片列表；
     NSMutableArray *photoList; //array of MWPhoto objects
     NSMutableArray *imageViewList; //
     BOOL downloadFinished;
@@ -44,7 +43,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    imageList = [NSMutableArray new];
+//    imageList = [NSMutableArray new];
     imageViewList = [NSMutableArray new];
     
     //下拉刷新数据
@@ -77,7 +76,7 @@
 - (void)setupWithProduct:(ProductDetail *)detail {
     product = detail;
     [imageViewList removeAllObjects];
-    [imageList removeAllObjects];
+//    [imageList removeAllObjects];
     
     //类型图片
     NSString *imageName = @"";
@@ -148,22 +147,22 @@
         [imageViewList addObject:imageView];
         
         //异步下载图片
-        __block NSURL *sourceUrl = [NSURL URLWithString:imageInfo.source];
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            NSData *imageData = [NSData dataWithContentsOfURL:sourceUrl];
-            UIImage *image;
-            if (imageData) {
-                image = [[UIImage alloc] initWithData:imageData];
-            }
-            else {
-                image = UIImageWithName(@"default_5");
-            }
-            [imageList addObject:image];
-            
-            if ([imageList count] == count) {
-                downloadFinished = YES;
-            }
-        });
+//        __block NSURL *sourceUrl = [NSURL URLWithString:imageInfo.source];
+//        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//            NSData *imageData = [NSData dataWithContentsOfURL:sourceUrl];
+//            UIImage *image;
+//            if (imageData) {
+//                image = [[UIImage alloc] initWithData:imageData];
+//            }
+//            else {
+//                image = UIImageWithName(@"default_5");
+//            }
+//            [imageList addObject:image];
+//
+//            if ([imageList count] == count) {
+//                downloadFinished = YES;
+//            }
+//        });
     }
     
     [self layoutSubviews];
@@ -190,10 +189,11 @@
 }
 
 - (void)scrollViewPressed {
-    CGFloat originX = _imageScroll.contentOffset.x;
-    NSInteger index = originX / SCREEN_WIDTH;
-    
+//    CGFloat originX = _imageScroll.contentOffset.x;
+//    NSInteger index = originX / SCREEN_WIDTH;
 //    [XLPhotoBrowser showPhotoBrowserWithImages:imageList currentImageIndex:index];
+    
+    [_delegate showProductImages];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

@@ -20,8 +20,10 @@
 #import "ProductConsulateViewController.h"
 #import "ProductDetail.h"
 #import "CommentInfo.h"
+#import "ProductImageInfo.h"
+#import <MWPhotoBrowser/MWPhotoBrowser.h>
 
-@interface ProductDetailViewController () <ProductDetailRefreshDelegate, ProductSpecificationDelegate>
+@interface ProductDetailViewController () <ProductDetailRefreshDelegate, ProductSpecificationDelegate, MWPhotoBrowserDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *homeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *detailBtn;
 @property (weak, nonatomic) IBOutlet UIButton *commentBtn;
@@ -209,6 +211,15 @@
             [SVProgressHUD showErrorWithStatus:errorMsg];
         }
     }];
+}
+
+//浏览商品图片
+- (void)showProductImages {
+    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+    browser.displayActionButton = NO;
+    browser.displayNavArrows = NO;
+    //push到MWPhotoBrowser
+    [self.navigationController pushViewController:browser animated:YES];
 }
 
 //MARK: 按钮点击
@@ -442,6 +453,20 @@
     LoginViewController *loginVC = [LoginViewController new];
     loginVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:loginVC animated:NO];
+}
+
+//MARK: - MWPhotoBrowserDelegate
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser{
+    return [detail.productImages count];
+}
+
+//返回图片模型
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index{
+    ProductImageInfo *imageInfo = [detail.productImages objectAtIndex:index];
+    NSString *imageUrl = imageInfo.source;
+    //创建图片模型
+    MWPhoto *photo = [MWPhoto photoWithURL:[NSURL URLWithString:imageUrl]];
+    return photo;
 }
 
 @end
