@@ -11,6 +11,7 @@
 #import "GetCoinsLogRequest.h"
 #import "CreditLogCell.h"
 #import <MJRefresh/MJRefresh.h>
+#import "CoinDetailViewController.h"
 
 @interface MyCreditsLogViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -55,7 +56,8 @@
     table = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     table.delegate = self;
     table.dataSource = self;
-    table.rowHeight = 48;
+    table.estimatedRowHeight = 64;
+    table.rowHeight = UITableViewAutomaticDimension;
     table.sectionHeaderHeight = 0;
     table.sectionFooterHeight = 10;
     table.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -177,6 +179,21 @@
         }
     }
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.section == 0) {
+        return;
+    }
+    if (!_showCoinLog) {
+        return;
+    }
+    
+    CoinDetailViewController *detailVC = [CoinDetailViewController new];
+    detailVC.coinLog = [coinLogList objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 //ZC_DEBUG

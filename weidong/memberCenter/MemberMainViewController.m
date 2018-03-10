@@ -288,6 +288,7 @@
 //个人账户管理
 - (void)managePersonalInfo {
     PersonalInfoViewController *personalVC = [PersonalInfoViewController new];
+    personalVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:personalVC animated:YES];
 }
 

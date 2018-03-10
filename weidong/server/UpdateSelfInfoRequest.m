@@ -21,7 +21,15 @@
 }
 
 - (void)generateParameterDic {
-    self.paramDic = [_info mj_keyValues];
+    NSMutableDictionary *tempDic = [NSMutableDictionary new];
+    [tempDic setValue:_info.nickname forKey:@"nickname"];
+    [tempDic setValue:_info.email forKey:@"email"];
+    [tempDic setValue:_info.mobile forKey:@"mobile"];
+    [tempDic setValue:_info.phone forKey:@"phone"];
+    [tempDic setValue:_info.memberAttribute_1 forKey:@"memberAttribute_1"];
+    [tempDic setValue:_info.memberAttribute_51 forKey:@"memberAttribute_51"];
+    
+    self.paramDic = [tempDic copy];
 }
 
 - (void)excuteRequest:(void (^)(BOOL, NSString * _Nullable))complete {

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,7 +22,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赠送" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpr-pI-drM">
-                        <rect key="frame" x="33.5" y="15.5" width="29" height="17"/>
+                        <rect key="frame" x="25.5" y="15.5" width="29" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -33,19 +34,20 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cON-AO-ebH">
-                        <rect key="frame" x="146" y="13.5" width="28.5" height="21"/>
+                        <rect key="frame" x="130" y="13.5" width="28.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="cON-AO-ebH" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="8I7-Yc-chd"/>
+                    <constraint firstItem="cON-AO-ebH" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.9" id="8I7-Yc-chd"/>
                     <constraint firstItem="bpr-pI-drM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="QR0-3z-lKF"/>
-                    <constraint firstItem="bpr-pI-drM" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.3" id="arx-jz-AFq"/>
+                    <constraint firstItem="bpr-pI-drM" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.25" id="arx-jz-AFq"/>
                     <constraint firstItem="cON-AO-ebH" firstAttribute="centerY" secondItem="bpr-pI-drM" secondAttribute="centerY" id="hK5-ys-LaH"/>
-                    <constraint firstItem="d6d-Df-7P5" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.7" id="uNu-Q5-6Lx"/>
+                    <constraint firstItem="d6d-Df-7P5" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.7" priority="750" id="uNu-Q5-6Lx"/>
                     <constraint firstItem="d6d-Df-7P5" firstAttribute="centerY" secondItem="bpr-pI-drM" secondAttribute="centerY" id="xaz-AT-8fv"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="d6d-Df-7P5" secondAttribute="trailing" id="yRT-SA-oZC"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>

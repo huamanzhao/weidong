@@ -48,6 +48,8 @@
 		952A2E601F9CE3A800F6F239 /* HeaderSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952A2E5E1F9CE3A700F6F239 /* HeaderSearchView.xib */; };
 		952A2E631F9CE4C300F6F239 /* ProductFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 952A2E621F9CE4C300F6F239 /* ProductFilterView.m */; };
 		952A2E651F9CE4D400F6F239 /* ProductFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952A2E641F9CE4D400F6F239 /* ProductFilterView.xib */; };
+		952B43552026A44A008B83CC /* CoinDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 952B43532026A44A008B83CC /* CoinDetailViewController.m */; };
+		952B43562026A44A008B83CC /* CoinDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952B43542026A44A008B83CC /* CoinDetailViewController.xib */; };
 		9531ADD01FB86FC7009D51EB /* RealNameVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9531ADCE1FB86FC7009D51EB /* RealNameVerifyViewController.m */; };
 		9531ADD11FB86FC7009D51EB /* RealNameVerifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9531ADCF1FB86FC7009D51EB /* RealNameVerifyViewController.xib */; };
 		95343B4D1FEBDAC100438BDE /* RemoveFavoriteReqeust.m in Sources */ = {isa = PBXBuildFile; fileRef = 95343B4B1FEBDAC000438BDE /* RemoveFavoriteReqeust.m */; };
@@ -259,12 +261,16 @@
 		95E7297C1F92FF1500C920FD /* CategoryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E7297B1F92FF1500C920FD /* CategoryInfo.m */; };
 		95E729801F93435D00C920FD /* AdvertisementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E7297E1F93435D00C920FD /* AdvertisementViewController.m */; };
 		95E729841F9367E400C920FD /* ArticalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E729831F9367E400C920FD /* ArticalInfo.m */; };
+		95E7D3EC2050A39F00075B2F /* VerifySmsCodeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E7D3EB2050A39F00075B2F /* VerifySmsCodeRequest.m */; };
 		95E83B65201A1C9500886956 /* RefoundWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E83B63201A1C9500886956 /* RefoundWebViewController.m */; };
 		95EA128C1FD19DF000B627D9 /* ProductConsulateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA128A1FD19DF000B627D9 /* ProductConsulateCell.m */; };
 		95EA128D1FD19DF000B627D9 /* ProductConsulateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95EA128B1FD19DF000B627D9 /* ProductConsulateCell.xib */; };
 		95EF49B11F89118C00DBE834 /* ResponseBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF49AE1F89118C00DBE834 /* ResponseBase.m */; };
 		95EF49B21F89118C00DBE834 /* RequestBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF49B01F89118C00DBE834 /* RequestBase.m */; };
 		95EF49B41F89E27300DBE834 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95EF49B31F89E27300DBE834 /* config.plist */; };
+		95F5ACF12053B9D6001E08BC /* ProductCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F5ACEF2053B9D6001E08BC /* ProductCommentViewController.m */; };
+		95F5ACF22053B9D6001E08BC /* ProductCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F5ACF02053B9D6001E08BC /* ProductCommentViewController.xib */; };
+		95F5ACF520541C4B001E08BC /* AddCommentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F5ACF420541C4B001E08BC /* AddCommentRequest.m */; };
 		95F729431F821CA800C1E3C1 /* BannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F729411F821CA800C1E3C1 /* BannerView.m */; };
 		95F729471F821D9C00C1E3C1 /* LoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F729461F821D9C00C1E3C1 /* LoopView.m */; };
 		95F985A61FF13007001CA540 /* CouponListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F985A41FF13007001CA540 /* CouponListCell.m */; };
@@ -351,6 +357,9 @@
 		952A2E611F9CE4C300F6F239 /* ProductFilterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProductFilterView.h; path = category/ProductFilterView.h; sourceTree = "<group>"; };
 		952A2E621F9CE4C300F6F239 /* ProductFilterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProductFilterView.m; path = category/ProductFilterView.m; sourceTree = "<group>"; };
 		952A2E641F9CE4D400F6F239 /* ProductFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProductFilterView.xib; path = main/ProductFilterView.xib; sourceTree = "<group>"; };
+		952B43522026A44A008B83CC /* CoinDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CoinDetailViewController.h; path = memberCenter/CoinDetailViewController.h; sourceTree = "<group>"; };
+		952B43532026A44A008B83CC /* CoinDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CoinDetailViewController.m; path = memberCenter/CoinDetailViewController.m; sourceTree = "<group>"; };
+		952B43542026A44A008B83CC /* CoinDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CoinDetailViewController.xib; path = memberCenter/CoinDetailViewController.xib; sourceTree = "<group>"; };
 		9531ADCD1FB86FC7009D51EB /* RealNameVerifyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RealNameVerifyViewController.h; path = memberCenter/RealNameVerifyViewController.h; sourceTree = "<group>"; };
 		9531ADCE1FB86FC7009D51EB /* RealNameVerifyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RealNameVerifyViewController.m; path = memberCenter/RealNameVerifyViewController.m; sourceTree = "<group>"; };
 		9531ADCF1FB86FC7009D51EB /* RealNameVerifyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RealNameVerifyViewController.xib; path = memberCenter/RealNameVerifyViewController.xib; sourceTree = "<group>"; };
@@ -710,6 +719,8 @@
 		95E7297E1F93435D00C920FD /* AdvertisementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AdvertisementViewController.m; path = main/AdvertisementViewController.m; sourceTree = "<group>"; };
 		95E729821F9367E400C920FD /* ArticalInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ArticalInfo.h; path = main/ArticalInfo.h; sourceTree = "<group>"; };
 		95E729831F9367E400C920FD /* ArticalInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ArticalInfo.m; path = main/ArticalInfo.m; sourceTree = "<group>"; };
+		95E7D3EA2050A39F00075B2F /* VerifySmsCodeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VerifySmsCodeRequest.h; path = server/VerifySmsCodeRequest.h; sourceTree = "<group>"; };
+		95E7D3EB2050A39F00075B2F /* VerifySmsCodeRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VerifySmsCodeRequest.m; path = server/VerifySmsCodeRequest.m; sourceTree = "<group>"; };
 		95E83B62201A1C9500886956 /* RefoundWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RefoundWebViewController.h; path = memberCenter/RefoundWebViewController.h; sourceTree = "<group>"; };
 		95E83B63201A1C9500886956 /* RefoundWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RefoundWebViewController.m; path = memberCenter/RefoundWebViewController.m; sourceTree = "<group>"; };
 		95EA12891FD19DF000B627D9 /* ProductConsulateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProductConsulateCell.h; path = category/view/ProductConsulateCell.h; sourceTree = "<group>"; };
@@ -720,6 +731,11 @@
 		95EF49AF1F89118C00DBE834 /* RequestBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestBase.h; path = server/RequestBase.h; sourceTree = "<group>"; };
 		95EF49B01F89118C00DBE834 /* RequestBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequestBase.m; path = server/RequestBase.m; sourceTree = "<group>"; };
 		95EF49B31F89E27300DBE834 /* config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
+		95F5ACEE2053B9D6001E08BC /* ProductCommentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProductCommentViewController.h; path = category/ProductCommentViewController.h; sourceTree = "<group>"; };
+		95F5ACEF2053B9D6001E08BC /* ProductCommentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProductCommentViewController.m; path = category/ProductCommentViewController.m; sourceTree = "<group>"; };
+		95F5ACF02053B9D6001E08BC /* ProductCommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProductCommentViewController.xib; path = category/ProductCommentViewController.xib; sourceTree = "<group>"; };
+		95F5ACF320541C4B001E08BC /* AddCommentRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AddCommentRequest.h; path = server/AddCommentRequest.h; sourceTree = "<group>"; };
+		95F5ACF420541C4B001E08BC /* AddCommentRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AddCommentRequest.m; path = server/AddCommentRequest.m; sourceTree = "<group>"; };
 		95F729401F821CA800C1E3C1 /* BannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BannerView.h; path = main/BannerView.h; sourceTree = "<group>"; };
 		95F729411F821CA800C1E3C1 /* BannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BannerView.m; path = main/BannerView.m; sourceTree = "<group>"; };
 		95F729451F821D9C00C1E3C1 /* LoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoopView.h; path = main/LoopView.h; sourceTree = "<group>"; };
@@ -1001,6 +1017,8 @@
 				95D2BE021FEF5CE600577D3A /* AddProductNotifyReqeust.m */,
 				95F985B51FF1353C001CA540 /* GetCouponListRequest.h */,
 				95F985B61FF1353C001CA540 /* GetCouponListRequest.m */,
+				95E7D3EA2050A39F00075B2F /* VerifySmsCodeRequest.h */,
+				95E7D3EB2050A39F00075B2F /* VerifySmsCodeRequest.m */,
 			);
 			name = server;
 			sourceTree = "<group>";
@@ -1119,6 +1137,8 @@
 				958873451FD985A800D6D82E /* AddFavoriteProductReqeust.m */,
 				95BFC7711FE41C980038B326 /* AddConsulationRequest.h */,
 				95BFC7721FE41C980038B326 /* AddConsulationRequest.m */,
+				95F5ACF320541C4B001E08BC /* AddCommentRequest.h */,
+				95F5ACF420541C4B001E08BC /* AddCommentRequest.m */,
 			);
 			name = server;
 			sourceTree = "<group>";
@@ -1329,6 +1349,9 @@
 				95BFC76C1FE3F35E0038B326 /* ProductConsulateViewController.h */,
 				95BFC76D1FE3F35E0038B326 /* ProductConsulateViewController.m */,
 				95BFC76E1FE3F35E0038B326 /* ProductConsulateViewController.xib */,
+				95F5ACEE2053B9D6001E08BC /* ProductCommentViewController.h */,
+				95F5ACEF2053B9D6001E08BC /* ProductCommentViewController.m */,
+				95F5ACF02053B9D6001E08BC /* ProductCommentViewController.xib */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -1401,6 +1424,9 @@
 				959157DC201E026C00D529C8 /* RefoundListWebViewController.m */,
 				95CBCC9E1FC1C4260053DFF4 /* MyCreditsLogViewController.h */,
 				95CBCC9F1FC1C4260053DFF4 /* MyCreditsLogViewController.m */,
+				952B43522026A44A008B83CC /* CoinDetailViewController.h */,
+				952B43532026A44A008B83CC /* CoinDetailViewController.m */,
+				952B43542026A44A008B83CC /* CoinDetailViewController.xib */,
 				95063DF51F87160F00F9D2DF /* LoginViewController.h */,
 				95063DF61F87160F00F9D2DF /* LoginViewController.m */,
 				95063DF71F87160F00F9D2DF /* LoginViewController.xib */,
@@ -1620,6 +1646,7 @@
 				95CF88E71FAFD0640068744B /* MemberMessageCell.xib in Resources */,
 				95A437C01F85518B00424E06 /* PrimaryFuncCell.xib in Resources */,
 				95CBCCAA1FC253F50053DFF4 /* AddressEditViewController.xib in Resources */,
+				95F5ACF22053B9D6001E08BC /* ProductCommentViewController.xib in Resources */,
 				95CF88F11FB0958B0068744B /* MemberLogoutCell.xib in Resources */,
 				953D56301FC39CAB0098B726 /* PersonalInfoViewController.xib in Resources */,
 				95D503C21FACAC8800151154 /* ChangePswdViewController.xib in Resources */,
@@ -1660,6 +1687,7 @@
 				95A437C21F85518B00424E06 /* SecondaryFuncCell.xib in Resources */,
 				951D8EBB1FA2A21E00285084 /* CategoryPrimaryCell.xib in Resources */,
 				95CF88DD1FAF42AA0068744B /* MemberTableSectionView.xib in Resources */,
+				952B43562026A44A008B83CC /* CoinDetailViewController.xib in Resources */,
 				956DD29E1F98F70E0028B18F /* NavibarSearchView.xib in Resources */,
 				95CD879D1FAE0AAA00E2EF09 /* MemberHeaderView.xib in Resources */,
 				951FE1521FF28A5B00726576 /* MemberTitleView.xib in Resources */,
@@ -1802,6 +1830,7 @@
 				955512A41F8A7D0D0032DC13 /* GetHomeCategoryRequest.m in Sources */,
 				952A2E591F9CE36300F6F239 /* NSData+Base64.m in Sources */,
 				95CF88F81FB271DB0068744B /* ProductFavoriteViewController.m in Sources */,
+				95F5ACF520541C4B001E08BC /* AddCommentRequest.m in Sources */,
 				95D503C11FACAC8800151154 /* ChangePswdViewController.m in Sources */,
 				9555127A1F8A37700032DC13 /* RefreshTokenReqeust.m in Sources */,
 				952711E21F9C1FB60046CE4C /* DropdownTableView.m in Sources */,
@@ -1838,7 +1867,9 @@
 				95180FDB1F7E7F1300A96FD8 /* MainTabbarViewController.m in Sources */,
 				955512771F8A23330032DC13 /* LoginRequest.m in Sources */,
 				95863D801FA93D5C006131A6 /* RegisterViewController.m in Sources */,
+				95F5ACF12053B9D6001E08BC /* ProductCommentViewController.m in Sources */,
 				952A2E5B1F9CE36300F6F239 /* GTMBase64.m in Sources */,
+				952B43552026A44A008B83CC /* CoinDetailViewController.m in Sources */,
 				954074141F8BBE2000D52350 /* CheckoutOrderRequest.m in Sources */,
 				956DD29A1F98F6DD0028B18F /* NavibarSearchView.m in Sources */,
 				952A2E5F1F9CE3A800F6F239 /* HeaderSearchView.m in Sources */,
@@ -1899,6 +1930,7 @@
 				95FD535E1F90E222000A6C2F /* CheckVerifyCodeRequest.m in Sources */,
 				9577CEAF1FA6261100D675B3 /* MemberLoginInfo.m in Sources */,
 				95CD87961FAE051000E2EF09 /* VersionInfo.m in Sources */,
+				95E7D3EC2050A39F00075B2F /* VerifySmsCodeRequest.m in Sources */,
 				9555128B1F8A55730032DC13 /* ProductSearchRequest.m in Sources */,
 				956AE16D1FA5B433006D59B7 /* ProductSkuInfo.m in Sources */,
 				9534E1651FEFEBA700F6B43B /* ArrivalNotifyCell.m in Sources */,

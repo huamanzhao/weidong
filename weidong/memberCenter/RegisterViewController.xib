@@ -20,9 +20,8 @@
                 <outlet property="phoneTF" destination="Jk2-0u-Afz" id="6st-yx-kPq"/>
                 <outlet property="realNameTF" destination="TBu-Dc-E6V" id="K3K-a5-DWS"/>
                 <outlet property="registerBtn" destination="Utc-IN-XPY" id="5ne-o6-8df"/>
+                <outlet property="sendBtn" destination="Mqs-q0-Yku" id="JUs-pa-fyd"/>
                 <outlet property="userNameTF" destination="c3Q-mE-nzm" id="Enj-q2-rXp"/>
-                <outlet property="verifyCodeView" destination="bnt-Mb-fUP" id="9mR-lV-WFh"/>
-                <outlet property="verifyHeightCS" destination="Tmb-E6-WNp" id="KNA-qw-J3v"/>
                 <outlet property="verifyTF" destination="ro7-kl-RLB" id="9SN-WP-OPx"/>
                 <outlet property="verifyView" destination="d7X-YF-w5c" id="W5D-FC-Cin"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -153,30 +152,37 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wmn-Q3-B03">
                                     <rect key="frame" x="16" y="33" width="343" height="30"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bnt-Mb-fUP" customClass="VerifyCodeView">
-                                            <rect key="frame" x="263" y="0.0" width="80" height="30"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="80" id="fnB-8b-EfS"/>
-                                            </constraints>
-                                        </view>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ro7-kl-RLB">
-                                            <rect key="frame" x="4" y="0.0" width="259" height="30"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="短信验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ro7-kl-RLB">
+                                            <rect key="frame" x="0.0" y="0.0" width="223" height="30"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqs-q0-Yku">
+                                            <rect key="frame" x="231" y="0.0" width="100" height="30"/>
+                                            <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="MlB-JJ-DsK"/>
+                                                <constraint firstAttribute="height" constant="30" id="brD-cA-ldJ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <state key="normal" title="发送验证码">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="sendBtnPressed:" destination="-1" eventType="touchUpInside" id="i7W-dO-SdQ"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="bnt-Mb-fUP" secondAttribute="bottom" id="9fa-6S-jaA"/>
+                                        <constraint firstItem="Mqs-q0-Yku" firstAttribute="leading" secondItem="ro7-kl-RLB" secondAttribute="trailing" constant="8" id="2NC-9d-YNc"/>
                                         <constraint firstItem="ro7-kl-RLB" firstAttribute="top" secondItem="Wmn-Q3-B03" secondAttribute="top" id="EuL-O2-VCr"/>
-                                        <constraint firstAttribute="trailing" secondItem="bnt-Mb-fUP" secondAttribute="trailing" id="avh-Pe-bEW"/>
-                                        <constraint firstItem="bnt-Mb-fUP" firstAttribute="top" secondItem="Wmn-Q3-B03" secondAttribute="top" id="awy-kC-e9i"/>
+                                        <constraint firstItem="Mqs-q0-Yku" firstAttribute="centerY" secondItem="Wmn-Q3-B03" secondAttribute="centerY" id="Vty-n1-fOf"/>
                                         <constraint firstAttribute="bottom" secondItem="ro7-kl-RLB" secondAttribute="bottom" id="dFp-S6-c6X"/>
-                                        <constraint firstItem="ro7-kl-RLB" firstAttribute="leading" secondItem="Wmn-Q3-B03" secondAttribute="leading" constant="4" id="dOh-vU-cXS"/>
+                                        <constraint firstAttribute="trailing" secondItem="Mqs-q0-Yku" secondAttribute="trailing" constant="12" id="dL6-r9-9Ie"/>
+                                        <constraint firstItem="ro7-kl-RLB" firstAttribute="leading" secondItem="Wmn-Q3-B03" secondAttribute="leading" id="dOh-vU-cXS"/>
                                         <constraint firstAttribute="height" constant="30" id="qrK-sf-YO3"/>
-                                        <constraint firstItem="bnt-Mb-fUP" firstAttribute="leading" secondItem="ro7-kl-RLB" secondAttribute="trailing" id="zuV-EP-RMd"/>
                                     </constraints>
                                 </view>
                             </subviews>

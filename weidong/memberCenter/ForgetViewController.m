@@ -98,14 +98,12 @@
         return;
     }
     
-    [SVProgressHUD showWithStatus:@"正在请求"];
+    [self startSendButtonCountdown];
     SendSmsVerifycodeRequest *request = [SendSmsVerifycodeRequest new];
     request.mobile = mobile;
     [request excuteRequest:^(BOOL isOK, NSString * _Nullable errorMsg) {
-        [SVProgressHUD dismiss];
         if (isOK) {
             [SVProgressHUD showInfoWithStatus:@"验证码短信已发送，请注意查收"];
-            [self startSendButtonCountdown];
         }
         else {
             [SVProgressHUD showErrorWithStatus:errorMsg];

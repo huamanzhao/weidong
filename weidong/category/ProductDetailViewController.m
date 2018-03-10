@@ -23,6 +23,9 @@
 #import "ProductImageInfo.h"
 #import <MWPhotoBrowser/MWPhotoBrowser.h>
 
+#import "ProductCommentViewController.h"
+
+
 @interface ProductDetailViewController () <ProductDetailRefreshDelegate, ProductSpecificationDelegate, MWPhotoBrowserDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *homeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *detailBtn;
@@ -243,9 +246,16 @@
     if (!didPressedConsult) {
         didPressedConsult = YES;
         
+        //ZC_DEBUG
+        //打开商品咨询界面
         ProductConsulateViewController *consulateVC = [ProductConsulateViewController new];
         consulateVC.product = detail;
         [self.navigationController pushViewController:consulateVC animated:YES];
+        
+        //打开商品评价界面
+//        ProductCommentViewController *commentVC = [ProductCommentViewController new];
+//        commentVC.productId = @"1351";
+//        [self.navigationController pushViewController:commentVC animated:YES];
     }
 }
 

@@ -15,6 +15,7 @@
 #import "MyCreditsLogViewController.h"
 #import "PayManager.h"
 #import "RefoundWebViewController.h"
+#import "ProductCommentViewController.h"
 
 @interface OrderWebViewController ()  <UIWebViewDelegate, PayManagerDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -180,6 +181,12 @@
         return NO;
     }
     
+    //拦截评论界面
+    if ([formateUrl containsString:@"/review/add/"]) {
+        [self openCommentVC:formateUrl];
+        return NO;
+    }
+    
     return YES;
 }
 
@@ -214,4 +221,17 @@
     refundVC.funcBaseUrl = url;
     [self.navigationController pushViewController:refundVC animated:YES];
 }
+
+- (void)openCommentVC:(NSString *)url {
+    NSString *productId;
+    NSArray *contents = [url componentsSeparatedByString:@"add/"];
+    if ([contents count] == 2) {
+        productId = [contents lastObject];
+        
+        ProductCommentViewController *commentVC = [ProductCommentViewController new];
+        commentVC.productId = productId;
+        [self.navigationController pushViewController:commentVC animated:YES];
+    }
+}
+
 @end
