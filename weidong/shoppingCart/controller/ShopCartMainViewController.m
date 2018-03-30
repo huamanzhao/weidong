@@ -378,7 +378,8 @@
         return ProductType_Deliver;
     }
     if ([title isEqualToString:@"保税"]) {
-        return ProductType_Trade;
+//        return ProductType_Trade;
+        return ProductType_Bonded;
     }
     
     return ProductType_Init;

@@ -141,24 +141,36 @@
         return;
     }
     
-    //0. 检查手机号是否已注册
-    [self checkExist];
-    
+    //1. 验证验证码
+    [self beginVerify];
 }
 
 - (void)checkExist {
     NSString *phone = _phoneTF.text;
-    [SVProgressHUD showWithStatus:@"正在注册"];
+    [SVProgressHUD showWithStatus:@"正在发送验证码"];
     CheckPhoneExistRequest *request = [CheckPhoneExistRequest new];
     request.mobile = phone;
     [request excuteRequest:^(BOOL isOK, NSString * _Nullable errorMsg) {
+        [SVProgressHUD dismiss];
         if (!isOK) {
+            _sendBtn.userInteractionEnabled = YES;
             [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"此手机号码已被注册"]];
             return;
         }
         
-        //1. 验证验证码
-        [self beginVerify];
+        [self startSendButtonCountdown];
+        SendSmsVerifycodeRequest *request = [SendSmsVerifycodeRequest new];
+        request.mobile = _phoneTF.text;
+        [request excuteRequest:^(BOOL isOK, NSString * _Nullable errorMsg) {
+            _sendBtn.userInteractionEnabled = YES;
+            if (isOK) {
+                [SVProgressHUD showInfoWithStatus:@"验证码短信已发送，请注意查收"];
+            }
+            else {
+                [SVProgressHUD showErrorWithStatus:errorMsg];
+                
+            }
+        }];
     }];
 }
 
@@ -236,18 +248,8 @@
         return;
     }
     
-    [self startSendButtonCountdown];
-    SendSmsVerifycodeRequest *request = [SendSmsVerifycodeRequest new];
-    request.mobile = mobile;
-    [request excuteRequest:^(BOOL isOK, NSString * _Nullable errorMsg) {
-        if (isOK) {
-            [SVProgressHUD showInfoWithStatus:@"验证码短信已发送，请注意查收"];
-        }
-        else {
-            [SVProgressHUD showErrorWithStatus:errorMsg];
-            _sendBtn.userInteractionEnabled = YES;
-        }
-    }];
+    //0. 检查手机号是否已注册
+    [self checkExist];
 }
 
 - (void)setSendBtnEnabled:(BOOL)enable {
