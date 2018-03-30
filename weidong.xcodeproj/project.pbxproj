@@ -41,6 +41,7 @@
 		95256A7C1FDDA81E00E21764 /* ConsulationListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95256A7A1FDDA81E00E21764 /* ConsulationListViewController.xib */; };
 		952711E21F9C1FB60046CE4C /* DropdownTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 952711E11F9C1FB60046CE4C /* DropdownTableView.m */; };
 		952711E41F9C20290046CE4C /* DropdownTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952711E31F9C20290046CE4C /* DropdownTableView.xib */; };
+		9527DF9F206E84A300D8D043 /* CheckPhoneExistRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9527DF9E206E84A300D8D043 /* CheckPhoneExistRequest.m */; };
 		952A2E591F9CE36300F6F239 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 952A2E521F9CE36200F6F239 /* NSData+Base64.m */; };
 		952A2E5A1F9CE36300F6F239 /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 952A2E531F9CE36200F6F239 /* NSData+AES.m */; };
 		952A2E5B1F9CE36300F6F239 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 952A2E561F9CE36300F6F239 /* GTMBase64.m */; };
@@ -344,6 +345,8 @@
 		952711E01F9C1FB60046CE4C /* DropdownTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DropdownTableView.h; path = category/DropdownTableView.h; sourceTree = "<group>"; };
 		952711E11F9C1FB60046CE4C /* DropdownTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DropdownTableView.m; path = category/DropdownTableView.m; sourceTree = "<group>"; };
 		952711E31F9C20290046CE4C /* DropdownTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DropdownTableView.xib; path = category/DropdownTableView.xib; sourceTree = "<group>"; };
+		9527DF9D206E84A300D8D043 /* CheckPhoneExistRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CheckPhoneExistRequest.h; path = server/CheckPhoneExistRequest.h; sourceTree = "<group>"; };
+		9527DF9E206E84A300D8D043 /* CheckPhoneExistRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CheckPhoneExistRequest.m; path = server/CheckPhoneExistRequest.m; sourceTree = "<group>"; };
 		952A2E521F9CE36200F6F239 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "weidong/include/Security/NSData+Base64.m"; sourceTree = SOURCE_ROOT; };
 		952A2E531F9CE36200F6F239 /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+AES.m"; path = "weidong/include/Security/NSData+AES.m"; sourceTree = SOURCE_ROOT; };
 		952A2E541F9CE36200F6F239 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "weidong/include/Security/NSData+Base64.h"; sourceTree = SOURCE_ROOT; };
@@ -1019,6 +1022,8 @@
 				95F985B61FF1353C001CA540 /* GetCouponListRequest.m */,
 				95E7D3EA2050A39F00075B2F /* VerifySmsCodeRequest.h */,
 				95E7D3EB2050A39F00075B2F /* VerifySmsCodeRequest.m */,
+				9527DF9D206E84A300D8D043 /* CheckPhoneExistRequest.h */,
+				9527DF9E206E84A300D8D043 /* CheckPhoneExistRequest.m */,
 			);
 			name = server;
 			sourceTree = "<group>";
@@ -1952,6 +1957,7 @@
 				955512E51F8A81FB0032DC13 /* LogoutRequest.m in Sources */,
 				954074021F8BB7D800D52350 /* CancelOrderRequest.m in Sources */,
 				95EA128C1FD19DF000B627D9 /* ProductConsulateCell.m in Sources */,
+				9527DF9F206E84A300D8D043 /* CheckPhoneExistRequest.m in Sources */,
 				955512D91F8A81400032DC13 /* GetAreaListRequest.m in Sources */,
 				955512951F8A79030032DC13 /* GetBannerAdsRequest.m in Sources */,
 				951D8EBA1FA2A21E00285084 /* CategoryPrimaryCell.m in Sources */,

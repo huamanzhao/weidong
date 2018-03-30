@@ -20,42 +20,42 @@
     
     switch (row) {
         case 0:
-            imageName = @"collect_0";
+            imageName = @"collect_0_j";
             title = @"商品分类";
             break;
             
         case 1:
-            imageName = @"collect_1";
+            imageName = @"collect_1_j";
             title = @"积分乐园";
             break;
             
         case 2:
-            imageName = @"collect_2";
+            imageName = @"collect_2_j";
             title = @"充值中心";
             break;
             
         case 3:
-            imageName = @"collect_3";
+            imageName = @"collect_3_j";
             title = @"会员中心";
             break;
             
         case 4:     //ZC_DEBUG
-            imageName = @"collect_7";
+            imageName = @"collect_7_j";
             title = @"直邮到家";
             break;
             
         case 5:
-            imageName = @"collect_5";
-            title = @"全城优食";
+            imageName = @"collect_5_j";
+            title = @"金木之家";
             break;
             
         case 6:
-            imageName = @"collect_6";
+            imageName = @"collect_6_j";
             title = @"微动精选";
             break;
             
         case 7:     //ZC_DEBUG
-            imageName = @"collect_4";
+            imageName = @"collect_4_j";
             title = @"母婴世界";
             break;
             

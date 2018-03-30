@@ -13,6 +13,7 @@
 #import "UserProtocolViewController.h"
 #import "SendSmsVerifycodeRequest.h"
 #import "VerifySmsCodeRequest.h"
+#import "CheckPhoneExistRequest.h"
 
 @interface RegisterViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameTF;
@@ -66,8 +67,6 @@
     [_registerBtn setRoundCorner];
     [self setupPositiveButtonStyle:_registerBtn];
     
-    _personalHeightCS.constant = 0;
-    
     _sendBtn.layer.cornerRadius = 4.0;
     _sendBtn.backgroundColor = POSITIVE_COLOR;
 }
@@ -113,7 +112,7 @@
         [SVProgressHUD showInfoWithStatus:@"请输入您的密码"];
         return;
     }
-    if ([userName length] < 4) {
+    if ([password length] < 4) {
         [SVProgressHUD showInfoWithStatus:@"密码长度不能少于4位"];
         return;
     }
@@ -142,8 +141,30 @@
         return;
     }
     
-    //1. 验证验证码
+    //0. 检查手机号是否已注册
+    [self checkExist];
+    
+}
+
+- (void)checkExist {
+    NSString *phone = _phoneTF.text;
     [SVProgressHUD showWithStatus:@"正在注册"];
+    CheckPhoneExistRequest *request = [CheckPhoneExistRequest new];
+    request.mobile = phone;
+    [request excuteRequest:^(BOOL isOK, NSString * _Nullable errorMsg) {
+        if (!isOK) {
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"此手机号码已被注册"]];
+            return;
+        }
+        
+        //1. 验证验证码
+        [self beginVerify];
+    }];
+}
+
+- (void)beginVerify {
+    NSString *phone = _phoneTF.text;
+    NSString *verifyCode = _verifyTF.text;
     VerifySmsCodeRequest *request = [VerifySmsCodeRequest new];
     request.mobile = phone;
     request.verifyCode = verifyCode;
@@ -152,26 +173,41 @@
             [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"验证失败：%@", errorMsg]];
             return;
         }
-    
+        
         //2. 验证通过后开始注册
-        [SVProgressHUD showWithStatus:@"正在注册"];
-        RegisterRequest *request = [RegisterRequest new];
-        request.username = userName;
-        request.password = password;
-        request.email = email;
-        request.gender = gender;
-        request.phone = phone;
-        request.mobile = phone;
-        [request excuteRequest:^(BOOL isOK, NSString * _Nullable errorMsg) {
-            [SVProgressHUD dismiss];
-            if (!isOK) {
-                [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"注册失败：%@", errorMsg]];
-                return;
-            }
-            //注册成功后，返回登录界面
-            [SVProgressHUD showSuccessWithStatus:@"注册成功"];
-            [self.navigationController popViewControllerAnimated:YES];
-        }];
+        [self beginRegister];
+    }];
+}
+
+- (void)beginRegister {
+    NSString *userName = _userNameTF.text;
+    NSString *password = _passwordTF.text;
+    NSString *confirmPsw = _confirmTF.text;
+    NSString *email = _emailTF.text;
+    NSString *phone = _phoneTF.text;
+    NSString *verifyCode = _verifyTF.text;
+    NSString *name = _realNameTF.text;
+    NSString *cardId = _idCardNoTF.text;
+    
+    [SVProgressHUD showWithStatus:@"正在注册"];
+    RegisterRequest *request = [RegisterRequest new];
+    request.username = userName;
+    request.password = password;
+    request.email = email;
+    request.gender = gender;
+    request.phone = phone;
+    request.mobile = phone;
+    request.memberAttribute_1 = name;
+    request.memberAttribute_51 = cardId;
+    [request excuteRequest:^(BOOL isOK, NSString * _Nullable errorMsg) {
+        [SVProgressHUD dismiss];
+        if (!isOK) {
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"注册失败：%@", errorMsg]];
+            return;
+        }
+        //注册成功后，返回登录界面
+        [SVProgressHUD showSuccessWithStatus:@"注册成功"];
+        [self.navigationController popViewControllerAnimated:YES];
     }];
 }
 
