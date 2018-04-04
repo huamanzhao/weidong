@@ -105,6 +105,10 @@
 }
 
 - (void)loadServerData {
+    if (_inJinMuMode) {
+        [self getJinMuFamilyProductlist];
+        return;
+    }
     if (!STRING_NULL(_searchKey)) {
         [self searchProducts];
     }
@@ -148,6 +152,42 @@
     request.orderType = orderType;
     request.pageSize = 10;
     request.pageNumber = pageNum;
+    [request excuteRequest:^(BOOL isOK, GetProductListResponse * _Nullable response, NSString * _Nullable errorMsg) {
+        [SVProgressHUD dismiss];
+        if (isOK) {
+            if (!inLoadMore) {
+                productList = [response.list mutableCopy];
+            }
+            else {
+                [productList addObjectsFromArray:response.list];
+                inLoadMore = NO;
+            }
+            
+            if (productList && [productList count]) {
+                [_collection setHidden:NO];
+                [_collection reloadData];
+            }
+            else {
+                [_collection setHidden:YES];
+            }
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:errorMsg];
+        }
+        
+        [_collection.mj_header endRefreshing];
+        [_collection.mj_footer endRefreshing];
+    }];
+}
+
+- (void)getJinMuFamilyProductlist {
+    [SVProgressHUD showWithStatus:@"正在请求数据"];
+    GetCategoryProductListRequest *request = [GetCategoryProductListRequest new];
+    request.productCategoryId = @"1";
+    request.productSupplierId = @"52";
+    request.orderType = orderType;
+//    request.pageSize = 10;
+//    request.pageNumber = pageNum;
     [request excuteRequest:^(BOOL isOK, GetProductListResponse * _Nullable response, NSString * _Nullable errorMsg) {
         [SVProgressHUD dismiss];
         if (isOK) {

@@ -19,5 +19,6 @@
 @property(nonatomic, assign)BOOL inZhiyouMode;
 @property(nonatomic, assign)BOOL inHotSelling;
 @property(nonatomic, assign)NSInteger productType;
+@property(nonatomic, assign)BOOL inJinMuMode;
 
 @end

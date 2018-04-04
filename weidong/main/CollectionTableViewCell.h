@@ -18,6 +18,7 @@
 - (void)openHotSellingProducts;
 - (void)openCategoryWithID:(NSString *)categoryID;
 - (void)openZhiyouProductList;
+- (void)openJinMuFamily;
 @end
 
 @interface CollectionTableViewCell : UITableViewCell <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>

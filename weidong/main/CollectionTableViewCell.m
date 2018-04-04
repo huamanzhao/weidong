@@ -64,7 +64,7 @@
     
     NSString *categoryId = @"";
     
-    //ZC_DEBUG  直邮到家、母婴世界两个按钮换位置后，这里的点击逻辑要修改
+    //直邮到家、母婴世界两个按钮换位置后，这里的点击逻辑要修改
     //现在第二行第一个是直邮、最后一个是母婴世界
     
     if (row > 4) {
@@ -90,7 +90,7 @@
             [_delegate openZhiyouProductList];  //目前这个是直邮到家
             break;
         case 5:
-            [_delegate openCategoryWithID:categoryId];
+            [_delegate openJinMuFamily];   //金木之家
             break;
         case 6:
             [_delegate openHotSellingProducts];

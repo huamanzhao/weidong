@@ -355,11 +355,21 @@
 
 //打开广告详情界面
 - (void)selectAdWithId: (AdInfo *)adInfo {
-    if (adInfo.type == 1) {
-        [self getAdArticalWithId:adInfo.articleId];
-    }
-    else {
-        [self selectProductWithID:adInfo.articleId];
+    switch (adInfo.type) {
+        case 1:
+            [self getAdArticalWithId:adInfo.articleId];
+            break;
+            
+        case 2:
+            [self selectProductWithID:adInfo.articleId];
+            break;
+            
+        case 3:
+            [self openCategoryWithID:adInfo.articleId];
+            break;
+            
+        default:
+            break;
     }
 }
 
@@ -413,6 +423,14 @@
 - (void)openCategoryWithID:(NSString *)categoryID {
     ProductListViewController *listVC = [ProductListViewController new];
     listVC.categoryId = categoryID;
+    listVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:listVC animated:YES];
+}
+
+//打开金木之家
+- (void)openJinMuFamily {
+    ProductListViewController *listVC = [ProductListViewController new];
+    listVC.inJinMuMode = YES;
     listVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:listVC animated:YES];
 }
