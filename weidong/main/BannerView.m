@@ -22,8 +22,6 @@
     CGFloat width;
     CGFloat height;
     
-    int timeTick;
-    
     NSTimer *timer;
     UITapGestureRecognizer *tapGesture;
 }
@@ -109,12 +107,8 @@
     [self setNeedsLayout];
     [self layoutIfNeeded];
     
-    timeTick = 0;
     if (!timer) {
-//        timer = [NSTimer scheduledTimerWithTimeInterval:3.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
-//            [self startLoopAnimation];
-//        }];
-        timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(startLoopAnimation) userInfo:nil repeats:YES];
+        [self startTimer];
     }
 }
 
@@ -134,25 +128,8 @@
         
         imageView.frame = CGRectMake(width * i, 0, width, height);
     }
-}
-
-//执行循环动画
-- (void)startLoopAnimation {
-    timeTick++;
     
-    CGFloat offsetX = timeTick * width;
-    
-    [_scrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat orginX = scrollView.contentOffset.x;
-    NSUInteger index = (NSUInteger)(orginX / width);
-    
-    if (index == bannersCount) {
-        timeTick = 0;
-        [scrollView setContentOffset:CGPointMake(0, 0) animated:false];
-    }
+    _scrollView.contentSize = CGSizeMake((bannersCount + 1) * width, height);
 }
 
 - (void)bannerSelected {
@@ -162,6 +139,45 @@
         
         [self.delegate selectAdWithId:adInfo];
     }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    pageControl.currentPage = (NSInteger)(_scrollView.contentOffset.x / width);;
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    CGFloat orginX = scrollView.contentOffset.x;
+    NSInteger pageIndex = (NSInteger)(orginX / width);
+    if (pageIndex == bannersCount) {
+        pageIndex = 0;
+        [scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
+    }
+    
+    [self startTimer];
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    CGFloat orginX = scrollView.contentOffset.x;
+    NSInteger pageIndex = (NSInteger)(orginX / width);
+    if (pageIndex == bannersCount) {
+        pageIndex = 0;
+        [scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
+    }
+    
+    [self startTimer];
+}
+
+- (void)startTimer {
+    [timer invalidate];
+    timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(startLoopAnimation) userInfo:nil repeats:NO];
+}
+
+//执行循环动画
+- (void)startLoopAnimation {
+    NSInteger index = (NSInteger)(_scrollView.contentOffset.x / width);
+    
+    CGFloat offsetX = (index + 1) * width;
+    [_scrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
 }
 
 @end
