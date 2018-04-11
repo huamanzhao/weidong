@@ -82,7 +82,14 @@
             complete(YES, responseObject, desc);
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             //失败
-            complete(NO, nil, error.localizedDescription);
+            NSString *errorMsg = error.localizedDescription;
+            if (error.code == -1 || error.code == 3840) {
+                errorMsg = HTTP_ERRMSG_TIMEOUT;
+            }
+            if (error.code == -1009) {
+                errorMsg = HTTP_ERRMSG_NONETWORK;
+            }
+            complete(NO, nil, errorMsg);
         }];        
     }
 //    if ([self.reqType isEqualToString: @"GET"]) {

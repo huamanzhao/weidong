@@ -73,4 +73,9 @@
 #define WX_AppID @"wxcaacd462002e7404"
 #define WX_PartnerID @"1496008132"
 
+#define HTTP_ERRMSG_TIMEOUT @"网络请求超时"
+#define HTTP_ERRMSG_NONETWORK @"网络连接错误"
+
+
+
 #endif /* Constants_h */

@@ -22,6 +22,7 @@
 #import "ChargeCenterViewController.h"
 #import "ChargeWebViewController.h"
 #import "LoginViewController.h"
+#import <AFNetworking/AFNetworkReachabilityManager.h>
 
 #import "ProductSearchRequest.h"
 #import "GetHotSearchRequest.h"
@@ -37,6 +38,7 @@
 #import "GetProductConsultRequest.h"
 
 #import "RealNameVerifyViewController.h"
+#import "NetworkFailureViewController.h"
 
 
 @interface HomePageViewController () <UITableViewDelegate, UITableViewDataSource, BannerViewDelegate, LoopDelegate, ScrollCellDelegate, CategoryCellDelegate, CollectionFuncDelegate>
@@ -104,8 +106,6 @@
     if (firstLoad) {
         //服务端数据请求
         [self loadServerData];
-        
-        firstLoad = NO;
     }
     
     self.navigationController.navigationBar.hidden = NO;
@@ -231,7 +231,10 @@
 }
 
 - (void)loadServerData {
-    [self getTopBannerAdList];      //获取顶部滚动广告
+    //先判断网络连接
+    [self checkNetworkStatus];
+    
+//    [self getTopBannerAdList];      //获取顶部滚动广告
 //    [self getFuncBtnCategory];      //获取第二列4个按钮分类
 ////    [self getPromotionList];        //获取促销列表（礼包后面上下滚动部分）
 //    [self getHotspotAdList];        //获取热点广告（scroll视图部分）
@@ -485,10 +488,17 @@
             }
         }
         else {
-            [SVProgressHUD showErrorWithStatus:@"内容获取失败，下拉刷新一下~"];
+            if ([errorMsg isEqualToString:HTTP_ERRMSG_TIMEOUT]) {
+                [self showServerUpdatingAlert];
+                return;
+            }
+            
+            if (![errorMsg isEqualToString:HTTP_ERRMSG_NONETWORK]) {
+                errorMsg = @"内容获取失败，下拉刷新一下~";
+            }
+            [SVProgressHUD showErrorWithStatus:errorMsg];
         }
         
-        //ZC_DEBUG
         [self getFuncBtnCategory];      //获取第二列4个按钮分类
     }];
 }
@@ -601,6 +611,52 @@
          }
         else {
         }
+    }];
+}
+
+- (void)checkNetworkStatus {
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusNotReachable:{
+                [self openNoNetWorkVC];
+                break;
+            }
+                
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+            case AFNetworkReachabilityStatusReachableViaWWAN:{
+                firstLoad = NO;
+                [self getTopBannerAdList];
+                [[AFNetworkReachabilityManager sharedManager] stopMonitoring];
+                break;
+            }
+                
+            default:
+                break;
+        }
+    }];
+}
+
+- (void)openNoNetWorkVC {
+    NetworkFailureViewController *failureVC = [NetworkFailureViewController new];
+    [self.navigationController presentViewController:failureVC animated:YES completion:nil];
+}
+
+- (void)showServerUpdatingAlert {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"系统升级" message:@"大家好，系统升级维护中，请稍后访问" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        [self exitApplication];
+        exit(0);
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)exitApplication {
+    [UIView animateWithDuration:0.5 animations:^{
+        UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+        window.transform = CGAffineTransformMakeScale(0, 0);
+    } completion:^(BOOL finished) {
+        exit(0);
     }];
 }
 

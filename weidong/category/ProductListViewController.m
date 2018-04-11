@@ -186,8 +186,8 @@
     request.productCategoryId = @"1";
     request.productSupplierId = @"52";
     request.orderType = orderType;
-//    request.pageSize = 10;
-//    request.pageNumber = pageNum;
+    request.pageSize = 50;
+    request.pageNumber = pageNum;
     [request excuteRequest:^(BOOL isOK, GetProductListResponse * _Nullable response, NSString * _Nullable errorMsg) {
         [SVProgressHUD dismiss];
         if (isOK) {

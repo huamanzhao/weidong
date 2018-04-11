@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		950041CC20771B2400732F07 /* NetworkFailureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 950041CA20771B2400732F07 /* NetworkFailureViewController.m */; };
+		950041CD20771B2400732F07 /* NetworkFailureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 950041CB20771B2400732F07 /* NetworkFailureViewController.xib */; };
 		950060541FF6A0A10087EB87 /* ModifyPayPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 950060521FF6A0A10087EB87 /* ModifyPayPasswordViewController.m */; };
 		950060551FF6A0A10087EB87 /* ModifyPayPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 950060531FF6A0A10087EB87 /* ModifyPayPasswordViewController.xib */; };
 		950195431FC4693E0025DACD /* SendSmsVerifycodeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 950195421FC4693E0025DACD /* SendSmsVerifycodeRequest.m */; };
@@ -288,6 +290,9 @@
 /* Begin PBXFileReference section */
 		06C3F508CE0C4E82EAB2BEA3 /* Pods_weidong.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weidong.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		632F1735DC52A73D11BEF6A3 /* Pods-weidong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weidong.release.xcconfig"; path = "Pods/Target Support Files/Pods-weidong/Pods-weidong.release.xcconfig"; sourceTree = "<group>"; };
+		950041C920771B2400732F07 /* NetworkFailureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkFailureViewController.h; path = main/NetworkFailureViewController.h; sourceTree = "<group>"; };
+		950041CA20771B2400732F07 /* NetworkFailureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NetworkFailureViewController.m; path = main/NetworkFailureViewController.m; sourceTree = "<group>"; };
+		950041CB20771B2400732F07 /* NetworkFailureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NetworkFailureViewController.xib; path = main/NetworkFailureViewController.xib; sourceTree = "<group>"; };
 		950060511FF6A0A10087EB87 /* ModifyPayPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ModifyPayPasswordViewController.h; path = memberCenter/ModifyPayPasswordViewController.h; sourceTree = "<group>"; };
 		950060521FF6A0A10087EB87 /* ModifyPayPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ModifyPayPasswordViewController.m; path = memberCenter/ModifyPayPasswordViewController.m; sourceTree = "<group>"; };
 		950060531FF6A0A10087EB87 /* ModifyPayPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ModifyPayPasswordViewController.xib; path = memberCenter/ModifyPayPasswordViewController.xib; sourceTree = "<group>"; };
@@ -1397,6 +1402,9 @@
 				95BFC7791FE641300038B326 /* EgouCardViewController.h */,
 				95BFC77A1FE641300038B326 /* EgouCardViewController.m */,
 				95BFC77B1FE641300038B326 /* EgouCardViewController.xib */,
+				950041C920771B2400732F07 /* NetworkFailureViewController.h */,
+				950041CA20771B2400732F07 /* NetworkFailureViewController.m */,
+				950041CB20771B2400732F07 /* NetworkFailureViewController.xib */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -1686,6 +1694,7 @@
 				95256A771FDDA22700E21764 /* CommentListViewController.xib in Resources */,
 				9534E1661FEFEBA700F6B43B /* ArrivalNotifyCell.xib in Resources */,
 				95A437E91F86387300424E06 /* ProductCollectionViewCell.xib in Resources */,
+				950041CD20771B2400732F07 /* NetworkFailureViewController.xib in Resources */,
 				950060551FF6A0A10087EB87 /* ModifyPayPasswordViewController.xib in Resources */,
 				95BFC77D1FE641300038B326 /* EgouCardViewController.xib in Resources */,
 				956DD2961F98EAD30028B18F /* ProductDetailViewController.xib in Resources */,
@@ -1802,6 +1811,7 @@
 				955512D01F8A80B20032DC13 /* AddAddressRequest.m in Sources */,
 				95256A7B1FDDA81E00E21764 /* ConsulationListViewController.m in Sources */,
 				95D2BDE21FEC785600577D3A /* GetCommentLIstRequest.m in Sources */,
+				950041CC20771B2400732F07 /* NetworkFailureViewController.m in Sources */,
 				9560987C1F7D3293002D7E35 /* AppDelegate.m in Sources */,
 				95CF88EB1FAFD6760068744B /* MemberToolsCell.m in Sources */,
 				95D2BDF31FEE2C7000577D3A /* OrderListInfo.m in Sources */,

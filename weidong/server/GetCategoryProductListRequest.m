@@ -54,6 +54,7 @@
     self.paramDic = [tempDic copy];
 }
 
+
 - (void)excuteRequest:(void (^)(BOOL, GetProductListResponse * _Nullable, NSString * _Nullable))complete {
     [self doRequest:^(Boolean isOK, NSDictionary * _Nullable responseDic, NSString * _Nullable errorMsg) {
         if (isOK) {
