@@ -138,20 +138,20 @@
 
 - (void)initNaviBarLeftItem {
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:UIImageWithName(@"navi_more") style:UIBarButtonItemStylePlain target:self action:@selector(naviLeftBarItemPressed)];
-    [item setTintColor:[UIColor whiteColor]];
+    [item setTintColor:[[UIColor whiteColor] colorWithAlphaComponent:0.8]];
     self.navigationItem.leftBarButtonItem = item;
 }
 
 - (void)initNaviBarRightItem {
     UIBarButtonItem *userItem = [[UIBarButtonItem alloc] initWithImage:UIImageWithName(@"navi_user") style:UIBarButtonItemStylePlain target:self action:@selector(naviRightBarItemPressed)];
-    [userItem setTintColor:[UIColor whiteColor]];
+    [userItem setTintColor:[[UIColor whiteColor] colorWithAlphaComponent:0.8]];
     self.navigationItem.rightBarButtonItem = userItem;
 }
 
 - (void)initNaviBarTitle {
     //背景View
-    CGFloat titleHeight = 32;
-    CGFloat titleWidth  = SCREEN_WIDTH * 0.65;
+    CGFloat titleHeight = 30;
+    CGFloat titleWidth  = SCREEN_WIDTH * 0.75;
     UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, titleWidth, titleHeight)];
     bgView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.4];
     bgView.layer.cornerRadius = 6.0;
@@ -187,6 +187,7 @@
 - (void)initNaviBackGroundImage:(BOOL)flag {
     UIImage *image = flag ? UIImageWithName(@"navi_background") : nil;
     [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
 }
 
 - (void)initTableView {
@@ -202,7 +203,7 @@
         [self loadServerData];
     }];
     
-    banner = [[BannerView alloc] initWithFrame:CGRectMake(0, -44, SCREEN_WIDTH, SCREEN_WIDTH * 9 / 20)];
+    banner = [[BannerView alloc] initWithFrame:CGRectMake(0, -44, SCREEN_WIDTH, SCREEN_WIDTH * 46 / 75)];
     banner.delegate = self;
 //    _table.tableHeaderView = banner;
     
@@ -275,7 +276,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 10;
+    return 0.1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -325,7 +326,7 @@
     header.backgroundColor = [UIColor whiteColor];
     
     //薯条
-    UIView *bar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 12, headHeight)];
+    UIView *bar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 8, headHeight)];
     bar.backgroundColor = [colorList objectAtIndex:index];
     [header addSubview:bar];
     

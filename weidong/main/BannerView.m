@@ -58,6 +58,7 @@
     //pageControll
     pageControl = [UIPageControl new];
     pageControl.currentPage = 0;
+    pageControl.currentPageIndicatorTintColor = [[UIColor colorWithHex:0xb8ee6e] colorWithAlphaComponent:0.8];
     [self addSubview:pageControl];
     
     //手势

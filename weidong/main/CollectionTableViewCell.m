@@ -50,7 +50,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat length = SCREEN_WIDTH / 4;
     
-    return CGSizeMake(length, length);
+    return CGSizeMake(length, length * 68 / 75);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

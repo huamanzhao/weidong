@@ -2545,11 +2545,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/main/HomePageViewController.m"
-            timestampString = "544693325.291929"
+            timestampString = "545454526.169667"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "361"
-            endingLineNumber = "361"
+            startingLineNumber = "362"
+            endingLineNumber = "362"
             landmarkName = "-selectAdWithId:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2561,11 +2561,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/main/HomePageViewController.m"
-            timestampString = "544693325.292012"
+            timestampString = "545454526.170099"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "612"
-            endingLineNumber = "612"
+            startingLineNumber = "613"
+            endingLineNumber = "613"
             landmarkName = "-checkVersionUpdate"
             landmarkType = "7">
          </BreakpointContent>
@@ -2593,11 +2593,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/main/HomePageViewController.m"
-            timestampString = "544693325.292134"
+            timestampString = "545454526.170507"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "496"
-            endingLineNumber = "496"
+            startingLineNumber = "497"
+            endingLineNumber = "497"
             landmarkName = "-getTopBannerAdList"
             landmarkType = "7">
          </BreakpointContent>
@@ -2609,11 +2609,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/main/HomePageViewController.m"
-            timestampString = "544693325.292182"
+            timestampString = "545454526.17082"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "491"
-            endingLineNumber = "491"
+            startingLineNumber = "492"
+            endingLineNumber = "492"
             landmarkName = "-getTopBannerAdList"
             landmarkType = "7">
          </BreakpointContent>

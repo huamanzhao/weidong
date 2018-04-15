@@ -1,0 +1,78 @@
+2018-04-12 07:06:25: -- Analysis Started by User Command
+2018-04-12 07:06:28: Changes: 70, Conflicts: 0, CopyTime: 0, FixState: 0, Errors: 0, All: 1625
+2018-04-12 07:06:28: Left to Right: Copy File: 70 
+2018-04-12 07:06:28: -- Analysis Complete. Time 00:00:03, Speed: 541 files/s
+2018-04-12 07:06:28: 
+2018-04-12 07:06:55: == Sync Started by User Command
+2018-04-12 07:06:55: Create Folder '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_0_j.imageset'
+2018-04-12 07:06:55: Create Folder '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_1_j.imageset'
+2018-04-12 07:06:55: Create Folder '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_2_j.imageset'
+2018-04-12 07:06:55: Create Folder '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_3_j.imageset'
+2018-04-12 07:06:55: Create Folder '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_4_j.imageset'
+2018-04-12 07:06:55: Create Folder '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_5_j.imageset'
+2018-04-12 07:06:55: Create Folder '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_6_j.imageset'
+2018-04-12 07:06:55: Create Folder '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_7_j.imageset'
+2018-04-12 07:06:55: Create Folder '/Volumes/X5000/Code/weidong/Assets.xcassets/img_network.imageset'
+2018-04-12 07:06:55: Create Folder '/Volumes/X5000/Code/weidong/weidong.xcworkspace/xcshareddata'
+2018-04-12 07:07:10: Copy Over '/work/weidong/Assets.xcassets/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/Contents.json' (62)
+2018-04-12 07:07:10: Copy New '/work/weidong/Assets.xcassets/home/collect_0_j.imageset/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_0_j.imageset/Contents.json' (349)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_0_j.imageset/分类1.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_0_j.imageset/分类1.jpg' (39513)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_0_j.imageset/分类1的副本 2.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_0_j.imageset/分类1的副本 2.jpg' (373556)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_1_j.imageset/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_1_j.imageset/Contents.json' (359)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_1_j.imageset/积分乐园.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_1_j.imageset/积分乐园.jpg' (38248)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_1_j.imageset/积分乐园的副本 2.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_1_j.imageset/积分乐园的副本 2.jpg' (371977)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_2_j.imageset/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_2_j.imageset/Contents.json' (359)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_2_j.imageset/充值中心.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_2_j.imageset/充值中心.jpg' (34846)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_2_j.imageset/充值中心的副本 2.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_2_j.imageset/充值中心的副本 2.jpg' (356184)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_3_j.imageset/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_3_j.imageset/Contents.json' (359)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_3_j.imageset/会员中心.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_3_j.imageset/会员中心.jpg' (26423)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_3_j.imageset/会员中心的副本 2.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_3_j.imageset/会员中心的副本 2.jpg' (332105)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_4_j.imageset/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_4_j.imageset/Contents.json' (359)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_4_j.imageset/母婴世界.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_4_j.imageset/母婴世界.jpg' (26031)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_4_j.imageset/母婴世界的副本 2.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_4_j.imageset/母婴世界的副本 2.jpg' (330250)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_5_j.imageset/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_5_j.imageset/Contents.json' (359)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_5_j.imageset/金木之家.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_5_j.imageset/金木之家.jpg' (31265)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_5_j.imageset/金木之家的副本 2.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_5_j.imageset/金木之家的副本 2.jpg' (347579)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_6_j.imageset/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_6_j.imageset/Contents.json' (359)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_6_j.imageset/微动精选.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_6_j.imageset/微动精选.jpg' (28035)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_6_j.imageset/微动精选的副本 2.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_6_j.imageset/微动精选的副本 2.jpg' (335692)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_7_j.imageset/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_7_j.imageset/Contents.json' (359)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_7_j.imageset/直邮到家.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_7_j.imageset/直邮到家.jpg' (34214)
+2018-04-12 07:07:27: Copy New '/work/weidong/Assets.xcassets/home/collect_7_j.imageset/直邮到家的副本 2.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_7_j.imageset/直邮到家的副本 2.jpg' (345885)
+2018-04-12 07:08:06: Copy Over '/work/weidong/Assets.xcassets/home/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/Contents.json' (62)
+2018-04-12 07:08:06: Copy New '/work/weidong/Assets.xcassets/img_network.imageset/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/img_network.imageset/Contents.json' (308)
+2018-04-12 07:08:06: Copy New '/work/weidong/Assets.xcassets/img_network.imageset/无网络-2.png' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/img_network.imageset/无网络-2.png' (10624)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/AppDelegate.m' -> '/Volumes/X5000/Code/weidong/weidong/AppDelegate.m' (4495)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/category/ProductListViewController.h' -> '/Volumes/X5000/Code/weidong/weidong/category/ProductListViewController.h' (672)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/category/ProductListViewController.m' -> '/Volumes/X5000/Code/weidong/weidong/category/ProductListViewController.m' (17014)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/common/Constants.h' -> '/Volumes/X5000/Code/weidong/weidong/common/Constants.h' (3174)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/common/WebBaseViewController.m' -> '/Volumes/X5000/Code/weidong/weidong/common/WebBaseViewController.m' (8610)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/Info.plist' -> '/Volumes/X5000/Code/weidong/weidong/Info.plist' (2454)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/main/AdInfo.h' -> '/Volumes/X5000/Code/weidong/weidong/main/AdInfo.h' (580)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/main/BannerView.m' -> '/Volumes/X5000/Code/weidong/weidong/main/BannerView.m' (5260)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/main/ChargeWebViewController.m' -> '/Volumes/X5000/Code/weidong/weidong/main/ChargeWebViewController.m' (9869)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/main/CollectionTableViewCell.h' -> '/Volumes/X5000/Code/weidong/weidong/main/CollectionTableViewCell.h' (837)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/main/CollectionTableViewCell.m' -> '/Volumes/X5000/Code/weidong/weidong/main/CollectionTableViewCell.m' (3244)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/main/HomePageViewController.m' -> '/Volumes/X5000/Code/weidong/weidong/main/HomePageViewController.m' (22162)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/main/LoopView.m' -> '/Volumes/X5000/Code/weidong/weidong/main/LoopView.m' (5563)
+2018-04-12 07:08:06: Copy New '/work/weidong/weidong/main/NetworkFailureViewController.h' -> '/Volumes/X5000/Code/weidong/weidong/main/NetworkFailureViewController.h' (265)
+2018-04-12 07:08:06: Copy New '/work/weidong/weidong/main/NetworkFailureViewController.m' -> '/Volumes/X5000/Code/weidong/weidong/main/NetworkFailureViewController.m' (1850)
+2018-04-12 07:08:06: Copy New '/work/weidong/weidong/main/NetworkFailureViewController.xib' -> '/Volumes/X5000/Code/weidong/weidong/main/NetworkFailureViewController.xib' (5316)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/main/PrimaryFuncCell.m' -> '/Volumes/X5000/Code/weidong/weidong/main/PrimaryFuncCell.m' (1831)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/memberCenter/RefoundListWebViewController.m' -> '/Volumes/X5000/Code/weidong/weidong/memberCenter/RefoundListWebViewController.m' (6684)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/memberCenter/RefoundWebViewController.m' -> '/Volumes/X5000/Code/weidong/weidong/memberCenter/RefoundWebViewController.m' (6685)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/memberCenter/RegisterViewController.m' -> '/Volumes/X5000/Code/weidong/weidong/memberCenter/RegisterViewController.m' (9211)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/memberCenter/RegisterViewController.xib' -> '/Volumes/X5000/Code/weidong/weidong/memberCenter/RegisterViewController.xib' (42070)
+2018-04-12 07:08:06: Copy New '/work/weidong/weidong/server/CheckPhoneExistRequest.h' -> '/Volumes/X5000/Code/weidong/weidong/server/CheckPhoneExistRequest.h' (354)
+2018-04-12 07:08:06: Copy New '/work/weidong/weidong/server/CheckPhoneExistRequest.m' -> '/Volumes/X5000/Code/weidong/weidong/server/CheckPhoneExistRequest.m' (636)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/server/GetBannerAdsRequest.m' -> '/Volumes/X5000/Code/weidong/weidong/server/GetBannerAdsRequest.m' (1210)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/server/GetCategoryProductListRequest.h' -> '/Volumes/X5000/Code/weidong/weidong/server/GetCategoryProductListRequest.h' (1401)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/server/GetCategoryProductListRequest.m' -> '/Volumes/X5000/Code/weidong/weidong/server/GetCategoryProductListRequest.m' (1815)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/server/RequestBase.m' -> '/Volumes/X5000/Code/weidong/weidong/server/RequestBase.m' (5147)
+2018-04-12 07:08:06: Copy Over '/work/weidong/weidong/shoppingCart/controller/ShopCartMainViewController.m' -> '/Volumes/X5000/Code/weidong/weidong/shoppingCart/controller/ShopCartMainViewController.m' (14086)
+2018-04-12 07:09:21: Copy Over '/work/weidong/weidong.xcodeproj/project.pbxproj' -> '/Volumes/X5000/Code/weidong/weidong.xcodeproj/project.pbxproj' (216078)
+2018-04-12 07:09:29: Copy New '/work/weidong/weidong.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist' -> '/Volumes/X5000/Code/weidong/weidong.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist' (238)
+2018-04-12 07:09:52: Copy Over '/work/weidong/weidong.xcworkspace/xcuserdata/zhouchao.xcuserdatad/UserInterfaceState.xcuserstate' -> '/Volumes/X5000/Code/weidong/weidong.xcworkspace/xcuserdata/zhouchao.xcuserdatad/UserInterfaceState.xcuserstate' (640403)
+2018-04-12 07:09:52: Copy Over '/work/weidong/weidong.xcworkspace/xcuserdata/zhouchao.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist' -> '/Volumes/X5000/Code/weidong/weidong.xcworkspace/xcuserdata/zhouchao.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist' (118778)
+2018-04-12 07:10:45: == Sync Complete. Time: 00:03:50, Speed: 24.9 KB/s, OK: 70, Errors: 0
+2018-04-12 07:10:45: 
