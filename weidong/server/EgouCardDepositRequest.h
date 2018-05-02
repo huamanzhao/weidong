@@ -13,9 +13,10 @@
 
 @property(nonatomic, copy)NSString *cardNo;
 @property(nonatomic, copy)NSString *cardPassword;
-@property(nonatomic, assign)float cardValue;
+@property(nonatomic, copy)NSString *cardValue;
+@property(nonatomic, copy)NSString *transactionId;
 
 
-- (void)excuteRequst:(void (^_Nonnull)(Boolean isOK, float balance, NSString * _Nullable errorMsg))complete;
+- (void)excuteRequst:(void (^_Nonnull)(Boolean isOK, NSString * _Nullable errorMsg))complete;
 
 @end

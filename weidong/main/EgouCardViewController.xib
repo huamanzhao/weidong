@@ -285,9 +285,9 @@
                 <constraint firstAttribute="bottom" secondItem="R8W-eX-moL" secondAttribute="bottom" constant="20" id="H3F-op-139"/>
                 <constraint firstItem="Nlb-cu-hlv" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="JAd-H6-oqW"/>
                 <constraint firstItem="R8W-eX-moL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="Kl5-rK-Y5k"/>
-                <constraint firstItem="UqE-SZ-rvc" firstAttribute="top" secondItem="R1c-R6-moR" secondAttribute="bottom" constant="17" id="NiH-zi-Pcv"/>
                 <constraint firstItem="HKr-ao-hHr" firstAttribute="leading" secondItem="jjR-gW-lqj" secondAttribute="trailing" constant="2" id="XOD-pg-jpV"/>
                 <constraint firstItem="hx4-AA-4eM" firstAttribute="top" secondItem="Nlb-cu-hlv" secondAttribute="bottom" constant="18" id="Yuc-XM-i3e"/>
+                <constraint firstItem="UqE-SZ-rvc" firstAttribute="top" secondItem="fTe-uU-vZf" secondAttribute="bottom" constant="18" id="gRw-Eu-IfI"/>
                 <constraint firstItem="R8W-eX-moL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hsm-RF-xbc"/>
                 <constraint firstItem="UqE-SZ-rvc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="iLg-0e-RJm"/>
                 <constraint firstItem="Nlb-cu-hlv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="o3U-8k-aDy"/>

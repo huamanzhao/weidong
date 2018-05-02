@@ -195,9 +195,7 @@
     
     //拦截易购卡充值界面
     if ([urlString containsString:EGOU_CARD_URL_BASE]) {
-        decisionHandler(WKNavigationActionPolicyCancel);
         [self openCartPayVCWithURL:urlString];
-        return;
     }
     
     //拦截跳转到入口界面的上一级界面
@@ -290,15 +288,18 @@
     [self.navigationController pushViewController:creditsVC animated:YES];
 }
 
-- (void)openCartPayVCWithURL:(NSString *)url {
-    NSArray *components = [url componentsSeparatedByString:@"?"];
-    if ([components count] + 2) {
-        [SVProgressHUD showInfoWithStatus:@"易购卡地址错误"];
+- (void)openCartPayVCWithURL:(NSString *)urlstr {
+    NSURL *url = [NSURL URLWithString:urlstr];
+    if (!url) {
+        [SVProgressHUD showInfoWithStatus:@"易购卡参数错误"];
+        return;
+    }
+    NSData *jsonData = [NSData dataWithContentsOfURL:url];
+    if (!jsonData) {
+        [SVProgressHUD showInfoWithStatus:@"易购卡参数错误"];
         return;
     }
     
-    NSString *jsonString = [components lastObject];
-    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     NSError *err;
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
                                                         options:NSJSONReadingMutableContainers
@@ -309,9 +310,8 @@
         return;
     }
     
-    
     EgouCardViewController *cardVC = [EgouCardViewController new];
-    cardVC.transactionId = [dic ];
+    cardVC.paramDic = dic;
     [self.navigationController pushViewController:cardVC animated:NO];
 }
 

@@ -10,6 +10,7 @@
 #import <MJExtension/MJExtension.h>
 #import "Constants.h"
 #import "Enum.h"
+#import "SecurityUtil.h"
 
 @interface RequestBase : NSObject
 

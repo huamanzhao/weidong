@@ -39,8 +39,15 @@
 #define SERVER_SERVER_URL       @"http://www.weldone.shop"      //正式服务器
 #define SERVER_YANXUDONG        @"http://192.168.43.91:8080/"   //严旭东
 
+#define SERVER_TEST_EGOU_URL    @"http://47.95.204.47:8090/card/rechargephone.do"
+#define SERVER_RELEASE_EGOU_URL @"https://www.egocard.cn/card/rechargephone.do"
 
-#define SERVER_HTTP_BASE     SERVER_TEST_HTTP_BASE//   SERVER_SERVER_URL//    //测试服务器、正式服务器切换改这里
+
+
+#define SERVER_HTTP_BASE     SERVER_SERVER_URL//     SERVER_TEST_HTTP_BASE//    //测试服务器、正式服务器切换改这里
+#define SERVER_EGOU_URL      SERVER_RELEASE_EGOU_URL//  SERVER_TEST_EGOU_URL//  //易购卡测试服务器 、正式服务器
+
+
 
 #define SERVER_BASE_URL     [SERVER_HTTP_BASE stringByAppendingString:@":80/"]  //服务器基地址
 #define SERVER_API_URL      [SERVER_BASE_URL stringByAppendingString:@"interfaces/app/"] //接口url基地址
@@ -52,8 +59,7 @@
 #define SERVER_CoinList_URL [SERVER_HTTP_BASE stringByAppendingString:@"/member/deposit/log"]   //微动币列表URL
 #define SERVER_HOME_URL     [SERVER_HTTP_BASE stringByAppendingString:@"/"] //首页URL
 
-
-#define EGOU_CARD_URL_BASE     @"rechargecheck.do" //易购卡支付界面
+#define EGOU_CARD_URL_BASE      @"rechargephonecheck.do" //易购卡支付界面
 
 /* -------- 个人信息 -------- */
 #define USER_NAME    @"username"

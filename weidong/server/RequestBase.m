@@ -8,7 +8,6 @@
 
 #import "RequestBase.h"
 #import <AFNetworking/AFNetworking.h>
-#import "SecurityUtil.h"
 #import "Util.h"
 
 @implementation RequestBase {
@@ -35,7 +34,7 @@
     
     //响应数据的格式
     AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializer];
-    responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", nil];
+    responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/plain", nil];
 //    [NSSet setWithObject:@"application/json"];
     [manager setResponseSerializer:responseSerializer];
 //    manager.responseSerializer = [AFJSONResponseSerializer serializer];//[AFHTTPResponseSerializer serializer]; //普通格式，返回data
@@ -75,7 +74,7 @@
             NSInteger result = [[responseObject valueForKey:@"result"] integerValue];
             NSString *desc = [responseObject valueForKey:@"desc"];
             if (result != 1) {
-                complete(NO, nil, desc);
+                complete(NO, responseObject, desc);
                 return;
             }
             

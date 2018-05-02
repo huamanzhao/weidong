@@ -127,7 +127,7 @@
 
 - (void)openCartPayView {
     EgouCardViewController *cardVC = [EgouCardViewController new];
-    cardVC.amount = [_amountTF.text floatValue];
+//    cardVC.amount = [_amountTF.text floatValue];
     [self.navigationController pushViewController:cardVC animated:NO];
 }
 

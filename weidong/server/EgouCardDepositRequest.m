@@ -13,20 +13,28 @@
 {
     self = [super init];
     if (self) {
-        self.urlString = [SERVER_API_URL_MEMEBER stringByAppendingString:@"deposit"];
+        self.urlString = SERVER_EGOU_URL;
+        self.reqType = @"POST";
     }
     return self;
 }
 
-- (void)excuteRequst:(void (^)(Boolean, float, NSString * _Nullable))complete {
+- (void)excuteRequst:(void (^)(Boolean, NSString * _Nullable))complete {
     [self doRequest:^(Boolean isOK, NSDictionary * _Nullable responseDic, NSString * _Nullable errorMsg) {
-        if (isOK) {
-            float balance = [[responseDic valueForKey:@"memberBalance"] floatValue];
-            complete(YES, balance, nil);
+        if (!isOK) {
+            complete(NO, errorMsg);
+            return;
         }
-        else {
-            complete(NO, 0, errorMsg);
+        
+        NSString *result = [responseDic objectForKey:@"result"];
+        NSString *desc   = [responseDic objectForKey:@"desc"];
+        
+        if (![result isEqualToString:@"1"]) {
+            complete(NO, desc);
+            return;
         }
+        
+        complete(YES, desc);
     }];
 }
 

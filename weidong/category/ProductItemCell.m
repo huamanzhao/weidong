@@ -8,6 +8,7 @@
 
 #import "ProductItemCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "ProductImageInfo.h"
 
 @implementation ProductItemCell
 
@@ -17,7 +18,6 @@
 }
 
 -(void)setupWithProduct: (ProductInfo *)product {
-    [_image sd_setImageWithURL:[NSURL URLWithString:product.image] placeholderImage:UIImageWithName(@"default_4")];
     _titleLabel.text = product.name;
     _priceLabel.text = [NSString stringWithFormat:@"￥%.2f", product.price];
     
@@ -40,6 +40,20 @@
     }
     if (!STRING_NULL(imageName)) {
         _typeImage.image = UIImageWithName(imageName);
+    }
+    
+    NSString *imageUrlStr = @"";
+    if ([product.productImages count] > 0) {
+        ProductImageInfo *imageInfo = product.productImages.firstObject;
+        imageUrlStr = imageInfo.medium;
+    }
+    if (STRING_NULL(imageUrlStr)) {
+        imageUrlStr = product.image;
+    }
+    
+    NSURL *imageUrl = [NSURL URLWithString:imageUrlStr];
+    if (imageUrl) {
+        [_image sd_setImageWithURL:imageUrl placeholderImage:UIImageWithName(@"default_2") options:SDWebImageProgressiveDownload];
     }
     
 }

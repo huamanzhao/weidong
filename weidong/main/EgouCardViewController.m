@@ -52,7 +52,7 @@
     [self getVerifyCode];
     
     _nameLabel.text = [Util getUserName];
-    _amountLabel.text = [NSString stringWithFormat:@"￥%.2lf", _amount];
+    _amountLabel.text = [NSString stringWithFormat:@"￥%@", [_paramDic objectForKey:@"cardValue"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -123,9 +123,11 @@
     [SVProgressHUD showWithStatus:@"正在充值"];
     EgouCardDepositRequest *request = [EgouCardDepositRequest new];
     request.cardNo = _cardNoTF.text;
-    request.cardPassword = _passwordTF.text;
-    request.cardValue = 100;//_amount;
-    [request excuteRequst:^(Boolean isOK, float balance, NSString * _Nullable errorMsg) {
+    NSString *encryptStr = [SecurityUtil encryptAESString:_passwordTF.text];
+    request.cardPassword = encryptStr;
+    request.transactionId = [_paramDic valueForKey:@"transactionId"];
+    request.cardValue = [_paramDic valueForKey:@"cardValue"];
+    [request excuteRequst:^(Boolean isOK, NSString * _Nullable errorMsg) {
         [SVProgressHUD dismiss];
         if (isOK) {
             [SVProgressHUD showSuccessWithStatus:@"充值成功"];

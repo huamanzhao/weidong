@@ -14,5 +14,5 @@
 @property (nonatomic, strong) LVKeyboardView *keyboard;
 @property (nonatomic, strong) NSMutableString *passWord;
 
-@property (nonatomic, copy)NSString *transactionId;
+@property (nonatomic, copy)NSDictionary *paramDic;
 @end
