@@ -12,7 +12,7 @@
 #import "CheckVerifyCodeRequest.h"
 #import "EgouCardDepositRequest.h"
 
-@interface EgouCardViewController () <VerifiCodeDelegate>
+@interface EgouCardViewController () <UITextFieldDelegate, LVKeyboardDelegate, VerifiCodeDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *amountLabel;
 @property (weak, nonatomic) IBOutlet UITextField *cardNoTF;
@@ -31,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"充值服务";
+    self.title = @"易购卡充值";
     [self initNaviBackButton];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.extendedLayoutIncludesOpaqueBars=NO;
@@ -41,6 +41,9 @@
     [self setupPositiveButtonStyle:_chargeBtn];
     _cardBgView.layer.cornerRadius = 8.0;
     [_cardBgView addShadowLayer];
+    
+    _passwordTF.inputAccessoryView = [LVKeyboardAccessoryBtn new];
+    _passwordTF.inputView = self.keyboard;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -121,7 +124,7 @@
     EgouCardDepositRequest *request = [EgouCardDepositRequest new];
     request.cardNo = _cardNoTF.text;
     request.cardPassword = _passwordTF.text;
-    request.cardValue = _amount;
+    request.cardValue = 100;//_amount;
     [request excuteRequst:^(Boolean isOK, float balance, NSString * _Nullable errorMsg) {
         [SVProgressHUD dismiss];
         if (isOK) {
@@ -139,6 +142,50 @@
 - (void)needChangeVerifyCode {
     serverVerify = @"";
     [self getVerifyCode];
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    self.passwordTF.text = nil;
+    self.passWord = nil;
+    
+    CGFloat x = 0;
+    CGFloat y = self.view.height - 216;
+    CGFloat w = self.view.width;
+    CGFloat h = 216;
+    self.keyboard = [[LVKeyboardView alloc] initWithFrame:CGRectMake(x, y, w, h)];
+    self.keyboard.delegate = self;
+    
+    self.passwordTF.inputView = _keyboard;
+    
+    return YES;
+}
+
+#pragma mark - LVKeyboardDelegate
+- (void)keyboard:(LVKeyboardView *)keyboard didClickButton:(UIButton *)button {
+    
+    if (self.passWord.length > 5) return;
+    [self.passWord appendString:button.currentTitle];
+    
+    self.passwordTF.text = self.passWord;
+    NSLog(@"%@", self.passwordTF.text);
+}
+
+- (void)keyboard:(LVKeyboardView *)keyboard didClickDeleteBtn:(UIButton *)deleteBtn {
+    NSLog(@"删除");
+    NSUInteger loc = self.passWord.length;
+    if (loc == 0)   return;
+    NSRange range = NSMakeRange(loc - 1, 1);
+    [self.passWord deleteCharactersInRange:range];
+    self.passwordTF.text = self.passWord;
+    NSLog(@"%@", self.passwordTF.text);
+}
+
+#pragma mark - 需要
+- (NSMutableString *)passWord {
+    if (!_passWord) {
+        _passWord = [NSMutableString new];
+    }
+    return _passWord;
 }
 
 @end

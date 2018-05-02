@@ -20,5 +20,5 @@
 @property(nonatomic, copy)NSString *image;   //图片地址
 @property(nonatomic, assign)float price;
 @property(nonatomic, copy)NSString *introduction;
-
+@property(nonatomic, copy)NSArray *productImages;
 @end

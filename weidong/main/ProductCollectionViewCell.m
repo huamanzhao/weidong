@@ -8,6 +8,7 @@
 
 #import "ProductCollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "ProductImageInfo.h"
 
 @implementation ProductCollectionViewCell
 
@@ -21,7 +22,15 @@
 //    self.descriptLabel.text = product.caption;
     self.priceLabel.text = [NSString stringWithFormat:@"￥%.2f", product.price];
     
-    NSString *imageUrlStr = product.image;
+    NSString *imageUrlStr = @"";
+    if ([product.productImages count] > 0) {
+        ProductImageInfo *imageInfo = product.productImages.firstObject;
+        imageUrlStr = imageInfo.medium;
+    }
+    if (STRING_NULL(imageUrlStr)) {
+        imageUrlStr = product.image;
+    }
+    
     NSURL *imageUrl = [NSURL URLWithString:imageUrlStr];
     if (imageUrl) {
         [_productImage sd_setImageWithURL:imageUrl placeholderImage:UIImageWithName(@"default_2") options:SDWebImageProgressiveDownload];

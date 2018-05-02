@@ -134,6 +134,9 @@
 		956AE16D1FA5B433006D59B7 /* ProductSkuInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 956AE16C1FA5B433006D59B7 /* ProductSkuInfo.m */; };
 		956AE1701FA5BB39006D59B7 /* ParameterInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 956AE16F1FA5BB39006D59B7 /* ParameterInfo.m */; };
 		956AE1731FA5BC1F006D59B7 /* ProductSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 956AE1721FA5BC1F006D59B7 /* ProductSpec.m */; };
+		956CCD932090B5D5006B3AED /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 956CCD902090B5D5006B3AED /* UIView+Extension.m */; };
+		956CCD942090B5D5006B3AED /* LVKeyboardAccessoryBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 956CCD912090B5D5006B3AED /* LVKeyboardAccessoryBtn.m */; };
+		956CCD952090B5D5006B3AED /* LVKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 956CCD922090B5D5006B3AED /* LVKeyboardView.m */; };
 		956DD28C1F98E6EE0028B18F /* CategoryMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956DD28B1F98E6EE0028B18F /* CategoryMainViewController.xib */; };
 		956DD2901F98E7260028B18F /* ProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 956DD28E1F98E7260028B18F /* ProductListViewController.m */; };
 		956DD2911F98E7260028B18F /* ProductListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956DD28F1F98E7260028B18F /* ProductListViewController.xib */; };
@@ -522,6 +525,12 @@
 		956AE16F1FA5BB39006D59B7 /* ParameterInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ParameterInfo.m; path = main/ParameterInfo.m; sourceTree = "<group>"; };
 		956AE1711FA5BC1F006D59B7 /* ProductSpec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProductSpec.h; path = main/ProductSpec.h; sourceTree = "<group>"; };
 		956AE1721FA5BC1F006D59B7 /* ProductSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProductSpec.m; path = main/ProductSpec.m; sourceTree = "<group>"; };
+		956CCD8D2090B5D5006B3AED /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		956CCD8E2090B5D5006B3AED /* LVKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVKeyboardView.h; sourceTree = "<group>"; };
+		956CCD8F2090B5D5006B3AED /* LVKeyboardAccessoryBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVKeyboardAccessoryBtn.h; sourceTree = "<group>"; };
+		956CCD902090B5D5006B3AED /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		956CCD912090B5D5006B3AED /* LVKeyboardAccessoryBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVKeyboardAccessoryBtn.m; sourceTree = "<group>"; };
+		956CCD922090B5D5006B3AED /* LVKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVKeyboardView.m; sourceTree = "<group>"; };
 		956DD28B1F98E6EE0028B18F /* CategoryMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryMainViewController.xib; path = category/CategoryMainViewController.xib; sourceTree = "<group>"; };
 		956DD28D1F98E7260028B18F /* ProductListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProductListViewController.h; path = category/ProductListViewController.h; sourceTree = "<group>"; };
 		956DD28E1F98E7260028B18F /* ProductListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProductListViewController.m; path = category/ProductListViewController.m; sourceTree = "<group>"; };
@@ -863,6 +872,7 @@
 		95180FDC1F7E7F1E00A96FD8 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				956CCD8C2090B5D5006B3AED /* CustomKeyboard */,
 				95A4993E1FE03ADA00F7C352 /* SAMKeychain */,
 				954073EE1F8BA75800D52350 /* security */,
 			);
@@ -1242,6 +1252,20 @@
 				95EF49AE1F89118C00DBE834 /* ResponseBase.m */,
 			);
 			name = server;
+			sourceTree = "<group>";
+		};
+		956CCD8C2090B5D5006B3AED /* CustomKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				956CCD8E2090B5D5006B3AED /* LVKeyboardView.h */,
+				956CCD922090B5D5006B3AED /* LVKeyboardView.m */,
+				956CCD8F2090B5D5006B3AED /* LVKeyboardAccessoryBtn.h */,
+				956CCD912090B5D5006B3AED /* LVKeyboardAccessoryBtn.m */,
+				956CCD8D2090B5D5006B3AED /* UIView+Extension.h */,
+				956CCD902090B5D5006B3AED /* UIView+Extension.m */,
+			);
+			name = CustomKeyboard;
+			path = include/CustomKeyboard;
 			sourceTree = "<group>";
 		};
 		956DD2971F98F5B60028B18F /* NavibarSearchView */ = {
@@ -1801,6 +1825,7 @@
 				95A437DE1F860A2F00424E06 /* ScrollTableViewCell.m in Sources */,
 				959A335B1FC071F800CD9A26 /* ProductSpecValue.m in Sources */,
 				95A437D91F85DF5700424E06 /* PromotionTableViewCell.m in Sources */,
+				956CCD932090B5D5006B3AED /* UIView+Extension.m in Sources */,
 				95CF88DB1FAF42420068744B /* MemberTableSectionView.m in Sources */,
 				955512B41F8A7E540032DC13 /* GetCategoryProductListRequest.m in Sources */,
 				955512EF1F8A82820032DC13 /* AddCartInfoRequest.m in Sources */,
@@ -1882,6 +1907,7 @@
 				95180FDB1F7E7F1300A96FD8 /* MainTabbarViewController.m in Sources */,
 				955512771F8A23330032DC13 /* LoginRequest.m in Sources */,
 				95863D801FA93D5C006131A6 /* RegisterViewController.m in Sources */,
+				956CCD942090B5D5006B3AED /* LVKeyboardAccessoryBtn.m in Sources */,
 				95F5ACF12053B9D6001E08BC /* ProductCommentViewController.m in Sources */,
 				952A2E5B1F9CE36300F6F239 /* GTMBase64.m in Sources */,
 				952B43552026A44A008B83CC /* CoinDetailViewController.m in Sources */,
@@ -1955,6 +1981,7 @@
 				95180FE81F7E7F8000A96FD8 /* Util.m in Sources */,
 				959A334C1FC0265000CD9A26 /* ProductCommentsView.m in Sources */,
 				95D2BE031FEF5CE600577D3A /* AddProductNotifyReqeust.m in Sources */,
+				956CCD952090B5D5006B3AED /* LVKeyboardView.m in Sources */,
 				955512A71F8A7D420032DC13 /* GetProductDetailRequest.m in Sources */,
 				95D2BDF01FEE2BC900577D3A /* OrderProductInfo.m in Sources */,
 				955512EC1F8A825C0032DC13 /* GetCartListRequest.m in Sources */,

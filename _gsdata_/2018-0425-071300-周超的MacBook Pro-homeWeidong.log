@@ -1,0 +1,75 @@
+2018-04-25 07:13:00: -- Analysis Started by User Command
+2018-04-25 07:13:03: Changes: 64, Conflicts: 0, CopyTime: 0, FixState: 0, Errors: 0, All: 1648
+2018-04-25 07:13:03: Left to Right: Copy File: 44 Delete File: 12 
+2018-04-25 07:13:03: Right to Left: Copy File: 8 
+2018-04-25 07:13:03: -- Analysis Complete. Time 00:00:03, Speed: 549 files/s
+2018-04-25 07:13:03: 
+2018-04-25 07:15:39: == Sync Started by User Command
+2018-04-25 07:16:01: Delete File '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_0_j.imageset/分类1.jpg'
+2018-04-25 07:16:01: Delete File '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_0_j.imageset/分类1的副本 2.jpg'
+2018-04-25 07:16:01: Delete File '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_1_j.imageset/积分乐园的副本 2.jpg'
+2018-04-25 07:16:01: Delete File '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_2_j.imageset/充值中心的副本 2.jpg'
+2018-04-25 07:16:01: Delete File '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_3_j.imageset/会员中心的副本 2.jpg'
+2018-04-25 07:16:01: Delete File '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_4_j.imageset/母婴世界的副本 2.jpg'
+2018-04-25 07:16:01: Delete File '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_5_j.imageset/金木之家的副本 2.jpg'
+2018-04-25 07:16:01: Delete File '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_6_j.imageset/微动精选的副本 2.jpg'
+2018-04-25 07:16:01: Delete File '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_7_j.imageset/直邮到家的副本 2.jpg'
+2018-04-25 07:16:01: Delete File '/Volumes/X5000/Code/weidong/Assets.xcassets/home/navi_back.imageset/返回 2.png'
+2018-04-25 07:16:01: Delete File '/Volumes/X5000/Code/weidong/Assets.xcassets/home/navi_user.imageset/06 2.png'
+2018-04-25 07:16:01: Delete File '/Volumes/X5000/Code/weidong/Assets.xcassets/home/navi_user.imageset/06.png'
+2018-04-25 07:16:01: Create Folder '/work/weidong/Pods/Pods.xcodeproj/xcuserdata/zhouch.xcuserdatad'
+2018-04-25 07:16:01: Create Folder '/work/weidong/Pods/Pods.xcodeproj/xcuserdata/zhouch.xcuserdatad/xcschemes'
+2018-04-25 07:16:01: Create Folder '/work/weidong/weidong.xcodeproj/xcuserdata/zhouch.xcuserdatad'
+2018-04-25 07:16:01: Create Folder '/work/weidong/weidong.xcodeproj/xcuserdata/zhouch.xcuserdatad/xcschemes'
+2018-04-25 07:16:01: Create Folder '/work/weidong/weidong.xcworkspace/xcuserdata/zhouch.xcuserdatad'
+2018-04-25 07:16:01: Copy Over '/work/weidong/Assets.xcassets/home/collect_0_j.imageset/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_0_j.imageset/Contents.json' (357)
+2018-04-25 07:16:01: Copy New '/work/weidong/Assets.xcassets/home/collect_0_j.imageset/商品分类.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_0_j.imageset/商品分类.jpg' (24992)
+2018-04-25 07:16:01: Copy New '/work/weidong/Assets.xcassets/home/collect_0_j.imageset/商品分类的副本.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_0_j.imageset/商品分类的副本.jpg' (335083)
+2018-04-25 07:16:01: Copy Over '/work/weidong/Assets.xcassets/home/collect_1_j.imageset/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_1_j.imageset/Contents.json' (357)
+2018-04-25 07:16:01: Copy Over '/work/weidong/Assets.xcassets/home/collect_1_j.imageset/积分乐园.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_1_j.imageset/积分乐园.jpg' (26819)
+2018-04-25 07:16:01: Copy New '/work/weidong/Assets.xcassets/home/collect_1_j.imageset/积分乐园的副本.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_1_j.imageset/积分乐园的副本.jpg' (339445)
+2018-04-25 07:16:01: Copy Over '/work/weidong/Assets.xcassets/home/collect_2_j.imageset/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_2_j.imageset/Contents.json' (357)
+2018-04-25 07:16:01: Copy Over '/work/weidong/Assets.xcassets/home/collect_2_j.imageset/充值中心.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_2_j.imageset/充值中心.jpg' (25591)
+2018-04-25 07:16:01: Copy New '/work/weidong/Assets.xcassets/home/collect_2_j.imageset/充值中心的副本.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_2_j.imageset/充值中心的副本.jpg' (324319)
+2018-04-25 07:16:01: Copy Over '/work/weidong/Assets.xcassets/home/collect_3_j.imageset/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_3_j.imageset/Contents.json' (357)
+2018-04-25 07:16:01: Copy Over '/work/weidong/Assets.xcassets/home/collect_3_j.imageset/会员中心.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_3_j.imageset/会员中心.jpg' (18916)
+2018-04-25 07:16:01: Copy New '/work/weidong/Assets.xcassets/home/collect_3_j.imageset/会员中心的副本.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_3_j.imageset/会员中心的副本.jpg' (306637)
+2018-04-25 07:16:01: Copy Over '/work/weidong/Assets.xcassets/home/collect_4_j.imageset/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_4_j.imageset/Contents.json' (357)
+2018-04-25 07:16:01: Copy Over '/work/weidong/Assets.xcassets/home/collect_4_j.imageset/母婴世界.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_4_j.imageset/母婴世界.jpg' (18949)
+2018-04-25 07:16:01: Copy New '/work/weidong/Assets.xcassets/home/collect_4_j.imageset/母婴世界的副本.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_4_j.imageset/母婴世界的副本.jpg' (303546)
+2018-04-25 07:16:01: Copy Over '/work/weidong/Assets.xcassets/home/collect_5_j.imageset/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_5_j.imageset/Contents.json' (357)
+2018-04-25 07:16:01: Copy Over '/work/weidong/Assets.xcassets/home/collect_5_j.imageset/金木之家.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_5_j.imageset/金木之家.jpg' (23020)
+2018-04-25 07:16:01: Copy New '/work/weidong/Assets.xcassets/home/collect_5_j.imageset/金木之家的副本.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_5_j.imageset/金木之家的副本.jpg' (325293)
+2018-04-25 07:16:01: Copy Over '/work/weidong/Assets.xcassets/home/collect_6_j.imageset/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_6_j.imageset/Contents.json' (357)
+2018-04-25 07:16:01: Copy Over '/work/weidong/Assets.xcassets/home/collect_6_j.imageset/微动精选.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_6_j.imageset/微动精选.jpg' (21342)
+2018-04-25 07:16:30: Copy New '/work/weidong/Assets.xcassets/home/collect_6_j.imageset/微动精选的副本.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_6_j.imageset/微动精选的副本.jpg' (325110)
+2018-04-25 07:16:30: Copy Over '/work/weidong/Assets.xcassets/home/collect_7_j.imageset/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_7_j.imageset/Contents.json' (357)
+2018-04-25 07:16:30: Copy Over '/work/weidong/Assets.xcassets/home/collect_7_j.imageset/直邮到家.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_7_j.imageset/直邮到家.jpg' (25440)
+2018-04-25 07:16:30: Copy New '/work/weidong/Assets.xcassets/home/collect_7_j.imageset/直邮到家的副本.jpg' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/collect_7_j.imageset/直邮到家的副本.jpg' (322747)
+2018-04-25 07:16:30: Copy Over '/work/weidong/Assets.xcassets/home/navi_back.imageset/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/navi_back.imageset/Contents.json' (372)
+2018-04-25 07:16:30: Copy New '/work/weidong/Assets.xcassets/home/navi_back.imageset/返回.png' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/navi_back.imageset/返回.png' (1518)
+2018-04-25 07:16:30: Copy Over '/work/weidong/Assets.xcassets/home/navi_more.imageset/主页面_09 2.png' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/navi_more.imageset/主页面_09 2.png' (2707)
+2018-04-25 07:16:30: Copy Over '/work/weidong/Assets.xcassets/home/navi_more.imageset/主页面_09.png' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/navi_more.imageset/主页面_09.png' (2074)
+2018-04-25 07:16:30: Copy Over '/work/weidong/Assets.xcassets/home/navi_user.imageset/Contents.json' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/navi_user.imageset/Contents.json' (402)
+2018-04-25 07:16:30: Copy New '/work/weidong/Assets.xcassets/home/navi_user.imageset/user.png' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/navi_user.imageset/user.png' (2947)
+2018-04-25 07:16:30: Copy New '/work/weidong/Assets.xcassets/home/navi_user.imageset/user2.png' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/navi_user.imageset/user2.png' (4181)
+2018-04-25 07:16:30: Copy New '/work/weidong/Assets.xcassets/home/navi_user.imageset/user2的副本.png' -> '/Volumes/X5000/Code/weidong/Assets.xcassets/home/navi_user.imageset/user2的副本.png' (3375)
+2018-04-25 07:16:35: Copy New '/Volumes/X5000/Code/weidong/Pods/Pods.xcodeproj/xcuserdata/zhouch.xcuserdatad/xcschemes/xcschememanagement.plist' -> '/work/weidong/Pods/Pods.xcodeproj/xcuserdata/zhouch.xcuserdatad/xcschemes/xcschememanagement.plist' (1481)
+2018-04-25 07:16:59: Copy Over '/work/weidong/weidong/category/ProductListViewController.m' -> '/Volumes/X5000/Code/weidong/weidong/category/ProductListViewController.m' (16982)
+2018-04-25 07:17:25: Copy Over '/work/weidong/weidong/common/Constants.h' -> '/Volumes/X5000/Code/weidong/weidong/common/Constants.h' (3260)
+2018-04-25 07:17:33: Copy Over '/work/weidong/weidong/Info.plist' -> '/Volumes/X5000/Code/weidong/weidong/Info.plist' (2456)
+2018-04-25 07:17:57: Copy Over '/work/weidong/weidong/main/BannerView.m' -> '/Volumes/X5000/Code/weidong/weidong/main/BannerView.m' (5371)
+2018-04-25 07:18:13: Copy Over '/work/weidong/weidong/main/ChargeWebViewController.m' -> '/Volumes/X5000/Code/weidong/weidong/main/ChargeWebViewController.m' (10360)
+2018-04-25 07:18:13: Copy Over '/work/weidong/weidong/main/CollectionTableViewCell.m' -> '/Volumes/X5000/Code/weidong/weidong/main/CollectionTableViewCell.m' (3254)
+2018-04-25 07:18:13: Copy Over '/work/weidong/weidong/main/CollectionTableViewCell.xib' -> '/Volumes/X5000/Code/weidong/weidong/main/CollectionTableViewCell.xib' (3749)
+2018-04-25 07:18:13: Copy Over '/work/weidong/weidong/main/EgouCardViewController.m' -> '/Volumes/X5000/Code/weidong/weidong/main/EgouCardViewController.m' (4237)
+2018-04-25 07:18:13: Copy Over '/work/weidong/weidong/main/HomePageViewController.m' -> '/Volumes/X5000/Code/weidong/weidong/main/HomePageViewController.m' (22300)
+2018-04-25 07:18:28: Copy Over '/work/weidong/weidong.xcodeproj/project.pbxproj' -> '/Volumes/X5000/Code/weidong/weidong.xcodeproj/project.pbxproj' (216078)
+2018-04-25 07:18:28: Copy New '/Volumes/X5000/Code/weidong/weidong.xcodeproj/xcuserdata/zhouch.xcuserdatad/xcschemes/xcschememanagement.plist' -> '/work/weidong/weidong.xcodeproj/xcuserdata/zhouch.xcuserdatad/xcschemes/xcschememanagement.plist' (330)
+2018-04-25 07:18:32: Copy New '/Volumes/X5000/Code/weidong/weidong.xcworkspace/xcuserdata/zhouch.xcuserdatad/UserInterfaceState.xcuserstate' -> '/work/weidong/weidong.xcworkspace/xcuserdata/zhouch.xcuserdatad/UserInterfaceState.xcuserstate' (11226)
+2018-04-25 07:18:43: /work/weidong/weidong.xcworkspace/xcuserdata/zhouchao.xcuserdatad/UserInterfaceState.xcuserstate: Source file has changed between Analyze and Sync from '[file] size=643848 accu-time=2018-04-25 06:58:10 attr=644 cktype=0' to 'size=644204 time=2018-04-25 07:17:18', noted in source file state
+2018-04-25 07:18:43: Copy Over '/work/weidong/weidong.xcworkspace/xcuserdata/zhouchao.xcuserdatad/UserInterfaceState.xcuserstate' -> '/Volumes/X5000/Code/weidong/weidong.xcworkspace/xcuserdata/zhouchao.xcuserdatad/UserInterfaceState.xcuserstate' (643848)
+2018-04-25 07:18:43: /work/weidong/weidong.xcworkspace/xcuserdata/zhouchao.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist: Source file has changed between Analyze and Sync from '[file] size=117959 accu-time=2018-04-24 21:48:27 attr=644 cktype=0' to 'size=117959 time=2018-04-25 07:17:08', noted in source file state
+2018-04-25 07:18:43: Copy Over '/work/weidong/weidong.xcworkspace/xcuserdata/zhouchao.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist' -> '/Volumes/X5000/Code/weidong/weidong.xcworkspace/xcuserdata/zhouchao.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist' (117959)
+2018-04-25 07:19:55: == Sync Complete. Time: 00:04:16, Speed: 22.0 KB/s, OK: 64, Errors: 0
+2018-04-25 07:19:55: 

@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
+#import "LVKeyboardView.h"
 
-@interface EgouCardViewController : UIViewController
-@property (nonatomic, assign)float amount;
+@interface EgouCardViewController : UIViewController <UITextFieldDelegate>
+@property (nonatomic, strong) LVKeyboardView *keyboard;
+@property (nonatomic, strong) NSMutableString *passWord;
+
+@property (nonatomic, copy)NSString *transactionId;
 @end

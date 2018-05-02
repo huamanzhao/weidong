@@ -15,6 +15,7 @@
 #import "SecurityUtil.h"
 #import "MyCreditsLogViewController.h"
 #import "PayManager.h"
+#import "EgouCardViewController.h"
 
 @interface ChargeWebViewController () <WKNavigationDelegate, PayManagerDelegate>
 @property(nonatomic, copy)NSString *funcBaseUrl; //功能部分
@@ -192,6 +193,13 @@
         return;
     }
     
+    //拦截易购卡充值界面
+    if ([urlString containsString:EGOU_CARD_URL_BASE]) {
+        decisionHandler(WKNavigationActionPolicyCancel);
+        [self openCartPayVCWithURL:urlString];
+        return;
+    }
+    
     //拦截跳转到入口界面的上一级界面
     if ([urlString isEqualToString:_previosUrl]) {
         decisionHandler(WKNavigationActionPolicyCancel);
@@ -280,6 +288,31 @@
     creditsVC.showCoinLog = YES;
     creditsVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:creditsVC animated:YES];
+}
+
+- (void)openCartPayVCWithURL:(NSString *)url {
+    NSArray *components = [url componentsSeparatedByString:@"?"];
+    if ([components count] + 2) {
+        [SVProgressHUD showInfoWithStatus:@"易购卡地址错误"];
+        return;
+    }
+    
+    NSString *jsonString = [components lastObject];
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                        options:NSJSONReadingMutableContainers
+                                                          error:&err];
+    
+    if (!dic || [dic count] <= 0) {
+        [SVProgressHUD showInfoWithStatus:@"易购卡参数错误"];
+        return;
+    }
+    
+    
+    EgouCardViewController *cardVC = [EgouCardViewController new];
+    cardVC.transactionId = [dic ];
+    [self.navigationController pushViewController:cardVC animated:NO];
 }
 
 @end

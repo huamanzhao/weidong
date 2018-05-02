@@ -133,7 +133,6 @@
     NSInteger count = [product.productImages count];
     _imageScroll.contentSize = CGSizeMake(SCREEN_WIDTH * count, SCREEN_WIDTH / 1.1);
     for (ProductImageInfo *imageInfo in product.productImages) {
-        
         NSURL *imageUrl = [NSURL URLWithString:imageInfo.large];
         if (!imageUrl) {
             continue;

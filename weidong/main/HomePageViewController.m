@@ -551,7 +551,6 @@
         }
         getHotpotAdsDone = YES;
         
-        //ZC_DEBUG
         [self getProductCategoryList];  //底部分类产品
     }];
 }

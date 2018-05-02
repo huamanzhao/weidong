@@ -183,10 +183,9 @@
 - (void)getJinMuFamilyProductlist {
     [SVProgressHUD showWithStatus:@"正在请求数据"];
     GetCategoryProductListRequest *request = [GetCategoryProductListRequest new];
-    request.productCategoryId = @"1";
+    request.productCategoryId = nil;
     request.productSupplierId = @"52";
-    request.orderType = orderType;
-    request.pageSize = 50;
+    request.pageSize = 100000;
     request.pageNumber = pageNum;
     [request excuteRequest:^(BOOL isOK, GetProductListResponse * _Nullable response, NSString * _Nullable errorMsg) {
         [SVProgressHUD dismiss];
