@@ -68,7 +68,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/server/ChangePasswordRequest.m"
-                  timestampString = "546966495.580108"
+                  timestampString = "549981373.296854"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
@@ -83,7 +83,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/server/ChangePasswordRequest.m"
-                  timestampString = "546966495.582167"
+                  timestampString = "549981373.2986211"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "29"
@@ -98,7 +98,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/server/ChangePasswordRequest.m"
-                  timestampString = "546966495.584214"
+                  timestampString = "549981373.30075"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
@@ -147,7 +147,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/server/AddAddressRequest.m"
-                  timestampString = "546966495.595306"
+                  timestampString = "549981373.317253"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
@@ -162,7 +162,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/server/AddAddressRequest.m"
-                  timestampString = "546966495.59732"
+                  timestampString = "549981373.3199281"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "29"
@@ -177,7 +177,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/server/AddAddressRequest.m"
-                  timestampString = "546966495.599283"
+                  timestampString = "549981373.321888"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
@@ -210,7 +210,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/server/CheckRealIdentifyRequest.m"
-                  timestampString = "546966495.605673"
+                  timestampString = "549981373.327745"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "23"
@@ -225,7 +225,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/server/CheckRealIdentifyRequest.m"
-                  timestampString = "546966495.607749"
+                  timestampString = "549981373.329457"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "23"
@@ -240,7 +240,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/server/CheckRealIdentifyRequest.m"
-                  timestampString = "546966495.609794"
+                  timestampString = "549981373.3312891"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "23"
@@ -337,7 +337,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/AppDelegate.m"
-                  timestampString = "546966495.634153"
+                  timestampString = "549981373.352686"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "70"
@@ -352,7 +352,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/AppDelegate.m"
-                  timestampString = "546966495.636325"
+                  timestampString = "549981373.355152"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "72"
@@ -401,7 +401,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/AppDelegate.m"
-                  timestampString = "546966495.64651"
+                  timestampString = "549981373.363651"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "76"
@@ -416,7 +416,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/AppDelegate.m"
-                  timestampString = "546966495.64861"
+                  timestampString = "549981373.365459"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "78"
@@ -768,22 +768,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "weidong/main/MainTabbarViewController.m"
-            timestampString = "539100246.57085"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "-handleAutoLogin"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "weidong/memberCenter/LoginViewController.m"
             timestampString = "539100246.570969"
             startingColumnNumber = "9223372036854775807"
@@ -849,11 +833,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/memberCenter/AddressEditViewController.m"
-            timestampString = "539100246.571106"
+            timestampString = "549981372.938427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "466"
-            endingLineNumber = "466"
+            startingLineNumber = "482"
+            endingLineNumber = "482"
             landmarkName = "-updateAddress"
             landmarkType = "7">
             <Locations>
@@ -865,11 +849,11 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/AddressEditViewController.m"
-                  timestampString = "546966495.746708"
+                  timestampString = "549981373.463644"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "466"
-                  endingLineNumber = "466"
+                  startingLineNumber = "482"
+                  endingLineNumber = "482"
                   offsetFromSymbolStart = "1180">
                </Location>
                <Location
@@ -880,26 +864,26 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/AddressEditViewController.m"
-                  timestampString = "546966495.7484781"
+                  timestampString = "549981373.46551"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "467"
-                  endingLineNumber = "467"
+                  startingLineNumber = "483"
+                  endingLineNumber = "483"
                   offsetFromSymbolStart = "72">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_.268"
+                  symbolName = "__destroy_helper_block_.317"
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/AddressEditViewController.m"
-                  timestampString = "546966495.750191"
+                  timestampString = "549981373.467456"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "466"
-                  endingLineNumber = "466"
+                  startingLineNumber = "482"
+                  endingLineNumber = "482"
                   offsetFromSymbolStart = "20">
                </Location>
             </Locations>
@@ -912,11 +896,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/memberCenter/AddressEditViewController.m"
-            timestampString = "539100246.5711581"
+            timestampString = "549981372.938803"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "437"
-            endingLineNumber = "437"
+            startingLineNumber = "453"
+            endingLineNumber = "453"
             landmarkName = "-addNewAddress"
             landmarkType = "7">
             <Locations>
@@ -928,11 +912,11 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/AddressEditViewController.m"
-                  timestampString = "546966495.755602"
+                  timestampString = "549981373.4739569"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "437"
-                  endingLineNumber = "437"
+                  startingLineNumber = "453"
+                  endingLineNumber = "453"
                   offsetFromSymbolStart = "884">
                </Location>
                <Location
@@ -943,26 +927,26 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/AddressEditViewController.m"
-                  timestampString = "546966495.757318"
+                  timestampString = "549981373.475852"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "438"
-                  endingLineNumber = "438"
+                  startingLineNumber = "454"
+                  endingLineNumber = "454"
                   offsetFromSymbolStart = "72">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_.259"
+                  symbolName = "__destroy_helper_block_.308"
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/AddressEditViewController.m"
-                  timestampString = "546966495.759021"
+                  timestampString = "549981373.477695"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "437"
-                  endingLineNumber = "437"
+                  startingLineNumber = "453"
+                  endingLineNumber = "453"
                   offsetFromSymbolStart = "20">
                </Location>
             </Locations>
@@ -991,7 +975,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/RealNameVerifyViewController.m"
-                  timestampString = "546966495.764329"
+                  timestampString = "549981373.482977"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "60"
@@ -1006,7 +990,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/RealNameVerifyViewController.m"
-                  timestampString = "546966495.76607"
+                  timestampString = "549981373.4846489"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "61"
@@ -1021,7 +1005,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/RealNameVerifyViewController.m"
-                  timestampString = "546966495.767778"
+                  timestampString = "549981373.486519"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "60"
@@ -1134,7 +1118,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/OrderListViewController.m"
-                  timestampString = "546966495.7907439"
+                  timestampString = "549981373.509674"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "54"
@@ -1149,7 +1133,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/OrderListViewController.m"
-                  timestampString = "546966495.792451"
+                  timestampString = "549981373.511367"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "55"
@@ -1164,7 +1148,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/OrderListViewController.m"
-                  timestampString = "546966495.7941459"
+                  timestampString = "549981373.513033"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "54"
@@ -1244,101 +1228,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "weidong/memberCenter/CouponListViewController.m"
-            timestampString = "539398007.496357"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "-getCouponList"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "weidong/server/GetCouponListRequest.m"
-            timestampString = "535937558.077518"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "-excuteRequest:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[GetCouponListRequest excuteRequest:]"
-                  moduleName = "weidong"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///work/weidong/weidong/server/GetCouponListRequest.m"
-                  timestampString = "546966495.8169301"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "76">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__38-[GetCouponListRequest excuteRequest:]_block_invoke"
-                  moduleName = "weidong"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///work/weidong/weidong/server/GetCouponListRequest.m"
-                  timestampString = "546966495.818661"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "88">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_"
-                  moduleName = "weidong"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///work/weidong/weidong/server/GetCouponListRequest.m"
-                  timestampString = "546966495.820802"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "weidong/server/GetCouponListRequest.m"
-            timestampString = "535937558.077572"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "-excuteRequest:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "weidong/category/ProductDetailViewController.m"
             timestampString = "546531911.5269769"
             startingColumnNumber = "9223372036854775807"
@@ -1404,7 +1293,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/shoppingCart/controller/ShopCartPayViewController.m"
-            timestampString = "537799297.470987"
+            timestampString = "549814150.674853"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "142"
@@ -1420,7 +1309,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/shoppingCart/controller/ShopCartPayViewController.m"
-            timestampString = "537799297.471055"
+            timestampString = "549814150.6749279"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "158"
@@ -1436,7 +1325,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/shoppingCart/controller/ShopCartPayViewController.m"
-            timestampString = "537799297.471119"
+            timestampString = "549814150.674978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "144"
@@ -1452,7 +1341,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/shoppingCart/controller/ShopCartPayViewController.m"
-            timestampString = "537799297.471177"
+            timestampString = "549814150.675022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "147"
@@ -1516,7 +1405,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/shoppingCart/controller/ShopCartPayViewController.m"
-            timestampString = "537799297.47129"
+            timestampString = "549814150.675126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "122"
@@ -1532,7 +1421,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/shoppingCart/controller/ShopCartPayViewController.m"
-                  timestampString = "546966496.054425"
+                  timestampString = "549981373.67199"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "122"
@@ -1547,7 +1436,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/shoppingCart/controller/ShopCartPayViewController.m"
-                  timestampString = "546966496.05783"
+                  timestampString = "549981373.673844"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "124"
@@ -1562,7 +1451,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/shoppingCart/controller/ShopCartPayViewController.m"
-                  timestampString = "546966496.0603189"
+                  timestampString = "549981373.675663"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "122"
@@ -1595,7 +1484,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/ModifyPayPasswordViewController.m"
-                  timestampString = "546966496.067346"
+                  timestampString = "549981373.681762"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "103"
@@ -1610,7 +1499,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/ModifyPayPasswordViewController.m"
-                  timestampString = "546966496.069767"
+                  timestampString = "549981373.683444"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "105"
@@ -1625,7 +1514,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/ModifyPayPasswordViewController.m"
-                  timestampString = "546966496.072282"
+                  timestampString = "549981373.685364"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "103"
@@ -1658,7 +1547,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/ProductFavoriteListViewController.m"
-                  timestampString = "546966496.080629"
+                  timestampString = "549981373.691025"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -1673,7 +1562,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/ProductFavoriteListViewController.m"
-                  timestampString = "546966496.082942"
+                  timestampString = "549981373.6928101"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
@@ -1688,7 +1577,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/ProductFavoriteListViewController.m"
-                  timestampString = "546966496.085192"
+                  timestampString = "549981373.695086"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -1737,11 +1626,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/main/ChargeWebViewController.m"
-            timestampString = "546966495.144136"
+            timestampString = "549903142.540743"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
             landmarkName = "-webView:didReceiveServerRedirectForProvisionalNavigation:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1753,11 +1642,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/main/ChargeWebViewController.m"
-            timestampString = "546966495.14423"
+            timestampString = "549903142.5408159"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "254"
-            endingLineNumber = "254"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
             landmarkName = "-webView:didFailNavigation:withError:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1817,7 +1706,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/server/GetArticalDetailRequest.m"
-                  timestampString = "546966496.12925"
+                  timestampString = "549981373.723192"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
@@ -1832,7 +1721,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/server/GetArticalDetailRequest.m"
-                  timestampString = "546966496.131508"
+                  timestampString = "549981373.725144"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
@@ -1847,7 +1736,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/server/GetArticalDetailRequest.m"
-                  timestampString = "546966496.133648"
+                  timestampString = "549981373.727212"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
@@ -1879,44 +1768,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "weidong/server/GetPointsLogRequest.m"
-            timestampString = "539398515.0227309"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "-excuteRequest:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "weidong/memberCenter/view/CreditLogCell.m"
-            timestampString = "539408371.948814"
+            timestampString = "549814150.675423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "weidong/memberCenter/MyCreditsLogViewController.m"
-            timestampString = "541848782.9478379"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
-            landmarkType = "7">
+            startingLineNumber = "200"
+            endingLineNumber = "200">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1942,7 +1799,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/ForgetViewController.m"
-                  timestampString = "546966496.155581"
+                  timestampString = "549981373.788548"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "104"
@@ -1957,7 +1814,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/ForgetViewController.m"
-                  timestampString = "546966496.15815"
+                  timestampString = "549981373.790606"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "105"
@@ -1972,7 +1829,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/ForgetViewController.m"
-                  timestampString = "546966496.160512"
+                  timestampString = "549981373.792516"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "104"
@@ -2069,7 +1926,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/server/UpdateSelfInfoRequest.m"
-                  timestampString = "546966496.190094"
+                  timestampString = "549981373.813645"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "36"
@@ -2084,7 +1941,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/server/UpdateSelfInfoRequest.m"
-                  timestampString = "546966496.1938291"
+                  timestampString = "549981373.8154089"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "37"
@@ -2099,7 +1956,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/server/UpdateSelfInfoRequest.m"
-                  timestampString = "546966496.198128"
+                  timestampString = "549981373.817174"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "36"
@@ -2116,7 +1973,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/memberCenter/OrderWebViewController.m"
-            timestampString = "542385795.260528"
+            timestampString = "549814150.675972"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "228"
@@ -2132,7 +1989,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/memberCenter/OrderWebViewController.m"
-            timestampString = "542385795.260581"
+            timestampString = "549814150.676026"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "185"
@@ -2148,7 +2005,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/memberCenter/OrderWebViewController.m"
-            timestampString = "542385795.2606291"
+            timestampString = "549814150.676075"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "125"
@@ -2164,7 +2021,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/OrderWebViewController.m"
-                  timestampString = "546966496.2209001"
+                  timestampString = "549981373.834839"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "125"
@@ -2179,7 +2036,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/OrderWebViewController.m"
-                  timestampString = "546966496.223581"
+                  timestampString = "549981373.837872"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "127"
@@ -2194,7 +2051,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/memberCenter/OrderWebViewController.m"
-                  timestampString = "546966496.2259229"
+                  timestampString = "549981373.8406579"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "125"
@@ -2211,11 +2068,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/main/ChargeWebViewController.m"
-            timestampString = "546966495.144598"
+            timestampString = "549903142.541038"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "-webView:didFailProvisionalNavigation:withError:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2307,7 +2164,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/shoppingCart/controller/ShopCartMainViewController.m"
-                  timestampString = "546966496.286983"
+                  timestampString = "549981373.877557"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "355"
@@ -2322,7 +2179,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/shoppingCart/controller/ShopCartMainViewController.m"
-                  timestampString = "546966496.289288"
+                  timestampString = "549981373.87992"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "355"
@@ -2337,7 +2194,7 @@
                   moduleName = "weidong"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///work/weidong/weidong/shoppingCart/controller/ShopCartMainViewController.m"
-                  timestampString = "546966496.291472"
+                  timestampString = "549981373.8825279"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "355"
@@ -2386,11 +2243,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/main/HomePageViewController.m"
-            timestampString = "546966495.1448489"
+            timestampString = "549814150.676291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "362"
-            endingLineNumber = "362"
+            startingLineNumber = "361"
+            endingLineNumber = "361"
             landmarkName = "-selectAdWithId:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2402,11 +2259,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weidong/main/HomePageViewController.m"
-            timestampString = "546966495.144905"
+            timestampString = "549814150.676342"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "612"
-            endingLineNumber = "612"
+            startingLineNumber = "610"
+            endingLineNumber = "610"
             landmarkName = "-checkVersionUpdate"
             landmarkType = "7">
          </BreakpointContent>
@@ -2465,14 +2322,235 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "weidong/category/view/ProductMainView.m"
-            timestampString = "546966495.145059"
+            filePath = "weidong/main/ChargeWebViewController.m"
+            timestampString = "549903142.541232"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "-setupWithProduct:"
+            startingLineNumber = "316"
+            endingLineNumber = "316"
+            landmarkName = "-openCartPayVCWithURL:"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "weidong/memberCenter/WeidouChargeWebViewController.m"
+            timestampString = "549903142.5412869"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "-webView:decidePolicyForNavigationAction:decisionHandler:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[WeidouChargeWebViewController webView:decidePolicyForNavigationAction:decisionHandler:]"
+                  moduleName = "weidong"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///work/weidong/weidong/memberCenter/WeidouChargeWebViewController.m"
+                  timestampString = "549981373.9244159"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "332">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__89-[WeidouChargeWebViewController webView:decidePolicyForNavigationAction:decisionHandler:]_block_invoke"
+                  moduleName = "weidong"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///work/weidong/weidong/memberCenter/WeidouChargeWebViewController.m"
+                  timestampString = "549981373.926343"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "137"
+                  endingLineNumber = "137"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_"
+                  moduleName = "weidong"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///work/weidong/weidong/memberCenter/WeidouChargeWebViewController.m"
+                  timestampString = "549981373.928158"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "weidong/memberCenter/WeidouChargeWebViewController.m"
+            timestampString = "549903142.541679"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "weidong/memberCenter/WeidouChargeWebViewController.m"
+            timestampString = "549903142.541952"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "weidong/main/EgouCardViewController.m"
+            timestampString = "549903648.381874"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "-getVerifyCode"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[EgouCardViewController getVerifyCode]"
+                  moduleName = "weidong"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///work/weidong/weidong/main/EgouCardViewController.m"
+                  timestampString = "549981373.941717"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__39-[EgouCardViewController getVerifyCode]_block_invoke"
+                  moduleName = "weidong"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///work/weidong/weidong/main/EgouCardViewController.m"
+                  timestampString = "549981373.9435869"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_"
+                  moduleName = "weidong"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///work/weidong/weidong/main/EgouCardViewController.m"
+                  timestampString = "549981373.945509"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "weidong/main/EgouCardViewController.m"
+            timestampString = "549903655.814151"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "-cardDeposit"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[EgouCardViewController cardDeposit]"
+                  moduleName = "weidong"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///work/weidong/weidong/main/EgouCardViewController.m"
+                  timestampString = "549981373.951216"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "668">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__37-[EgouCardViewController cardDeposit]_block_invoke"
+                  moduleName = "weidong"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///work/weidong/weidong/main/EgouCardViewController.m"
+                  timestampString = "549981373.9531651"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.115"
+                  moduleName = "weidong"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///work/weidong/weidong/main/EgouCardViewController.m"
+                  timestampString = "549981373.955063"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

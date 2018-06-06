@@ -69,9 +69,9 @@
 }
 
 - (void)setupCellWithTitle: (NSString *)title Image:(NSString *)name {
-//    self.centerImage.image = UIImageWithName(name);
-//    self.titleLabel.text = title;
-//    self.titleLabel.textColor = [UIColor darkTextColor];
+    self.centerImage.image = UIImageWithName(name);
+    self.titleLabel.text = title;
+    self.titleLabel.textColor = [UIColor darkTextColor];
 }
 
 @end

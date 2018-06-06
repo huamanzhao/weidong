@@ -195,7 +195,9 @@
     
     //拦截易购卡充值界面
     if ([urlString containsString:EGOU_CARD_URL_BASE]) {
+        decisionHandler(WKNavigationActionPolicyCancel);
         [self openCartPayVCWithURL:urlString];
+        return;
     }
     
     //拦截跳转到入口界面的上一级界面
@@ -283,7 +285,7 @@
 
 - (void)openCoinsLogVC {
     MyCreditsLogViewController *creditsVC = [MyCreditsLogViewController new];
-    creditsVC.showCoinLog = YES;
+    creditsVC.type = 1;
     creditsVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:creditsVC animated:YES];
 }
@@ -304,6 +306,12 @@
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
                                                         options:NSJSONReadingMutableContainers
                                                           error:&err];
+    /*
+     cardValue = 35;
+     desc = "成功";
+     result = 1;
+     transactionId = 225;
+     */
     
     if (!dic || [dic count] <= 0) {
         [SVProgressHUD showInfoWithStatus:@"易购卡参数错误"];

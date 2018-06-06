@@ -14,7 +14,7 @@
 #import "MemberOrderCell.h"
 //#import "MemberMessageCell.h"
 #import "MemberToolsCell.h"
-#import "MemberToolsCell.h"
+#import "MemberOtherCell.h"
 #import "MemberLogoutCell.h"
 #import "LogoutRequest.h"
 #import "GetMemberInfoRequest.h"
@@ -24,7 +24,6 @@
 #import "MyCreditsLogViewController.h"
 #import "AddressListViewController.h"
 #import "PersonalInfoViewController.h"
-#import "ChargeCenterViewController.h"
 #import "OrderWebViewController.h"
 #import "ArrivalNoticeListViewController.h"
 #import "CommentListViewController.h"
@@ -38,8 +37,9 @@
 #import "ModifyPayPasswordViewController.h"
 #import "RefoundWebViewController.h"
 #import "RefoundListWebViewController.h"
+#import "WeidouChargeWebViewController.h"
 
-@interface MemberMainViewController () <UITableViewDelegate, UITableViewDataSource, MemberToolsDelegate, MemberLogoutDelegate, MemberTableSectionDelegate, MemberOrderDelegate, MemberFunctionDelegate>
+@interface MemberMainViewController () <UITableViewDelegate, UITableViewDataSource, MemberToolsDelegate, MemberLogoutDelegate, MemberTableSectionDelegate, MemberOrderDelegate, MemberFunctionDelegate, MemberOtherCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *table;
 
 @end
@@ -106,6 +106,7 @@
     [_table registerNib:[UINib nibWithNibName:@"MemberOrderCell" bundle:nil] forCellReuseIdentifier:ORDER_CELLID];
 //    [_table registerNib:[UINib nibWithNibName:@"MemberMessageCell" bundle:nil] forCellReuseIdentifier:MESSAGE_CELLID];
     [_table registerNib:[UINib nibWithNibName:@"MemberToolsCell" bundle:nil] forCellReuseIdentifier:TOOLS_CELLID];
+    [_table registerNib:[UINib nibWithNibName:@"MemberOtherCell" bundle:nil] forCellReuseIdentifier:MemberOtherCellID];
     [_table registerNib:[UINib nibWithNibName:@"MemberLogoutCell" bundle:nil] forCellReuseIdentifier:LOGOUT_CELLID];
 }
 
@@ -173,7 +174,7 @@
             [sectionView setupWithTitle:MEMBER_MY_ORDER Image:@"icon_order" Subtitle:@"查看全部订单" TintColor:COLOR_0];
             break;
             
-        case 1:
+        case 1: //必备工具
 //            [sectionView setupWithTitle:@"消息盒子" Image:@"icon_message" Subtitle:@"" TintColor:COLOR_1];
 //            break;
             
@@ -223,7 +224,8 @@
 //            break;
 //        }
 //        case 2: {
-            MemberToolsCell *cell = [tableView dequeueReusableCellWithIdentifier:TOOLS_CELLID forIndexPath:indexPath];
+//            MemberToolsCell *cell = [tableView dequeueReusableCellWithIdentifier:TOOLS_CELLID forIndexPath:indexPath];
+            MemberOtherCell *cell = [tableView dequeueReusableCellWithIdentifier:MemberOtherCellID forIndexPath:indexPath];
             cell.delegate = self;
             return cell;
             break;
@@ -243,6 +245,39 @@
 
 
 #pragma mark - 自定义控件Delegate
+
+- (void)otherFunctionSelected:(NSInteger)index {
+    switch (index) {
+        case 0:
+            [self showMyCredits];
+            break;
+            
+        case 1:
+            [self showMyWeidongCoins];
+            break;
+            
+        case 2:
+            [self chargeWeidongCoin];
+            break;
+            
+        case 3:
+            [self showMyCoupons];
+            break;
+            
+        case 4:
+            [self showWeidouChargeVC];
+            break;
+            
+        case 5:
+            [self showWeidouLogs];
+            break;
+            
+            
+        default:
+            break;
+    }
+}
+
 //打开全部订单
 - (void)showMoreOrders {
     OrderWebViewController *orderVC = [OrderWebViewController new];
@@ -259,7 +294,6 @@
 }
 
 - (void)chargeWeidongCoin {
-//    ChargeCenterViewController *chargeVC = [ChargeCenterViewController new];
     ChargeWebViewController *chargeVC = [ChargeWebViewController new];
     chargeVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:chargeVC animated:YES];
@@ -267,7 +301,7 @@
 
 - (void)showMyWeidongCoins {
     MyCreditsLogViewController *creditsVC = [MyCreditsLogViewController new];
-    creditsVC.showCoinLog = YES;
+    creditsVC.type = 1;
     creditsVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:creditsVC animated:YES];
 }
@@ -276,6 +310,19 @@
     CouponListViewController *couponVC = [CouponListViewController new];
     couponVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:couponVC animated:YES];
+}
+
+- (void)showWeidouLogs {
+    MyCreditsLogViewController *creditsVC = [MyCreditsLogViewController new];
+    creditsVC.type = 2;
+    creditsVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:creditsVC animated:YES];
+}
+
+- (void)showWeidouChargeVC {
+    WeidouChargeWebViewController *chargeVC = [WeidouChargeWebViewController new];
+    chargeVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:chargeVC animated:YES];
 }
 
 //管理收货地址

@@ -10,5 +10,5 @@
 #import "BaseViewController.h"
 
 @interface MyCreditsLogViewController : UIViewController
-@property (nonatomic, assign)BOOL showCoinLog;
+@property (nonatomic, assign)NSInteger type;    //0-积分  1-微动币  2-微豆
 @end

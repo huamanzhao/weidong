@@ -36,13 +36,13 @@
     NSInteger row = indexPath.row;
     
     [cell setupPrimaryCell:indexPath.row];
-    if (row > 3) {
-        NSInteger index = indexPath.row - 4;
-        CategoryInfo *category = [funcCategoryList objectAtIndex:index];
-        NSString *title = category.name;
-//        NSString *imgStr = category.
-        [cell setupCellWithTitle:title Image:nil];
-    }
+//    if (row > 3) {
+//        NSInteger index = indexPath.row - 4;
+//        CategoryInfo *category = [funcCategoryList objectAtIndex:index];
+//        NSString *title = category.name;
+////        NSString *imgStr = category.
+//        [cell setupCellWithTitle:title Image:nil];
+//    }
     
     return cell;
 }

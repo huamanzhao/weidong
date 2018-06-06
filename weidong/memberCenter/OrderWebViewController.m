@@ -211,7 +211,7 @@
 
 - (void)openCoinsLogVC {
     MyCreditsLogViewController *creditsVC = [MyCreditsLogViewController new];
-    creditsVC.showCoinLog = YES;
+    creditsVC.type = 1;
     creditsVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:creditsVC animated:YES];
 }

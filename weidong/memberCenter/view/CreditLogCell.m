@@ -140,4 +140,60 @@
     }
 }
 
+- (void)setupBeanTitleStyle {
+    _typeLabel.text = @"类型";
+    _typeLabel.textColor = [UIColor darkGrayColor];
+    
+    _changeLabel.text = @"+/-";
+    _changeLabel.textColor = [UIColor darkGrayColor];
+    
+    _balanceLabel.text = @"当前余额";
+    _balanceLabel.textColor = [UIColor darkGrayColor];
+}
+
+- (void)setupWithBean:(CreditLogInfo *)bean Index:(NSInteger)index {
+    NSString *type = @"";
+    switch (bean.type) {
+        case 0: {
+            type = @"预存款充值";
+            break;
+        }
+        case 1: {
+            type = @"预存款调整";
+            break;
+        }
+        case 2: {
+            type = @"订单支付";
+            break;
+        }
+        case 3: {
+            type = @"订单退款";
+            break;
+        }
+            
+        default:
+            break;
+    }
+    _typeLabel.text = type;
+    
+    if (bean.credit > 0) {
+        _changeLabel.text = [NSString stringWithFormat:@"+%.2ld", (long)bean.credit];
+        _changeLabel.textColor = POSITIVE_COLOR;
+    }
+    else if (bean.debit > 0) {
+        _changeLabel.text = [NSString stringWithFormat:@"-%.2ld", (long)bean.debit];
+        _changeLabel.textColor = [UIColor colorWithHex:0xEE0000];
+    }
+    
+    _balanceLabel.text = [NSString stringWithFormat:@"%.2ld", (long)bean.balance];
+    
+    if (index % 2) {
+        self.backgroundColor = [UIColor whiteColor];
+        
+    }
+    else {
+        self.backgroundColor = [UIColor colorWithHex:0xFFF8DC];
+    }
+}
+
 @end

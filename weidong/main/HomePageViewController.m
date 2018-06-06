@@ -19,7 +19,6 @@
 #import "ProductListViewController.h"
 #import "AdvertisementViewController.h"
 #import "ProductDetailViewController.h"
-#import "ChargeCenterViewController.h"
 #import "ChargeWebViewController.h"
 #import "LoginViewController.h"
 #import <AFNetworking/AFNetworkReachabilityManager.h>
@@ -412,7 +411,6 @@
 //打开充值中心
 - (void)openChargeCenter {
     self.hidesBottomBarWhenPushed = YES;
-//    ChargeCenterViewController *chargeVC = [ChargeCenterViewController new];
     ChargeWebViewController *chargeVC = [ChargeWebViewController new];
     [self.navigationController pushViewController:chargeVC animated:YES];
     self.hidesBottomBarWhenPushed=NO;

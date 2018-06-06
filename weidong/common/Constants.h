@@ -11,8 +11,38 @@
 
 #import "Util.h"
 
-/* -------- 常量 -------- */
+/* -------- 服务器设置 -------- */
+#define SERVER_TEST_HTTP_BASE   @"http://47.95.204.47" 
+#define SERVER_SERVER_URL       @"http://www.weldone.shop"      //正式服务器
 
+#define SERVER_TEST_EGOU_URL    @"http://47.95.204.47:8090/card/rechargephone.do"
+#define SERVER_RELEASE_EGOU_URL @"https://www.egocard.cn/card/rechargephone.do"
+
+
+#define SERVER_TEST_WEIDOU_URL    @"http://47.95.204.47:8090/member/depositCode/recharge?deviceType=mobile"
+#define SERVER_RELEASE_WEIDOU_URL @"https://www.egocard.cn/cardb/rechargephone.do"
+
+
+#define SERVER_HTTP_BASE     SERVER_TEST_HTTP_BASE//    SERVER_SERVER_URL//     //测试服务器、正式服务器切换改这里
+#define SERVER_EGOU_URL      SERVER_RELEASE_EGOU_URL//  SERVER_TEST_EGOU_URL//  //易购卡测试服务器 、正式服务器
+#define SERVER_WEIDOU_URL    SERVER_TEST_WEIDOU_URL//   SERVER_RELEASE_WEIDOU_URL//    //微豆测试、正式服务器
+
+
+#define SERVER_BASE_URL     [SERVER_HTTP_BASE stringByAppendingString:@":80/"]  //服务器基地址
+#define SERVER_API_URL      [SERVER_BASE_URL stringByAppendingString:@"interfaces/app/"] //接口url基地址
+#define SERVER_API_URL_MEMEBER  [SERVER_BASE_URL stringByAppendingString:@"interfaces/app/member/"] //需要登录访问的接口
+
+#define SERVER_MEMBERCETER_URL  [SERVER_HTTP_BASE stringByAppendingString:@"/member/index"]         //个人中心URL
+#define SERVER_CART_URL     [SERVER_HTTP_BASE stringByAppendingString:@"/cart/list"]            //购物车URL
+#define SERVER_ORDER_URL    [SERVER_HTTP_BASE stringByAppendingString:@"/member/order/list"]    //订单URL
+#define SERVER_CoinList_URL [SERVER_HTTP_BASE stringByAppendingString:@"/member/deposit/log"]   //微动币列表URL
+#define SERVER_HOME_URL     [SERVER_HTTP_BASE stringByAppendingString:@"/"] //首页URL
+
+#define EGOU_CARD_URL_BASE      @"rechargephonecheck.do" //易购卡支付界面
+#define WEIDOU_URL_BASE         @"cardb/rechargephone.do" //微豆充值
+
+
+/* -------- 常量 -------- */
 //屏幕大小
 #define SCREEN_SIZE [[UIScreen mainScreen] bounds].size
 #define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
@@ -33,33 +63,6 @@
 #define SUB_COLOR  [UIColor colorWithHex:0x80bbec]
 #define GRAY_COLOR [UIColor colorWithHex:0x9a9a9a]
 #define LOGIN_RED  [UIColor colorWithHex:0xf03030]
-
-/* -------- 服务器设置 -------- */
-#define SERVER_TEST_HTTP_BASE   @"http://pay.rhd361.com"    //@"http://172.20.10.2"//
-#define SERVER_SERVER_URL       @"http://www.weldone.shop"      //正式服务器
-#define SERVER_YANXUDONG        @"http://192.168.43.91:8080/"   //严旭东
-
-#define SERVER_TEST_EGOU_URL    @"http://47.95.204.47:8090/card/rechargephone.do"
-#define SERVER_RELEASE_EGOU_URL @"https://www.egocard.cn/card/rechargephone.do"
-
-
-
-#define SERVER_HTTP_BASE     SERVER_SERVER_URL//     SERVER_TEST_HTTP_BASE//    //测试服务器、正式服务器切换改这里
-#define SERVER_EGOU_URL      SERVER_RELEASE_EGOU_URL//  SERVER_TEST_EGOU_URL//  //易购卡测试服务器 、正式服务器
-
-
-
-#define SERVER_BASE_URL     [SERVER_HTTP_BASE stringByAppendingString:@":80/"]  //服务器基地址
-#define SERVER_API_URL      [SERVER_BASE_URL stringByAppendingString:@"interfaces/app/"] //接口url基地址
-#define SERVER_API_URL_MEMEBER  [SERVER_BASE_URL stringByAppendingString:@"interfaces/app/member/"] //需要登录访问的接口
-
-#define SERVER_MEMBERCETER_URL  [SERVER_HTTP_BASE stringByAppendingString:@"/member/index"]         //个人中心URL
-#define SERVER_CART_URL     [SERVER_HTTP_BASE stringByAppendingString:@"/cart/list"]            //购物车URL
-#define SERVER_ORDER_URL    [SERVER_HTTP_BASE stringByAppendingString:@"/member/order/list"]    //订单URL
-#define SERVER_CoinList_URL [SERVER_HTTP_BASE stringByAppendingString:@"/member/deposit/log"]   //微动币列表URL
-#define SERVER_HOME_URL     [SERVER_HTTP_BASE stringByAppendingString:@"/"] //首页URL
-
-#define EGOU_CARD_URL_BASE      @"rechargephonecheck.do" //易购卡支付界面
 
 /* -------- 个人信息 -------- */
 #define USER_NAME    @"username"

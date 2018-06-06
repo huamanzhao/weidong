@@ -9,6 +9,7 @@
 #import "MyCreditsLogViewController.h"
 #import "GetPointsLogRequest.h"
 #import "GetCoinsLogRequest.h"
+#import "GetWeiBeanLogsRequest.h"
 #import "CreditLogCell.h"
 #import <MJRefresh/MJRefresh.h>
 #import "CoinDetailViewController.h"
@@ -18,8 +19,7 @@
 @end
 
 @implementation MyCreditsLogViewController {
-    NSMutableArray *creditLogList;
-    NSMutableArray *coinLogList;
+    NSMutableArray *dataLogList;
     UITableView *table;
     
     NSInteger pageNum;
@@ -29,12 +29,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = _showCoinLog ? @"我的微动币" : @"我的积分";
+    NSString *title = @"";
+    if (self.type == 0) {
+        title = @"我的微动币";
+    }
+    else if (self.type == 1) {
+        title = @"我的积分";
+    }
+    else {
+        title = @"我的微豆";
+    }
+    self.title = title;
+    
     [self initNaviBackButton];
     [self initNaviTopEdge];
     
-    creditLogList = [NSMutableArray new];
-    coinLogList = [NSMutableArray new];
+    dataLogList = [NSMutableArray new];
     
     pageNum = 1;
     inLoadMore = NO;
@@ -84,14 +94,18 @@
 }
 
 - (void)getServerData {
-    if (!_showCoinLog) {
+    if (self.type == 0) {   //积分查询
         [self getCreditsLogs];
     }
-    else {
+    else if (self.type == 0) {  //微动币查询
         [self getCoinsLogs];
+    }
+    else {  //微豆查询
+        [self getBeanLogs];
     }
 }
 
+//积分查询
 - (void)getCreditsLogs {
     [SVProgressHUD showWithStatus:@"正在加载"];
     GetPointsLogRequest *request = [GetPointsLogRequest new];
@@ -101,10 +115,10 @@
         [SVProgressHUD dismiss];
         if (isOK) {
             if (!inLoadMore) {
-                creditLogList = [response.list mutableCopy];
+                dataLogList = [response.list mutableCopy];
             }
             else {
-                [creditLogList addObjectsFromArray:response.list];
+                [dataLogList addObjectsFromArray:response.list];
                 inLoadMore = NO;
             }
             
@@ -119,6 +133,7 @@
     }];
 }
 
+//微动币查询
 - (void)getCoinsLogs {
     [SVProgressHUD showWithStatus:@"正在加载"];
     GetCoinsLogRequest *request = [GetCoinsLogRequest new];
@@ -128,10 +143,10 @@
         [SVProgressHUD dismiss];
         if (isOK) {
             if (!inLoadMore) {
-                coinLogList = [response.list mutableCopy];
+                dataLogList = [response.list mutableCopy];
             }
             else {
-                [coinLogList addObjectsFromArray:response.list];
+                [dataLogList addObjectsFromArray:response.list];
                 inLoadMore = NO;
             }
             
@@ -143,6 +158,31 @@
         
         [table.mj_header endRefreshing];
         [table.mj_footer endRefreshing];
+    }];
+}
+
+//微豆查询
+- (void)getBeanLogs {
+    [SVProgressHUD showWithStatus:@"正在加载"];
+    GetWeiBeanLogsRequest *request = [GetWeiBeanLogsRequest new];
+    request.pageSize = 10;
+    request.pageNumber = pageNum;
+    [request excuteRequest:^(BOOL isOK, NSArray * _Nullable list, NSString * _Nullable errorMsg) {
+        [SVProgressHUD dismiss];
+        if (!isOK) {
+            [SVProgressHUD showErrorWithStatus:errorMsg];
+            return;
+        }
+        
+        if (!inLoadMore) {
+            dataLogList = [list mutableCopy];
+        }
+        else {
+            [dataLogList addObjectsFromArray:list];
+            inLoadMore = NO;
+        }
+        
+        [table reloadData];
     }];
 }
 
@@ -155,27 +195,27 @@
         return 1;
     }
     
-    return _showCoinLog ? [coinLogList count] : [creditLogList count];
+    return [dataLogList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     CreditLogCell *cell = [tableView dequeueReusableCellWithIdentifier:CREDITLOG_CELLID forIndexPath:indexPath];
-    if (!_showCoinLog) {
+    if (self.type == 0) {   //积分
         if (section == 0) {
             [cell setupCreditTitleStyle];
         }
         else {
-            [cell setupWithCredit:[creditLogList objectAtIndex:row] Index:row];
+            [cell setupWithCredit:[dataLogList objectAtIndex:row] Index:row];
         }
     }
-    else {
+    else if (self.type == 1 || self.type == 2){
         if (section == 0) {
             [cell setupCoinTitleStyle];
         }
         else {
-            [cell setupWithCoin:[coinLogList objectAtIndex:row] Index:row];
+            [cell setupWithCoin:[dataLogList objectAtIndex:row] Index:row];
         }
     }
     return cell;
@@ -187,13 +227,12 @@
     if (indexPath.section == 0) {
         return;
     }
-    if (!_showCoinLog) {
-        return;
-    }
     
-    CoinDetailViewController *detailVC = [CoinDetailViewController new];
-    detailVC.coinLog = [coinLogList objectAtIndex:indexPath.row];
-    [self.navigationController pushViewController:detailVC animated:YES];
+    if (self.type == 1 || self.type == 2) {
+        CoinDetailViewController *detailVC = [CoinDetailViewController new];
+        detailVC.coinLog = [dataLogList objectAtIndex:indexPath.row];
+        [self.navigationController pushViewController:detailVC animated:YES];
+    }
 }
 
 //ZC_DEBUG
@@ -234,7 +273,7 @@
     credit5.debit = 0;
     credit5.balance = 115;
     
-    creditLogList = @[credit0, credit1, credit2, credit3, credit4, credit5];
+    dataLogList = @[credit0, credit1, credit2, credit3, credit4, credit5];
 }
 
 

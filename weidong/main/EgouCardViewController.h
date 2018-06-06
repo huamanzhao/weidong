@@ -15,4 +15,6 @@
 @property (nonatomic, strong) NSMutableString *passWord;
 
 @property (nonatomic, copy)NSDictionary *paramDic;
+@property (nonatomic, assign)NSInteger type; //0-微动币充值  1-微豆充值
+
 @end

@@ -55,6 +55,8 @@
 		952B43562026A44A008B83CC /* CoinDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952B43542026A44A008B83CC /* CoinDetailViewController.xib */; };
 		9531ADD01FB86FC7009D51EB /* RealNameVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9531ADCE1FB86FC7009D51EB /* RealNameVerifyViewController.m */; };
 		9531ADD11FB86FC7009D51EB /* RealNameVerifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9531ADCF1FB86FC7009D51EB /* RealNameVerifyViewController.xib */; };
+		9532077220C6BFA9002DDB33 /* WeidouChargeWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9532077120C6BFA9002DDB33 /* WeidouChargeWebViewController.m */; };
+		9532077520C745E2002DDB33 /* EgouCardBDepositRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9532077420C745E2002DDB33 /* EgouCardBDepositRequest.m */; };
 		95343B4D1FEBDAC100438BDE /* RemoveFavoriteReqeust.m in Sources */ = {isa = PBXBuildFile; fileRef = 95343B4B1FEBDAC000438BDE /* RemoveFavoriteReqeust.m */; };
 		95343B511FEBE48800438BDE /* ConsulateProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95343B4F1FEBE48800438BDE /* ConsulateProductCell.m */; };
 		95343B521FEBE48800438BDE /* ConsulateProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95343B501FEBE48800438BDE /* ConsulateProductCell.xib */; };
@@ -123,6 +125,8 @@
 		9560987C1F7D3293002D7E35 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9560987B1F7D3293002D7E35 /* AppDelegate.m */; };
 		956098821F7D3293002D7E35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956098801F7D3293002D7E35 /* Main.storyboard */; };
 		956098871F7D3293002D7E35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956098851F7D3293002D7E35 /* LaunchScreen.storyboard */; };
+		9560E28720BD747E00FC0378 /* MemberOtherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9560E28520BD747E00FC0378 /* MemberOtherCell.m */; };
+		9560E28820BD747E00FC0378 /* MemberOtherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9560E28620BD747E00FC0378 /* MemberOtherCell.xib */; };
 		956206861F9108BF00612934 /* AdInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 956206851F9108BF00612934 /* AdInfo.m */; };
 		9562F6F21FDEC4C2003B02D6 /* ShopCartMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9562F6F01FDEC4C2003B02D6 /* ShopCartMainViewController.m */; };
 		9562F6F31FDEC4C2003B02D6 /* ShopCartMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9562F6F11FDEC4C2003B02D6 /* ShopCartMainViewController.xib */; };
@@ -137,6 +141,7 @@
 		956CCD932090B5D5006B3AED /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 956CCD902090B5D5006B3AED /* UIView+Extension.m */; };
 		956CCD942090B5D5006B3AED /* LVKeyboardAccessoryBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 956CCD912090B5D5006B3AED /* LVKeyboardAccessoryBtn.m */; };
 		956CCD952090B5D5006B3AED /* LVKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 956CCD922090B5D5006B3AED /* LVKeyboardView.m */; };
+		956D633320C3863300394DFC /* GetWeiBeanLogsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 956D633220C3863300394DFC /* GetWeiBeanLogsRequest.m */; };
 		956DD28C1F98E6EE0028B18F /* CategoryMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956DD28B1F98E6EE0028B18F /* CategoryMainViewController.xib */; };
 		956DD2901F98E7260028B18F /* ProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 956DD28E1F98E7260028B18F /* ProductListViewController.m */; };
 		956DD2911F98E7260028B18F /* ProductListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956DD28F1F98E7260028B18F /* ProductListViewController.xib */; };
@@ -209,8 +214,6 @@
 		95BFC76F1FE3F35E0038B326 /* ProductConsulateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BFC76D1FE3F35E0038B326 /* ProductConsulateViewController.m */; };
 		95BFC7701FE3F35E0038B326 /* ProductConsulateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95BFC76E1FE3F35E0038B326 /* ProductConsulateViewController.xib */; };
 		95BFC7731FE41C980038B326 /* AddConsulationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BFC7721FE41C980038B326 /* AddConsulationRequest.m */; };
-		95BFC7771FE555450038B326 /* ChargeCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BFC7751FE555450038B326 /* ChargeCenterViewController.m */; };
-		95BFC7781FE555450038B326 /* ChargeCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95BFC7761FE555450038B326 /* ChargeCenterViewController.xib */; };
 		95BFC77C1FE641300038B326 /* EgouCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BFC77A1FE641300038B326 /* EgouCardViewController.m */; };
 		95BFC77D1FE641300038B326 /* EgouCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95BFC77B1FE641300038B326 /* EgouCardViewController.xib */; };
 		95BFC7801FE72DF90038B326 /* EgouCardDepositRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BFC77F1FE72DF90038B326 /* EgouCardDepositRequest.m */; };
@@ -374,6 +377,10 @@
 		9531ADCD1FB86FC7009D51EB /* RealNameVerifyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RealNameVerifyViewController.h; path = memberCenter/RealNameVerifyViewController.h; sourceTree = "<group>"; };
 		9531ADCE1FB86FC7009D51EB /* RealNameVerifyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RealNameVerifyViewController.m; path = memberCenter/RealNameVerifyViewController.m; sourceTree = "<group>"; };
 		9531ADCF1FB86FC7009D51EB /* RealNameVerifyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RealNameVerifyViewController.xib; path = memberCenter/RealNameVerifyViewController.xib; sourceTree = "<group>"; };
+		9532077020C6BFA9002DDB33 /* WeidouChargeWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WeidouChargeWebViewController.h; path = memberCenter/WeidouChargeWebViewController.h; sourceTree = "<group>"; };
+		9532077120C6BFA9002DDB33 /* WeidouChargeWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WeidouChargeWebViewController.m; path = memberCenter/WeidouChargeWebViewController.m; sourceTree = "<group>"; };
+		9532077320C745E2002DDB33 /* EgouCardBDepositRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EgouCardBDepositRequest.h; path = server/EgouCardBDepositRequest.h; sourceTree = "<group>"; };
+		9532077420C745E2002DDB33 /* EgouCardBDepositRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EgouCardBDepositRequest.m; path = server/EgouCardBDepositRequest.m; sourceTree = "<group>"; };
 		95343B4B1FEBDAC000438BDE /* RemoveFavoriteReqeust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RemoveFavoriteReqeust.m; path = server/RemoveFavoriteReqeust.m; sourceTree = "<group>"; };
 		95343B4C1FEBDAC000438BDE /* RemoveFavoriteReqeust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoveFavoriteReqeust.h; path = server/RemoveFavoriteReqeust.h; sourceTree = "<group>"; };
 		95343B4E1FEBE48800438BDE /* ConsulateProductCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ConsulateProductCell.h; path = memberCenter/view/ConsulateProductCell.h; sourceTree = "<group>"; };
@@ -506,6 +513,9 @@
 		956098811F7D3293002D7E35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		956098861F7D3293002D7E35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		956098881F7D3293002D7E35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9560E28420BD747E00FC0378 /* MemberOtherCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MemberOtherCell.h; path = memberCenter/view/MemberOtherCell.h; sourceTree = "<group>"; };
+		9560E28520BD747E00FC0378 /* MemberOtherCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MemberOtherCell.m; path = memberCenter/view/MemberOtherCell.m; sourceTree = "<group>"; };
+		9560E28620BD747E00FC0378 /* MemberOtherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MemberOtherCell.xib; path = memberCenter/view/MemberOtherCell.xib; sourceTree = "<group>"; };
 		956206841F9108BF00612934 /* AdInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AdInfo.h; path = main/AdInfo.h; sourceTree = "<group>"; };
 		956206851F9108BF00612934 /* AdInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AdInfo.m; path = main/AdInfo.m; sourceTree = "<group>"; };
 		9562F6EF1FDEC4C2003B02D6 /* ShopCartMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ShopCartMainViewController.h; path = shoppingCart/controller/ShopCartMainViewController.h; sourceTree = "<group>"; };
@@ -531,6 +541,8 @@
 		956CCD902090B5D5006B3AED /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		956CCD912090B5D5006B3AED /* LVKeyboardAccessoryBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVKeyboardAccessoryBtn.m; sourceTree = "<group>"; };
 		956CCD922090B5D5006B3AED /* LVKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVKeyboardView.m; sourceTree = "<group>"; };
+		956D633120C3863300394DFC /* GetWeiBeanLogsRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GetWeiBeanLogsRequest.h; path = server/GetWeiBeanLogsRequest.h; sourceTree = "<group>"; };
+		956D633220C3863300394DFC /* GetWeiBeanLogsRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GetWeiBeanLogsRequest.m; path = server/GetWeiBeanLogsRequest.m; sourceTree = "<group>"; };
 		956DD28B1F98E6EE0028B18F /* CategoryMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryMainViewController.xib; path = category/CategoryMainViewController.xib; sourceTree = "<group>"; };
 		956DD28D1F98E7260028B18F /* ProductListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProductListViewController.h; path = category/ProductListViewController.h; sourceTree = "<group>"; };
 		956DD28E1F98E7260028B18F /* ProductListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProductListViewController.m; path = category/ProductListViewController.m; sourceTree = "<group>"; };
@@ -639,9 +651,6 @@
 		95BFC76E1FE3F35E0038B326 /* ProductConsulateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProductConsulateViewController.xib; path = category/ProductConsulateViewController.xib; sourceTree = "<group>"; };
 		95BFC7711FE41C980038B326 /* AddConsulationRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AddConsulationRequest.h; path = server/AddConsulationRequest.h; sourceTree = "<group>"; };
 		95BFC7721FE41C980038B326 /* AddConsulationRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AddConsulationRequest.m; path = server/AddConsulationRequest.m; sourceTree = "<group>"; };
-		95BFC7741FE555450038B326 /* ChargeCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ChargeCenterViewController.h; path = main/ChargeCenterViewController.h; sourceTree = "<group>"; };
-		95BFC7751FE555450038B326 /* ChargeCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ChargeCenterViewController.m; path = main/ChargeCenterViewController.m; sourceTree = "<group>"; };
-		95BFC7761FE555450038B326 /* ChargeCenterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ChargeCenterViewController.xib; path = main/ChargeCenterViewController.xib; sourceTree = "<group>"; };
 		95BFC7791FE641300038B326 /* EgouCardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EgouCardViewController.h; path = main/EgouCardViewController.h; sourceTree = "<group>"; };
 		95BFC77A1FE641300038B326 /* EgouCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EgouCardViewController.m; path = main/EgouCardViewController.m; sourceTree = "<group>"; };
 		95BFC77B1FE641300038B326 /* EgouCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EgouCardViewController.xib; path = main/EgouCardViewController.xib; sourceTree = "<group>"; };
@@ -997,6 +1006,8 @@
 				955512DB1F8A81790032DC13 /* GetSelfInfoRequest.m */,
 				955512B51F8A7E8B0032DC13 /* GetVerifyCodeRequest.h */,
 				955512B61F8A7E8B0032DC13 /* GetVerifyCodeRequest.m */,
+				956D633120C3863300394DFC /* GetWeiBeanLogsRequest.h */,
+				956D633220C3863300394DFC /* GetWeiBeanLogsRequest.m */,
 				955512751F8A23330032DC13 /* LoginRequest.h */,
 				955512761F8A23330032DC13 /* LoginRequest.m */,
 				955512E31F8A81FB0032DC13 /* LogoutRequest.h */,
@@ -1039,6 +1050,8 @@
 				95E7D3EB2050A39F00075B2F /* VerifySmsCodeRequest.m */,
 				9527DF9D206E84A300D8D043 /* CheckPhoneExistRequest.h */,
 				9527DF9E206E84A300D8D043 /* CheckPhoneExistRequest.m */,
+				9532077320C745E2002DDB33 /* EgouCardBDepositRequest.h */,
+				9532077420C745E2002DDB33 /* EgouCardBDepositRequest.m */,
 			);
 			name = server;
 			sourceTree = "<group>";
@@ -1417,12 +1430,11 @@
 				95180FEB1F7E840700A96FD8 /* HomePageViewController.xib */,
 				95E7297D1F93435D00C920FD /* AdvertisementViewController.h */,
 				95E7297E1F93435D00C920FD /* AdvertisementViewController.m */,
-				95BFC7741FE555450038B326 /* ChargeCenterViewController.h */,
-				95BFC7751FE555450038B326 /* ChargeCenterViewController.m */,
-				95BFC7761FE555450038B326 /* ChargeCenterViewController.xib */,
 				95D2BDFB1FEE9F4A00577D3A /* ChargeWebViewController.h */,
 				95D2BDFA1FEE9F4A00577D3A /* ChargeWebViewController.m */,
 				95D2BDF91FEE9F4A00577D3A /* ChargeWebViewController.xib */,
+				9532077020C6BFA9002DDB33 /* WeidouChargeWebViewController.h */,
+				9532077120C6BFA9002DDB33 /* WeidouChargeWebViewController.m */,
 				95BFC7791FE641300038B326 /* EgouCardViewController.h */,
 				95BFC77A1FE641300038B326 /* EgouCardViewController.m */,
 				95BFC77B1FE641300038B326 /* EgouCardViewController.xib */,
@@ -1539,6 +1551,9 @@
 				95CF88E81FAFD6760068744B /* MemberToolsCell.h */,
 				95CF88E91FAFD6760068744B /* MemberToolsCell.m */,
 				95CF88EA1FAFD6760068744B /* MemberToolsCell.xib */,
+				9560E28420BD747E00FC0378 /* MemberOtherCell.h */,
+				9560E28520BD747E00FC0378 /* MemberOtherCell.m */,
+				9560E28620BD747E00FC0378 /* MemberOtherCell.xib */,
 				95CF88ED1FB0958B0068744B /* MemberLogoutCell.h */,
 				95CF88EE1FB0958B0068744B /* MemberLogoutCell.m */,
 				95CF88EF1FB0958B0068744B /* MemberLogoutCell.xib */,
@@ -1661,7 +1676,6 @@
 			files = (
 				95343B521FEBE48800438BDE /* ConsulateProductCell.xib in Resources */,
 				959A33531FC0269200CD9A26 /* ProductConsultsView.xib in Resources */,
-				95BFC7781FE555450038B326 /* ChargeCenterViewController.xib in Resources */,
 				95D2BDFC1FEE9F4B00577D3A /* ChargeWebViewController.xib in Resources */,
 				95F985B41FF132E4001CA540 /* CouponListViewController.xib in Resources */,
 				959A33441FBFD36500CD9A26 /* ProductMainView.xib in Resources */,
@@ -1683,6 +1697,7 @@
 				95CF88E71FAFD0640068744B /* MemberMessageCell.xib in Resources */,
 				95A437C01F85518B00424E06 /* PrimaryFuncCell.xib in Resources */,
 				95CBCCAA1FC253F50053DFF4 /* AddressEditViewController.xib in Resources */,
+				9560E28820BD747E00FC0378 /* MemberOtherCell.xib in Resources */,
 				95F5ACF22053B9D6001E08BC /* ProductCommentViewController.xib in Resources */,
 				95CF88F11FB0958B0068744B /* MemberLogoutCell.xib in Resources */,
 				953D56301FC39CAB0098B726 /* PersonalInfoViewController.xib in Resources */,
@@ -1774,6 +1789,7 @@
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/MWPhotoBrowser/MWPhotoBrowser.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/VTMagic/VTMagic.framework",
@@ -1787,6 +1803,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MWPhotoBrowser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VTMagic.framework",
@@ -1897,6 +1914,7 @@
 				954074111F8BBBBB00D52350 /* CaculateOrderRequest.m in Sources */,
 				956206861F9108BF00612934 /* AdInfo.m in Sources */,
 				952012291FFE51E100623762 /* PayManager.m in Sources */,
+				956D633320C3863300394DFC /* GetWeiBeanLogsRequest.m in Sources */,
 				95D2BE001FEF4C8700577D3A /* GetProductNotifyRequest.m in Sources */,
 				950060541FF6A0A10087EB87 /* ModifyPayPasswordViewController.m in Sources */,
 				955512CA1F8A7FF10032DC13 /* GetMemberBalanceRequest.m in Sources */,
@@ -1915,6 +1933,7 @@
 				956DD29A1F98F6DD0028B18F /* NavibarSearchView.m in Sources */,
 				952A2E5F1F9CE3A800F6F239 /* HeaderSearchView.m in Sources */,
 				9518C1F51FE069E900865226 /* ShopCartPayViewController.m in Sources */,
+				9560E28720BD747E00FC0378 /* MemberOtherCell.m in Sources */,
 				95CBCCB31FC2D4BD0053DFF4 /* AddressItemCell.m in Sources */,
 				95180FEC1F7E840700A96FD8 /* HomePageViewController.m in Sources */,
 				955512DF1F8A81A80032DC13 /* UpdateSelfInfoRequest.m in Sources */,
@@ -1922,7 +1941,6 @@
 				9577CEA91FA606CD00D675B3 /* ReplyInfo.m in Sources */,
 				95CBCCAE1FC2CF6B0053DFF4 /* AddressListViewController.m in Sources */,
 				95F985B71FF1353C001CA540 /* GetCouponListRequest.m in Sources */,
-				95BFC7771FE555450038B326 /* ChargeCenterViewController.m in Sources */,
 				9562F6F81FDEC4DE003B02D6 /* ShopCartListViewController.m in Sources */,
 				95CF88F41FB1FBC90068744B /* BadgeButton.m in Sources */,
 				95CD87941FAE051000E2EF09 /* SelfInfo.m in Sources */,
@@ -1943,6 +1961,7 @@
 				95EF49B11F89118C00DBE834 /* ResponseBase.m in Sources */,
 				954073FF1F8BB79E00D52350 /* GetOrderDetailRequest.m in Sources */,
 				957E2FCE1FC637680073B31D /* ProductCommentCell.m in Sources */,
+				9532077220C6BFA9002DDB33 /* WeidouChargeWebViewController.m in Sources */,
 				9534E0DD1FEFE31200F6B43B /* ArrivalNoticeInfo.m in Sources */,
 				95CD87991FAE054F00E2EF09 /* MemberHeaderView.m in Sources */,
 				95E7297C1F92FF1500C920FD /* CategoryInfo.m in Sources */,
@@ -1960,6 +1979,7 @@
 				959A33471FBFE3BD00CD9A26 /* ProductDetailView.m in Sources */,
 				95E729801F93435D00C920FD /* AdvertisementViewController.m in Sources */,
 				95D2BDF71FEE437F00577D3A /* OrderListCell.m in Sources */,
+				9532077520C745E2002DDB33 /* EgouCardBDepositRequest.m in Sources */,
 				956AE1701FA5BB39006D59B7 /* ParameterInfo.m in Sources */,
 				95CF88E11FAF57E30068744B /* MemberOrderCell.m in Sources */,
 				95085B681FAF164F0082F72C /* MemberFunctionView.m in Sources */,

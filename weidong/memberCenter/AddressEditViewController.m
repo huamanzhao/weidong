@@ -10,8 +10,8 @@
 #import "AddAddressRequest.h"
 #import "UpdateAddressRequest.h"
 #import "GetAreaListRequest.h"
-
 #import "AreaInfo.h"
+#import "Masonry.h"
 
 @interface AddressEditViewController () <UIPickerViewDelegate, UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UITextField *nameTF;
@@ -385,8 +385,6 @@
     }
 }
 
-
-
 - (void)initAreaPickerView {
     areaPicker = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGH - pickerHeight, SCREEN_WIDTH, pickerHeight)];
     areaPicker.backgroundColor = [UIColor whiteColor];
@@ -395,14 +393,15 @@
     areaPicker.layer.shadowOpacity = 0.5;
     areaPicker.layer.shadowOffset = CGSizeMake(2, -4);
     [self.view addSubview:areaPicker];
+    [areaPicker mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.view.mas_bottom);
+        make.height.mas_equalTo(areaPicker.mas_width).multipliedBy(0.6);
+        make.left.mas_equalTo(self.view.mas_left);
+        make.width.mas_equalTo(self.view.mas_width);
+    }];
     
     CGFloat btnHeight = 30;
     CGFloat margin = 4;
-    picker = [[UIPickerView alloc] initWithFrame:CGRectMake(margin, margin, SCREEN_WIDTH - margin * 2, pickerHeight - margin * 2 - btnHeight)];
-    picker.delegate = self;
-    picker.dataSource = self;
-    [areaPicker addSubview:picker];
-    
     UIButton *confirmBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 120, btnHeight)];
     confirmBtn.center = CGPointMake(SCREEN_WIDTH / 2, pickerHeight - margin - btnHeight);
     [confirmBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -411,6 +410,23 @@
     confirmBtn.layer.cornerRadius = 6.0;
     [confirmBtn addTarget:self action:@selector(confirmAreaSelection) forControlEvents:UIControlEventTouchUpInside];
     [areaPicker addSubview:confirmBtn];
+    [confirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(areaPicker.mas_bottom).mas_offset(-10);
+        make.height.mas_equalTo(32);
+        make.centerX.mas_equalTo(areaPicker.mas_centerX);
+        make.width.mas_equalTo(100);
+    }];
+    
+    picker = [[UIPickerView alloc] initWithFrame:CGRectMake(margin, margin, SCREEN_WIDTH - margin * 2, pickerHeight - margin * 2 - btnHeight)];
+    picker.delegate = self;
+    picker.dataSource = self;
+    [areaPicker addSubview:picker];
+    [picker mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(areaPicker.mas_top);
+        make.left.mas_equalTo(areaPicker.mas_left).mas_offset(margin);
+        make.right.mas_equalTo(areaPicker.mas_right).mas_offset(-margin);
+        make.bottom.mas_equalTo(confirmBtn.mas_top).mas_offset(-margin);
+    }];
     
     //隐藏picker
     areaPicker.transform = CGAffineTransformTranslate(picker.transform, 0, pickerHeight);

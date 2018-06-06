@@ -10,4 +10,5 @@ pod 'JPush', '~> 3.0'
 pod 'SVProgressHUD’
 pod 'WechatOpenSDK'
 pod 'MWPhotoBrowser', '~> 2.1'
+pod 'Masonry'
 end
