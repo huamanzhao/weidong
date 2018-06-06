@@ -17,6 +17,6 @@
 @property(nonatomic, copy)NSString *transactionId;
 
 
-- (void)excuteRequst:(void (^_Nonnull)(Boolean isOK, NSString * _Nullable errorMsg))complete;
+- (void)excuteRequst:(void (^_Nonnull)(Boolean isOK, NSString * _Nullable url, NSString * _Nullable errorMsg))complete;
 
 @end

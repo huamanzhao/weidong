@@ -17,7 +17,7 @@
 #import "PayManager.h"
 #import "EgouCardViewController.h"
 
-@interface ChargeWebViewController () <WKNavigationDelegate, PayManagerDelegate>
+@interface ChargeWebViewController () <WKNavigationDelegate, PayManagerDelegate, EgouCardChargeDelegate>
 @property(nonatomic, copy)NSString *funcBaseUrl; //功能部分
 @property(nonatomic, copy)NSString *previosUrl;
 
@@ -92,16 +92,20 @@
     }
     
     if (needReload) {
-        NSURL *URL = [NSURL URLWithString:webUrl];
-        if (!URL) {
-            return;
-        }
-        NSURLRequest *request = [NSURLRequest requestWithURL:URL cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:15.0];
-        
-        [webView loadRequest:request];
+        [self webViewLoadUrlStr:webUrl];
         
         needReload = NO;
     }
+}
+
+- (void)webViewLoadUrlStr:(NSString *)webUrl {
+    NSURL *URL = [NSURL URLWithString:webUrl];
+    if (!URL) {
+        return;
+    }
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:15.0];
+    
+    [webView loadRequest:request];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -320,7 +324,12 @@
     
     EgouCardViewController *cardVC = [EgouCardViewController new];
     cardVC.paramDic = dic;
+    cardVC.delegate = self;
     [self.navigationController pushViewController:cardVC animated:NO];
+}
+
+- (void)chargeSucceedWithURL:(NSString *)urlStr {
+    [self webViewLoadUrlStr:urlStr];
 }
 
 @end

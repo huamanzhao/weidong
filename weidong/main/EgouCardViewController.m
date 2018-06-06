@@ -11,6 +11,7 @@
 #import "GetVerifyCodeRequest.h"
 #import "CheckVerifyCodeRequest.h"
 #import "EgouCardDepositRequest.h"
+#import "EgouCardBDepositRequest.h"
 
 @interface EgouCardViewController () <UITextFieldDelegate, LVKeyboardDelegate, VerifiCodeDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -77,13 +78,22 @@
         [SVProgressHUD showInfoWithStatus:@"请输入验证码"];
         return;
     }
-//    if (![serverVerify isEqualToString:verifyCode]) {
-//        [SVProgressHUD showInfoWithStatus:@"验证码错误"];
-//        return;
-//    }
+    if (![serverVerify isEqualToString:verifyCode]) {
+        [SVProgressHUD showInfoWithStatus:@"验证码错误"];
+        return;
+    }
 //
 //    [self checkVerifyCode];
-    [self cardDeposit];
+    [self excuteRequest];
+}
+
+- (void)excuteRequest {
+    if (self.type == 0) {
+        [self cardDeposit];
+    }
+    else {
+        [self cardbDeposit];
+    }
 }
 
 - (void)getVerifyCode {
@@ -110,7 +120,7 @@
     request.verifyCode = _verifyTF.text;
     [request excuteRequst:^(Boolean isOK, NSString * _Nullable errorMsg) {
         if (isOK) {
-            [self cardDeposit];
+            [self excuteRequest];
         }
         else {
             [SVProgressHUD showErrorWithStatus:errorMsg];
@@ -127,12 +137,40 @@
     request.cardPassword = encryptStr;
     request.transactionId = [_paramDic valueForKey:@"transactionId"];
     request.cardValue = [_paramDic valueForKey:@"cardValue"];
-    [request excuteRequst:^(Boolean isOK, NSString * _Nullable errorMsg) {
+    [request excuteRequst:^(Boolean isOK, NSString * _Nullable url, NSString * _Nullable errorMsg) {
         [SVProgressHUD dismiss];
         if (isOK) {
             [SVProgressHUD showSuccessWithStatus:@"充值成功"];
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            if (_delegate) {
+                [_delegate chargeSucceedWithURL:url];
+            }
+            
+            [self.navigationController popViewControllerAnimated:YES];
             return;
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:errorMsg];
+        }
+    }];
+}
+
+- (void)cardbDeposit {
+    [SVProgressHUD showWithStatus:@"正在充值"];
+    EgouCardBDepositRequest *request = [EgouCardBDepositRequest new];
+    request.cardNo = _cardNoTF.text;
+    NSString *encryptStr = [SecurityUtil encryptAESString:_passwordTF.text];
+    request.cardPassword = encryptStr;
+    request.transactionId = [_paramDic valueForKey:@"transactionId"];
+    request.cardValue = [_paramDic valueForKey:@"cardValue"];
+    [request excuteRequst:^(Boolean isOK, NSString * _Nullable url, NSString * _Nullable errorMsg) {
+        [SVProgressHUD dismiss];
+        if (isOK) {
+            [SVProgressHUD showSuccessWithStatus:@"充值成功"];
+            if (_delegate) {
+                [_delegate chargeSucceedWithURL:url];
+            }
+            
+            [self.navigationController popViewControllerAnimated:YES];
         }
         else {
             [SVProgressHUD showErrorWithStatus:errorMsg];

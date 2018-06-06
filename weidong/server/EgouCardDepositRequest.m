@@ -19,22 +19,23 @@
     return self;
 }
 
-- (void)excuteRequst:(void (^)(Boolean, NSString * _Nullable))complete {
+- (void)excuteRequst:(void (^)(Boolean, NSString * _Nullable, NSString * _Nullable))complete {
     [self doRequest:^(Boolean isOK, NSDictionary * _Nullable responseDic, NSString * _Nullable errorMsg) {
         if (!isOK) {
-            complete(NO, errorMsg);
+            complete(NO, nil, errorMsg);
             return;
         }
         
         NSString *result = [responseDic objectForKey:@"result"];
         NSString *desc   = [responseDic objectForKey:@"desc"];
+        NSString *url    = [responseDic objectForKey:@"url"];
         
         if (![result isEqualToString:@"1"]) {
-            complete(NO, desc);
+            complete(NO, nil, desc);
             return;
         }
         
-        complete(YES, desc);
+        complete(YES, url, desc);
     }];
 }
 

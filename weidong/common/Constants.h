@@ -12,14 +12,13 @@
 #import "Util.h"
 
 /* -------- 服务器设置 -------- */
-#define SERVER_TEST_HTTP_BASE   @"http://47.95.204.47" 
+#define SERVER_TEST_HTTP_BASE   @"http://pay.rhd361.com"
 #define SERVER_SERVER_URL       @"http://www.weldone.shop"      //正式服务器
 
 #define SERVER_TEST_EGOU_URL    @"http://47.95.204.47:8090/card/rechargephone.do"
 #define SERVER_RELEASE_EGOU_URL @"https://www.egocard.cn/card/rechargephone.do"
 
-
-#define SERVER_TEST_WEIDOU_URL    @"http://47.95.204.47:8090/member/depositCode/recharge?deviceType=mobile"
+#define SERVER_TEST_WEIDOU_URL    @"http://47.95.204.47:8090/cardb/rechargephone.do"
 #define SERVER_RELEASE_WEIDOU_URL @"https://www.egocard.cn/cardb/rechargephone.do"
 
 
