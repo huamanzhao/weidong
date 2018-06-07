@@ -15,18 +15,29 @@
 #define SERVER_TEST_HTTP_BASE   @"http://pay.rhd361.com"
 #define SERVER_SERVER_URL       @"http://www.weldone.shop"      //正式服务器
 
-#define SERVER_TEST_EGOU_URL    @"http://47.95.204.47:8090/card/rechargephone.do"
-#define SERVER_RELEASE_EGOU_URL @"https://www.egocard.cn/card/rechargephone.do"
-
-#define SERVER_TEST_WEIDOU_URL    @"http://47.95.204.47:8090/cardb/rechargephone.do"
-#define SERVER_RELEASE_WEIDOU_URL @"https://www.egocard.cn/cardb/rechargephone.do"
-
-
-#define SERVER_HTTP_BASE     SERVER_TEST_HTTP_BASE//    SERVER_SERVER_URL//     //测试服务器、正式服务器切换改这里
-#define SERVER_EGOU_URL      SERVER_RELEASE_EGOU_URL//  SERVER_TEST_EGOU_URL//  //易购卡测试服务器 、正式服务器
-#define SERVER_WEIDOU_URL    SERVER_TEST_WEIDOU_URL//   SERVER_RELEASE_WEIDOU_URL//    //微豆测试、正式服务器
+/*  易购卡  */
+//服务器
+#define SERVER_TEST_EGOU_HTTP    @"http://47.95.204.47:8090/"
+#define SERVER_RELEASE_EGOU_HTTP @"https://www.egocard.cn/"
+//基地址
+#define SERVER_EGOU_BASE        @"card/rechargephone.do"
+#define SERVER_WEIDOU_BASE      @"cardb/rechargephone.do"
 
 
+//配置正式、测试环境
+#define SERVER_HTTP_BASE    SERVER_SERVER_URL//     SERVER_TEST_HTTP_BASE//     //测试服务器、正式服务器切换改这里
+#define SERVER_HTTP_EGOU    SERVER_RELEASE_EGOU_HTTP//  SERVER_TEST_EGOU_HTTP//     //易购卡
+
+/*
+ #define SERVER_TEST_EGOU_URL    @"http://47.95.204.47:8090/card/rechargephone.do"
+ #define SERVER_RELEASE_EGOU_URL @"https://www.egocard.cn/card/rechargephone.do"
+ #define SERVER_TEST_WEIDOU_URL    @"http://47.95.204.47:8090/cardb/rechargephone.do"
+ #define SERVER_RELEASE_WEIDOU_URL @"https://www.egocard.cn/cardb/rechargephone.do"
+ #define SERVER_EGOU_URL      SERVER_RELEASE_EGOU_URL//  SERVER_TEST_EGOU_URL//  //易购卡测试服务器 、正式服务器
+ #define SERVER_WEIDOU_URL    SERVER_TEST_WEIDOU_URL//   SERVER_RELEASE_WEIDOU_URL//    //微豆测试、正式服务器
+ */
+#define SERVER_EGOU_URL     [SERVER_HTTP_EGOU stringByAppendingString: SERVER_EGOU_BASE]
+#define SERVER_WEIDOU_URL   [SERVER_HTTP_EGOU stringByAppendingString: SERVER_WEIDOU_BASE];
 #define SERVER_BASE_URL     [SERVER_HTTP_BASE stringByAppendingString:@":80/"]  //服务器基地址
 #define SERVER_API_URL      [SERVER_BASE_URL stringByAppendingString:@"interfaces/app/"] //接口url基地址
 #define SERVER_API_URL_MEMEBER  [SERVER_BASE_URL stringByAppendingString:@"interfaces/app/member/"] //需要登录访问的接口
@@ -39,7 +50,6 @@
 
 #define EGOU_CARD_URL_BASE      @"rechargephonecheck.do" //易购卡支付界面
 #define WEIDOU_URL_BASE         @"cardb/rechargephone.do" //微豆充值
-
 
 /* -------- 常量 -------- */
 //屏幕大小
@@ -85,7 +95,5 @@
 
 #define HTTP_ERRMSG_TIMEOUT @"网络请求超时"
 #define HTTP_ERRMSG_NONETWORK @"网络连接错误"
-
-
 
 #endif /* Constants_h */

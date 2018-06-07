@@ -135,6 +135,11 @@
     }];
     
     if (pickerType == 0) {
+        NSInteger row = [picker selectedRowInComponent:0];
+        AreaInfo *province = [provinceList objectAtIndex:row];
+        selectProvinceId = province.areaId;
+        provinceName = province.name;
+        
         _provinceLabel.text = provinceName;
         _cityLabel.text = @"选择城市";
         _districtLabel.text = @"选择区县";
@@ -147,6 +152,11 @@
         [self getCityListRequest];
     }
     else if (pickerType == 1) {
+        NSInteger row = [picker selectedRowInComponent:0];
+        AreaInfo *city = [cityList objectAtIndex:row];
+        selectCityId = city.areaId;
+        cityName = city.name;
+        
         _cityLabel.text = cityName;
         _districtLabel.text = @"选择区县";
         districtName = nil;
@@ -156,6 +166,11 @@
         [self getDistrictListRequest];
     }
     else {
+        NSInteger row = [picker selectedRowInComponent:0];
+        AreaInfo *district = [districtList objectAtIndex:row];
+        selectDistrictId = district.areaId;
+        districtName = district.name;
+        
         _districtLabel.text = districtName;
     }
 }
@@ -169,8 +184,6 @@
     }
     
     pickerType = 0;
-//    AreaInfo *area = [provinceList objectAtIndex:0];
-//    selectProvinceId = area.areaId;
     [picker reloadAllComponents];
     [self showAreaPickerView];
 }
@@ -182,8 +195,6 @@
     }
     
     pickerType = 1;
-//    AreaInfo *area = [cityList objectAtIndex:0];
-//    selectCityId = area.areaId;
     [picker reloadAllComponents];
     [self showAreaPickerView];
 }
@@ -195,8 +206,6 @@
     }
     
     pickerType = 2;
-//    AreaInfo *area = [districtList objectAtIndex:0];
-//    selectDistrictId = area.areaId;
     [picker reloadAllComponents];
     [self showAreaPickerView];
 }
@@ -365,24 +374,6 @@
     }
     AreaInfo *area = [districtList objectAtIndex:row];
     return area.name;
-}
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    if (pickerType == 0) {
-        AreaInfo *province = [provinceList objectAtIndex:row];
-        selectProvinceId = province.areaId;
-        provinceName = province.name;
-    }
-    else if (pickerType == 1) {
-        AreaInfo *city = [cityList objectAtIndex:row];
-        selectCityId = city.areaId;
-        cityName = city.name;
-    }
-    else {
-        AreaInfo *district = [districtList objectAtIndex:row];
-        selectDistrictId = district.areaId;
-        districtName = district.name;
-    }
 }
 
 - (void)initAreaPickerView {

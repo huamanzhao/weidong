@@ -155,6 +155,8 @@
 		9577CEAF1FA6261100D675B3 /* MemberLoginInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9577CEAE1FA6261100D675B3 /* MemberLoginInfo.m */; };
 		957E2FCE1FC637680073B31D /* ProductCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 957E2FCC1FC637680073B31D /* ProductCommentCell.m */; };
 		957E2FCF1FC637680073B31D /* ProductCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 957E2FCD1FC637680073B31D /* ProductCommentCell.xib */; };
+		9585CB8A20C967F70015536F /* ToolItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9585CB8820C967F70015536F /* ToolItemCell.m */; };
+		9585CB8B20C967F70015536F /* ToolItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9585CB8920C967F70015536F /* ToolItemCell.xib */; };
 		95863D801FA93D5C006131A6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95863D7E1FA93D5C006131A6 /* RegisterViewController.m */; };
 		95863D811FA93D5C006131A6 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95863D7F1FA93D5C006131A6 /* RegisterViewController.xib */; };
 		95879C801FC9A0FC0012A19C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 95879C7F1FC9A0FC0012A19C /* libc++.tbd */; };
@@ -564,6 +566,9 @@
 		957E2FCB1FC637680073B31D /* ProductCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProductCommentCell.h; path = category/view/ProductCommentCell.h; sourceTree = "<group>"; };
 		957E2FCC1FC637680073B31D /* ProductCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProductCommentCell.m; path = category/view/ProductCommentCell.m; sourceTree = "<group>"; };
 		957E2FCD1FC637680073B31D /* ProductCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProductCommentCell.xib; path = category/view/ProductCommentCell.xib; sourceTree = "<group>"; };
+		9585CB8720C967F70015536F /* ToolItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ToolItemCell.h; path = memberCenter/view/ToolItemCell.h; sourceTree = "<group>"; };
+		9585CB8820C967F70015536F /* ToolItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ToolItemCell.m; path = memberCenter/view/ToolItemCell.m; sourceTree = "<group>"; };
+		9585CB8920C967F70015536F /* ToolItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ToolItemCell.xib; path = memberCenter/view/ToolItemCell.xib; sourceTree = "<group>"; };
 		95863D7C1FA938B9006131A6 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		95863D7D1FA93D5C006131A6 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = memberCenter/RegisterViewController.h; sourceTree = "<group>"; };
 		95863D7E1FA93D5C006131A6 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = memberCenter/RegisterViewController.m; sourceTree = "<group>"; };
@@ -1578,6 +1583,9 @@
 				95F985A31FF13007001CA540 /* CouponListCell.h */,
 				95F985A41FF13007001CA540 /* CouponListCell.m */,
 				95F985A51FF13007001CA540 /* CouponListCell.xib */,
+				9585CB8720C967F70015536F /* ToolItemCell.h */,
+				9585CB8820C967F70015536F /* ToolItemCell.m */,
+				9585CB8920C967F70015536F /* ToolItemCell.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -1726,6 +1734,7 @@
 				95EF49B41F89E27300DBE834 /* config.plist in Resources */,
 				957E2FCF1FC637680073B31D /* ProductCommentCell.xib in Resources */,
 				952711E41F9C20290046CE4C /* DropdownTableView.xib in Resources */,
+				9585CB8B20C967F70015536F /* ToolItemCell.xib in Resources */,
 				95879C871FC9A53B0012A19C /* AlipaySDK.bundle in Resources */,
 				95BB3AB01FC1588F002FB2FE /* CartItemCell.xib in Resources */,
 				9531ADD11FB86FC7009D51EB /* RealNameVerifyViewController.xib in Resources */,
@@ -1945,6 +1954,7 @@
 				95CF88F41FB1FBC90068744B /* BadgeButton.m in Sources */,
 				95CD87941FAE051000E2EF09 /* SelfInfo.m in Sources */,
 				956098791F7D3293002D7E35 /* main.m in Sources */,
+				9585CB8A20C967F70015536F /* ToolItemCell.m in Sources */,
 				95FD535B1F8FAB28000A6C2F /* ReceiveOrderRequest.m in Sources */,
 				95A437D41F85D47500424E06 /* CollectionTableViewCell.m in Sources */,
 				95CF88F01FB0958B0068744B /* MemberLogoutCell.m in Sources */,

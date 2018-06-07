@@ -7,7 +7,7 @@
 //
 
 #import "MemberOtherCell.h"
-#import "PrimaryFuncCell.h"
+#import "ToolItemCell.h"
 
 @implementation MemberOtherCell {
     NSArray *titleList;
@@ -19,7 +19,7 @@
     
     _collection.delegate = self;
     _collection.dataSource = self;
-    [_collection registerNib:[UINib nibWithNibName:@"PrimaryFuncCell" bundle:nil] forCellWithReuseIdentifier:PrimaryCellIdentifier];
+    [_collection registerNib:[UINib nibWithNibName:@"ToolItemCell" bundle:nil] forCellWithReuseIdentifier:ToolItemCellID];
     
     titleList = @[@"我的积分", @"微动币", @"微动币充值", @"优惠券", @"微豆充值", @"我的微豆"];
     imageList = @[@"tool_credit", @"tool_charge", @"tool_coin", @"tool_coupon", @"icon_weidou_charge", @"icon_weidou_log"];
@@ -34,7 +34,7 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    PrimaryFuncCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:PrimaryCellIdentifier forIndexPath:indexPath];
+    ToolItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ToolItemCellID forIndexPath:indexPath];
     NSInteger row = indexPath.row;
     
     [cell setupCellWithTitle:[titleList objectAtIndex:row] Image:[imageList objectAtIndex:row]];
@@ -42,7 +42,7 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat length = (SCREEN_WIDTH - 10 * 3) / 4 ;
+    CGFloat length = (SCREEN_WIDTH * 0.9 - 2 * 3) / 4 ;
     
     return CGSizeMake(length, length);
 }

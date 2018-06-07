@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet VerifyCodeView *verifyCodeView;
 @property (weak, nonatomic) IBOutlet UIButton *chargeBtn;
 @property (weak, nonatomic) IBOutlet UIView *cardBgView;
+@property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
 
 @end
 
@@ -32,7 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"易购卡充值";
+    self.title = self.type == 0 ? @"易购卡充值" : @"心卡充值";
     [self initNaviBackButton];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.extendedLayoutIncludesOpaqueBars=NO;
@@ -45,6 +46,12 @@
     
     _passwordTF.inputAccessoryView = [LVKeyboardAccessoryBtn new];
     _passwordTF.inputView = self.keyboard;
+    
+    if (self.type == 1) {
+        _welcomeLabel.text = @"欢迎使用心卡充值服务";
+        _cardNoTF.placeholder = @"请输入心卡卡号";
+        _passwordTF.placeholder = @"请输入心卡密码";
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -67,11 +74,11 @@
     NSString *verifyCode = _verifyTF.text;
     
     if (STRING_NULL(cardNo)) {
-        [SVProgressHUD showInfoWithStatus:@"请输入额购卡卡号"];
+        [SVProgressHUD showInfoWithStatus:@"请输入卡号"];
         return;
     }
     if (STRING_NULL(password)) {
-        [SVProgressHUD showInfoWithStatus:@"请输入易购卡密码"];
+        [SVProgressHUD showInfoWithStatus:@"请输入卡密码"];
         return;
     }
     if (STRING_NULL(verifyCode)) {

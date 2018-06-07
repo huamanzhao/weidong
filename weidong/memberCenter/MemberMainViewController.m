@@ -121,10 +121,10 @@
     
     [self.table reloadData];
     [headerView setupWithUserName:[Util getUserName] Ranking:memberInfo.memberRankName];
-    [functionView setupBadgeWithFavorite:memInfo.productFavoriteCount
-                                Delivery:memInfo.productNotifyCount
-                                 Comment:memInfo.reviewCount
-                                 Consult:memInfo.consultationCount];
+//    [functionView setupBadgeWithFavorite:memInfo.productFavoriteCount
+//                                Delivery:memInfo.productNotifyCount
+//                                 Comment:memInfo.reviewCount
+//                                 Consult:memInfo.consultationCount];
 }
 
 #pragma mark - 获取服务端数据

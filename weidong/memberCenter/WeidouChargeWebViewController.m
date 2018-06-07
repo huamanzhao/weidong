@@ -296,12 +296,12 @@
 - (void)openCartPayVCWithURL:(NSString *)urlstr {
     NSURL *url = [NSURL URLWithString:urlstr];
     if (!url) {
-        [SVProgressHUD showInfoWithStatus:@"易购卡参数错误"];
+        [SVProgressHUD showInfoWithStatus:@"心卡参数错误"];
         return;
     }
     NSData *jsonData = [NSData dataWithContentsOfURL:url];
     if (!jsonData) {
-        [SVProgressHUD showInfoWithStatus:@"易购卡参数错误"];
+        [SVProgressHUD showInfoWithStatus:@"心卡参数错误"];
         return;
     }
     
@@ -317,7 +317,7 @@
      */
     
     if (!dic || [dic count] <= 0) {
-        [SVProgressHUD showInfoWithStatus:@"易购卡参数错误"];
+        [SVProgressHUD showInfoWithStatus:@"心卡参数错误"];
         return;
     }
     

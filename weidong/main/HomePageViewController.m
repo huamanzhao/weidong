@@ -121,6 +121,7 @@
         [searchView dismiss];
         searchView = nil;   //避免从其他界面返回后，此界面出不来
     }
+    [SVProgressHUD dismiss];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {

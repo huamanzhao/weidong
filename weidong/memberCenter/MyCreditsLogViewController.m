@@ -31,10 +31,10 @@
     
     NSString *title = @"";
     if (self.type == 0) {
-        title = @"我的微动币";
+        title = @"我的积分";
     }
     else if (self.type == 1) {
-        title = @"我的积分";
+        title = @"我的微动币";
     }
     else {
         title = @"我的微豆";
